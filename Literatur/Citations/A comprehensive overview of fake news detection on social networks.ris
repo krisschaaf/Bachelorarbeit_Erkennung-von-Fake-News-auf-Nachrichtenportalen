@@ -1,0 +1,16 @@
+TY  - JOUR
+AU  - Sharma, Upasna
+AU  - Singh, Jaswinder
+PY  - 2024
+DA  - 2024/06/24
+TI  - A comprehensive overview of fake news detection on social networks
+JO  - Social Network Analysis and Mining
+SP  - 120
+VL  - 14
+IS  - 1
+AB  - As social media and web-based forums have grown in popularity, the fast-spreading trend of fake news has become a major threat to the government and other agencies. With the rise of social media and internet platforms, misinformation may quickly spread over borders and language boundaries. Detecting and neutralizing fake news in several languages can help to protect the integrity of global elections, political discourse, and public opinion. The lack of a robust multilingual database for training the classification models makes detecting fake news a difficult task. This paper looks at it by describing several forms of fake news (like serious fabrications, large-scale hoaxes, stance news, deceptive news, satire news, clickbait, misinformation, rumour). This review paper includes different steps, features, tools for mitigating the scourge of information pollution, and different available datasets. This study presented a taxonomy for detecting fake news, which gives a comprehensive overview and analysis of existing DL-based algorithms focusing on diverse techniques. This paper also includes the monolingual and multilingual fake news detection models. Finally, this paper ends with the technical challenges.
+SN  - 1869-5469
+UR  - https://doi.org/10.1007/s13278-024-01280-3
+DO  - 10.1007/s13278-024-01280-3
+ID  - Sharma2024
+ER  - 
