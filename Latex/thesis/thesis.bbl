@@ -1,4 +1,4 @@
-\begin{thebibliography}{0}
+\begin{thebibliography}{5}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -6,5 +6,54 @@
 \makeatother
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax\def\url#1{\texttt{#1}}\fi
+
+\bibitem[Ashish u.\,a.(2024)Ashish, Sonia, Arora, Hemraj, Rana und
+  Gupta]{Ashish2024}
+\dinatlabel{Ashish u.\,a. 2024} \textsc{Ashish}~; \textsc{Sonia}~;
+  \textsc{Arora}, Monika~; \textsc{Hemraj}~; \textsc{Rana}, Anurag~;
+  \textsc{Gupta}, Gaurav:
+\newblock An Analysis and Identification of Fake News using Machine Learning
+  Techniques.
+\newblock In: \emph{2024 11th International Conference on Computing for
+  Sustainable Global Development (INDIACom)}, 2024, S.~634--638
+
+\bibitem[B{\"u}rker(2022)]{buerker2022fakenews}
+\dinatlabel{B{\"u}rker 2022} \textsc{B{\"u}rker}, Michael:
+\newblock \emph{Fake-News, Propaganda \& Co: Wie behalte ich den
+  {\"U}berblick?}
+\newblock 2022. --
+\newblock URL
+  \url{https://www.haw-landshut.de/aktuelles/beitrag/fake-news-propaganda-co-wie-behalte-ich-den-ueberblick}.
+  -- Zugriffsdatum: 2025-04-23. --
+\newblock Interview gef{\"u}hrt von EINFALLSreich, Hochschule Landshut
+
+\bibitem[Sharma und Singh(2024)]{Sharma:2024}
+\dinatlabel{Sharma und Singh 2024} \textsc{Sharma}, Upasna~; \textsc{Singh},
+  Jaswinder:
+\newblock A comprehensive overview of fake news detection on social networks.
+\newblock In: \emph{Social Network Analysis and Mining}
+\newblock 14 (2024), Nr.~1, S.~120. --
+\newblock URL \url{https://doi.org/10.1007/s13278-024-01280-3}.
+\newblock ISBN 1869-5469
+
+\bibitem[Wagner(2010)]{Wagner:2010aa}
+\dinatlabel{Wagner 2010} \textsc{Wagner}, Wiebke:
+\newblock Steven Bird, Ewan Klein and Edward Loper: Natural Language Processing
+  with Python, Analyzing Text with the Natural Language Toolkit.
+\newblock In: \emph{Language Resources and Evaluation}
+\newblock 44 (2010), Nr.~4, S.~421--424. --
+\newblock URL \url{https://doi.org/10.1007/s10579-010-9124-x}.
+\newblock ISBN 1574-0218
+
+\bibitem[Zhang u.\,a.(2017)Zhang, {Habibi Lashkari} und {A.
+  Ghorbani}]{secrypt17}
+\dinatlabel{Zhang u.\,a. 2017} \textsc{Zhang}, Xichen~; \textsc{{Habibi
+  Lashkari}}, Arash~; \textsc{{A. Ghorbani}}, Ali:
+\newblock A Lightweight Online Advertising Classification System using
+  Lexical-based Features.
+\newblock In: \emph{Proceedings of the 14th International Joint Conference on
+  e-Business and Telecommunications (ICETE 2017) - SECRYPT}
+\newblock INSTICC (Veranst.), SciTePress, 2017, S.~486--494. --
+\newblock ISBN 978-989-758-259-2
 
 \end{thebibliography}
