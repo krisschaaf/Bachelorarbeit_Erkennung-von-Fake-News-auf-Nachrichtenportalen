@@ -1,4 +1,4 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{6}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -16,6 +16,15 @@
   Techniques.
 \newblock In: \emph{2024 11th International Conference on Computing for
   Sustainable Global Development (INDIACom)}, 2024, S.~634--638
+
+\bibitem[Baptista und Gradim(2020)]{socsci9100185}
+\dinatlabel{Baptista und Gradim 2020} \textsc{Baptista}, Jo{\~a.~P.~;
+  \textsc{Gradim}, Anabela:
+\newblock Understanding Fake News Consumption: A Review.
+\newblock In: \emph{Social Sciences}
+\newblock 9 (2020), Nr.~10. --
+\newblock URL \url{https://www.mdpi.com/2076-0760/9/10/185}. --
+\newblock ISSN 2076-0760
 
 \bibitem[B{\"u}rker(2022)]{buerker2022fakenews}
 \dinatlabel{B{\"u}rker 2022} \textsc{B{\"u}rker}, Michael:
