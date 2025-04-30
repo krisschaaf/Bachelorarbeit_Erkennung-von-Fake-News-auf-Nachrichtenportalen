@@ -1,2 +1,8 @@
-# ml_zum_erkennen_von_fake_news
-Bachelorarbeit an der HAW Hamburg
+# Entwicklung einer Software zur Erkennung von Fake News auf Nachrichtenportalen
+
+### BACHELOR THESIS - Kristoﬀer Schaaf
+
+
+FAKULTÄT TECHNIK UND INFORMATIK
+
+Department Informatik
