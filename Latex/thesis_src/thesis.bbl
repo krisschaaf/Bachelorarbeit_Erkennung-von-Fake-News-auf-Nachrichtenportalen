@@ -1,4 +1,4 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{9}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -36,6 +36,28 @@
   -- Zugriffsdatum: 2025-04-23. --
 \newblock Interview gef{\"u}hrt von EINFALLSreich, Hochschule Landshut
 
+\bibitem[Hartwig und Reuter(2021)]{Hartwig2021}
+\dinatlabel{Hartwig und Reuter 2021} \textsc{Hartwig}, Katrin~;
+  \textsc{Reuter}, Christian:
+\newblock \emph{Fake News technisch begegnen -- Detektions- und
+  Behandlungsans{\"a}tze zur Unterst{\"u}tzung von NutzerInnen}.
+\newblock S.~133--149.
+\newblock In: \textsc{Klimczak}, Peter (Hrsg.)~; \textsc{Zoglauer}, Thomas
+  (Hrsg.): \emph{Wahrheit und Fake im postfaktisch-digitalen Zeitalter:
+  Distinktionen in den Geistes- und IT-Wissenschaften}.
+\newblock Wiesbaden~: Springer Fachmedien Wiesbaden, 2021. --
+\newblock URL \url{https://doi.org/10.1007/978-3-658-32957-0_7}. --
+\newblock ISBN 978-3-658-32957-0
+
+\bibitem[Horne und Adali(2017)]{horne2017}
+\dinatlabel{Horne und Adali 2017} \textsc{Horne}, Benjamin~; \textsc{Adali},
+  Sibel:
+\newblock This Just In: Fake News Packs a Lot in Title, Uses Simpler,
+  Repetitive Content in Text Body, More Similar to Satire than Real News.
+\newblock In: \emph{Proceedings of the International AAAI Conference on Web and
+  Social Media}
+\newblock 11 (2017), 03
+
 \bibitem[Sharma und Singh(2024)]{Sharma:2024}
 \dinatlabel{Sharma und Singh 2024} \textsc{Sharma}, Upasna~; \textsc{Singh},
   Jaswinder:
@@ -44,6 +66,14 @@
 \newblock 14 (2024), Nr.~1, S.~120. --
 \newblock URL \url{https://doi.org/10.1007/s13278-024-01280-3}.
 \newblock ISBN 1869-5469
+
+\bibitem[Simone u.\,a.(2022)Simone, Oliver, Clara und Andreas]{Simone2022}
+\dinatlabel{Simone u.\,a. 2022} \textsc{Simone}, Sandler~; \textsc{Oliver},
+  Krauss~; \textsc{Clara}, Diesenreiter~; \textsc{Andreas}, St{\"o}ckl:
+\newblock Detecting Fake News and Performing Quality Ranking of German
+  Newspapers Using Machine Learning.
+\newblock In: \emph{2022 International Conference on Electrical, Computer,
+  Communications and Mechatronics Engineering (ICECCME)}, 2022, S.~1--5
 
 \bibitem[Wagner(2010)]{Wagner:2010aa}
 \dinatlabel{Wagner 2010} \textsc{Wagner}, Wiebke:
