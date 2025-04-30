@@ -6,3 +6,5 @@
 FAKULTÄT TECHNIK UND INFORMATIK
 
 Department Informatik
+
+[For pdf click here](Latex/thesis_src/thesis.pdf)
