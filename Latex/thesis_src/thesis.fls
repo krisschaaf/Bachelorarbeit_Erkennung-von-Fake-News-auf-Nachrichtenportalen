@@ -1,9 +1,9 @@
-PWD /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual
+PWD /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src
 INPUT /usr/local/texlive/2021/texmf.cnf
 INPUT /usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.tex
-OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.log
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.tex
+OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.log
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/scrreprt.cls
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/scrreprt.cls
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/scrreprt.cls
@@ -100,6 +100,8 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/typearea.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/typearea.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/footmisc/footmisc.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/footmisc/footmisc.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/typearea.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/typearea.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/typearea.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/typearea.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/typearea.sty
@@ -124,15 +126,15 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/typearea.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/typearea.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/typearea.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/scrkbase.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/thesisstyle.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/thesisstyle.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/thesisstyle.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/thesisstyle.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/thesisstyle.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/thesisstyle.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/thesisstyle.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/thesisstyle.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/thesisstyle.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/thesisstyle.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/thesisstyle.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/thesisstyle.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/thesisstyle.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/thesisstyle.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/thesisstyle.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/thesisstyle.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/thesisstyle.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/thesisstyle.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/inputenc.sty
@@ -617,6 +619,19 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
@@ -831,7 +846,7 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libr
 INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
 INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
 INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
-OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.pdf
+OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.pdf
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/tools/calc.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/tools/calc.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/tools/calc.sty
@@ -1538,41 +1553,36 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/pdfpages/pppdftex.def
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/pdfpages/pppdftex.def
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/pdfpages/pppdftex.def
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/pdfpages/pppdftex.def
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/configurationcommands.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/configurationcommands.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/configurationcommands.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/configurationcommands.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/configurationcommands.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/configurationcommands.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/configurationcommands.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/configurationcommands.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/configurationcommands.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/configurationcommands.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/configurationcommands.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/configurationcommands.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/configurationcommands.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/configurationcommands.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/configurationcommands.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/configurationcommands.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/configurationcommands.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/configurationcommands.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/convenience.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/convenience.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/convenience.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/convenience.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/convenience.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/convenience.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/convenience.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/convenience.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/../style/convenience.sty
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty
-OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.idx
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.aux
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.aux
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.aux
-OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.aux
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/convenience.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/convenience.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/convenience.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/convenience.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/convenience.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/convenience.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/convenience.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/convenience.sty
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/convenience.sty
+OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.glo
+OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.acn
+OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.slo
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesisglossaries.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesisglossaries.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesisglossaries.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesisglossaries.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.aux
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.aux
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.aux
+OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.aux
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
@@ -1666,17 +1676,17 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestri
 INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.out
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.out
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.out
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.out
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.out
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.out
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.out
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.out
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.out
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.out
-OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.out
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.out
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.out
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.out
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.out
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.out
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.out
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.out
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.out
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.out
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.out
+OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.out
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/bookmark/bookmark.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/bookmark/bookmark.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/bookmark/bookmark.sty
@@ -1748,206 +1758,200 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecbx1095.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecbx2074.tfm
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.toc
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.toc
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.toc
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
-OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.toc
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecsl1095.tfm
-INPUT /usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/intro.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/intro.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/intro.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/intro.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/intro.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/intro.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/intro.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/intro.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/intro.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/intro.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/intro.tex
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/wheretofindwhat.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/wheretofindwhat.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/wheretofindwhat.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/wheretofindwhat.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/wheretofindwhat.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/wheretofindwhat.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/wheretofindwhat.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/wheretofindwhat.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/wheretofindwhat.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/wheretofindwhat.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/wheretofindwhat.tex
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/firststeps.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/firststeps.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/firststeps.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/firststeps.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/firststeps.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/firststeps.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/firststeps.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/firststeps.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/firststeps.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/firststeps.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/firststeps.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/configuration/configuration.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/configuration/configuration.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/configuration/configuration.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/configuration/configuration.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/configuration/configuration.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/configuration/configuration.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/configuration/configuration.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/configuration/configuration.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/configuration/configuration.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/configuration/configuration.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/configuration/configuration.tex
+INPUT ../style/coverpageCD2017.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/coverpageCD2017.tex
+INPUT ../style/coverpageCD2017.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/coverpageCD2017.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/coverpageCD2017.tex
+INPUT ../style/coverpageCD2017.tex
+INPUT ../style/coverpageCD2017.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/coverpageCD2017.tex
+INPUT ../style/coverpageCD2017.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/coverpageCD2017.tex
+INPUT ../style/coverpageCD2017.tex
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1phv.fd
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1phv.fd
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1phv.fd
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1phv.fd
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/HAW_Marke_schwarz.pdf
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/HAW_Marke_schwarz.pdf
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/HAW_Marke_schwarz.pdf
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/HAW_Marke_schwarz.pdf
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecrm2986.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecbx2986.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmss9.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/configurations.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/configurations.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/configurations.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/configurations.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/configurations.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/configurations.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/configurations.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/configurations.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/configurations.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/configurations.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/configurations.tex
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/courier/pcrr8t.vf
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/glossary.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/glossary.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/glossary.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/glossary.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/glossary.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/glossary.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/glossary.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/glossary.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/glossary.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/glossary.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/glossary.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/citation.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/citation.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/citation.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/citation.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/citation.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/citation.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/citation.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/citation.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/citation.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/citation.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/citation.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/maintainer.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/maintainer.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/maintainer.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/maintainer.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/maintainer.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/maintainer.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/maintainer.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/maintainer.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/maintainer.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/maintainer.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/maintainer.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/additionalpackages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/additionalpackages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/additionalpackages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/additionalpackages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/additionalpackages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/additionalpackages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/additionalpackages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/additionalpackages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/additionalpackages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/additionalpackages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/additionalpackages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/convenience.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/convenience.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/convenience.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/convenience.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/convenience.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/convenience.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/convenience.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/convenience.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/convenience.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/convenience.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/convenience.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/knownissues.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/knownissues.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/knownissues.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/knownissues.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/knownissues.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/knownissues.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/knownissues.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/knownissues.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/knownissues.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/knownissues.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/knownissues.tex
+INPUT ../style/metadata.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/metadata.tex
+INPUT ../style/metadata.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/metadata.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/metadata.tex
+INPUT ../style/metadata.tex
+INPUT ../style/metadata.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/metadata.tex
+INPUT ../style/metadata.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/metadata.tex
+INPUT ../style/metadata.tex
+INPUT ../style/titlepage.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/titlepage.tex
+INPUT ../style/titlepage.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/titlepage.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/titlepage.tex
+INPUT ../style/titlepage.tex
+INPUT ../style/titlepage.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/titlepage.tex
+INPUT ../style/titlepage.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/titlepage.tex
+INPUT ../style/titlepage.tex
+INPUT /usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.ist
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecti1200.tfm
+INPUT ../style/abstractpage.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/abstractpage.tex
+INPUT ../style/abstractpage.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/abstractpage.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/abstractpage.tex
+INPUT ../style/abstractpage.tex
+INPUT ../style/abstractpage.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/abstractpage.tex
+INPUT ../style/abstractpage.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/abstractpage.tex
+INPUT ../style/abstractpage.tex
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/helvetic/phvr8t.vf
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/helvetic/phvr8t.vf
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecbx1095.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecsl1095.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecbx2074.tfm
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.toc
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.toc
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.toc
+OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.toc
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.lof
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.lof
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.lof
+OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.lof
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.lot
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.lot
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.lot
+OUTPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.lot
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/01_einleitung.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/01_einleitung.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/01_einleitung.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/01_einleitung.tex
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/courier/pcrr8t.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/courier/pcrr8t.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/courier/pcrr8t.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/02_grundlagen_und_begriffsdefinitionen.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/02_grundlagen_und_begriffsdefinitionen.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/02_grundlagen_und_begriffsdefinitionen.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/02_grundlagen_und_begriffsdefinitionen.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/03_maschinelles_lernen_zur_fake_news_erkennung.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/03_maschinelles_lernen_zur_fake_news_erkennung.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/03_maschinelles_lernen_zur_fake_news_erkennung.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/03_maschinelles_lernen_zur_fake_news_erkennung.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/04_nlp&deep_learning.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/04_nlp&deep_learning.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/04_nlp&deep_learning.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/04_nlp&deep_learning.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/05_relevante_datensaetze_und_auswahlkriterien.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/05_relevante_datensaetze_und_auswahlkriterien.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/05_relevante_datensaetze_und_auswahlkriterien.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/05_relevante_datensaetze_und_auswahlkriterien.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/06_konzeption_der_softwareloesung.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/06_konzeption_der_softwareloesung.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/06_konzeption_der_softwareloesung.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/06_konzeption_der_softwareloesung.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/07_umsetzung_des_prototyps.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/07_umsetzung_des_prototyps.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/07_umsetzung_des_prototyps.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/07_umsetzung_des_prototyps.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/08_evaluation_und_ergebnisse.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/08_evaluation_und_ergebnisse.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/08_evaluation_und_ergebnisse.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/08_evaluation_und_ergebnisse.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/09_diskussion.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/09_diskussion.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/09_diskussion.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/09_diskussion.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/10_fazit_und_ausblick.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/10_fazit_und_ausblick.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/10_fazit_und_ausblick.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/10_fazit_und_ausblick.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.bbl
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.bbl
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.bbl
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.bbl
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/eccc1095.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecti1095.tfm
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/appendix/example_appendix.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/appendix/example_appendix.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/appendix/example_appendix.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/appendix/example_appendix.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/appendix/example_appendix.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/appendix/example_appendix.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/appendix/example_appendix.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/appendix/example_appendix.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/appendix/example_appendix.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/appendix/example_appendix.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/appendix/example_appendix.tex
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/courier/pcrr8t.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/languages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/languages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/languages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/languages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/languages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/languages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/languages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/languages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/languages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/languages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/languages.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.ind
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.ind
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.ind
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.ind
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.bbl
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.bbl
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.bbl
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.bbl
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/eccc0900.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecti0900.tfm
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.aux
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.out
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/template-latex_thesis 2/manual/manual.out
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
+INPUT ../style/statement.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/statement.tex
+INPUT ../style/statement.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/statement.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/statement.tex
+INPUT ../style/statement.tex
+INPUT ../style/statement.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/statement.tex
+INPUT ../style/statement.tex
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/../style/statement.tex
+INPUT ../style/statement.tex
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmss.fd
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmss.fd
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmss.fd
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmss.fd
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecsx1095.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecsx1200.tfm
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.aux
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.out
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.out
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc0900.pfb
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx2986.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb

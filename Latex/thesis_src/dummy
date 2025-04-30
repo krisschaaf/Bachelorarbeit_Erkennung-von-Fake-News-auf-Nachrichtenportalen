@@ -1,17 +1,37 @@
-%% This BibTeX bibliography file was created using BibDesk.
-%% https://bibdesk.sourceforge.io/
-
-%% Created for Kristoffer Schaaf at 2025-04-24 08:57:31 +0200 
-
-
 %% Saved with string encoding Unicode (UTF-8) 
+@article{LOW2022115824,
+	abstract = {Indiscriminate elimination of harmful fake news risks destroying satirical news, which can be benign or even beneficial, because both types of news share highly similar textual cues. In this work we applied a recent development in neural network architecture, transformers, to the task of separating satirical news from fake news. Transformers have hitherto not been applied to this specific problem. Our evaluation results on a publicly available and carefully curated dataset show that the performance from a classifier framework built around a DistilBERT architecture performed better than existing machine-learning approaches. Additional improvement over baseline DistilBERT was achieved through the use of non-standard tokenization schemes as well as varying the pre-training and text pre-processing strategies. The improvement over existing approaches stands at 0.0429 (5.2%) in F1 and 0.0522 (6.4%) in accuracy. Further evaluation on two additional datasets shows our framework's ability to generalize across datasets without diminished performance.},
+	author = {Jwen Fai Low and Benjamin C.M. Fung and Farkhund Iqbal and Shih-Chia Huang},
+	date-added = {2025-04-24 12:38:16 +0200},
+	date-modified = {2025-04-24 12:38:16 +0200},
+	doi = {https://doi.org/10.1016/j.eswa.2021.115824},
+	issn = {0957-4174},
+	journal = {Expert Systems with Applications},
+	keywords = {Fake news, Satire, Sarcasm, Deep learning, Transformers, BERT, DistilBERT, Classification},
+	pages = {115824},
+	title = {Distinguishing between fake news and satire with transformers},
+	url = {https://www.sciencedirect.com/science/article/pii/S0957417421011891},
+	volume = {187},
+	year = {2022},
+	bdsk-url-1 = {https://www.sciencedirect.com/science/article/pii/S0957417421011891},
+	bdsk-url-2 = {https://doi.org/10.1016/j.eswa.2021.115824}}
+
+@article{article,
+	author = {Horne, Benjamin and Adali, Sibel},
+	doi = {10.1609/icwsm.v11i1.14976},
+	journal = {Proceedings of the International AAAI Conference on Web and Social Media},
+	month = {03},
+	title = {This Just In: Fake News Packs a Lot in Title, Uses Simpler, Repetitive Content in Text Body, More Similar to Satire than Real News},
+	volume = {11},
+	year = {2017},
+	bdsk-url-1 = {https://doi.org/10.1609/icwsm.v11i1.14976}}
 
 @inproceedings{Munger2018TheEO,
-  title={The Effect of Clickbait ∗},
-  author={Kevin Munger and Mario Luca and Jonathan Nagler and Joshua A. Tucker},
-  year={2018},
-  url={https://api.semanticscholar.org/CorpusID:53381238}
-}
+	author = {Kevin Munger and Mario Luca and Jonathan Nagler and Joshua A. Tucker},
+	title = {The Effect of Clickbait ∗},
+	url = {https://api.semanticscholar.org/CorpusID:53381238},
+	year = {2018},
+	bdsk-url-1 = {https://api.semanticscholar.org/CorpusID:53381238}}
 
 @article{Wagner:2010aa,
 	author = {Wagner, Wiebke},
@@ -43,7 +63,7 @@
 	year = {2022},
 	bdsk-url-1 = {https://www.haw-landshut.de/aktuelles/beitrag/fake-news-propaganda-co-wie-behalte-ich-den-ueberblick}}
 
-@url{posetti2018,
+@misc{posetti2018,
 	author = {Posetti, Julie, and Alice Matthews},
 	date-added = {2025-04-23 13:26:48 +0200},
 	date-modified = {2025-04-23 13:29:26 +0200},
@@ -145,8 +165,6 @@
 	author = {Willweber, Julian Thomas Dieter Rudolf},
 	date-added = {2025-04-03 10:06:11 +0200},
 	date-modified = {2025-04-03 10:07:51 +0200},
-	rss-description = {
-},
 	school = {Technische Hochschule Ingolstadt},
 	title = {Comparison of deep learning and word embedding approaches for German fake news detection},
 	year = {2023}}

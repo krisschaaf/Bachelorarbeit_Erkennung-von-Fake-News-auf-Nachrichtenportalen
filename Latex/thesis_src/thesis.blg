@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2021)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: manual.aux
+The top-level auxiliary file: thesis.aux
 The style file: dinat.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -8,44 +8,44 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: literature.bib
-You've used 2 entries,
+You've used 6 entries,
             3552 wiz_defined-function locations,
-            808 strings with 6326 characters,
-and the built_in function-call counts, 1124 in all, are:
-= -- 130
-> -- 14
-< -- 19
-+ -- 24
-- -- 7
-* -- 91
-:= -- 190
-add.period$ -- 3
-call.type$ -- 2
-change.case$ -- 8
-chr.to.int$ -- 2
-cite$ -- 2
-duplicate$ -- 28
-empty$ -- 94
-format.name$ -- 12
-if$ -- 230
+            848 strings with 7522 characters,
+and the built_in function-call counts, 4884 in all, are:
+= -- 622
+> -- 69
+< -- 108
++ -- 143
+- -- 46
+* -- 481
+:= -- 807
+add.period$ -- 8
+call.type$ -- 6
+change.case$ -- 34
+chr.to.int$ -- 6
+cite$ -- 6
+duplicate$ -- 118
+empty$ -- 333
+format.name$ -- 85
+if$ -- 975
 int.to.chr$ -- 0
 int.to.str$ -- 1
-missing$ -- 2
-newline$ -- 24
-num.names$ -- 8
-pop$ -- 8
+missing$ -- 13
+newline$ -- 53
+num.names$ -- 24
+pop$ -- 36
 preamble$ -- 1
-purify$ -- 8
+purify$ -- 33
 quote$ -- 0
-skip$ -- 44
+skip$ -- 180
 stack$ -- 0
-substring$ -- 104
-swap$ -- 4
-text.length$ -- 2
+substring$ -- 449
+swap$ -- 29
+text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 17
+type$ -- 66
 warning$ -- 0
-while$ -- 12
+while$ -- 50
 width$ -- 0
-write$ -- 33
+write$ -- 87
