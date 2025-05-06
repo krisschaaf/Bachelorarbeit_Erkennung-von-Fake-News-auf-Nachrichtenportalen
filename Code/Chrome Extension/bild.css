@@ -1,0 +1,19 @@
+#analyse-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+    padding: 10px;
+    border: 2px solid red; /* ← hier wird der Rahmen gesetzt */
+    border-radius: 8px;     /* optional: abgerundete Ecken */
+    background-color: #fff0f0; /* optional: dezenter Hintergrund */
+  }
+
+#analyse-paragraph {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+  }
+  
