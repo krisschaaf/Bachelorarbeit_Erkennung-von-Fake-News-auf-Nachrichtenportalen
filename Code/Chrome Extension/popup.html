@@ -1,6 +1,54 @@
-<html>
-  <body>
-    <h1>Hello Extensions</h1>
-    <script src="popup.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>News Cover</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 1em;
+      width: 300px;
+      background-color: #f9f9f9;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+    .header img {
+      width: 48px;
+      height: 48px;
+      margin-right: 10px;
+    }
+    .title {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .description {
+      margin: 1em 0;
+      font-size: 0.95em;
+      color: #333;
+    }
+    .footer {
+      font-size: 0.8em;
+      color: #777;
+      text-align: center;
+      margin-top: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="icon.png" alt="Extension Icon">
+    <div class="title">News Cover</div>
+  </div>
+  <div class="description">
+    This extension helps detect fake news content on <strong>Bild.de</strong>. Stay informed and critical.
+  </div>
+  <div class="footer">
+    © 2025 Kristoffer Schaaf
+  </div>
+</body>
 </html>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 #analyse-container {
     display: flex;
     flex-direction: column;
@@ -11,6 +13,7 @@
   }
 
 #analyse-paragraph {
+    font-family: 'Roboto', sans-serif;
     color: red;
     font-weight: bold;
     text-align: center;
