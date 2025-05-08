@@ -15,7 +15,7 @@ const analyseArticle = async () => {
     const articles = document.getElementsByTagName("article");
 
     if (articles.length !== 1) {
-        console.log("Article contains live-ticker...returning")
+        console.log("Page contains live-ticker...returning")
         return;
     };
 
@@ -30,24 +30,13 @@ const analyseArticle = async () => {
     const headlineText = headlineElement.textContent.trim();
     console.log(`headlineText: ${headlineText}`);
 
-    await fetchDataTest().then(data => {
+    await globalThis.fetchDataTest().then(data => {
         appendDataToDOM(data, headlineText, article);
     }).catch(err => {
         console.error("Error fetching data:", err);
     }
     );
 }
-
-const fetchDataTest = async () => {
-    const response = await fetch("http://localhost:4000/test", {
-        method: "GET",
-        headers: { "Accept": "application/json" },
-    });
-
-    const data = await response.json();
-    return data;
-};
-
 
 const appendDataToDOM = (data, headlineText, article) => {
     if (!document.getElementById("analyse-container")) {

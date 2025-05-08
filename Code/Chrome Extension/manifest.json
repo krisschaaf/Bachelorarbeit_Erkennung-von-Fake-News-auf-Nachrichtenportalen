@@ -4,14 +4,14 @@
   "version": "1.0.0",
   "manifest_version": 3,
   "icons": {
-    "16": "icon.png",
-    "48": "icon.png",
-    "128": "icon.png"
+    "16": "static/icon.png",
+    "48": "static/icon.png",
+    "128": "static/icon.png"
   },
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "popup/popup.html",
     "default_title": "Fake News Detection Extension",
-    "default_icon": "icon.png"
+    "default_icon": "static/icon.png"
   },
   "permissions": ["storage", "tabs"],
   "host_permissions": [
@@ -19,18 +19,25 @@
     "*://*.zeit.de/*"
   ],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "serviceWorker/background.js"
   },
   "content_scripts": [
     {
       "matches": ["*://*.bild.de/*"],
-      "js": ["bild.js"],
-      "css": ["bild.css"],
+      "js": [
+        "contentScripts/bild/bild.js",
+        "contentScripts/backendService.js"
+      ],
+      "css": ["contentScripts/bild/bild.css"],
       "run_at": "document_end"
     },
     {
-      "matches": ["*://*.zeit.de/*"],
-      "js": ["zeit.js"],
+      "matches": ["*://*.taz.de/*"],
+      "js": [
+        "contentScripts/taz/taz.js",
+        "contentScripts/backendService.js"
+      ],
+      "css": ["contentScripts/taz/taz.css"],
       "run_at": "document_end"
     }
   ]
