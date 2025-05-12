@@ -1,6 +1,6 @@
 .DS_Store
 Datasets/news.csv
-Datasets/news.csv
+Datasets/FANG-COVID_DATASET
 Python/.idea
 Python/__pycache__/
 Python/venv/
