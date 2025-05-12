@@ -4,30 +4,61 @@
 \section{Machine Learning}
 \label{sec:ml}
 
-\cite{sabir2025}
-\cite{Buddhadev2025}
-
 \subsection{Textbereinigung und Vorverarbeitung}
 \label{sec:text_vorverarbeitung}
 
 \begin{itemize}
-    \item \textbf{Titel und Inhalt der Artikel zusammenfügen \cite{Buddhadev2025}}: 
-    \item \textbf{Akzente und Sonderzeichen entfernen \cite{Buddhadev2025} \cite{sabir2025}}
-    \item \textbf{Alle Buchstaben zu Kleinbuchstaben konvertieren \cite{sabir2025} \cite{SUDHAKAR2024101028}}
-    \item \textbf{Leere Spalten entfernen \cite{SUDHAKAR2024101028}}
-    \item \textbf{Kontraktionen auflösen (ans -> an das) \cite{Buddhadev2025}}
-    \item \textbf{Stoppwörter entfernen \cite{sabir2025} \cite{Buddhadev2025}}
-    \item \textbf{Rechtschreibfehler korrigieren \cite{sabir2025}} 
-    \item \textbf{Lemmatisieren \cite{Buddhadev2025} \cite{sabir2025}}
-    \item \textbf{Tokenisierung \cite{sabir2025}}
+    \item \textbf{Titel und Inhalt der Artikel zusammenfügen \cite{Buddhadev2025}}: Damit keine wichtigen Informationen verloren gehen,
+    werden Titel und Inhalt des Artikels zusammengefasst. Gerade der Titel kann durch z.B. Clickbait (siehe \ref{sec:wie_definieren_sich_fake_news})
+    schnell Hinweise auf eventuelle Fake News geben.
+
+    \item \textbf{Akzente und Sonderzeichen entfernen \cite{Buddhadev2025} \cite{sabir2025}}: Akzente führen dazu, dass Wörter wie „café“ und „cafe“ unterschiedlich behandelt werden, 
+    obwohl sie semantisch gleich sind. Das Entfernen dieser erhöht die Generalisierung. Sonderzeichen stören einfache Tokenizer (z. B. bei Bag-of-Words), führen zu vielen seltenen Tokens zu 
+    überdimensionierten Vektoren (siehe \ref{sec:bag_of_words}).
+
+    \item \textbf{Alle Buchstaben zu Kleinbuchstaben konvertieren \cite{sabir2025} \cite{SUDHAKAR2024101028}}: Ähnlich wie zum vorherigen Punkt
+    erhöht die durchgehende Kleinschreibung aller Buchstaben die Generalisierung und verhindert somit unnötige Duplikate im Vokabular.
+
+    \item \textbf{Leere Spalten entfernen \cite{SUDHAKAR2024101028}}: Leere Spalten enthalten keine Information. 
+    Sie können bei der Vektorisierung oder Modellerstellung Fehler verursachen und werden als einfache Datenbereinigungsmaßnahme entfernt.
+
+    \item \textbf{Kontraktionen auflösen (ans -> an das) \cite{Buddhadev2025}}: Im deutschen sind Kontradiktionen zwar nicht so häufig wie im englischen,
+    sie kommen aber trotzdem vor und sollten aufgelöst werden. Dies vermeidet fragmentierte Token und verbessert die Semantik und Trennbarkeit im Modell.
+
+    \item \textbf{Stoppwörter entfernen \cite{Buddhadev2025} \cite{sabir2025}}: Wörter wie „der“, „ist“, „und“ tragen wenig zur inhaltlichen Differenzierung bei. 
+    Das Entfernen dieser verbessert die semantische Gewichtung relevanter Begriffe \cite{sarkar2018nlpguide}.
+
+    \item \textbf{Rechtschreibfehler korrigieren \cite{sabir2025}}: Tippfehler führen zu seltenen Tokens und stören die Generalisierung. 
+    In offiziellen Artikeln sind zwar selten Rechtschreibfehler zu finden, aber falls vorhanden, hilft die Korrektur zur Verbesserung
+    der Modellqualität.
+
+    \item \textbf{Lemmatisieren \cite{Buddhadev2025} \cite{sabir2025}}: Bei der Lemmatisierung werden verschiedene Wortformen auf die Grundform zurückgeführt 
+    („läuft“, „lief“, „laufen“ wird zu „laufen“). So erkennt das Modell gleiche Bedeutungen trotz grammatischer Variation.
+
+    \item \textbf{Tokenisierung \cite{sabir2025}}: In der Tokenisierung werden die Texte in einzelne Wörter oder Einheiten (Tokens) zerlegt, die für Modelle verarbeitbar sind. 
+    Dies ist eine Grundvoraussetzung für alle weiteren NLP-Schritte wie TF-IDF oder Word Embeddings.
 \end{itemize}
 
-\paragraph{Eine duale Feature-Pipeline} 
+\subsubsection{Nutzung einer duale Feature-Pipeline}
+
+Ein Problem welches das Entfernen der Akzente und Sonderzeichen und das Konvertieren aller Buchstaben zu Kleinbuchstaben mit sich bringt
+ist, dass viele wichtige Hinweise zum Erkennen von Fake News verloren gehen. Wie in Kapitel \ref{sec:potenzielle_indikatoren} beschrieben,
+sind fortlaufende Großschreibung, übermäßige Nutzung von Satzzeichen und falsche Zeichensetzung am Satzende potenzielle Indikatoren für Fake News.
+
+Eine duale Feature-Pipeline kann dieses Problem lösen. Implementiert wird eine „cleaned“ Version (z.B. für inhaltliche Bedeutung) mit 
+standardisierten, inhaltlichen Features und eine „rohe“ Version (z.B. für Stilmerkmale) mit stilistischen, rohen Textfeatures.
+
+So werden semantische und stilistische Hinweise genau so genutzt wie ein Mensch es beim Lesen macht.
+
+\paragraph{Die Notwendigkeit der Stilmerkmale} ist aber diskutierbar. Die Datensätze werden ausschließlich aus Artikeln von offiziellen
+Nachrichtenportalen zusammengesetzt. Diese schreiben meist sauber, ohne Caps-Lock oder auffällige Sonderzeichen. Stilistische Merkmale wie viele 
+Ausrufezeichen, Emojis oder absichtliche Rechtschreibfehler kommen dort nicht vor – also sind sie in diesem Fall auch keine verlässlichen Fake-News-Signale.
 
 \subsection{Merkmalextraktion}
 \label{sec:merkmalextraktion}
 
 \subsubsection{Bag-of-words}
+\label{sec:bag_of_words}
 
 \subsubsection{TF-IDF}
 

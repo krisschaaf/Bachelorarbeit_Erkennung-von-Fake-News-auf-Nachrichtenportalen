@@ -1,4 +1,4 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{16}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -97,6 +97,15 @@
   Classification.
 \newblock
 \newblock (2025), 03
+
+\bibitem[Sarkar(2018)]{sarkar2018nlpguide}
+\dinatlabel{Sarkar 2018} \textsc{Sarkar}, Dipanjan:
+\newblock \emph{A Practitioner’s Guide to Natural Language Processing (Part
+  I) – Processing \& Understanding Text}.
+\newblock
+  \url{https://towardsdatascience.com/a-practitioners-guide-to-natural-language-processing-part-i-processing-understanding-text-9f4abfd13e72/}.
+\newblock 2018. --
+\newblock Zugriff am 12. Mai 2025
 
 \bibitem[Sharma und Singh(2024)]{Sharma:2024}
 \dinatlabel{Sharma und Singh 2024} \textsc{Sharma}, Upasna~; \textsc{Singh},
