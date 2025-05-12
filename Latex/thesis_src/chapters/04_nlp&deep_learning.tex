@@ -57,11 +57,43 @@ Ausrufezeichen, Emojis oder absichtliche Rechtschreibfehler kommen dort nicht vo
 \subsection{Merkmalextraktion}
 \label{sec:merkmalextraktion}
 
+
 \subsubsection{Bag-of-words}
 \label{sec:bag_of_words}
 
+Das Bag-of-Words-Modell ist ein einfaches Verfahren zur Textrepräsentation, bei dem ein Dokument als Vektor der Häufigkeiten 
+einzelner Wörter dargestellt wird – unabhängig von deren Reihenfolge oder Kontext. Es zählt lediglich das Vorkommen jedes Wortes aus 
+einem festen Vokabular \cite{cichosz2018forum}.
+
+
 \subsubsection{TF-IDF}
 
+TF-IDF ist ein gewichtetes Modell zur Textdarstellung, das berücksichtigt, wie häufig ein Wort in einem Dokument vorkommt (TF) 
+und wie selten es im Gesamtkorpus ist (IDF). Es dient dazu, häufige, aber wenig informative Wörter zu reduzieren und 
+aussagekräftige Begriffe zu betonen \cite{elov2023uzbek}.
+
+\begin{table}[h!]
+    \centering
+        \begin{tabular}{|p{6cm}|p{6cm}|}
+            \hline
+            \textbf{Bag-of-Words (BoW)} & \textbf{TF-IDF} \\
+            \hline
+            Einfache Implementierung \cite{cichosz2018forum} & Berücksichtigt Wortwichtigkeit im gesamten Korpus \cite{elov2023uzbek} \\
+            \hline
+            Keine Gewichtung — häufige Wörter dominieren & Seltener, aber informativer Inhalt wird stärker gewichtet \cite{das2023tfidf} \\
+            \hline
+            Hohe Dimensionalität (sparse matrix) & Gleiches Problem, aber mit informativeren Werten \cite{alzami2020tfidf} \\
+            \hline
+            Ignoriert Wortreihenfolge und Kontext \cite{umar2022sentiment} & Gleiches Grundproblem, aber geringfügig bessere Performance \cite{parmar2024stacking} \\
+            \hline
+            Nützlich für einfache Klassifikatoren & Verbessert häufige Klassifikatoren wie SVM oder Logistic Regression \cite{iyer2024sentiment} \\
+            \hline
+        \end{tabular}
+    \caption{Vergleich der Vor- und Nachteile von BoW und TF-IDF}
+    \label{tab:vergleich}
+\end{table}
+
+Aus \ref{tab:vergleich} zu erkennen ist, dass TF-IDF in vielen Anwendungen leistungsfähiger ist als BoW. Insbesondere bei heterogenen Texten mit hohem Vokabularumfang \cite{das2023tfidf}.
 
 \subsection{Machine Learning Modelle}
 \label{sec:ml_modelle}

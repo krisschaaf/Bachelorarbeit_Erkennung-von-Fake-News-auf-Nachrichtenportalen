@@ -30,22 +30,22 @@
 \contentsline {subsection}{\numberline {4.1.1}Textbereinigung und Vorverarbeitung}{8}{subsection.4.1.1}%
 \contentsline {subsubsection}{\nonumberline Nutzung einer duale Feature-Pipeline}{9}{subsubsection*.5}%
 \contentsline {paragraph}{\nonumberline Die Notwendigkeit der Stilmerkmale}{9}{paragraph*.7}%
-\contentsline {subsection}{\numberline {4.1.2}Merkmalextraktion}{11}{subsection.4.1.2}%
-\contentsline {subsubsection}{\nonumberline Bag-of-words}{11}{subsubsection*.9}%
-\contentsline {subsubsection}{\nonumberline TF-IDF}{11}{subsubsection*.11}%
+\contentsline {subsection}{\numberline {4.1.2}Merkmalextraktion}{10}{subsection.4.1.2}%
+\contentsline {subsubsection}{\nonumberline Bag-of-words}{10}{subsubsection*.9}%
+\contentsline {subsubsection}{\nonumberline TF-IDF}{10}{subsubsection*.11}%
 \contentsline {subsection}{\numberline {4.1.3}Machine Learning Modelle}{11}{subsection.4.1.3}%
-\contentsline {subsubsection}{\nonumberline Naive Bayes}{11}{subsubsection*.13}%
-\contentsline {subsubsection}{\nonumberline Support Vector Machines}{11}{subsubsection*.15}%
-\contentsline {subsubsection}{\nonumberline Logistische Regression}{11}{subsubsection*.17}%
+\contentsline {subsubsection}{\nonumberline Naive Bayes}{11}{subsubsection*.14}%
+\contentsline {subsubsection}{\nonumberline Support Vector Machines}{11}{subsubsection*.16}%
+\contentsline {subsubsection}{\nonumberline Logistische Regression}{11}{subsubsection*.18}%
 \contentsline {section}{\numberline {4.2}Deep Learning}{11}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Word Embeddings}{11}{subsection.4.2.1}%
-\contentsline {subsubsection}{\nonumberline Word2Vec}{11}{subsubsection*.19}%
-\contentsline {subsubsection}{\nonumberline GloVe}{11}{subsubsection*.21}%
-\contentsline {subsubsection}{\nonumberline BERT-Tokenisierung}{11}{subsubsection*.23}%
+\contentsline {subsubsection}{\nonumberline Word2Vec}{11}{subsubsection*.20}%
+\contentsline {subsubsection}{\nonumberline GloVe}{11}{subsubsection*.22}%
+\contentsline {subsubsection}{\nonumberline BERT-Tokenisierung}{11}{subsubsection*.24}%
 \contentsline {subsection}{\numberline {4.2.2}Deep Learning-Modelle}{11}{subsection.4.2.2}%
-\contentsline {subsubsection}{\nonumberline CNN}{11}{subsubsection*.25}%
-\contentsline {subsubsection}{\nonumberline LSTM}{11}{subsubsection*.27}%
-\contentsline {subsubsection}{\nonumberline Transformer: BERT}{11}{subsubsection*.29}%
+\contentsline {subsubsection}{\nonumberline CNN}{11}{subsubsection*.26}%
+\contentsline {subsubsection}{\nonumberline LSTM}{11}{subsubsection*.28}%
+\contentsline {subsubsection}{\nonumberline Transformer: BERT}{11}{subsubsection*.30}%
 \contentsline {section}{\numberline {4.3}Hybride Modelle}{11}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}convolutional neural network (CNN) along with bi-directional LSTM}{11}{subsection.4.3.1}%
 \contentsline {chapter}{\numberline {5}Relevante Datensätze und Auswahlkriterien}{12}{chapter.5}%
@@ -54,17 +54,17 @@
 \contentsline {section}{\numberline {5.3}Herausforderungen bei deutschen Textdaten (Klassenverteilung, Quellenvielfalt)}{12}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Konzeption der Softwarelösung}{13}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Hauptkomponente}{13}{section.6.1}%
-\contentsline {paragraph}{\nonumberline Als Beispiel die Seite Bild.de:}{13}{paragraph*.31}%
+\contentsline {paragraph}{\nonumberline Als Beispiel die Seite Bild.de:}{13}{paragraph*.32}%
 \contentsline {chapter}{\numberline {7}Umsetzung des Prototyps}{17}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Implementierung der Chrome Erweiterung}{17}{section.7.1}%
-\contentsline {paragraph}{\nonumberline Service Worker}{17}{paragraph*.34}%
-\contentsline {paragraph}{\nonumberline Content Scripts}{17}{paragraph*.36}%
-\contentsline {paragraph}{\nonumberline Pop-ups}{17}{paragraph*.38}%
+\contentsline {paragraph}{\nonumberline Service Worker}{17}{paragraph*.35}%
+\contentsline {paragraph}{\nonumberline Content Scripts}{17}{paragraph*.37}%
+\contentsline {paragraph}{\nonumberline Pop-ups}{17}{paragraph*.39}%
 \contentsline {chapter}{\numberline {8}Evaluation und Ergebnisse}{20}{chapter.8}%
 \contentsline {chapter}{\numberline {9}Diskussion}{21}{chapter.9}%
 \contentsline {chapter}{\numberline {10}Fazit und Ausblick}{22}{chapter.10}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{23}{chapter*.40}%
-\contentsline {chapter}{\numberline {A}Anhang}{26}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Verwendete Hilfsmittel}{26}{section.A.1}%
-\contentsline {chapter}{Selbstständigkeitserklärung}{27}{section*.42}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{23}{chapter*.41}%
+\contentsline {chapter}{\numberline {A}Anhang}{27}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Verwendete Hilfsmittel}{27}{section.A.1}%
+\contentsline {chapter}{Selbstständigkeitserklärung}{28}{section*.43}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
