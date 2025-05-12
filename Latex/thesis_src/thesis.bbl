@@ -1,4 +1,4 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{15}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -26,6 +26,14 @@
 \newblock URL \url{https://www.mdpi.com/2076-0760/9/10/185}. --
 \newblock ISSN 2076-0760
 
+\bibitem[Buddhadev und Parekh(2025)]{Buddhadev2025}
+\dinatlabel{Buddhadev und Parekh 2025} \textsc{Buddhadev}, Manan~;
+  \textsc{Parekh}, Virtee:
+\newblock Fake News Detection: Benchmarking Machine Learning and Deep Learning
+  Approaches.
+\newblock In: \emph{ESP Journal of Engineering and Technology Advancements}
+\newblock 5 (2025), 04, S.~39--46
+
 \bibitem[B{\"u}rker(2022)]{buerker2022fakenews}
 \dinatlabel{B{\"u}rker 2022} \textsc{B{\"u}rker}, Michael:
 \newblock \emph{Fake-News, Propaganda \& Co: Wie behalte ich den
@@ -35,6 +43,30 @@
   \url{https://www.haw-landshut.de/aktuelles/beitrag/fake-news-propaganda-co-wie-behalte-ich-den-ueberblick}.
   -- Zugriffsdatum: 2025-04-23. --
 \newblock Interview gef{\"u}hrt von EINFALLSreich, Hochschule Landshut
+
+\bibitem[for Developers(2025{\natexlab{a}})]{chrome2025popups}
+\dinatlabel{for Developers 2025{\natexlab{a}}} \textsc{Developers}, Chrome for:
+\newblock \emph{Add Popup}.
+\newblock
+  \url{https://developer.chrome.com/docs/extensions/develop/ui/add-popup}.
+\newblock 2025. --
+\newblock Zugriff am 11. Mai 2025
+
+\bibitem[for Developers(2025{\natexlab{b}})]{chrome2025contentscripts}
+\dinatlabel{for Developers 2025{\natexlab{b}}} \textsc{Developers}, Chrome for:
+\newblock \emph{Content scripts}.
+\newblock
+  \url{https://developer.chrome.com/docs/extensions/develop/concepts/content-scripts}.
+\newblock 2025. --
+\newblock Zugriff am 11. Mai 2025
+
+\bibitem[for Developers(2025{\natexlab{c}})]{chrome2025serviceworker}
+\dinatlabel{for Developers 2025{\natexlab{c}}} \textsc{Developers}, Chrome for:
+\newblock \emph{A service worker's life}.
+\newblock
+  \url{https://developer.chrome.com/docs/workbox/service-worker-lifecycle}.
+\newblock 2025. --
+\newblock Zugriff am 11. Mai 2025
 
 \bibitem[Hartwig und Reuter(2021)]{Hartwig2021}
 \dinatlabel{Hartwig und Reuter 2021} \textsc{Hartwig}, Katrin~;
@@ -58,6 +90,14 @@
   Social Media}
 \newblock 11 (2017), 03
 
+\bibitem[Sabir u.\,a.(2025)Sabir, Khan und Azam]{sabir2025}
+\dinatlabel{Sabir u.\,a. 2025} \textsc{Sabir}, Muhammad~; \textsc{Khan},
+  Talha~; \textsc{Azam}, Muhammad:
+\newblock A Comparative Study of Traditional and Hybrid Models for Text
+  Classification.
+\newblock
+\newblock (2025), 03
+
 \bibitem[Sharma und Singh(2024)]{Sharma:2024}
 \dinatlabel{Sharma und Singh 2024} \textsc{Sharma}, Upasna~; \textsc{Singh},
   Jaswinder:
@@ -74,6 +114,17 @@
   Newspapers Using Machine Learning.
 \newblock In: \emph{2022 International Conference on Electrical, Computer,
   Communications and Mechatronics Engineering (ICECCME)}, 2022, S.~1--5
+
+\bibitem[Sudhakar und Kaliyamurthie(2024)]{SUDHAKAR2024101028}
+\dinatlabel{Sudhakar und Kaliyamurthie 2024} \textsc{Sudhakar}, M.~;
+  \textsc{Kaliyamurthie}, K.P.:
+\newblock Detection of fake news from social media using support vector machine
+  learning algorithms.
+\newblock In: \emph{Measurement: Sensors}
+\newblock 32 (2024), S.~101028. --
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S2665917424000047}. --
+\newblock ISSN 2665-9174
 
 \bibitem[Wagner(2010)]{Wagner:2010aa}
 \dinatlabel{Wagner 2010} \textsc{Wagner}, Wiebke:
