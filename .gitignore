@@ -1,3 +1,6 @@
 .DS_Store
 Datasets/news.csv
 Datasets/news.csv
+Python/.idea
+Python/__pycache__/
+Python/venv/

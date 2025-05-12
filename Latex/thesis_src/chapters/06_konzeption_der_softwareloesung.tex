@@ -1,7 +1,7 @@
 \chapter{Konzeption der Softwarelösung}
 \label{chap:konzeption_der_softwareloesung}
 
-\section{Hauptkomponente}
+\section{Hauptkomponente} \label{sec:06:hauptkomponente}
 
 Die Hauptkomponente hat die Aufgabe die Artikel auf den verschiedenen Nachrichtenportalen zu lesen und zu ergänzen.
 Hierfür muss erkannt werden auf welcher Seite sich der Nutzer befindet. Außerdem muss das html dieser Seite ausgelesen und analysiert werden können.
@@ -55,7 +55,7 @@ Ob ein Artikel geöffnet ist, kann also anhand der Anzahl der \textit{article}-E
 
 Der Titel und Inhalt des Artikels kann den entsprechenden html-Elementen entnommen werden.
 Diese werden dann an die API gesendet und dort verarbeitet. 
-Der Rückgabewert der API enhält dann die Info ob der Artikel falsch oder echt ist.
+Der Rückgabewert der API enthält dann die Info ob der Artikel falsch oder echt ist.
 Diese wird in einem von der Hauptkomponente erzeugten \textit{div}-Container über dem Artikel eingefügt.
 
 \begin{table}[ht]
