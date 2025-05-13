@@ -1,4 +1,4 @@
-\begin{thebibliography}{23}
+\begin{thebibliography}{25}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -27,6 +27,14 @@
   Techniques.
 \newblock In: \emph{2024 11th International Conference on Computing for
   Sustainable Global Development (INDIACom)}, 2024, S.~634--638
+
+\bibitem[Aslam u.\,a.(2022)Aslam, Xia, Rustam, Hameed und Ashraf]{aslam2022}
+\dinatlabel{Aslam u.\,a. 2022} \textsc{Aslam}, Naila~; \textsc{Xia}, Kewen~;
+  \textsc{Rustam}, Furqan~; \textsc{Hameed}, Afifa~; \textsc{Ashraf}, Imran:
+\newblock Using Aspect-Level Sentiments for Calling App Recommendation with
+  Hybrid Deep-Learning Models.
+\newblock In: \emph{Applied Sciences}
+\newblock 12 (2022), 08, S.~8522
 
 \bibitem[Baptista und Gradim(2020)]{socsci9100185}
 \dinatlabel{Baptista und Gradim 2020} \textsc{Baptista}, Joao~P.~;
@@ -144,6 +152,14 @@
 \newblock In: \emph{5th International Conference on Artificial Intelligence and
   Data Science}, URL
   \url{https://ieeexplore.ieee.org/abstract/document/10493890/}, 2024
+
+\bibitem[Qaiser und Ali(2018)]{qaiser2018}
+\dinatlabel{Qaiser und Ali 2018} \textsc{Qaiser}, Shahzad~; \textsc{Ali},
+  Ramsha:
+\newblock Text Mining: Use of TF-IDF to Examine the Relevance of Words to
+  Documents.
+\newblock In: \emph{International Journal of Computer Applications}
+\newblock 181 (2018), 07
 
 \bibitem[Sabir u.\,a.(2025)Sabir, Khan und Azam]{sabir2025}
 \dinatlabel{Sabir u.\,a. 2025} \textsc{Sabir}, Muhammad~; \textsc{Khan},

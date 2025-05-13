@@ -12,11 +12,11 @@
     werden Titel und Inhalt des Artikels zusammengefasst. Gerade der Titel kann durch z.B. Clickbait (siehe \ref{sec:wie_definieren_sich_fake_news})
     schnell Hinweise auf eventuelle Fake News geben.
 
-    \item \textbf{Akzente und Sonderzeichen entfernen \cite{Buddhadev2025} \cite{sabir2025}}: Akzente führen dazu, dass Wörter wie „café“ und „cafe“ unterschiedlich behandelt werden, 
-    obwohl sie semantisch gleich sind. Das Entfernen dieser erhöht die Generalisierung. Sonderzeichen stören einfache Tokenizer (z. B. bei Bag-of-Words), führen zu vielen seltenen Tokens zu 
+    \item \textbf{Akzente und Sonderzeichen entfernen \cite{Buddhadev2025} \cite{sabir2025} \cite{aslam2022}}: Akzente führen dazu, dass Wörter wie „café“ und „cafe“ unterschiedlich behandelt werden, 
+    obwohl sie semantisch gleich sind. Das Entfernen dieser erhöht die Generalisierung. Sonderzeichen stören einfache Tokenizer (z. B. bei Bag-of-Words), führen zu vielen seltenen Tokens und zu 
     überdimensionierten Vektoren (siehe \ref{sec:bag_of_words}).
 
-    \item \textbf{Alle Buchstaben zu Kleinbuchstaben konvertieren \cite{sabir2025} \cite{SUDHAKAR2024101028}}: Ähnlich wie zum vorherigen Punkt
+    \item \textbf{Alle Buchstaben zu Kleinbuchstaben konvertieren \cite{sabir2025} \cite{SUDHAKAR2024101028} \cite{aslam2022}}: Ähnlich wie zum vorherigen Punkt
     erhöht die durchgehende Kleinschreibung aller Buchstaben die Generalisierung und verhindert somit unnötige Duplikate im Vokabular.
 
     \item \textbf{Leere Spalten entfernen \cite{SUDHAKAR2024101028}}: Leere Spalten enthalten keine Information. 
@@ -25,14 +25,14 @@
     \item \textbf{Kontraktionen auflösen (ans -> an das) \cite{Buddhadev2025}}: Im deutschen sind Kontradiktionen zwar nicht so häufig wie im englischen,
     sie kommen aber trotzdem vor und sollten aufgelöst werden. Dies vermeidet fragmentierte Token und verbessert die Semantik und Trennbarkeit im Modell.
 
-    \item \textbf{Stoppwörter entfernen \cite{Buddhadev2025} \cite{sabir2025}}: Wörter wie „der“, „ist“, „und“ tragen wenig zur inhaltlichen Differenzierung bei. 
+    \item \textbf{Stoppwörter entfernen \cite{Buddhadev2025} \cite{sabir2025} \cite{aslam2022}}: Wörter wie „der“, „ist“, „und“ tragen wenig zur inhaltlichen Differenzierung bei. 
     Das Entfernen dieser verbessert die semantische Gewichtung relevanter Begriffe \cite{sarkar2018nlpguide}.
 
     \item \textbf{Rechtschreibfehler korrigieren \cite{sabir2025}}: Tippfehler führen zu seltenen Tokens und stören die Generalisierung. 
     In offiziellen Artikeln sind zwar selten Rechtschreibfehler zu finden, aber falls vorhanden, hilft die Korrektur zur Verbesserung
     der Modellqualität.
 
-    \item \textbf{Lemmatisieren \cite{Buddhadev2025} \cite{sabir2025}}: Bei der Lemmatisierung werden verschiedene Wortformen auf die Grundform zurückgeführt 
+    \item \textbf{Lemmatisieren \cite{Buddhadev2025} \cite{sabir2025} \cite{aslam2022}}: Bei der Lemmatisierung werden verschiedene Wortformen auf die Grundform zurückgeführt 
     („läuft“, „lief“, „laufen“ wird zu „laufen“). So erkennt das Modell gleiche Bedeutungen trotz grammatischer Variation.
 
     \item \textbf{Tokenisierung \cite{sabir2025}}: In der Tokenisierung werden die Texte in einzelne Wörter oder Einheiten (Tokens) zerlegt, die für Modelle verarbeitbar sind. 
@@ -65,12 +65,74 @@ Das Bag-of-Words-Modell ist ein einfaches Verfahren zur Textrepräsentation, bei
 einzelner Wörter dargestellt wird – unabhängig von deren Reihenfolge oder Kontext. Es zählt lediglich das Vorkommen jedes Wortes aus 
 einem festen Vokabular \cite{cichosz2018forum}.
 
-
 \subsubsection{TF-IDF}
 
 TF-IDF ist ein gewichtetes Modell zur Textdarstellung, das berücksichtigt, wie häufig ein Wort in einem Dokument vorkommt (TF) 
 und wie selten es im Gesamtkorpus ist (IDF). Es dient dazu, häufige, aber wenig informative Wörter zu reduzieren und 
 aussagekräftige Begriffe zu betonen \cite{elov2023uzbek}.
+
+\paragraph{Sparse Matrizen} werden sowohl von Bag-of-Words als auch von TF-IDF genutzt. Eine Matrix wird als sparse bezeichnet, 
+wenn der Anteil der Nicht-Null-Werte im Verhältnis zur Gesamtanzahl der Dokumente sehr klein ist. Pro hinzugefügtem Dokument wird eine Zeile 
+erstellt und pro Wort im Vokabular eine Spalte. Da jedes Dokument nur einen Bruchteil der Wörter des Gesamtvokabulars enthält, bestehen
+der Großteil einer solchen Matrix aus Nullen.
+
+\begin{figure}[h]
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \includegraphics[scale=0.5]{static/table_bow.png}
+        \caption{\label{fig:table_bow} Bag-of-words Sparse Matrix \cite{Buddhadev2025}}
+    \end{subfigure}
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \includegraphics[scale=0.25]{static/table_tf-idf.png}
+        \caption{\label{fig:table_tf-idf} TF-IDF Sparse Matrix \cite{Buddhadev2025}}
+    \end{subfigure}
+    
+    \caption{Vergleich der Sparse Matrizen}
+    \label{fig:vlg_sparse_matrizen}
+\end{figure}
+
+In Abbildung \ref{fig:vlg_sparse_matrizen} wurden den beiden Matrizen jeweils die drei Dokumente:
+
+\begin{itemize}
+    \item Doc1 - She loves chocolate cake
+    \item Doc2 - She is baking a cake
+    \item Doc3 - He is baking a cake to surprise her
+\end{itemize}
+
+hinzugefügt. In der Matrix \ref{fig:table_bow} werden in jeder Zelle in welcher das Dokument das entsprechende Wort beinhaltet eine 1 gesetzt.
+In \ref{fig:table_tf-idf} wird statt einer 1 eine Gewichtung über die Häufigkeit der Wörter in allen Dokumenten hinweg erstellt und eingetragen.
+Sie bewertet die Wichtigkeit eines Wortes in einem Dokument relativ zur gesamten Sammlung von Dokumenten. Dabei wird die Termfrequenz (TF) mit der 
+invertierten Dokumentfrequenz (IDF) multipliziert. Je höher der resultierende Wert, desto relevanter ist das Wort für das jeweilige Dokument. 
+Die Formel lautet:
+
+\begin{equation}
+    \text{tfidf}(t, d, D) = \text{tf}(t, d) \cdot \text{idf}(t, D)
+\end{equation}
+
+Dabei ist \( t \) das Wort, \( d \) das Dokument und \( D \) die gesamte Dokumentensammlung \cite{aslam2022}.
+
+Die TF misst, wie häufig ein bestimmter Begriff \( t \) in einem Dokument \( d \) vorkommt. 
+Sie beschreibt die lokale Bedeutung eines Wortes innerhalb des Dokuments.
+
+\begin{equation}
+\text{tf}(t, d) = \frac{\text{Anzahl der Vorkommen von } t \text{ in } d}{\text{Gesamtanzahl der Wörter in } d}
+\end{equation}
+
+Die IDF bewertet, wie selten ein Begriff \( t \) in der gesamten Dokumentensammlung \( D \) ist. 
+Je seltener ein Begriff in vielen Dokumenten vorkommt, desto höher ist sein IDF-Wert.
+
+\begin{equation}
+\text{idf}(t, D) = \log \left( \frac{N}{\text{df}(t)} \right)
+\end{equation}
+
+Dabei ist:
+\begin{itemize}
+    \item \( N \): Gesamtanzahl der Dokumente in Matrix
+    \item \( \text{df}(t) \): Anzahl der Dokumente, in denen der Begriff \( t \) vorkommt \cite{qaiser2018}
+\end{itemize}
+
+\subsubsection{Vergleich Bag-of-words und TF-IDF}
 
 \begin{table}[h!]
     \centering
@@ -78,27 +140,29 @@ aussagekräftige Begriffe zu betonen \cite{elov2023uzbek}.
             \hline
             \textbf{Bag-of-Words (BoW)} & \textbf{TF-IDF} \\
             \hline
-            Einfache Implementierung \cite{cichosz2018forum} & Berücksichtigt Wortwichtigkeit im gesamten Korpus \cite{elov2023uzbek} \\
+            Einfache Implementierung \cite{cichosz2018forum} & Berücksichtigt Wortwichtigkeit in gesamter Matrix  \cite{elov2023uzbek} \\
             \hline
             Keine Gewichtung — häufige Wörter dominieren & Seltener, aber informativer Inhalt wird stärker gewichtet \cite{das2023tfidf} \\
             \hline
-            Hohe Dimensionalität (sparse matrix) & Gleiches Problem, aber mit informativeren Werten \cite{alzami2020tfidf} \\
+            Hohe Dimensionalität (Sparse Matrix) & Gleiches Problem, aber mit informativeren Werten \cite{alzami2020tfidf} \\
             \hline
             Ignoriert Wortreihenfolge und Kontext \cite{umar2022sentiment} & Gleiches Grundproblem, aber geringfügig bessere Performance \cite{parmar2024stacking} \\
             \hline
-            Nützlich für einfache Klassifikatoren & Verbessert häufige Klassifikatoren wie SVM oder Logistic Regression \cite{iyer2024sentiment} \\
+            Nützlich für einfache Klassifikatoren & Bessere Klassifikationsergebnisse in Kombination mit SVM oder Logistic Regression \cite{iyer2024sentiment} \\
             \hline
         \end{tabular}
     \caption{Vergleich der Vor- und Nachteile von BoW und TF-IDF}
     \label{tab:vergleich}
 \end{table}
 
-Aus \ref{tab:vergleich} zu erkennen ist, dass TF-IDF in vielen Anwendungen leistungsfähiger ist als BoW. Insbesondere bei heterogenen Texten mit hohem Vokabularumfang \cite{das2023tfidf}.
+Aus \ref{tab:vergleich} zu erkennen ist, dass TF-IDF in vielen Anwendungen leistungsfähiger ist als BoW. Insbesondere bei Texten mit hohem Vokabularumfang.
 
 \subsection{Machine Learning Modelle}
 \label{sec:ml_modelle}
 
 \subsubsection{Naive Bayes}
+
+
 
 \subsubsection{Support Vector Machines}
 
