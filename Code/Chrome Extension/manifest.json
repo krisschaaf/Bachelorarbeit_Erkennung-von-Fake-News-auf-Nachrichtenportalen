@@ -1,0 +1,44 @@
+{
+  "name": "Fake News Detection Extension",
+  "description": "Fake News Detection Extension",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "static/icon.png",
+    "48": "static/icon.png",
+    "128": "static/icon.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Fake News Detection Extension",
+    "default_icon": "static/icon.png"
+  },
+  "permissions": ["tabs"],
+  "host_permissions": [
+    "*://*.bild.de/*",
+    "*://*.zeit.de/*"
+  ],
+  "background": {
+    "service_worker": "serviceWorker/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.bild.de/*"],
+      "js": [
+        "contentScripts/bild/bild.js",
+        "contentScripts/backendService.js"
+      ],
+      "css": ["contentScripts/bild/bild.css"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["*://*.taz.de/*"],
+      "js": [
+        "contentScripts/taz/taz.js",
+        "contentScripts/backendService.js"
+      ],
+      "css": ["contentScripts/taz/taz.css"],
+      "run_at": "document_end"
+    }
+  ]
+}

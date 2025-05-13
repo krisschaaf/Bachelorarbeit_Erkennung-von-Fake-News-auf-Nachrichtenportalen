@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesis.aux
+The style file: dinat.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: literature.bib
+Warning--empty booktitle in Domenico2016
+Warning--no proper publisher, using url in parmar2024stacking
+Warning--empty pages in parmar2024stacking
+You've used 26 entries,
+            3552 wiz_defined-function locations,
+            967 strings with 12326 characters,
+and the built_in function-call counts, 19787 in all, are:
+= -- 2467
+> -- 287
+< -- 480
++ -- 621
+- -- 191
+* -- 1887
+:= -- 3303
+add.period$ -- 33
+call.type$ -- 26
+change.case$ -- 143
+chr.to.int$ -- 24
+cite$ -- 29
+duplicate$ -- 497
+empty$ -- 1339
+format.name$ -- 350
+if$ -- 3897
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 54
+newline$ -- 185
+num.names$ -- 105
+pop$ -- 181
+preamble$ -- 1
+purify$ -- 138
+quote$ -- 0
+skip$ -- 795
+stack$ -- 0
+substring$ -- 1759
+swap$ -- 125
+text.length$ -- 62
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 281
+warning$ -- 3
+while$ -- 205
+width$ -- 0
+write$ -- 316
+(There were 3 warnings)

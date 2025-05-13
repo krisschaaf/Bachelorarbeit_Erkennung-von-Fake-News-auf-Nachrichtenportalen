@@ -1,0 +1,248 @@
+\begin{thebibliography}{26}
+% this bibliography was produced with the style dinat.bst v2.5
+\makeatletter
+\newcommand{\dinatlabel}[1]%
+{\ifNAT@numbers\else\NAT@biblabelnum{#1}\hspace{2\labelsep}\fi}
+\makeatother
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax\def\url#1{\texttt{#1}}\fi
+
+\bibitem[Alzami u.\,a.(2020)Alzami, Udayanti und Prabowo]{alzami2020tfidf}
+\dinatlabel{Alzami u.\,a. 2020} \textsc{Alzami}, F.~; \textsc{Udayanti},
+  E.~D.~; \textsc{Prabowo}, D.~P.:
+\newblock Document Preprocessing with TF-IDF to Improve the Polarity
+  Classification Performance.
+\newblock In: \emph{Kinetik: Game Technology, Information System, Computer
+  Network, Computing, Electronics, and Control}
+\newblock (2020). --
+\newblock URL
+  \url{https://scholar.archive.org/work/pfclh2k6tffsdeh5ezp3qtdkoy/access/wayback/http://202.52.52.28/index.php/kinetik/article/download/1066/pdf}
+
+\bibitem[Ashish u.\,a.(2024)Ashish, Sonia, Arora, Hemraj, Rana und
+  Gupta]{Ashish2024}
+\dinatlabel{Ashish u.\,a. 2024} \textsc{Ashish}~; \textsc{Sonia}~;
+  \textsc{Arora}, Monika~; \textsc{Hemraj}~; \textsc{Rana}, Anurag~;
+  \textsc{Gupta}, Gaurav:
+\newblock An Analysis and Identification of Fake News using Machine Learning
+  Techniques.
+\newblock In: \emph{2024 11th International Conference on Computing for
+  Sustainable Global Development (INDIACom)}, 2024, S.~634--638
+
+\bibitem[Aslam u.\,a.(2022)Aslam, Xia, Rustam, Hameed und Ashraf]{aslam2022}
+\dinatlabel{Aslam u.\,a. 2022} \textsc{Aslam}, Naila~; \textsc{Xia}, Kewen~;
+  \textsc{Rustam}, Furqan~; \textsc{Hameed}, Afifa~; \textsc{Ashraf}, Imran:
+\newblock Using Aspect-Level Sentiments for Calling App Recommendation with
+  Hybrid Deep-Learning Models.
+\newblock In: \emph{Applied Sciences}
+\newblock 12 (2022), 08, S.~8522
+
+\bibitem[Baptista und Gradim(2020)]{socsci9100185}
+\dinatlabel{Baptista und Gradim 2020} \textsc{Baptista}, Joao~P.~;
+  \textsc{Gradim}, Anabela:
+\newblock Understanding Fake News Consumption: A Review.
+\newblock In: \emph{Social Sciences}
+\newblock 9 (2020), Nr.~10. --
+\newblock URL \url{https://www.mdpi.com/2076-0760/9/10/185}. --
+\newblock ISSN 2076-0760
+
+\bibitem[Buddhadev und Parekh(2025)]{Buddhadev2025}
+\dinatlabel{Buddhadev und Parekh 2025} \textsc{Buddhadev}, Manan~;
+  \textsc{Parekh}, Virtee:
+\newblock Fake News Detection: Benchmarking Machine Learning and Deep Learning
+  Approaches.
+\newblock In: \emph{ESP Journal of Engineering and Technology Advancements}
+\newblock 5 (2025), 04, S.~39--46
+
+\bibitem[B{\"u}rker(2022)]{buerker2022fakenews}
+\dinatlabel{B{\"u}rker 2022} \textsc{B{\"u}rker}, Michael:
+\newblock \emph{Fake-News, Propaganda \& Co: Wie behalte ich den
+  {\"U}berblick?}
+\newblock 2022. --
+\newblock URL
+  \url{https://www.haw-landshut.de/aktuelles/beitrag/fake-news-propaganda-co-wie-behalte-ich-den-ueberblick}.
+  -- Zugriffsdatum: 2025-04-23. --
+\newblock Interview gef{\"u}hrt von EINFALLSreich, Hochschule Landshut
+
+\bibitem[Cichosz(2018)]{cichosz2018forum}
+\dinatlabel{Cichosz 2018} \textsc{Cichosz}, Piotr:
+\newblock A Case Study in Text Mining of Discussion Forum Posts: Classification
+  with Bag of Words and Global Vectors.
+\newblock In: \emph{International Journal of Applied Mathematics and Computer
+  Science}
+\newblock (2018). --
+\newblock URL \url{https://sciendo.com/pdf/10.2478/amcs-2018-0060}
+
+\bibitem[Das und Alphonse(2023)]{das2023tfidf}
+\dinatlabel{Das und Alphonse 2023} \textsc{Das}, M.~; \textsc{Alphonse}, P.
+  J.~A.:
+\newblock A Comparative Study on TF-IDF Feature Weighting Method and Its
+  Analysis Using Unstructured Dataset.
+\newblock In: \emph{arXiv preprint arXiv:2308.04037}
+\newblock (2023). --
+\newblock URL \url{https://arxiv.org/pdf/2308.04037}
+
+\bibitem[for Developers(2025{\natexlab{a}})]{chrome2025popups}
+\dinatlabel{for Developers 2025{\natexlab{a}}} \textsc{Developers}, Chrome for:
+\newblock \emph{Add Popup}.
+\newblock
+  \url{https://developer.chrome.com/docs/extensions/develop/ui/add-popup}.
+\newblock 2025. --
+\newblock Zugriff am 11. Mai 2025
+
+\bibitem[for Developers(2025{\natexlab{b}})]{chrome2025contentscripts}
+\dinatlabel{for Developers 2025{\natexlab{b}}} \textsc{Developers}, Chrome for:
+\newblock \emph{Content scripts}.
+\newblock
+  \url{https://developer.chrome.com/docs/extensions/develop/concepts/content-scripts}.
+\newblock 2025. --
+\newblock Zugriff am 11. Mai 2025
+
+\bibitem[for Developers(2025{\natexlab{c}})]{chrome2025serviceworker}
+\dinatlabel{for Developers 2025{\natexlab{c}}} \textsc{Developers}, Chrome for:
+\newblock \emph{A service worker's life}.
+\newblock
+  \url{https://developer.chrome.com/docs/workbox/service-worker-lifecycle}.
+\newblock 2025. --
+\newblock Zugriff am 11. Mai 2025
+
+\bibitem[Domeniconi u.\,a.(2016)Domeniconi, Moro, Pasolini und
+  Sartori]{Domenico2016}
+\dinatlabel{Domeniconi u.\,a. 2016} \textsc{Domeniconi}, Giacomo~;
+  \textsc{Moro}, Gianluca~; \textsc{Pasolini}, Roberto~; \textsc{Sartori},
+  Claudio:
+\newblock A Comparison of Term Weighting Schemes for Text Classification and
+  Sentiment Analysis with a Supervised Variant of tf.idf, 02 2016, S.~39--. --
+\newblock ISBN 978-3-319-30162-4
+
+\bibitem[Elov u.\,a.(2023)Elov, Khamroeva und Alayev]{elov2023uzbek}
+\dinatlabel{Elov u.\,a. 2023} \textsc{Elov}, B.~B.~; \textsc{Khamroeva},
+  S.~M.~; \textsc{Alayev}, R.~H.:
+\newblock Methods of Processing the Uzbek Language Corpus Texts.
+\newblock In: \emph{Journal of Open Innovations}
+\newblock (2023). --
+\newblock URL
+  \url{https://cyberleninka.ru/article/n/methods-of-processing-the-uzbek-language-corpus-texts}
+
+\bibitem[Hartwig und Reuter(2021)]{Hartwig2021}
+\dinatlabel{Hartwig und Reuter 2021} \textsc{Hartwig}, Katrin~;
+  \textsc{Reuter}, Christian:
+\newblock \emph{Fake News technisch begegnen -- Detektions- und
+  Behandlungsans{\"a}tze zur Unterst{\"u}tzung von NutzerInnen}.
+\newblock S.~133--149.
+\newblock In: \textsc{Klimczak}, Peter (Hrsg.)~; \textsc{Zoglauer}, Thomas
+  (Hrsg.): \emph{Wahrheit und Fake im postfaktisch-digitalen Zeitalter:
+  Distinktionen in den Geistes- und IT-Wissenschaften}.
+\newblock Wiesbaden~: Springer Fachmedien Wiesbaden, 2021. --
+\newblock URL \url{https://doi.org/10.1007/978-3-658-32957-0_7}. --
+\newblock ISBN 978-3-658-32957-0
+
+\bibitem[Horne und Adali(2017)]{horne2017}
+\dinatlabel{Horne und Adali 2017} \textsc{Horne}, Benjamin~; \textsc{Adali},
+  Sibel:
+\newblock This Just In: Fake News Packs a Lot in Title, Uses Simpler,
+  Repetitive Content in Text Body, More Similar to Satire than Real News.
+\newblock In: \emph{Proceedings of the International AAAI Conference on Web and
+  Social Media}
+\newblock 11 (2017), 03
+
+\bibitem[Iyer(2024)]{iyer2024sentiment}
+\dinatlabel{Iyer 2024} \textsc{Iyer}, Vivek:
+\newblock A Comparative Analysis of Sentiment Classification Models for
+  Improved Performance Optimization.
+\newblock In: \emph{NHSJS (National High School Journal of Science)}
+\newblock (2024). --
+\newblock URL
+  \url{https://nhsjs.com/wp-content/uploads/2024/05/A-Comparative-Analysis-of-Sentiment-Classification-Models-for-Improved-Performance-Optimization.pdf}
+
+\bibitem[Parmar und Tiwari(2024)]{parmar2024stacking}
+\dinatlabel{Parmar und Tiwari 2024} \textsc{Parmar}, M.~; \textsc{Tiwari}, A.:
+\newblock Enhancing Text Classification Performance using Stacking Ensemble
+  Method with TF-IDF Feature Extraction.
+\newblock In: \emph{5th International Conference on Artificial Intelligence and
+  Data Science}, URL
+  \url{https://ieeexplore.ieee.org/abstract/document/10493890/}, 2024
+
+\bibitem[Qaiser und Ali(2018)]{qaiser2018}
+\dinatlabel{Qaiser und Ali 2018} \textsc{Qaiser}, Shahzad~; \textsc{Ali},
+  Ramsha:
+\newblock Text Mining: Use of TF-IDF to Examine the Relevance of Words to
+  Documents.
+\newblock In: \emph{International Journal of Computer Applications}
+\newblock 181 (2018), 07
+
+\bibitem[Sabir u.\,a.(2025)Sabir, Khan und Azam]{sabir2025}
+\dinatlabel{Sabir u.\,a. 2025} \textsc{Sabir}, Muhammad~; \textsc{Khan},
+  Talha~; \textsc{Azam}, Muhammad:
+\newblock A Comparative Study of Traditional and Hybrid Models for Text
+  Classification.
+\newblock
+\newblock (2025), 03
+
+\bibitem[Sarkar(2018)]{sarkar2018nlpguide}
+\dinatlabel{Sarkar 2018} \textsc{Sarkar}, Dipanjan:
+\newblock \emph{A Practitioner’s Guide to Natural Language Processing (Part
+  I) – Processing \& Understanding Text}.
+\newblock
+  \url{https://towardsdatascience.com/a-practitioners-guide-to-natural-language-processing-part-i-processing-understanding-text-9f4abfd13e72/}.
+\newblock 2018. --
+\newblock Zugriff am 12. Mai 2025
+
+\bibitem[Sharma und Singh(2024)]{Sharma:2024}
+\dinatlabel{Sharma und Singh 2024} \textsc{Sharma}, Upasna~; \textsc{Singh},
+  Jaswinder:
+\newblock A comprehensive overview of fake news detection on social networks.
+\newblock In: \emph{Social Network Analysis and Mining}
+\newblock 14 (2024), Nr.~1, S.~120. --
+\newblock URL \url{https://doi.org/10.1007/s13278-024-01280-3}.
+\newblock ISBN 1869-5469
+
+\bibitem[Simone u.\,a.(2022)Simone, Oliver, Clara und Andreas]{Simone2022}
+\dinatlabel{Simone u.\,a. 2022} \textsc{Simone}, Sandler~; \textsc{Oliver},
+  Krauss~; \textsc{Clara}, Diesenreiter~; \textsc{Andreas}, St{\"o}ckl:
+\newblock Detecting Fake News and Performing Quality Ranking of German
+  Newspapers Using Machine Learning.
+\newblock In: \emph{2022 International Conference on Electrical, Computer,
+  Communications and Mechatronics Engineering (ICECCME)}, 2022, S.~1--5
+
+\bibitem[Sudhakar und Kaliyamurthie(2024)]{SUDHAKAR2024101028}
+\dinatlabel{Sudhakar und Kaliyamurthie 2024} \textsc{Sudhakar}, M.~;
+  \textsc{Kaliyamurthie}, K.P.:
+\newblock Detection of fake news from social media using support vector machine
+  learning algorithms.
+\newblock In: \emph{Measurement: Sensors}
+\newblock 32 (2024), S.~101028. --
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S2665917424000047}. --
+\newblock ISSN 2665-9174
+
+\bibitem[Umar u.\,a.(2022)Umar, Abubakar und Bakale]{umar2022sentiment}
+\dinatlabel{Umar u.\,a. 2022} \textsc{Umar}, M.~; \textsc{Abubakar}, H.~D.~;
+  \textsc{Bakale}, M.~A.:
+\newblock Sentiment Classification: Review of Text Vectorization Methods: Bag
+  of Words, TF-IDF, Word2vec and Doc2vec.
+\newblock In: \emph{SLU Journal of Science and Technology}
+\newblock (2022). --
+\newblock URL
+  \url{https://www.academia.edu/download/107531976/Mahmood_and_Haisal_pub2.pdf}
+
+\bibitem[Wagner(2010)]{Wagner:2010aa}
+\dinatlabel{Wagner 2010} \textsc{Wagner}, Wiebke:
+\newblock Steven Bird, Ewan Klein and Edward Loper: Natural Language Processing
+  with Python, Analyzing Text with the Natural Language Toolkit.
+\newblock In: \emph{Language Resources and Evaluation}
+\newblock 44 (2010), Nr.~4, S.~421--424. --
+\newblock URL \url{https://doi.org/10.1007/s10579-010-9124-x}.
+\newblock ISBN 1574-0218
+
+\bibitem[Zhang u.\,a.(2017)Zhang, {Habibi Lashkari} und {A.
+  Ghorbani}]{secrypt17}
+\dinatlabel{Zhang u.\,a. 2017} \textsc{Zhang}, Xichen~; \textsc{{Habibi
+  Lashkari}}, Arash~; \textsc{{A. Ghorbani}}, Ali:
+\newblock A Lightweight Online Advertising Classification System using
+  Lexical-based Features.
+\newblock In: \emph{Proceedings of the 14th International Joint Conference on
+  e-Business and Telecommunications (ICETE 2017) - SECRYPT}
+\newblock INSTICC (Veranst.), SciTePress, 2017, S.~486--494. --
+\newblock ISBN 978-989-758-259-2
+
+\end{thebibliography}
