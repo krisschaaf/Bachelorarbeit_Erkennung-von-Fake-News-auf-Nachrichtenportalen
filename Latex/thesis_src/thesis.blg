@@ -8,50 +8,51 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: literature.bib
+Warning--I didn't find a database entry for "SUDHAKAR2024101028101028"
 Warning--empty booktitle in Domenico2016
 Warning--no proper publisher, using url in parmar2024stacking
 Warning--empty pages in parmar2024stacking
 Warning--empty booktitle in zhang2004
 Warning--empty pages in zhang2004
-You've used 33 entries,
+You've used 37 entries,
             3552 wiz_defined-function locations,
-            1013 strings with 13872 characters,
-and the built_in function-call counts, 26048 in all, are:
-= -- 3246
-> -- 384
-< -- 689
-+ -- 881
-- -- 262
-* -- 2470
-:= -- 4369
-add.period$ -- 40
-call.type$ -- 33
-change.case$ -- 187
-chr.to.int$ -- 31
-cite$ -- 38
-duplicate$ -- 640
-empty$ -- 1703
-format.name$ -- 472
-if$ -- 5066
+            1040 strings with 14482 characters,
+and the built_in function-call counts, 28683 in all, are:
+= -- 3542
+> -- 421
+< -- 750
++ -- 959
+- -- 284
+* -- 2698
+:= -- 4808
+add.period$ -- 47
+call.type$ -- 37
+change.case$ -- 206
+chr.to.int$ -- 35
+cite$ -- 42
+duplicate$ -- 710
+empty$ -- 1932
+format.name$ -- 513
+if$ -- 5605
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 76
-newline$ -- 229
-num.names$ -- 133
-pop$ -- 236
+missing$ -- 83
+newline$ -- 255
+num.names$ -- 149
+pop$ -- 268
 preamble$ -- 1
-purify$ -- 182
+purify$ -- 201
 quote$ -- 0
-skip$ -- 1088
+skip$ -- 1199
 stack$ -- 0
-substring$ -- 2320
-swap$ -- 162
-text.length$ -- 85
+substring$ -- 2547
+swap$ -- 178
+text.length$ -- 92
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 358
+type$ -- 382
 warning$ -- 5
-while$ -- 268
+while$ -- 295
 width$ -- 0
-write$ -- 391
-(There were 5 warnings)
+write$ -- 436
+(There were 6 warnings)

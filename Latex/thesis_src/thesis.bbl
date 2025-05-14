@@ -1,4 +1,4 @@
-\begin{thebibliography}{33}
+\begin{thebibliography}{37}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -6,6 +6,13 @@
 \makeatother
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax\def\url#1{\texttt{#1}}\fi
+
+\bibitem[Agresti(2018)]{agresti2018cda}
+\dinatlabel{Agresti 2018} \textsc{Agresti}, Alan:
+\newblock \emph{An Introduction to Categorical Data Analysis}.
+\newblock 3rd.
+\newblock Wiley, 2018. --
+\newblock ISBN 9781119405269
 
 \bibitem[Al-Tarawneh u.\,a.(2025)Al-Tarawneh, Al-Khresheh, Al-Irr, Kulaglic,
   Danach, Kanj und Almahadin]{al-tarawneh2025}
@@ -158,6 +165,14 @@
 \newblock URL
   \url{https://cyberleninka.ru/article/n/methods-of-processing-the-uzbek-language-corpus-texts}
 
+\bibitem[G{\'e}ron(2019)]{geron2019}
+\dinatlabel{G{\'e}ron 2019} \textsc{G{\'e}ron}, Aur{\'e}lien:
+\newblock \emph{Hands-On Machine Learning with Scikit-Learn, Keras, and
+  TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems}.
+\newblock 2nd.
+\newblock O'Reilly Media, 2019. --
+\newblock ISBN 978-1492032649
+
 \bibitem[Hartwig und Reuter(2021)]{Hartwig2021}
 \dinatlabel{Hartwig und Reuter 2021} \textsc{Hartwig}, Katrin~;
   \textsc{Reuter}, Christian:
@@ -170,6 +185,14 @@
 \newblock Wiesbaden~: Springer Fachmedien Wiesbaden, 2021. --
 \newblock URL \url{https://doi.org/10.1007/978-3-658-32957-0_7}. --
 \newblock ISBN 978-3-658-32957-0
+
+\bibitem[Hastie u.\,a.(2009)Hastie, Tibshirani und Friedman]{hastie2009}
+\dinatlabel{Hastie u.\,a. 2009} \textsc{Hastie}, Trevor~; \textsc{Tibshirani},
+  Robert~; \textsc{Friedman}, Jerome:
+\newblock \emph{The Elements of Statistical Learning}.
+\newblock 2nd.
+\newblock Springer, 2009. --
+\newblock ISBN 9780387848570
 
 \bibitem[Horne und Adali(2017)]{horne2017}
 \dinatlabel{Horne und Adali 2017} \textsc{Horne}, Benjamin~; \textsc{Adali},
@@ -194,6 +217,12 @@
 \newblock Tutorial on support vector machine (svm).
 \newblock In: \emph{School of EECS, Washington State University}
 \newblock 37 (2006), Nr.~2.5, S.~3
+
+\bibitem[Jurafsky und Martin(2025)]{jurafsky2023}
+\dinatlabel{Jurafsky und Martin 2025} \textsc{Jurafsky}, Daniel~;
+  \textsc{Martin}, James~H.:
+\newblock \emph{5: Logistic Regression}.
+\newblock In: \emph{Speech and Language Processing}, 2025
 
 \bibitem[Noble(2006)]{Noble:2006aa}
 \dinatlabel{Noble 2006} \textsc{Noble}, William~S.:

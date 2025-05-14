@@ -47,7 +47,7 @@ Die eigentliche Nachricht ist aufgebaut in folgende Teile:
 \end{itemize}
 
 Fake News können die Form von Text, Fotos, Filmen oder Audio annehmen und sind dementsprechend auf jeder Platform auffindbar, 
-die die Verbreitung nicht unterbindet. Die momentan populärste Platform zum Teilen der Fake News ist WhatsApp \cite{Ashish2024}.
+die die Verbreitung nicht unterbindet. Die 2024 populärste Platform zum Teilen der Fake News ist WhatsApp \cite{Ashish2024}.
 
 \subsection{Aus welcher Motivation entstehen Fake News}
 
@@ -85,14 +85,12 @@ Laut \cite{horne2017} sind folgende Gruppen die größten Konsumenten:
 
 Außerdem scheinen konservative, rechtsgerichtete Menschen, ältere Personen und weniger gebildete Menschen eher dazu zu neigen, Fake News zu glauben und zu verbreiten \cite{socsci9100185}.
 
-\subsection{Probleme beim Erkennen von Fake News}
-
-Fake News können erst erkannt werden, nachdem diese erstellt und im Internet verbreitet wurden. \cite{Sharma:2024} %TODO: 
-
 \subsection{Welche potenziellen Indikatoren zum Erkennen bei Fake News gibt es}
 \label{sec:potenzielle_indikatoren}
 
-Gerade im Bereich der sozialen Medien gibt es relativ zuverlässige Indikatoren, die Fake News als solche enttarnen \cite{Hartwig2021}:
+Das Erkennen von Fake News ist gerade deshalb problematisch, da diese erst erkannt werden können, nachdem sie erstellt und im Internet verbreitet wurden. \cite{Sharma:2024}
+
+Gerade im Bereich der sozialen Medien gibt es aber relativ zuverlässige Indikatoren, die Fake News nach der Erstellung als solche zu enttarnen \cite{Hartwig2021}:
 
 \begin{itemize}
     \item \textbf{Fortlaufende Großschreibung:} Beispiel: \texttt{GROßSCHREIBUNG}
@@ -108,22 +106,35 @@ Gerade im Bereich der sozialen Medien gibt es relativ zuverlässige Indikatoren,
     \item \textbf{Fehlende Account-Verifizierung, besonders bei prominenten Personen}
 \end{itemize}
 
-\section{Wahl der Nachrichtenportale}
-\label{sec:wahl_nachrichtenportale}
-
-Im Paper der University of Applied Sciences Upper Austria wird die Qualität verschiedener deutscher Nachrichtenportalen mit „Machine Learning“-Modellen getestet. 
-Das Ergebnis zeigt, dass Spiegel, Die Zeit and Süddeutsche die besten Portale sind und Express, BZ-Berlin and Bild die schlechtesten - also auch am meisten Fake News verbreiten \cite{Simone2022}.
+Fake News in offiziellen Nachrichtenportalen zu erkennen, ist dagegen deutlich schwieriger.
+Die aufgezählten stilistischen Mittel wie zum Beispiel die fortlaufende Großschreibung sind eher untypisch.
+Stattdessen muss über die inhaltliche Bedeutung erkannt werden ob die Artikel wahr oder falsch sind.
 
 \section{Zielsetzung: Entwicklung einer Software zur automatisierten Fake-News-Erkennung}
 \label{sec:zielsetzung}
 
-Motiviert durch die Arbeiten der University of Applied Sciences Upper Austria und der TU Darmstadt werde ich in dieser Arbeit die Entwicklung eines weiteren Tools dokumentieren.
+Motiviert durch die Arbeiten der University of Applied Sciences Upper Austria \cite{Simone2022} und der TU Darmstadt \cite{Hartwig2021} wird in 
+dieser Arbeit die Entwicklung eines weiteren Tools dokumentieren.
 Dieses Tool soll wie auch das Browser Plugin TrustyTweet eine Unterstützung zum Erkennen von Fake News anbieten.
-Ob dieses Tool als Browser Plugin oder als eine andere Form der Software implementiert wird, steht zum jetzigen Zeitpunkt noch nicht fest.
-Auch ob eine Black Box oder White Box - das heißt, kann der User zum Beispiel sehen, warum der Artikel als Fake News deklariert wird - Architektur genutzt wird, wird im Laufe der Arbeit entschieden.
+Ob dieses Tool auch als Browser Plugin oder als eine andere Form der Software implementiert wird, steht zum jetzigen Zeitpunkt noch nicht fest.
+Auch ob eine Black Box oder White Box Architektur genutzt wird, - das heißt, kann der User zum Beispiel sehen, warum der Artikel als Fake News 
+deklariert wird - wird im Laufe der Arbeit entschieden.
 Ziel ist es, dass das Tool nicht wie TrustyTweet auf Twitter eingesetzt wird, sondern auf verschiedenen Nachrichtenportalen.
-Welche Portale hierfür genutzt werden, hängt von der noch ausstehenden Entscheidung der genutzten Datensätze ab. %TODO:
+Welche Portale hierfür genutzt werden, hängt von der noch ausstehenden Entscheidung der genutzten Datensätze ab.
+
+\section{Wahl der Nachrichtenportale}
+\label{sec:wahl_nachrichtenportale}
+
+Im Paper der University of Applied Sciences Upper Austria \cite{Simone2022} wird die Qualität verschiedener deutscher Nachrichtenportale mit 
+„Machine Learning“-Modellen getestet. 
+Das Ergebnis zeigt, dass Spiegel, Die Zeit and Süddeutsche die besten Portale sind und Express, BZ-Berlin and Bild die schlechtesten - 
+also auch am meisten Fake News verbreiten.
+Als populärstes der schlechtesten Portale wird Bild eines der zu analysierenden Portale. Dieses befindet sich politisch im rechten Spektrum.
+Als Gegensatz wird außerdem TAZ analysiert um einen Vergleich zu einem bekannten linken Nachrichtenportal zu haben.
+Das dritte Portal %TODO:
 
 \section{Aufbau der Arbeit}
 \label{sec:aufbau}
+
+
 

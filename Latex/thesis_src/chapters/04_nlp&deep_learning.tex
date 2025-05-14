@@ -16,10 +16,10 @@
     obwohl sie semantisch gleich sind. Das Entfernen dieser erhöht die Generalisierung. Sonderzeichen stören einfache Tokenizer (z. B. bei Bag-of-Words), führen zu vielen seltenen Tokens und zu 
     überdimensionierten Vektoren (siehe \ref{sec:bag_of_words}).
 
-    \item \textbf{Alle Buchstaben zu Kleinbuchstaben konvertieren \cite{sabir2025} \cite{SUDHAKAR2024101028} \cite{aslam2022}}: Ähnlich wie zum vorherigen Punkt
+    \item \textbf{Alle Buchstaben zu Kleinbuchstaben konvertieren \cite{sabir2025} \cite{SUDHAKAR2024101028101028} \cite{aslam2022}}: Ähnlich wie zum vorherigen Punkt
     erhöht die durchgehende Kleinschreibung aller Buchstaben die Generalisierung und verhindert somit unnötige Duplikate im Vokabular.
 
-    \item \textbf{Leere Spalten entfernen \cite{SUDHAKAR2024101028}}: Leere Spalten enthalten keine Information. 
+    \item \textbf{Leere Spalten entfernen \cite{SUDHAKAR2024101028101028}}: Leere Spalten enthalten keine Information. 
     Sie können bei der Vektorisierung oder Modellerstellung Fehler verursachen und werden als einfache Datenbereinigungsmaßnahme entfernt.
 
     \item \textbf{Kontraktionen auflösen (ans -> an das) \cite{Buddhadev2025}}: Im deutschen sind Kontradiktionen zwar nicht so häufig wie im englischen,
@@ -234,8 +234,8 @@ Dies vereinfacht die Berechnung erheblich, da nur die Wahrscheinlichkeiten einze
 
 \subsubsection{Decision Tree}
 
-Ein Decision Tree (Entscheidungsbaum) ist ein leistungsstarker Algorithmus für Klassifikation und Vorhersage. 
-Er basiert auf einer baumartigen Struktur, bei der jeder Knoten bzw. Ast ein Merkmal (Feature) aus einem Datensatz repräsentiert. 
+Ein Decision Tree (Entscheidungsbaum) ist ein Algorithmus für Klassifikation und Vorhersage. 
+Er basiert auf einer baumartigen Struktur, bei der jeder Knoten bzw. Ast ein Merkmal aus einem Datensatz repräsentiert. 
 Diese Struktur ermöglicht es, schrittweise Entscheidungen zu treffen, die schließlich zu einer Klassenzuordnung an einem Blattknoten führen \cite{10.3389/frai.2023.1124553}.
 
 Der Baum wird durch Auswahl von Merkmalen aufgebaut, die die Daten am besten aufspalten. 
@@ -301,7 +301,7 @@ höhere Genauigkeit \cite{al-tarawneh2025}.
 \subsubsection{Support Vector Machines}
 
 Support Vector Machines (SVMs) sind überwachte Lernalgorithmen, die besonders effektiv für Klassifikationsaufgaben sind. 
-Sie wurden in den 1990er Jahren entwickelt und finden breite Anwendung in Bereichen wie Bioinformatik, Textklassifikation und 
+Sie finden breite Anwendung in Bereichen wie Bioinformatik, Textklassifikation und 
 insbesondere in der Erkennung von Fake News. 
 Das Ziel einer SVM ist es, eine Trennlinie --- oder in höherdimensionalen Räumen ein Trenn-Hyperplane --- zu finden, 
 das Datenpunkte verschiedener Klassen mit maximalem Abstand (Margin) voneinander trennt  \cite{Noble:2006aa, Buddhadev2025, sabir2025, jakkula2006tutorial}.
@@ -384,6 +384,58 @@ Gängige Kernel-Funktionen:
 \end{itemize}
 
 \subsubsection{Logistische Regression}
+
+Die logistische Regression (LR) ist ein weit verbreitetes Verfahren des überwachten maschinellen Lernens zur Klassifikation binärer und 
+multiklassiger Zielvariablen. Sie wird eingesetzt, um die Wahrscheinlichkeit zu berechnen, mit der eine Beobachtung zu einer 
+bestimmten Klasse gehört \cite{elchami2025, aslam2022, SUDHAKAR2024101028}. Im Gegensatz zur linearen Regression verwendet LR eine Aktivierungsfunktion, 
+typischerweise die Sigmoidfunktion, um Ausgaben zwischen 0 und 1 abzubilden. Diese Werte stellen Wahrscheinlichkeiten dar und werden zur 
+Vorhersage diskreter Zielwerte genutzt \cite{aslam2022}. Die Tabelle \ref{tab:linkfunktionen} zeigt die Aktivierungsfunktionen, mit deren entsprechend
+benötigten Zielvariablen.
+
+\begin{table}[ht]
+    \centering
+        \begin{tabular}{|p{4.4cm}|p{4.4cm}|p{4.4cm}|}
+        \hline
+        \textbf{Typ} & \textbf{Aktivierungsfunktion} & \textbf{Typ der Zielvariable}\\
+        \hline
+        Binäre logistische Regression & Logit (Sigmoid): $\frac{1}{1 + e^{-z}}$ & Binär (0/1) \\
+        \hline
+        Multinomiale logistische Regression & Softmax: $\frac{e^{z_k}}{\sum_j e^{z_j}}$ & Kategorisch (mehrere Klassen) \\
+        \hline
+        Ordinale logistische Regression & Cumulative Logit, Probit, Cloglog & Geordnete Klassen \\
+        \hline
+        Probit-Modell & $\Phi(z)$ (Normalverteilung) & Binär (0/1), robust gegen Ausreißer \\
+        \hline
+        \end{tabular}
+\caption{Übersicht von Aktivierungsfunktion in der logistischen Regression \cite{jurafsky2023, hastie2009, agresti2018cda}}
+\label{tab:linkfunktionen}
+\end{table}
+
+Das Ziel der logistischen Regression ist es, eine Funktion zu finden, die die Wahrscheinlichkeit \( P \) berechnet, 
+dass ein Eingabewert \( X \) zur Klasse \( y = 1 \) gehört. Dies geschieht zum Beispiel mittels der Sigmoidfunktion \cite{jurafsky2023}:
+
+\begin{equation}
+    P = \frac{1}{1 + e^{-(a + bX)}}
+\end{equation}
+
+Dabei sind:
+\begin{itemize}
+  \item \( P \): Wahrscheinlichkeit für Klasse 1 (Wert zwischen 0 und 1)
+  \item \( X \): Eingabewert (Merkmalsvariable)
+  \item \( b \): Gewicht des Merkmals
+  \item \( a \): \textbf{Bias} oder \textbf{Intercept}, also der Schnittpunkt mit der y-Achse, verschiebt die Entscheidungsgrenze. 
+  Ohne Bias würde die Entscheidungsgrenze immer durch den Ursprung laufen, was in der Praxis selten sinnvoll ist \cite{geron2019}.
+\end{itemize}
+
+In \cite{elchami2025} wurde der Intercept explizit deaktiviert, wodurch sich die Gleichung zu \( P = 1 / (1 + e^{-bX}) \) vereinfacht.
+
+\textbf{Vorteile der logistischen Regression:}
+\begin{itemize}
+  \item \textbf{Einfachheit und Interpretierbarkeit}: LR-Modelle sind leicht verständlich und liefern direkt interpretierbare Wahrscheinlichkeiten \cite{aslam2022}.
+  \item \textbf{Effizienz}: Sie sind schnell trainierbar und benötigen relativ geringe Rechenleistung \cite{SUDHAKAR2024101028}.
+  \item \textbf{Flexibilität}: LR lässt sich für binäre, multinomiale und ordinale Klassifikationsprobleme erweitern \cite{SUDHAKAR2024101028}.
+  \item \textbf{Breite Anwendbarkeit}: Sie wird in zahlreichen Bereichen eingesetzt, von der Medizin bis zur Textklassifikation \cite{aslam2022, elchami2025}.
+\end{itemize}
 
 \subsubsection{K-Nearest Neighbor}
 
