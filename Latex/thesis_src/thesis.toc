@@ -36,37 +36,41 @@
 \contentsline {subsubsection}{\nonumberline Vergleich Bag-of-words und TF-IDF}{12}{subsubsection*.14}%
 \contentsline {subsubsection}{\nonumberline Hashing Vectorizer}{12}{subsubsection*.17}%
 \contentsline {subsection}{\numberline {4.1.3}Machine Learning Modelle}{14}{subsection.4.1.3}%
-\contentsline {subsubsection}{\nonumberline Naive Bayes}{14}{subsubsection*.20}%
-\contentsline {subsubsection}{\nonumberline Support Vector Machines}{14}{subsubsection*.22}%
-\contentsline {subsubsection}{\nonumberline Logistische Regression}{14}{subsubsection*.24}%
-\contentsline {section}{\numberline {4.2}Deep Learning}{14}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Word Embeddings}{14}{subsection.4.2.1}%
-\contentsline {subsubsection}{\nonumberline Word2Vec}{14}{subsubsection*.26}%
-\contentsline {subsubsection}{\nonumberline GloVe}{14}{subsubsection*.28}%
-\contentsline {subsubsection}{\nonumberline BERT-Tokenisierung}{14}{subsubsection*.30}%
-\contentsline {subsection}{\numberline {4.2.2}Deep Learning-Modelle}{14}{subsection.4.2.2}%
-\contentsline {subsubsection}{\nonumberline CNN}{14}{subsubsection*.32}%
-\contentsline {subsubsection}{\nonumberline LSTM}{14}{subsubsection*.34}%
-\contentsline {subsubsection}{\nonumberline Transformer: BERT}{14}{subsubsection*.36}%
-\contentsline {section}{\numberline {4.3}Hybride Modelle}{14}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}convolutional neural network (CNN) along with bi-directional LSTM}{14}{subsection.4.3.1}%
-\contentsline {chapter}{\numberline {5}Relevante Datensätze und Auswahlkriterien}{15}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Vorstellung verfügbarer deutscher Fake-News-Datensätze}{15}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Auswahl und Begründung des finalen Datensatzes}{15}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Herausforderungen bei deutschen Textdaten (Klassenverteilung, Quellenvielfalt)}{15}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Konzeption der Softwarelösung}{16}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Hauptkomponente}{16}{section.6.1}%
-\contentsline {paragraph}{\nonumberline Als Beispiel die Seite Bild.de:}{16}{paragraph*.38}%
-\contentsline {chapter}{\numberline {7}Umsetzung des Prototyps}{20}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Implementierung der Chrome Erweiterung}{20}{section.7.1}%
-\contentsline {paragraph}{\nonumberline Service Worker}{20}{paragraph*.41}%
-\contentsline {paragraph}{\nonumberline Content Scripts}{20}{paragraph*.43}%
-\contentsline {paragraph}{\nonumberline Pop-ups}{20}{paragraph*.45}%
-\contentsline {chapter}{\numberline {8}Evaluation und Ergebnisse}{23}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Diskussion}{24}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Fazit und Ausblick}{25}{chapter.10}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{26}{chapter*.47}%
-\contentsline {chapter}{\numberline {A}Anhang}{30}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Verwendete Hilfsmittel}{30}{section.A.1}%
-\contentsline {chapter}{Selbstständigkeitserklärung}{31}{section*.49}%
+\contentsline {subsubsection}{\nonumberline Naive-Bayes}{14}{subsubsection*.20}%
+\contentsline {subsubsection}{\nonumberline Decision Tree}{15}{subsubsection*.22}%
+\contentsline {subsubsection}{\nonumberline Random Forest}{16}{subsubsection*.24}%
+\contentsline {subsubsection}{\nonumberline Support Vector Machines}{17}{subsubsection*.26}%
+\contentsline {subsubsection}{\nonumberline Logistische Regression}{20}{subsubsection*.29}%
+\contentsline {subsubsection}{\nonumberline K-Nearest Neighbor}{20}{subsubsection*.31}%
+\contentsline {subsubsection}{\nonumberline XGBoost}{20}{subsubsection*.33}%
+\contentsline {section}{\numberline {4.2}Deep Learning}{20}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Word Embeddings}{20}{subsection.4.2.1}%
+\contentsline {subsubsection}{\nonumberline Word2Vec}{20}{subsubsection*.35}%
+\contentsline {subsubsection}{\nonumberline GloVe}{20}{subsubsection*.37}%
+\contentsline {subsubsection}{\nonumberline BERT-Tokenisierung}{20}{subsubsection*.39}%
+\contentsline {subsection}{\numberline {4.2.2}Deep Learning-Modelle}{20}{subsection.4.2.2}%
+\contentsline {subsubsection}{\nonumberline CNN}{20}{subsubsection*.41}%
+\contentsline {subsubsection}{\nonumberline LSTM}{20}{subsubsection*.43}%
+\contentsline {subsubsection}{\nonumberline Transformer: BERT}{20}{subsubsection*.45}%
+\contentsline {section}{\numberline {4.3}Hybride Modelle}{20}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}convolutional neural network (CNN) along with bi-directional LSTM}{20}{subsection.4.3.1}%
+\contentsline {chapter}{\numberline {5}Relevante Datensätze und Auswahlkriterien}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Vorstellung verfügbarer deutscher Fake-News-Datensätze}{21}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Auswahl und Begründung des finalen Datensatzes}{21}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Herausforderungen bei deutschen Textdaten (Klassenverteilung, Quellenvielfalt)}{21}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Konzeption der Softwarelösung}{22}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Hauptkomponente}{22}{section.6.1}%
+\contentsline {paragraph}{\nonumberline Als Beispiel die Seite Bild.de:}{22}{paragraph*.47}%
+\contentsline {chapter}{\numberline {7}Umsetzung des Prototyps}{26}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Implementierung der Chrome Erweiterung}{26}{section.7.1}%
+\contentsline {paragraph}{\nonumberline Service Worker}{26}{paragraph*.50}%
+\contentsline {paragraph}{\nonumberline Content Scripts}{26}{paragraph*.52}%
+\contentsline {paragraph}{\nonumberline Pop-ups}{26}{paragraph*.54}%
+\contentsline {chapter}{\numberline {8}Evaluation und Ergebnisse}{29}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Diskussion}{30}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Fazit und Ausblick}{31}{chapter.10}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{32}{chapter*.56}%
+\contentsline {chapter}{\numberline {A}Anhang}{37}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Verwendete Hilfsmittel}{37}{section.A.1}%
+\contentsline {chapter}{Selbstständigkeitserklärung}{38}{section*.58}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

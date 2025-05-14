@@ -204,13 +204,190 @@ Bei LR steigt der Wert auch von 0.87 und 0.88.
 \subsection{Machine Learning Modelle}
 \label{sec:ml_modelle}
 
-\subsubsection{Naive Bayes}
+\subsubsection{Naive-Bayes}
+
+Der Naive-Bayes-Algorithmus ist ein einfacher, aber leistungsfähiger Klassifikator, der auf dem Satz von Bayes basiert. 
+Er wird häufig in Bereichen wie Textklassifikation, Spam-Erkennung und Sentiment-Analyse eingesetzt \cite{zhang2004}.
+
+Der Klassifikator nutzt den Satz von Bayes zur Berechnung der Wahrscheinlichkeit einer Klasse \( C \) gegeben eine Merkmalsmenge \( X \):
+
+\begin{equation}
+    P(C \mid X) = \frac{P(X \mid C) \cdot P(C)}{P(X)}
+\end{equation}
+
+Dabei ist:
+
+\begin{itemize}
+  \item \textbf{\( P(C \mid X) \)} – \emph{Posterior}: Die Wahrscheinlichkeit für die Klasse \( C \), nachdem die Daten \( X \) beobachtet wurden.
+  \item \textbf{\( P(X \mid C) \)} – \emph{Likelihood}: Die Wahrscheinlichkeit, die Daten \( X \) zu sehen, wenn sie zur Klasse \( C \) gehören.
+  \item \textbf{\( P(C) \)} – \emph{Prior}: Die ursprüngliche Wahrscheinlichkeit der Klasse \( C \), ohne Kenntnis über die Daten.
+  \item \textbf{\( P(X) \)} – \emph{Evidenz}: Die Gesamtwahrscheinlichkeit, die Daten \( X \) zu beobachten (über alle Klassen hinweg).
+\end{itemize}
+
+Die zentrale Annahme des Naive-Bayes-Klassifikators ist die bedingte Unabhängigkeit der Merkmale:
+
+\begin{equation}
+    P(X \mid C) = \prod_{i=1}^{n} P(x_i \mid C)
+\end{equation}
+
+Dies vereinfacht die Berechnung erheblich, da nur die Wahrscheinlichkeiten einzelner Merkmale betrachtet werden müssen \cite{webb2010naive}.
+
+\subsubsection{Decision Tree}
+
+Ein Decision Tree (Entscheidungsbaum) ist ein leistungsstarker Algorithmus für Klassifikation und Vorhersage. 
+Er basiert auf einer baumartigen Struktur, bei der jeder Knoten bzw. Ast ein Merkmal (Feature) aus einem Datensatz repräsentiert. 
+Diese Struktur ermöglicht es, schrittweise Entscheidungen zu treffen, die schließlich zu einer Klassenzuordnung an einem Blattknoten führen \cite{10.3389/frai.2023.1124553}.
+
+Der Baum wird durch Auswahl von Merkmalen aufgebaut, die die Daten am besten aufspalten. 
+Dieses Auswahlkriterium basiert auf dem Konzept der \textbf{Entropie} und dem daraus abgeleiteten \textbf{Informationsgewinn}. 
+Ziel ist es, bei jeder Entscheidung im Baum das Merkmal auszuwählen, das die größte Reduktion an Unsicherheit bietet.
+
+Die Entropie misst die Unreinheit oder Unbestimmtheit eines Datensatzes. Sie ist dann maximal, 
+wenn alle Klassen gleichverteilt sind, und minimal (d.h. null), wenn alle Daten zur selben Klasse gehören. 
+Die Entropie \( E(S) \) eines Datensatzes \( S \) wird wie folgt berechnet:
+
+\begin{equation}
+    E(S) = - \sum_{i=1}^{c} p_i \log_2 p_i
+\end{equation}
+
+Dabei ist:
+\begin{itemize}
+  \item \( c \) die Anzahl der Klassen,
+  \item \( p_i \) der Anteil der Klasse \( i \) im Datensatz \( S \).
+\end{itemize}
+
+Der Informationsgewinn misst die Reduktion der Entropie, die durch das Aufteilen eines Datensatzes mittels eines bestimmten Merkmals erzielt wird. Je größer der Informationsgewinn, desto besser ist das Merkmal für die Aufspaltung geeignet. Eine alternative Formel für den Informationsgewinn $IG(E)$ lautet:
+
+\begin{equation}
+    IG(E) = 1 - \sum_{i=1}^{c} p_i^2
+\end{equation}
+
+Über einen Hyperparameter kann die maximale Tiefe des Baumes festlegt werden. 
+Eine zu große Tiefe kann zu Overfitting führen, da der Baum zu sehr an die Trainingsdaten angepasst wird \cite{aslam2022}.
 
 
+\subsubsection{Random Forest}
+
+Ein Random Forest besteht aus einer großen Anzahl von Entscheidungsbäumen. 
+Jeder Baum wird auf einem zufällig gezogenen Teildatensatz trainiert (Bagging). 
+Bei der Bildung jedes Knotens (Split) wird eine zufällige Teilmenge von Merkmalen berücksichtigt. 
+Die finale Klassifikation ergibt sich durch Mehrheitsentscheidung aller Bäume (Ensemble Voting) \cite{elchami2025}.
+
+Die Bedeutung eines Merkmals \( i \) im Random Forest ergibt sich aus der durchschnittlichen normierten Bedeutung 
+dieses Merkmals über alle Entscheidungsbäume hinweg. Diese kann mathematisch wie folgt dargestellt werden:
+
+\begin{equation}
+    RFf_i = \frac{\sum_{j \in \text{all trees}} normf_{ij}}{T}
+\end{equation}
+
+Dabei ist:
+\begin{itemize}
+    \item \( RFf_i \) die Gesamtrelevanz der Klasse \( i \) im gesamten Wald,
+    \item \( normf_{ij} \) die normierte Wichtigkeit des Merkmals \( i \) im Baum \( j \),
+    \item \( T \) die Gesamtanzahl der Entscheidungsbäume \cite{aslam2022}.
+\end{itemize}
+
+Wichtige Hyperparameter sind hier:
+\begin{itemize}
+    \item \texttt{n\_estimators}: Anzahl der Entscheidungsbäume im Wald.
+    \item \texttt{max\_depth}: Maximale Tiefe der Bäume.
+    \item \texttt{max\_features}: Anzahl der Merkmale, die für einen Split berücksichtigt werden.
+    \item \texttt{bootstrap}: Gibt an, ob Stichproben mit Zurücklegen gezogen werden.
+\end{itemize}
+
+Im Vergleich zu Decision Trees ist Random Forest robuster gegenüber Overfitting und bringt durch das Ensemble Voting eine 
+höhere Genauigkeit \cite{al-tarawneh2025}.
 
 \subsubsection{Support Vector Machines}
 
+Support Vector Machines (SVMs) sind überwachte Lernalgorithmen, die besonders effektiv für Klassifikationsaufgaben sind. 
+Sie wurden in den 1990er Jahren entwickelt und finden breite Anwendung in Bereichen wie Bioinformatik, Textklassifikation und 
+insbesondere in der Erkennung von Fake News. 
+Das Ziel einer SVM ist es, eine Trennlinie --- oder in höherdimensionalen Räumen ein Trenn-Hyperplane --- zu finden, 
+das Datenpunkte verschiedener Klassen mit maximalem Abstand (Margin) voneinander trennt  \cite{Noble:2006aa, Buddhadev2025, sabir2025, jakkula2006tutorial}.
+
+\textbf{1. Ziel: Eine Trennebene finden}
+Eine SVM sucht eine Gerade (in 2D), Ebene (in 3D) oder Hyperplane, die die Klassen voneinander trennt:
+\begin{equation}
+w^T x + b = 0
+\end{equation}
+
+\textbf{2. Bedingung für korrekte Trennung}
+Für jeden Punkt \( x_i \) mit zugehörigem Label \( y_i \in \{-1, +1\} \) gilt:
+\begin{equation}
+y_i(w^T x_i + b) \geq 1
+\end{equation}
+
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.5]{static/fig_hyperplanes.png}
+        \caption{\label{fig:hyperplanes} Darstellung von Hyperplanes \cite{jakkula2006tutorial}}
+    \end{center}
+\end{figure}
+
+\textbf{3. Margin maximieren}
+Der Margin ist der Abstand der nächsten Punkte beider Klassen zur Trennebene:
+\begin{equation}
+M = \frac{2}{\|w\|}
+\end{equation}
+
+Daher wird zur Maximierung des Margins folgende Zielfunktion minimiert:
+\begin{equation}
+\min_{w, b} \quad \frac{1}{2} \|w\|^2
+\quad \text{mit} \quad y_i(w^T x_i + b) \geq 1
+\end{equation}
+
+\textbf{4. Fehler zulassen – Soft Margin}
+
+Bei nicht perfekt trennbaren Daten werden sogenannte Slack-Variablen \( \xi_i \) eingeführt:
+\begin{equation}
+y_i(w^T x_i + b) \geq 1 - \xi_i, \quad \xi_i \geq 0
+\end{equation}
+
+Ziel ist es, Fehler klein zu halten, gleichzeitig aber den Margin möglichst groß:
+\begin{equation}
+\min \left( \frac{1}{2} \|w\|^2 + C \sum \xi_i \right)
+\end{equation}
+
+\textbf{5. Nichtlineare Trennung – Kernel-Trick}
+
+Bei komplexen Datensätzen wird das Problem durch eine Funktion \( \phi \) in höhere Dimensionen überführt, ohne sie explizit zu berechnen \cite{jakkula2006tutorial}:
+\begin{equation}
+K(x_i, x_j) = \phi(x_i)^T \phi(x_j) 
+\end{equation}
+
+Gängige Kernel-Funktionen:
+\begin{itemize}
+  \item Linearkernel: \( K(x, x') = x^T x' \)
+  \item Polynomial: \( K(x, x') = (x^T x' + 1)^d \)
+  \item Radial Basis Function (RBF): \( K(x, x') = \exp(-\gamma \|x - x'\|^2) \) \cite{jakkula2006tutorial}
+\end{itemize}
+\cite{Noble:2006aa} zeigt, dass durch geeignete Wahl eines Kernels auch komplex strukturierte Daten erfolgreich klassifiziert werden können.
+
+\textbf{Es ergibt sich folgender Ablauf:}
+
+\begin{enumerate}
+  \item Definiere Trennebene: \( w^T x + b = 0 \)
+  \item Erzwinge korrekte Trennung: \( y_i(w^T x_i + b) \geq 1 \)
+  \item Maximiere Margin: \( \min \frac{1}{2} \|w\|^2 \)
+  \item Erlaube kleine Fehler: \( \min \frac{1}{2} \|w\|^2 + C \sum \xi_i \)
+  \item Wende ggf. Kernel an: \( K(x_i, x_j) = \phi(x_i)^T \phi(x_j) \)
+\end{enumerate}
+
+\textbf{Vorteile von SVMs sind:}
+
+\begin{itemize}
+    \item \textbf{Robustheit gegenüber Overfitting}, insbesondere bei hoher Dimensionalität und geringem Datensatz \cite{Noble:2006aa}.
+    \item \textbf{Gute Generalisierungsfähigkeit} durch Maximierung des Margins.
+    \item \textbf{Effizient in der Praxis}: Für viele reale Probleme sind SVMs konkurrenzfähig gegenüber tieferen Netzwerken, (z.B. in Fake-News-Klassifikationen) \cite{Buddhadev2025, sabir2025}.
+    \item \textbf{Flexibilität durch Kernel-Funktionen}, womit verschiedene Datentypen (z.B. Vektoren, Strings, Graphen) verarbeitet werden können.
+\end{itemize}
+
 \subsubsection{Logistische Regression}
+
+\subsubsection{K-Nearest Neighbor}
+
+\subsubsection{XGBoost}
 
 
 \section{Deep Learning}
