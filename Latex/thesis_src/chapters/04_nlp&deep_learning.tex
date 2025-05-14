@@ -158,7 +158,7 @@ In der IF-IDF wird für IDF wird nun also RF eingesetzt und es ergibt sich folge
 
 \subsubsection{Vergleich Bag-of-words und TF-IDF}
 
-\begin{table}[h!]
+\begin{table}[!ht]
     \centering
         \begin{tabular}{|p{6cm}|p{6cm}|}
             \hline
@@ -180,6 +180,26 @@ In der IF-IDF wird für IDF wird nun also RF eingesetzt und es ergibt sich folge
 \end{table}
 
 Aus \ref{tab:vergleich} zu erkennen ist, dass TF-IDF in vielen Anwendungen leistungsfähiger ist als BoW. Insbesondere bei Texten mit hohem Vokabularumfang.
+
+\subsubsection{Hashing Vectorizer}
+
+Ein Hashing Vectorizer ist eine Methode zur Umwandlung von Text in numerische Merkmalsvektoren, ohne dass ein Vokabular explizit 
+erstellt oder gespeichert wird. Stattdessen wird eine Hash-Funktion verwendet, um jedes Wort auf einen Index im Feature-Vektor abzubilden \cite{Buddhadev2025}.
+
+In Abbildung \ref{fig:vgl_bow_tfidf_hashing} wird der Vergleich zwischen Machine-Learning-Modellen unter Verwendung von BoW-, TF-IDF- und
+Hashing-Features gezeigt. Die y-Achse präsentiert den F1-Score, also die Precision und Recall-Werte der jeweiligen Modelle.
+Das Random-Forest-Modell (RF) zeigt eine schwache Leistung bei der Verwendung von Hashing, während die linearen Modelle 
+(z.B. SVM (Support Vector Machine) und LR (Logistische Regression)) ihre F1-Werte mit Hashing-Features verbessern konnten. 
+
+Die Verbesserung ist aber nur minimal. Der F1-Score bei SVM ist ohne Hashing bei 0.89 und nach bei 0.90. 
+Bei LR steigt der Wert auch von 0.87 und 0.88.
+
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.5]{static/bow_vs_tfidf_vs_hashing.png}
+        \caption{\label{fig:vgl_bow_tfidf_hashing} Vergleich verschiedener Modelle mit BoW, TF-IDF und Hashing \cite{aslam2022}}
+    \end{center}
+\end{figure}
 
 \subsection{Machine Learning Modelle}
 \label{sec:ml_modelle}
