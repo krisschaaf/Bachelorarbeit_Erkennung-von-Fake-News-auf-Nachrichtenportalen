@@ -11,65 +11,69 @@
 \contentsline {subsection}{\numberline {1.1.6}Welche potenziellen Indikatoren zum Erkennen bei Fake News gibt es}{4}{subsection.1.1.6}%
 \contentsline {section}{\numberline {1.2}Zielsetzung: Entwicklung einer Software zur automatisierten Fake-News-Erkennung}{5}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Wahl der Nachrichtenportale}{5}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Aufbau der Arbeit}{5}{section.1.4}%
-\contentsline {chapter}{\numberline {2}Grundlagen und Begriffsdefinitionen}{6}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Definition „Fake News“: Merkmale, Ziele, Beispiele}{6}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Klassifizierungen}{6}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2}Kategorisierung der Fake News Detection-Ansätze}{6}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Warum der Fokus auf Machine Learning?}{6}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Überblick über relevante Plattformen und deren Rolle im Medienkonsum}{6}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Maschinelles Lernen zur Fake News Erkennung}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Grundlagen von ML}{7}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Überwachtes vs. unüberwachtes Lernen}{7}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Klassische ML-Modelle (Logistic Regression, Naive Bayes, SVM, Entscheidungsbäume)}{7}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Performance-Metriken: Accuracy, Precision, Recall, F1-Score}{7}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Herausforderungen im Kontext von Fake News}{7}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Natural Language Processing}{8}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Machine Learning}{8}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Textbereinigung und Vorverarbeitung}{8}{subsection.4.1.1}%
-\contentsline {subsubsection}{\nonumberline Nutzung einer duale Feature-Pipeline}{9}{subsubsection*.5}%
-\contentsline {subsection}{\numberline {4.1.2}Merkmalextraktion}{10}{subsection.4.1.2}%
-\contentsline {subsubsection}{\nonumberline Bag-of-words}{10}{subsubsection*.7}%
-\contentsline {subsubsection}{\nonumberline TF-IDF}{10}{subsubsection*.9}%
-\contentsline {paragraph}{\nonumberline Sparse Matrizen}{10}{paragraph*.11}%
-\contentsline {subsubsection}{\nonumberline Vergleich Bag-of-words und TF-IDF}{12}{subsubsection*.14}%
-\contentsline {subsubsection}{\nonumberline Hashing Vectorizer}{12}{subsubsection*.17}%
-\contentsline {subsection}{\numberline {4.1.3}Machine Learning Modelle}{14}{subsection.4.1.3}%
-\contentsline {subsubsection}{\nonumberline Naive-Bayes}{14}{subsubsection*.20}%
-\contentsline {subsubsection}{\nonumberline Decision Tree}{15}{subsubsection*.22}%
-\contentsline {subsubsection}{\nonumberline Random Forest}{16}{subsubsection*.24}%
-\contentsline {subsubsection}{\nonumberline Support Vector Machines}{17}{subsubsection*.26}%
-\contentsline {subsubsection}{\nonumberline Logistische Regression}{19}{subsubsection*.29}%
-\contentsline {subsubsection}{\nonumberline K-Nearest Neighbor}{21}{subsubsection*.32}%
-\contentsline {subsubsection}{\nonumberline XGBoost}{21}{subsubsection*.34}%
-\contentsline {section}{\numberline {4.2}Deep Learning}{21}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Word Embeddings}{21}{subsection.4.2.1}%
-\contentsline {subsubsection}{\nonumberline Word2Vec}{21}{subsubsection*.36}%
-\contentsline {subsubsection}{\nonumberline GloVe}{21}{subsubsection*.38}%
-\contentsline {subsubsection}{\nonumberline BERT-Tokenisierung}{21}{subsubsection*.40}%
-\contentsline {subsection}{\numberline {4.2.2}Deep Learning-Modelle}{21}{subsection.4.2.2}%
-\contentsline {subsubsection}{\nonumberline CNN}{21}{subsubsection*.42}%
-\contentsline {subsubsection}{\nonumberline LSTM}{21}{subsubsection*.44}%
-\contentsline {subsubsection}{\nonumberline Transformer: BERT}{21}{subsubsection*.46}%
-\contentsline {section}{\numberline {4.3}Hybride Modelle}{21}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}convolutional neural network (CNN) along with bi-directional LSTM}{21}{subsection.4.3.1}%
-\contentsline {chapter}{\numberline {5}Relevante Datensätze und Auswahlkriterien}{22}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Vorstellung verfügbarer deutscher Fake-News-Datensätze}{22}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Auswahl und Begründung des finalen Datensatzes}{22}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Herausforderungen bei deutschen Textdaten (Klassenverteilung, Quellenvielfalt)}{22}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Konzeption der Softwarelösung}{23}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Hauptkomponente}{23}{section.6.1}%
-\contentsline {paragraph}{\nonumberline Als Beispiel die Seite Bild.de:}{23}{paragraph*.48}%
-\contentsline {chapter}{\numberline {7}Umsetzung des Prototyps}{27}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Implementierung der Chrome Erweiterung}{27}{section.7.1}%
-\contentsline {paragraph}{\nonumberline Service Worker}{27}{paragraph*.51}%
-\contentsline {paragraph}{\nonumberline Content Scripts}{27}{paragraph*.53}%
-\contentsline {paragraph}{\nonumberline Pop-ups}{27}{paragraph*.55}%
-\contentsline {chapter}{\numberline {8}Evaluation und Ergebnisse}{30}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Diskussion}{31}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Fazit und Ausblick}{32}{chapter.10}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{33}{chapter*.57}%
-\contentsline {chapter}{\numberline {A}Anhang}{38}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Verwendete Hilfsmittel}{38}{section.A.1}%
-\contentsline {chapter}{Selbstständigkeitserklärung}{39}{section*.59}%
+\contentsline {section}{\numberline {1.4}Aufbau der Arbeit}{6}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Grundlagen und Begriffsdefinitionen}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Definition „Fake News“: Merkmale, Ziele, Beispiele}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Klassifizierungen}{7}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Kategorisierung der Fake News Detection-Ansätze}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Warum der Fokus auf Machine Learning?}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Überblick über relevante Plattformen und deren Rolle im Medienkonsum}{7}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Maschinelles Lernen zur Fake News Erkennung}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Grundlagen von ML}{8}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Überwachtes vs. unüberwachtes Lernen}{8}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Klassische ML-Modelle (Logistic Regression, Naive Bayes, SVM, Entscheidungsbäume)}{8}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Performance-Metriken: Accuracy, Precision, Recall, F1-Score}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Herausforderungen im Kontext von Fake News}{8}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Natural Language Processing}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Machine Learning}{9}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Textbereinigung und Vorverarbeitung}{9}{subsection.4.1.1}%
+\contentsline {subsubsection}{\nonumberline Nutzung einer duale Feature-Pipeline}{10}{subsubsection*.5}%
+\contentsline {subsection}{\numberline {4.1.2}Merkmalextraktion}{11}{subsection.4.1.2}%
+\contentsline {subsubsection}{\nonumberline Bag-of-words}{11}{subsubsection*.7}%
+\contentsline {subsubsection}{\nonumberline TF-IDF}{11}{subsubsection*.9}%
+\contentsline {paragraph}{\nonumberline Sparse Matrizen}{11}{paragraph*.11}%
+\contentsline {subsubsection}{\nonumberline Vergleich Bag-of-words und TF-IDF}{13}{subsubsection*.14}%
+\contentsline {subsubsection}{\nonumberline Hashing Vectorizer}{13}{subsubsection*.17}%
+\contentsline {subsection}{\numberline {4.1.3}Machine Learning Modelle}{15}{subsection.4.1.3}%
+\contentsline {subsubsection}{\nonumberline Naive-Bayes}{15}{subsubsection*.20}%
+\contentsline {subsubsection}{\nonumberline Decision Tree}{16}{subsubsection*.22}%
+\contentsline {subsubsection}{\nonumberline Random Forest}{17}{subsubsection*.24}%
+\contentsline {subsubsection}{\nonumberline Support Vector Machines}{18}{subsubsection*.26}%
+\contentsline {subsubsection}{\nonumberline Logistische Regression}{20}{subsubsection*.29}%
+\contentsline {subsubsection}{\nonumberline K-Nearest Neighbor}{22}{subsubsection*.32}%
+\contentsline {subsubsection}{\nonumberline XGBoost}{22}{subsubsection*.34}%
+\contentsline {subsection}{\numberline {4.1.4}Metriken}{22}{subsection.4.1.4}%
+\contentsline {subsubsection}{\nonumberline Accuracy}{22}{subsubsection*.36}%
+\contentsline {subsubsection}{\nonumberline Precision}{22}{subsubsection*.38}%
+\contentsline {subsubsection}{\nonumberline Recall}{22}{subsubsection*.40}%
+\contentsline {section}{\numberline {4.2}Deep Learning}{22}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Word Embeddings}{22}{subsection.4.2.1}%
+\contentsline {subsubsection}{\nonumberline Word2Vec}{22}{subsubsection*.42}%
+\contentsline {subsubsection}{\nonumberline GloVe}{22}{subsubsection*.44}%
+\contentsline {subsubsection}{\nonumberline BERT-Tokenisierung}{22}{subsubsection*.46}%
+\contentsline {subsection}{\numberline {4.2.2}Deep Learning-Modelle}{22}{subsection.4.2.2}%
+\contentsline {subsubsection}{\nonumberline CNN}{22}{subsubsection*.48}%
+\contentsline {subsubsection}{\nonumberline LSTM}{22}{subsubsection*.50}%
+\contentsline {subsubsection}{\nonumberline Transformer: BERT}{22}{subsubsection*.52}%
+\contentsline {section}{\numberline {4.3}Hybride Modelle}{22}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}convolutional neural network (CNN) along with bi-directional LSTM}{22}{subsection.4.3.1}%
+\contentsline {chapter}{\numberline {5}Relevante Datensätze und Auswahlkriterien}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Vorstellung verfügbarer deutscher Fake-News-Datensätze}{23}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Auswahl und Begründung des finalen Datensatzes}{23}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Herausforderungen bei deutschen Textdaten (Klassenverteilung, Quellenvielfalt)}{23}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Konzeption der Softwarelösung}{24}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Hauptkomponente}{24}{section.6.1}%
+\contentsline {paragraph}{\nonumberline Als Beispiel die Seite Bild.de:}{24}{paragraph*.54}%
+\contentsline {chapter}{\numberline {7}Umsetzung des Prototyps}{28}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Implementierung der Chrome Erweiterung}{28}{section.7.1}%
+\contentsline {paragraph}{\nonumberline Service Worker}{28}{paragraph*.57}%
+\contentsline {paragraph}{\nonumberline Content Scripts}{28}{paragraph*.59}%
+\contentsline {paragraph}{\nonumberline Pop-ups}{28}{paragraph*.61}%
+\contentsline {chapter}{\numberline {8}Evaluation und Ergebnisse}{31}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Diskussion}{32}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Fazit und Ausblick}{33}{chapter.10}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{34}{chapter*.63}%
+\contentsline {chapter}{\numberline {A}Anhang}{39}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Verwendete Hilfsmittel}{39}{section.A.1}%
+\contentsline {chapter}{Selbstständigkeitserklärung}{40}{section*.65}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

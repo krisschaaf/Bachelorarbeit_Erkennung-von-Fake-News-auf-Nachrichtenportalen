@@ -120,21 +120,43 @@ Ob dieses Tool auch als Browser Plugin oder als eine andere Form der Software im
 Auch ob eine Black Box oder White Box Architektur genutzt wird, - das heißt, kann der User zum Beispiel sehen, warum der Artikel als Fake News 
 deklariert wird - wird im Laufe der Arbeit entschieden.
 Ziel ist es, dass das Tool nicht wie TrustyTweet auf Twitter eingesetzt wird, sondern auf verschiedenen Nachrichtenportalen.
-Welche Portale hierfür genutzt werden, hängt von der noch ausstehenden Entscheidung der genutzten Datensätze ab.
+Um eine politisch möglichst breite Abdeckung zu decken, wird das Tool für drei verschiedenen Nachrichtenportalen implementiert 
+(siehe Kapitel \ref{sec:wahl_nachrichtenportale}).
 
 \section{Wahl der Nachrichtenportale}
 \label{sec:wahl_nachrichtenportale}
 
 Im Paper der University of Applied Sciences Upper Austria \cite{Simone2022} wird die Qualität verschiedener deutscher Nachrichtenportale mit 
 „Machine Learning“-Modellen getestet. 
-Das Ergebnis zeigt, dass Spiegel, Die Zeit and Süddeutsche die besten Portale sind und Express, BZ-Berlin and Bild die schlechtesten - 
-also auch am meisten Fake News verbreiten.
-Als populärstes der schlechtesten Portale wird Bild eines der zu analysierenden Portale. Dieses befindet sich politisch im rechten Spektrum.
-Als Gegensatz wird außerdem TAZ analysiert um einen Vergleich zu einem bekannten linken Nachrichtenportal zu haben.
-Das dritte Portal %TODO:
+Das Ergebnis zeigt, dass Spiegel, Die Zeit and Süddeutsche die 'besten' Portale sind. Express, BZ-Berlin und Bild sind die 'schlechtesten', da sie
+am meisten Fake News verbreiten.
+Die Quellen \cite{henke2024nachrichten, Lieb2023, Osing2022} zeigen, dass die Kombination von BILD, taz und Der Spiegel eine politisch 
+breites Spektrum abbilden.
+
+\begin{itemize}
+    \item \textbf{BILD:} Boulevardesk, populistisch, konservativ
+   
+    Die BILD-Zeitung gilt als stark meinungsgetriebenes Boulevardmedium mit populistischen Zügen. Ihre Berichterstattung ist geprägt von einer emotionalisierenden Sprache, 
+    Fokus auf Einzelereignisse und dem Ziel hoher Reichweiten.
+
+    \item \textbf{taz:} Kritisch, linksalternativ, bewegungsnah
+    
+    Die taz (tageszeitung) wird dem linksalternativen Spektrum zugeordnet. Sie verfolgt eine aktivistische Grundhaltung mit einem Fokus auf 
+    sozialen Bewegungen, Umweltfragen und Minderheitenrechten. 
+    Die taz gilt als Gegenmodell zu großen Leitmedien und strebt oft bewusst Gegenöffentlichkeit an.
+
+    \item \textbf{Der Spiegel:} Linksliberal, investigativ, kritisch gegenüber Macht
+    
+    Der Spiegel wird dem linksliberalen Spektrum zugeordnet. Er kombiniert klassische Leitmedienformate mit einem ausgeprägten Anspruch auf 
+    investigativen Journalismus, Kritik an staatlicher Macht und liberal-demokratischen Werten.
+\end{itemize}
+
+Das Tool, welches in dieser Arbeit entwickelt wird, wird also für diese drei Nachrichtenportale implementiert.
 
 \section{Aufbau der Arbeit}
 \label{sec:aufbau}
+
+%TODO: 
 
 
 

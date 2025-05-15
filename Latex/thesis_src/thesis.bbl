@@ -1,4 +1,4 @@
-\begin{thebibliography}{37}
+\begin{thebibliography}{40}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -194,6 +194,14 @@
 \newblock Springer, 2009. --
 \newblock ISBN 9780387848570
 
+\bibitem[Henke(2024)]{henke2024nachrichten}
+\dinatlabel{Henke 2024} \textsc{Henke}, Jakob:
+\newblock \emph{Nachrichten im Auge des Betrachters: Der Selektionsprozess aus
+  Perspektive der Nutzer*innen}.
+\newblock Wiesbaden, Deutschland~: Springer VS, 2024. --
+\newblock URL \url{https://doi.org/10.1007/978-3-658-46608-4}. --
+\newblock ISBN 978-3-658-46607-7
+
 \bibitem[Horne und Adali(2017)]{horne2017}
 \dinatlabel{Horne und Adali 2017} \textsc{Horne}, Benjamin~; \textsc{Adali},
   Sibel:
@@ -224,6 +232,19 @@
 \newblock \emph{5: Logistic Regression}.
 \newblock In: \emph{Speech and Language Processing}, 2025
 
+\bibitem[Lieb(2023)]{Lieb2023}
+\dinatlabel{Lieb 2023} \textsc{Lieb}, Wolfgang:
+\newblock \emph{Wandel des Mediensystems -- Kann das Internet die klassischen
+  Medien erg{\"a}nzen oder gar ersetzen?}
+\newblock S.~291--319.
+\newblock In: \textsc{Roters}, Wolfgang (Hrsg.)~; \textsc{Gr{\"a}f}, Horst
+  (Hrsg.)~; \textsc{Wollmann}, Hellmut (Hrsg.): \emph{Zukunft denken und
+  verantworten: Herausforderungen f{\"u}r Politik, Wissenschaft und
+  Gesellschaft im 21. Jahrhundert}.
+\newblock Wiesbaden~: Springer Fachmedien Wiesbaden, 2023. --
+\newblock URL \url{https://doi.org/10.1007/978-3-658-41039-1_21}. --
+\newblock ISBN 978-3-658-41039-1
+
 \bibitem[Noble(2006)]{Noble:2006aa}
 \dinatlabel{Noble 2006} \textsc{Noble}, William~S.:
 \newblock What is a support vector machine?
@@ -231,6 +252,16 @@
 \newblock 24 (2006), Nr.~12, S.~1565--1567. --
 \newblock URL \url{https://doi.org/10.1038/nbt1206-1565}.
 \newblock ISBN 1546-1696
+
+\bibitem[Osing(2022)]{Osing2022}
+\dinatlabel{Osing 2022} \textsc{Osing}, Tim:
+\newblock \emph{Perspektiven des Onlinejournalismus}.
+\newblock S.~235--247.
+\newblock In: \emph{Digitaler Journalismus in der Praxis: Grundlagen von
+  Onlinerecherche, Storytelling und Datenjournalismus}.
+\newblock Wiesbaden~: Springer Fachmedien Wiesbaden, 2022. --
+\newblock URL \url{https://doi.org/10.1007/978-3-658-39105-8_18}. --
+\newblock ISBN 978-3-658-39105-8
 
 \bibitem[Parmar und Tiwari(2024)]{parmar2024stacking}
 \dinatlabel{Parmar und Tiwari 2024} \textsc{Parmar}, M.~; \textsc{Tiwari}, A.:
