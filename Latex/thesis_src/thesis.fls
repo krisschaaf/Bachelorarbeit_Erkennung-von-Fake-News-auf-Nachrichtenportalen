@@ -1885,10 +1885,6 @@ INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/cha
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/02_grundlagen_und_begriffsdefinitionen.tex
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/02_grundlagen_und_begriffsdefinitionen.tex
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/02_grundlagen_und_begriffsdefinitionen.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/03_maschinelles_lernen_zur_fake_news_erkennung.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/03_maschinelles_lernen_zur_fake_news_erkennung.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/03_maschinelles_lernen_zur_fake_news_erkennung.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/03_maschinelles_lernen_zur_fake_news_erkennung.tex
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/04_nlp&deep_learning.tex
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/04_nlp&deep_learning.tex
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/04_nlp&deep_learning.tex
@@ -1916,6 +1912,11 @@ INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./c
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/fig_hyperplanes.png
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/fig_hyperplanes.png
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/fig_hyperplanes.png
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/vgl_svm_knn_etc.png
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/vgl_svm_knn_etc.png
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/vgl_svm_knn_etc.png
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/vgl_svm_knn_etc.png
+INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/vgl_svm_knn_etc.png
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/05_relevante_datensaetze_und_auswahlkriterien.tex
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/05_relevante_datensaetze_und_auswahlkriterien.tex
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/05_relevante_datensaetze_und_auswahlkriterien.tex
@@ -1946,10 +1947,6 @@ INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/cha
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/08_evaluation_und_ergebnisse.tex
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/08_evaluation_und_ergebnisse.tex
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/08_evaluation_und_ergebnisse.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/09_diskussion.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/09_diskussion.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/09_diskussion.tex
-INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/09_diskussion.tex
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/10_fazit_und_ausblick.tex
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/10_fazit_und_ausblick.tex
 INPUT /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/10_fazit_und_ausblick.tex

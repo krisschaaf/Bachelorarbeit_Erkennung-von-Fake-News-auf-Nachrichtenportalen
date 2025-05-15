@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.18)  15 MAY 2025 10:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.18)  15 MAY 2025 15:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1312,11 +1312,11 @@ LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <28> not available
 \tf@toc=\write9
 \openout9 = `thesis.toc'.
 
- [5] [6] (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.lof)
+ [5] (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.lof)
 \tf@lof=\write10
 \openout10 = `thesis.lof'.
 
- [7
+ [6
 
 ] (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.lot)
 \tf@lot=\write11
@@ -1325,7 +1325,7 @@ LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <28> not available
 
 No file thesis.acr.
 No file thesis.sls.
-[8
+[7
 
 ] (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/01_einleitung.tex
 chapter 1.
@@ -1349,29 +1349,25 @@ Class scrreprt Warning: \float@addtolists detected!
 
 ] [2] [3] [4] [5]) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/02_grundlagen_und_begriffsdefinitionen.tex [6]
 chapter 2.
-) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/03_maschinelles_lernen_zur_fake_news_erkennung.tex [7
+) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/04_nlp&deep_learning.tex [7
 
 ]
 chapter 3.
-) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/04_nlp&deep_learning.tex [8
 
-]
-chapter 4.
-
-Package natbib Warning: Citation `SUDHAKAR2024101028101028' on page 9 undefined on input line 19.
+Package natbib Warning: Citation `SUDHAKAR2024101028101028' on page 8 undefined on input line 19.
 
 
-Package natbib Warning: Citation `SUDHAKAR2024101028101028' on page 9 undefined on input line 22.
+Package natbib Warning: Citation `SUDHAKAR2024101028101028' on page 8 undefined on input line 22.
 
-[9
+[8
 
-] [10]
-<./chapters//static/table_bow.png, id=326, 383.4325pt x 281.05pt>
+] [9]
+<./chapters//static/table_bow.png, id=306, 383.4325pt x 281.05pt>
 File: ./chapters//static/table_bow.png Graphic file (type png)
 <use ./chapters//static/table_bow.png>
 Package pdftex.def Info: ./chapters//static/table_bow.png  used on input line 82.
 (pdftex.def)             Requested size: 191.71577pt x 140.52464pt.
-<./chapters//static/table_tf-idf.png, id=330, 600.2425pt x 609.27625pt>
+<./chapters//static/table_tf-idf.png, id=310, 600.2425pt x 609.27625pt>
 File: ./chapters//static/table_tf-idf.png Graphic file (type png)
 <use ./chapters//static/table_tf-idf.png>
 Package pdftex.def Info: ./chapters//static/table_tf-idf.png  used on input line 87.
@@ -1381,7 +1377,7 @@ Overfull \hbox (2.4216pt too wide) in paragraph at lines 80--90
 []$[]$ $[]$ 
  []
 
-[11 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/table_bow.png> </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/table_tf-idf.png>] [12]
+[10 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/table_bow.png> </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/table_tf-idf.png>] [11]
 Underfull \hbox (badness 3108) in paragraph at lines 167--168
 []|\T1/cmr/m/n/10.95 Berücksichtigt Wort-wich-tig-keit in
  []
@@ -1391,19 +1387,19 @@ Underfull \hbox (badness 1436) in paragraph at lines 173--174
 []|\T1/cmr/m/n/10.95 Gleiches Grund-pro-blem, aber ge-
  []
 
-[13]
-<./chapters//static/bow_vs_tfidf_vs_hashing.png, id=386, 514.92375pt x 316.18124pt>
+[12]
+<./chapters//static/bow_vs_tfidf_vs_hashing.png, id=367, 514.92375pt x 316.18124pt>
 File: ./chapters//static/bow_vs_tfidf_vs_hashing.png Graphic file (type png)
 <use ./chapters//static/bow_vs_tfidf_vs_hashing.png>
 Package pdftex.def Info: ./chapters//static/bow_vs_tfidf_vs_hashing.png  used on input line 199.
 (pdftex.def)             Requested size: 257.46124pt x 158.09023pt.
- [14 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/bow_vs_tfidf_vs_hashing.png>] [15] [16] [17]
-<./chapters//static/fig_hyperplanes.png, id=444, 448.67625pt x 271.0125pt>
+ [13 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/bow_vs_tfidf_vs_hashing.png>] [14] [15] [16]
+<./chapters//static/fig_hyperplanes.png, id=424, 448.67625pt x 271.0125pt>
 File: ./chapters//static/fig_hyperplanes.png Graphic file (type png)
 <use ./chapters//static/fig_hyperplanes.png>
 Package pdftex.def Info: ./chapters//static/fig_hyperplanes.png  used on input line 323.
 (pdftex.def)             Requested size: 224.33757pt x 135.5059pt.
- [18 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/fig_hyperplanes.png>] [19]
+ [17 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/fig_hyperplanes.png>] [18]
 Underfull \hbox (badness 10000) in paragraph at lines 403--403
 []|\T1/cmr/m/n/10.95 Multinomiale lo-gis-ti-sche
  []
@@ -1418,17 +1414,23 @@ Underfull \hbox (badness 3701) in paragraph at lines 405--405
 []|\T1/cmr/m/n/10.95 Ordinale lo-gis-ti-sche Re-
  []
 
-[20]) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/05_relevante_datensaetze_und_auswahlkriterien.tex [21] [22]
-chapter 5.
-) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/06_konzeption_der_softwareloesung.tex [23
+[19] [20]
+<./chapters//static/vgl_svm_knn_etc.png, id=505, 808.01875pt x 317.185pt>
+File: ./chapters//static/vgl_svm_knn_etc.png Graphic file (type png)
+<use ./chapters//static/vgl_svm_knn_etc.png>
+Package pdftex.def Info: ./chapters//static/vgl_svm_knn_etc.png  used on input line 485.
+(pdftex.def)             Requested size: 323.20177pt x 126.87173pt.
+) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/05_relevante_datensaetze_und_auswahlkriterien.tex [21] [22 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/vgl_svm_knn_etc.png>] [23]
+chapter 4.
+) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/06_konzeption_der_softwareloesung.tex [24
 
 ]
-chapter 6.
+chapter 5.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-) [24
+) [25
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 66--66
@@ -1505,30 +1507,26 @@ Underfull \hbox (badness 1616) in paragraph at lines 86--86
 \T1/cmr/m/n/10.95 kontrolle über
  []
 
-[25]) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/07_umsetzung_des_prototyps.tex [26] [27]
-chapter 7.
+[26]) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/07_umsetzung_des_prototyps.tex [27] [28]
+chapter 6.
 
 Overfull \hbox (13.0751pt too wide) in paragraph at lines 23--26
 \T1/cmr/m/n/10.95 auf das Ak-ti-ons-sym-bol der Er-wei-te-rung oder durch Drücken von chro-me.action.openPopup()
  []
 
-<./chapters//diagrams/hauptkomponente_sequenzdiagramm.png, id=603, 825.0825pt x 873.2625pt>
+<./chapters//diagrams/hauptkomponente_sequenzdiagramm.png, id=610, 825.0825pt x 873.2625pt>
 File: ./chapters//diagrams/hauptkomponente_sequenzdiagramm.png Graphic file (type png)
 <use ./chapters//diagrams/hauptkomponente_sequenzdiagramm.png>
 Package pdftex.def Info: ./chapters//diagrams/hauptkomponente_sequenzdiagramm.png  used on input line 29.
 (pdftex.def)             Requested size: 412.54024pt x 436.63017pt.
-[28
+[29
 
-] [29 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//diagrams/hauptkomponente_sequenzdiagramm.png>]) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/08_evaluation_und_ergebnisse.tex [30]
-chapter 8.
-) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/09_diskussion.tex [31
-
-]
-chapter 9.
+] [30 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//diagrams/hauptkomponente_sequenzdiagramm.png>]) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/08_evaluation_und_ergebnisse.tex [31]
+chapter 7.
 ) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/10_fazit_und_ausblick.tex [32
 
 ]
-chapter 10.
+chapter 8.
 ) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.bbl [33
 
 ]
@@ -1540,7 +1538,7 @@ Underfull \hbox (badness 1616) in paragraph at lines 177--188
 []\T1/cmr/m/sc/10.95 Hartwig\T1/cmr/m/n/10.95 , Ka-trin ; \T1/cmr/m/sc/10.95 Reu-ter\T1/cmr/m/n/10.95 , Chris-ti-an:  \T1/cmr/m/it/10.95 Fa-ke News tech-nisch be-geg-nen --
  []
 
-[36] [37]) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/appendix/example_appendix.tex [38]
+[36] [37] [38]) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/appendix/example_appendix.tex [39]
 chapter A.
 
 Underfull \hbox (badness 10000) in paragraph at lines 13--23
@@ -1549,13 +1547,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--23
 
 )
 No file thesis.gls.
-(../style/statement.tex [39
+(../style/statement.tex [40
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 7.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [40
+) [41
 
 ])
 
@@ -1573,18 +1571,18 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39829 strings out of 478994
- 787207 string characters out of 5858183
- 1466374 words of memory out of 5000000
- 56247 multiletter control sequences out of 15000+600000
+ 39824 strings out of 478994
+ 786773 string characters out of 5858183
+ 1465964 words of memory out of 5000000
+ 56246 multiletter control sequences out of 15000+600000
  436132 words of font info for 86 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  117i,20n,145p,10705b,2492s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx2986.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.pdf (48 pages, 866939 bytes).
+Output written on /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.pdf (48 pages, 965949 bytes).
 PDF statistics:
- 1027 PDF objects out of 1200 (max. 8388607)
- 905 compressed objects within 10 object streams
- 258 named destinations out of 1000 (max. 500000)
- 547 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1016 PDF objects out of 1200 (max. 8388607)
+ 892 compressed objects within 9 object streams
+ 259 named destinations out of 1000 (max. 500000)
+ 496 words of extra memory for PDF output out of 10000 (max. 10000000)
 

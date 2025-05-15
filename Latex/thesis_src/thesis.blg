@@ -14,45 +14,45 @@ Warning--no proper publisher, using url in parmar2024stacking
 Warning--empty pages in parmar2024stacking
 Warning--empty booktitle in zhang2004
 Warning--empty pages in zhang2004
-You've used 40 entries,
+You've used 43 entries,
             3552 wiz_defined-function locations,
-            1064 strings with 15304 characters,
-and the built_in function-call counts, 30908 in all, are:
-= -- 3803
-> -- 446
-< -- 801
-+ -- 1016
-- -- 296
-* -- 2902
-:= -- 5172
-add.period$ -- 54
-call.type$ -- 40
-change.case$ -- 218
-chr.to.int$ -- 38
-cite$ -- 45
-duplicate$ -- 763
-empty$ -- 2123
-format.name$ -- 540
-if$ -- 6061
+            1082 strings with 16068 characters,
+and the built_in function-call counts, 33445 in all, are:
+= -- 4124
+> -- 482
+< -- 876
++ -- 1109
+- -- 323
+* -- 3134
+:= -- 5593
+add.period$ -- 59
+call.type$ -- 43
+change.case$ -- 236
+chr.to.int$ -- 41
+cite$ -- 48
+duplicate$ -- 821
+empty$ -- 2285
+format.name$ -- 585
+if$ -- 6554
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 87
-newline$ -- 280
-num.names$ -- 162
-pop$ -- 289
+missing$ -- 92
+newline$ -- 300
+num.names$ -- 174
+pop$ -- 308
 preamble$ -- 1
-purify$ -- 213
+purify$ -- 230
 quote$ -- 0
-skip$ -- 1282
+skip$ -- 1393
 stack$ -- 0
-substring$ -- 2778
-swap$ -- 191
-text.length$ -- 98
+substring$ -- 3019
+swap$ -- 206
+text.length$ -- 106
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 400
+type$ -- 433
 warning$ -- 5
-while$ -- 321
+while$ -- 346
 width$ -- 0
-write$ -- 480
+write$ -- 516
 (There were 6 warnings)

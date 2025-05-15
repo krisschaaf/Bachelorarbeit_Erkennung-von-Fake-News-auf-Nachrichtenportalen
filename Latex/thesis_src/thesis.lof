@@ -2,15 +2,14 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Vergleich der Sparse Matrizen\relax }}{10}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Vergleich verschiedener Modelle mit BoW, TF-IDF und Hashing \cite {aslam2022}\relax }}{13}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Darstellung von Hyperplanes \cite {jakkula2006tutorial}\relax }}{17}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Auswertung verschiedener NLP Algorithmen \cite {prom2024}\relax }}{22}{figure.caption.33}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Vergleich der Sparse Matrizen\relax }}{11}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Vergleich verschiedener Modelle mit BoW, TF-IDF und Hashing \cite {aslam2022}\relax }}{14}{figure.caption.18}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Darstellung von Hyperplanes \cite {jakkula2006tutorial}\relax }}{18}{figure.caption.27}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Sequenzdiagramm Hauptkomponente\relax }}{29}{figure.caption.62}%
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Sequenzdiagramm Hauptkomponente\relax }}{30}{figure.caption.63}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

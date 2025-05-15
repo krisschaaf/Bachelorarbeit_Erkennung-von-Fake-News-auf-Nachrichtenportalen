@@ -1,4 +1,4 @@
-\begin{thebibliography}{40}
+\begin{thebibliography}{43}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -271,6 +271,15 @@
   Data Science}, URL
   \url{https://ieeexplore.ieee.org/abstract/document/10493890/}, 2024
 
+\bibitem[Prom u.\,a.(2024)Prom, Sun, Cadungog-Uy, Math und Thap]{prom2024}
+\dinatlabel{Prom u.\,a. 2024} \textsc{Prom}, Sokleng~; \textsc{Sun},
+  Panharith~; \textsc{Cadungog-Uy}, Neil~I.~; \textsc{Math}, Sa~;
+  \textsc{Thap}, Tharoeun:
+\newblock A BiLSTM-Based Sentiment Analysis Scheme for Khmer NLP in Time-Series
+  Data.
+\newblock In: \emph{2024 International Conference on Information Science and
+  Communications Technologies (ICISCT)}, 2024, S.~133--138
+
 \bibitem[Qaiser und Ali(2018)]{qaiser2018}
 \dinatlabel{Qaiser und Ali 2018} \textsc{Qaiser}, Shahzad~; \textsc{Ali},
   Ramsha:
@@ -295,6 +304,15 @@
   \url{https://towardsdatascience.com/a-practitioners-guide-to-natural-language-processing-part-i-processing-understanding-text-9f4abfd13e72/}.
 \newblock 2018. --
 \newblock Zugriff am 12. Mai 2025
+
+\bibitem[{Scikit-learn contributors}(2024)]{knnparams2024}
+\dinatlabel{{Scikit-learn contributors} 2024} \textsc{{Scikit-learn
+  contributors}}:
+\newblock \emph{K-Nearest Neighbors Classifier --- Hyperparameters Overview}.
+\newblock
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html}.
+\newblock 2024. --
+\newblock Zugriff am 15. Mai 2025
 
 \bibitem[Sharma und Singh(2024)]{Sharma:2024}
 \dinatlabel{Sharma und Singh 2024} \textsc{Sharma}, Upasna~; \textsc{Singh},
@@ -333,6 +351,16 @@
 \newblock (2022). --
 \newblock URL
   \url{https://www.academia.edu/download/107531976/Mahmood_and_Haisal_pub2.pdf}
+
+\bibitem[Verma und Yadav(2024)]{Verma:2024aa}
+\dinatlabel{Verma und Yadav 2024} \textsc{Verma}, Birendra~K.~; \textsc{Yadav},
+  Ajay~K.:
+\newblock Advancing Software Vulnerability Scoring: A Statistical Approach with
+  Machine Learning Techniques and GridSearchCV Parameter Tuning.
+\newblock In: \emph{SN Computer Science}
+\newblock 5 (2024), Nr.~5, S.~595. --
+\newblock URL \url{https://doi.org/10.1007/s42979-024-02942-x}.
+\newblock ISBN 2661-8907
 
 \bibitem[Wagner(2010)]{Wagner:2010aa}
 \dinatlabel{Wagner 2010} \textsc{Wagner}, Wiebke:
