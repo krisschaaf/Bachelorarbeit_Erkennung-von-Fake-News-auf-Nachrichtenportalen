@@ -12,47 +12,45 @@ Warning--I didn't find a database entry for "SUDHAKAR2024101028101028"
 Warning--empty booktitle in Domenico2016
 Warning--no proper publisher, using url in parmar2024stacking
 Warning--empty pages in parmar2024stacking
-Warning--empty booktitle in zhang2004
-Warning--empty pages in zhang2004
-You've used 43 entries,
+You've used 49 entries,
             3552 wiz_defined-function locations,
-            1082 strings with 16068 characters,
-and the built_in function-call counts, 33445 in all, are:
-= -- 4124
-> -- 482
-< -- 876
-+ -- 1109
-- -- 323
-* -- 3134
-:= -- 5593
-add.period$ -- 59
-call.type$ -- 43
-change.case$ -- 236
-chr.to.int$ -- 41
-cite$ -- 48
-duplicate$ -- 821
-empty$ -- 2285
-format.name$ -- 585
-if$ -- 6554
+            1119 strings with 17397 characters,
+and the built_in function-call counts, 38203 in all, are:
+= -- 4733
+> -- 548
+< -- 992
++ -- 1255
+- -- 365
+* -- 3570
+:= -- 6373
+add.period$ -- 69
+call.type$ -- 49
+change.case$ -- 270
+chr.to.int$ -- 47
+cite$ -- 52
+duplicate$ -- 936
+empty$ -- 2616
+format.name$ -- 667
+if$ -- 7508
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 92
-newline$ -- 300
-num.names$ -- 174
-pop$ -- 308
+missing$ -- 101
+newline$ -- 342
+num.names$ -- 198
+pop$ -- 344
 preamble$ -- 1
-purify$ -- 230
+purify$ -- 262
 quote$ -- 0
-skip$ -- 1393
+skip$ -- 1582
 stack$ -- 0
-substring$ -- 3019
-swap$ -- 206
-text.length$ -- 106
+substring$ -- 3475
+swap$ -- 235
+text.length$ -- 120
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 433
-warning$ -- 5
-while$ -- 346
+type$ -- 499
+warning$ -- 3
+while$ -- 396
 width$ -- 0
-write$ -- 516
-(There were 6 warnings)
+write$ -- 592
+(There were 4 warnings)

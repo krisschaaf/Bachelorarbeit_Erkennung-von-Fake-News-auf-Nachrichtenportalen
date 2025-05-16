@@ -1,6 +1,32 @@
 \chapter{Konzeption der Softwarelösung}
 \label{chap:konzeption_der_softwareloesung}
 
+\section{Machine Learning Modell} %TODO: eigenes chapter hierfür! (Analyse der verschiedenen NLP Modelle in Bezug auf Fake News Erkennung)
+
+\subsection{Welches Modell für Fake News Erkennung?}
+%TODO: ML, DL oder Hybrid (Bow, TD-idf oder word embeddings)
+
+\subsubsection{XGBoost}
+
+%TODO: Informationen prüfen
+
+
+In der Studie von \cite{petrovic2024} wurde XGBoost mit der TF-IDF-Vektorisierung kombiniert, 
+um Fake News aus textuellen Inhalten zu identifizieren. Durch eine zusätzliche Hyperparameter-Optimierung mittels eines 
+metaheuristischen Verfahrens (VNS) konnte die Modellleistung weiter verbessert werden. Die Autoren betonen, 
+dass XGBoost durch die Integration von Regularisierung und adaptiver Lernstrategie eine exzellente Eignung für textklassifikatorische 
+Aufgaben zeigt.
+
+In einer weiteren aktuellen Studie wurde XGBoost in Kombination mit BERT eingesetzt, um Sarkasmus in Texten zu erkennen. 
+Diese hybride Architektur kombinierte semantische Einbettungen mit der Klassifikationsstärke von XGBoost und lieferte deutlich bessere 
+Ergebnisse als Deep-Learning-Modelle allein \cite{sharma2025}.
+
+Auch in der Emotionserkennung aus Textdaten wurde XGBoost erfolgreich eingesetzt. 
+In einer experimentellen Vergleichsstudie erzielte XGBoost einen durchschnittlichen F1-Score von 97{,}86\%, 
+was ihn zum leistungsfähigsten klassischen ML-Modell gegenüber SVM und Random Forest machte\cite{paksoy2024}. 
+Die Studie nutzte unigram-basierte TF-IDF-Features und zeigte, dass XGBoost bei ausgeglichener Klassenzuordnung besonders effektiv ist.
+
+
 \section{Hauptkomponente} \label{sec:06:hauptkomponente}
 
 Die Hauptkomponente hat die Aufgabe die Artikel auf den verschiedenen Nachrichtenportalen zu lesen und zu ergänzen.

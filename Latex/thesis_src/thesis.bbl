@@ -1,4 +1,4 @@
-\begin{thebibliography}{43}
+\begin{thebibliography}{49}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -94,6 +94,17 @@
   -- Zugriffsdatum: 2025-04-23. --
 \newblock Interview gef{\"u}hrt von EINFALLSreich, Hochschule Landshut
 
+\bibitem[Chen und Guestrin(2016)]{chen2016xgboost}
+\dinatlabel{Chen und Guestrin 2016} \textsc{Chen}, Tianqi~; \textsc{Guestrin},
+  Carlos:
+\newblock XGBoost: A Scalable Tree Boosting System.
+\newblock In: \emph{Proceedings of the 22nd ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}.
+\newblock New York, NY, USA~: Association for Computing Machinery, 2016
+\newblock (KDD '16), S.~785--794. --
+\newblock URL \url{https://doi.org/10.1145/2939672.2939785}. --
+\newblock ISBN 9781450342322
+
 \bibitem[Cichosz(2018)]{cichosz2018forum}
 \dinatlabel{Cichosz 2018} \textsc{Cichosz}, Piotr:
 \newblock A Case Study in Text Mining of Discussion Forum Posts: Classification
@@ -102,6 +113,13 @@
   Science}
 \newblock (2018). --
 \newblock URL \url{https://sciendo.com/pdf/10.2478/amcs-2018-0060}
+
+\bibitem[Corporation(2024)]{ibm_bow}
+\dinatlabel{Corporation 2024} \textsc{Corporation}, IBM:
+\newblock \emph{Bag of Words Explained}.
+\newblock \url{https://www.ibm.com/think/topics/bag-of-words}.
+\newblock 2024. --
+\newblock Accessed: 2025-05-16
 
 \bibitem[Das und Alphonse(2023)]{das2023tfidf}
 \dinatlabel{Das und Alphonse 2023} \textsc{Das}, M.~; \textsc{Alphonse}, P.
@@ -164,6 +182,14 @@
 \newblock (2023). --
 \newblock URL
   \url{https://cyberleninka.ru/article/n/methods-of-processing-the-uzbek-language-corpus-texts}
+
+\bibitem[Gao(2023)]{gao2023federated}
+\dinatlabel{Gao 2023} \textsc{Gao}, Yan:
+\newblock \emph{Federated XGBoost with bagging aggregation}.
+\newblock
+  \url{https://flower.ai/blog/2023-11-29-federated-xgboost-with-bagging-aggregation/}.
+\newblock November 2023. --
+\newblock Zugriff am 16. Mai 2025
 
 \bibitem[G{\'e}ron(2019)]{geron2019}
 \dinatlabel{G{\'e}ron 2019} \textsc{G{\'e}ron}, Aur{\'e}lien:
@@ -263,6 +289,13 @@
 \newblock URL \url{https://doi.org/10.1007/978-3-658-39105-8_18}. --
 \newblock ISBN 978-3-658-39105-8
 
+\bibitem[Paksoy und Bakal(2024)]{paksoy2024}
+\dinatlabel{Paksoy und Bakal 2024} \textsc{Paksoy}, Melda~; \textsc{Bakal},
+  Gokhan:
+\newblock Words Speak Louder Than Actions: Decoding Emotions Through NLP.
+\newblock In: \emph{2024 9th International Conference on Computer Science and
+  Engineering (UBMK)}, 2024, S.~1--5
+
 \bibitem[Parmar und Tiwari(2024)]{parmar2024stacking}
 \dinatlabel{Parmar und Tiwari 2024} \textsc{Parmar}, M.~; \textsc{Tiwari}, A.:
 \newblock Enhancing Text Classification Performance using Stacking Ensemble
@@ -270,6 +303,16 @@
 \newblock In: \emph{5th International Conference on Artificial Intelligence and
   Data Science}, URL
   \url{https://ieeexplore.ieee.org/abstract/document/10493890/}, 2024
+
+\bibitem[Petrovic u.\,a.(2024)Petrovic, Perisic, Jovanovic, Zivkovic,
+  Antonijevic und Bacanin]{petrovic2024}
+\dinatlabel{Petrovic u.\,a. 2024} \textsc{Petrovic}, Aleksandar~;
+  \textsc{Perisic}, Jasmina~; \textsc{Jovanovic}, Luka~; \textsc{Zivkovic},
+  Miodrag~; \textsc{Antonijevic}, Milos~; \textsc{Bacanin}, Nebojsa:
+\newblock Natural Language Processing Approach for Fake News Detection Using
+  Metaheuristics Optimized Extreme Gradient Boosting.
+\newblock In: \emph{2024 IEEE 3rd World Conference on Applied Intelligence and
+  Computing (AIC)}, 2024, S.~252--257
 
 \bibitem[Prom u.\,a.(2024)Prom, Sun, Cadungog-Uy, Math und Thap]{prom2024}
 \dinatlabel{Prom u.\,a. 2024} \textsc{Prom}, Sokleng~; \textsc{Sun},
@@ -313,6 +356,15 @@
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html}.
 \newblock 2024. --
 \newblock Zugriff am 15. Mai 2025
+
+\bibitem[Sharma und Joshi(2024)]{sharma2025}
+\dinatlabel{Sharma und Joshi 2024} \textsc{Sharma}, Surbhi~; \textsc{Joshi},
+  Nisheeth:
+\newblock A fusion approach to detect sarcasm using NLTK models BERT and XG
+  Boost.
+\newblock In: \emph{Journal of Information and Optimization Sciences}
+\newblock 45 (2024), Nr.~4, S.~981--990. --
+\newblock URL \url{https://doi.org/10.47974/JIOS-1621}
 
 \bibitem[Sharma und Singh(2024)]{Sharma:2024}
 \dinatlabel{Sharma und Singh 2024} \textsc{Sharma}, Upasna~; \textsc{Singh},
@@ -380,7 +432,10 @@
 
 \bibitem[Zhang(2004)]{zhang2004}
 \dinatlabel{Zhang 2004} \textsc{Zhang}, Harry:
-\newblock The Optimality of Naive Bayes, 01 2004
+\newblock The Optimality of Naive Bayes.
+\newblock In: \emph{Proceedings of the Seventeenth International Florida
+  Artificial Intelligence Research Society Conference, FLAIRS 2004}
+\newblock 2 (2004), 01
 
 \bibitem[Zhang u.\,a.(2017)Zhang, {Habibi Lashkari} und {A.
   Ghorbani}]{secrypt17}

@@ -160,7 +160,7 @@ In der IF-IDF wird für IDF wird nun also RF eingesetzt und es ergibt sich folge
 
 \begin{table}[!ht]
     \centering
-        \begin{tabular}{|p{6cm}|p{6cm}|}
+        \begin{tabular}{|p{6.6cm}|p{6.6cm}|}
             \hline
             \textbf{Bag-of-Words (BoW)} & \textbf{TF-IDF} \\
             \hline
@@ -168,7 +168,7 @@ In der IF-IDF wird für IDF wird nun also RF eingesetzt und es ergibt sich folge
             \hline
             Keine Gewichtung — häufige Wörter dominieren & Seltener, aber informativer Inhalt wird stärker gewichtet \cite{das2023tfidf} \\
             \hline
-            Hohe Dimensionalität (Sparse Matrix) & Gleiches Problem, aber mit informativeren Werten \cite{alzami2020tfidf} \\
+            Hohe Dimensionalität in Sparse Matrix (jedes Wort bekommt eine separate Dimension) \cite{ibm_bow} & Gleiches Problem, aber mit informativeren Werten \cite{alzami2020tfidf} \\
             \hline
             Ignoriert Wortreihenfolge und Kontext \cite{umar2022sentiment} & Gleiches Grundproblem, aber geringfügig bessere Performance \cite{parmar2024stacking} \\
             \hline
@@ -179,7 +179,7 @@ In der IF-IDF wird für IDF wird nun also RF eingesetzt und es ergibt sich folge
     \label{tab:vergleich}
 \end{table}
 
-Aus \ref{tab:vergleich} zu erkennen ist, dass TF-IDF in vielen Anwendungen leistungsfähiger ist als BoW. Insbesondere bei Texten mit hohem Vokabularumfang.
+Aus Tabelle \ref{tab:vergleich} zu erkennen ist, dass TF-IDF in vielen Anwendungen leistungsfähiger ist als BoW. Insbesondere bei Texten mit hohem Vokabularumfang.
 
 \subsubsection{Hashing Vectorizer}
 
@@ -457,7 +457,7 @@ wie weit zwei Punkte im Merkmalsraum voneinander entfernt sind. Die Formel laute
 
 Dabei sind:
 \begin{itemize}
-    \item \( x_i \): der \( i \)-te Wert (z.\,B. ein Wortvektor-Merkmal) des zu klassifizierenden Punkts
+    \item \( x_i \): der \( i \)-te Wert des zu klassifizierenden Punkts
     \item \( y_i \): der entsprechende \( i \)-te Wert eines bekannten Trainingspunkts
     \item \( k \): die Anzahl der Merkmale (Dimensionen), z.B. bei Textdaten die Länge des Vektors
 \end{itemize}
@@ -477,8 +477,9 @@ Der KNN-Algorithmus verwendet mehrere wichtige Hyperparameter:
     möglich sind aber auch Manhattan, Minkowski oder andere Metriken \cite{aslam2022}
 \end{enumerate}
 
-Auch wenn KNN einfach und intuitiv zu implementieren ist und keinen Trainingsprozess benötigt, zeigt sich in \cite{prom2024}, 
-dass es ein vergleichsweise ineffektives Model für NLP ist (siehe Abbildung \ref{fig:nlp_models}).
+Auch wenn KNN einfach und intuitiv zu implementieren ist und keinen Trainingsprozess benötigt, zeigt Abbildung \ref{fig:nlp_models}, 
+dass es im Vergleich mit Naive Bayes (NB), logistischer Regression (LG) und Support Vector Machines (SVM) ein vergleichsweise ineffektives Model 
+für NLP ist.
 
 \begin{figure}[htbp]
     \begin{center}
@@ -493,6 +494,38 @@ Klassifikation von Textdaten bewertet, bei denen die Reihenfolge, der Zeitpunkt 
 für die Interpretation und Analyse spielt.
 
 \subsubsection{XGBoost}
+
+Beim XGBoost (eXtreme Gradient Boosting) wird das Modell durch die Addition mehrerer Entscheidungsbäume aufgebaut. 
+Diese Entscheidungsbäume fungieren als schwache Lernalgorithmen (base learners) und werden 
+nicht gleichzeitig, sondern sequentiell trainiert (siehe Abbildung \ref{fig:xgboost}).
+ 
+Anders als bei Random Forests, bei denen Bäume unabhängig voneinander trainiert und aggregiert werden, 
+lernen die Bäume in XGBoost aufeinander aufbauend. Die Vorhersage für ein Beispiel ergibt sich aus der Summe der 
+Ausgaben aller zuvor gelernten Bäume. Dadurch entsteht ein starkes Modell, das schrittweise durch Fehlerkorrektur 
+verbessert wird \cite{petrovic2024,chen2016xgboost,aslam2022}.
+
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.25]{static/xgboost-pipeline.jpg}
+        \caption{\label{fig:xgboost} XGBoost \cite{gao2023federated}}
+    \end{center}
+\end{figure}
+
+Ein zentraler Vorteil von XGBoost ist die integrierte Regularisierung, mit der das Modell Overfitting vermeiden kann. 
+Dabei werden zwei Arten von Regularisierung eingesetzt:
+
+\begin{itemize}
+    \item \textbf{L1-Regularisierung}: Bestraft große Gewichtswerte, indem sie einige Gewichte auf Null setzt. 
+        Dadurch hilft sie, unwichtige Merkmale automatisch zu entfernen.
+    \item \textbf{L2-Regularisierung}: Bestraft extreme Gewichtswerte, ohne sie komplett zu eliminieren. 
+        Dies führt zu stabileren Modellen mit kleinen, gleichmäßigen Gewichten.
+\end{itemize}
+
+Beide Regularisierungen sind in die sogenannte Ziel- oder Kostenfunktion eingebettet, die das Modell bei jedem Trainingsschritt minimiert. 
+
+In Anwendungen der natürlichen Sprachverarbeitung (NLP) hilft diese Kombination, besonders bei großen Textmerkmalräumen (z.B. TF-IDF), 
+relevante Merkmale herauszufiltern und gleichzeitig stabile Modelle zu trainieren\cite{chen2016xgboost}.
+
 
 
 \subsection{Metriken}

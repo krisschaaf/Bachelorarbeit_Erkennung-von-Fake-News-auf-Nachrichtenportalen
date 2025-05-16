@@ -35,38 +35,41 @@
 \contentsline {subsubsection}{\nonumberline Support Vector Machines}{17}{subsubsection*.26}%
 \contentsline {subsubsection}{\nonumberline Logistische Regression}{19}{subsubsection*.29}%
 \contentsline {subsubsection}{\nonumberline K-Nearest Neighbor}{20}{subsubsection*.32}%
-\contentsline {subsubsection}{\nonumberline XGBoost}{23}{subsubsection*.35}%
-\contentsline {subsection}{\numberline {3.1.4}Metriken}{23}{subsection.3.1.4}%
-\contentsline {subsubsection}{\nonumberline Accuracy}{23}{subsubsection*.37}%
-\contentsline {subsubsection}{\nonumberline Precision}{23}{subsubsection*.39}%
-\contentsline {subsubsection}{\nonumberline Recall}{23}{subsubsection*.41}%
-\contentsline {section}{\numberline {3.2}Deep Learning}{23}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Word Embeddings}{23}{subsection.3.2.1}%
-\contentsline {subsubsection}{\nonumberline Word2Vec}{23}{subsubsection*.43}%
-\contentsline {subsubsection}{\nonumberline GloVe}{23}{subsubsection*.45}%
-\contentsline {subsubsection}{\nonumberline BERT-Tokenisierung}{23}{subsubsection*.47}%
-\contentsline {subsection}{\numberline {3.2.2}Deep Learning-Modelle}{23}{subsection.3.2.2}%
-\contentsline {subsubsection}{\nonumberline CNN}{23}{subsubsection*.49}%
-\contentsline {subsubsection}{\nonumberline LSTM}{23}{subsubsection*.51}%
-\contentsline {subsubsection}{\nonumberline Transformer: BERT}{23}{subsubsection*.53}%
-\contentsline {section}{\numberline {3.3}Hybride Modelle}{23}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}convolutional neural network (CNN) along with bi-directional LSTM}{23}{subsection.3.3.1}%
-\contentsline {chapter}{\numberline {4}Relevante Datensätze und Auswahlkriterien}{24}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Vorstellung verfügbarer deutscher Fake-News-Datensätze}{24}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Auswahl und Begründung des finalen Datensatzes}{24}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Herausforderungen bei deutschen Textdaten (Klassenverteilung, Quellenvielfalt)}{24}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Konzeption der Softwarelösung}{25}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Hauptkomponente}{25}{section.5.1}%
-\contentsline {paragraph}{\nonumberline Als Beispiel die Seite Bild.de:}{25}{paragraph*.55}%
-\contentsline {chapter}{\numberline {6}Umsetzung des Prototyps}{29}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Implementierung der Chrome Erweiterung}{29}{section.6.1}%
-\contentsline {paragraph}{\nonumberline Service Worker}{29}{paragraph*.58}%
-\contentsline {paragraph}{\nonumberline Content Scripts}{29}{paragraph*.60}%
-\contentsline {paragraph}{\nonumberline Pop-ups}{29}{paragraph*.62}%
-\contentsline {chapter}{\numberline {7}Evaluation und Ergebnisse}{32}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Fazit und Ausblick}{33}{chapter.8}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{34}{chapter*.64}%
-\contentsline {chapter}{\numberline {A}Anhang}{40}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Verwendete Hilfsmittel}{40}{section.A.1}%
-\contentsline {chapter}{Selbstständigkeitserklärung}{41}{section*.66}%
+\contentsline {subsubsection}{\nonumberline XGBoost}{22}{subsubsection*.35}%
+\contentsline {subsection}{\numberline {3.1.4}Metriken}{24}{subsection.3.1.4}%
+\contentsline {subsubsection}{\nonumberline Accuracy}{24}{subsubsection*.38}%
+\contentsline {subsubsection}{\nonumberline Precision}{24}{subsubsection*.40}%
+\contentsline {subsubsection}{\nonumberline Recall}{24}{subsubsection*.42}%
+\contentsline {section}{\numberline {3.2}Deep Learning}{24}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Word Embeddings}{24}{subsection.3.2.1}%
+\contentsline {subsubsection}{\nonumberline Word2Vec}{24}{subsubsection*.44}%
+\contentsline {subsubsection}{\nonumberline GloVe}{24}{subsubsection*.46}%
+\contentsline {subsubsection}{\nonumberline BERT-Tokenisierung}{24}{subsubsection*.48}%
+\contentsline {subsection}{\numberline {3.2.2}Deep Learning-Modelle}{24}{subsection.3.2.2}%
+\contentsline {subsubsection}{\nonumberline CNN}{24}{subsubsection*.50}%
+\contentsline {subsubsection}{\nonumberline LSTM}{24}{subsubsection*.52}%
+\contentsline {subsubsection}{\nonumberline Transformer: BERT}{24}{subsubsection*.54}%
+\contentsline {section}{\numberline {3.3}Hybride Modelle}{24}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}convolutional neural network (CNN) along with bi-directional LSTM}{24}{subsection.3.3.1}%
+\contentsline {chapter}{\numberline {4}Relevante Datensätze und Auswahlkriterien}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Vorstellung verfügbarer deutscher Fake-News-Datensätze}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Auswahl und Begründung des finalen Datensatzes}{25}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Herausforderungen bei deutschen Textdaten (Klassenverteilung, Quellenvielfalt)}{25}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Konzeption der Softwarelösung}{26}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Machine Learning Modell}{26}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Welches Modell für Fake News Erkennung?}{26}{subsection.5.1.1}%
+\contentsline {subsubsection}{\nonumberline XGBoost}{26}{subsubsection*.56}%
+\contentsline {section}{\numberline {5.2}Hauptkomponente}{26}{section.5.2}%
+\contentsline {paragraph}{\nonumberline Als Beispiel die Seite Bild.de:}{27}{paragraph*.58}%
+\contentsline {chapter}{\numberline {6}Umsetzung des Prototyps}{30}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Implementierung der Chrome Erweiterung}{30}{section.6.1}%
+\contentsline {paragraph}{\nonumberline Service Worker}{30}{paragraph*.61}%
+\contentsline {paragraph}{\nonumberline Content Scripts}{30}{paragraph*.63}%
+\contentsline {paragraph}{\nonumberline Pop-ups}{30}{paragraph*.65}%
+\contentsline {chapter}{\numberline {7}Evaluation und Ergebnisse}{33}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Fazit und Ausblick}{34}{chapter.8}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{35}{chapter*.67}%
+\contentsline {chapter}{\numberline {A}Anhang}{42}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Verwendete Hilfsmittel}{42}{section.A.1}%
+\contentsline {chapter}{Selbstständigkeitserklärung}{43}{section*.69}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
