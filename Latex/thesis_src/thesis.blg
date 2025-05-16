@@ -14,43 +14,43 @@ Warning--no proper publisher, using url in parmar2024stacking
 Warning--empty pages in parmar2024stacking
 You've used 49 entries,
             3552 wiz_defined-function locations,
-            1119 strings with 17397 characters,
-and the built_in function-call counts, 38203 in all, are:
-= -- 4733
-> -- 548
-< -- 992
-+ -- 1255
-- -- 365
-* -- 3570
-:= -- 6373
+            1122 strings with 17434 characters,
+and the built_in function-call counts, 38547 in all, are:
+= -- 4776
+> -- 554
+< -- 1005
++ -- 1273
+- -- 371
+* -- 3622
+:= -- 6428
 add.period$ -- 69
 call.type$ -- 49
-change.case$ -- 270
+change.case$ -- 271
 chr.to.int$ -- 47
 cite$ -- 52
-duplicate$ -- 936
-empty$ -- 2616
-format.name$ -- 667
-if$ -- 7508
+duplicate$ -- 943
+empty$ -- 2629
+format.name$ -- 677
+if$ -- 7567
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 101
-newline$ -- 342
+missing$ -- 105
+newline$ -- 343
 num.names$ -- 198
-pop$ -- 344
+pop$ -- 345
 preamble$ -- 1
-purify$ -- 262
+purify$ -- 264
 quote$ -- 0
-skip$ -- 1582
+skip$ -- 1597
 stack$ -- 0
-substring$ -- 3475
-swap$ -- 235
-text.length$ -- 120
+substring$ -- 3502
+swap$ -- 239
+text.length$ -- 122
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 499
 warning$ -- 3
-while$ -- 396
+while$ -- 399
 width$ -- 0
-write$ -- 592
+write$ -- 594
 (There were 4 warnings)

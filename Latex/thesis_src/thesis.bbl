@@ -183,14 +183,6 @@
 \newblock URL
   \url{https://cyberleninka.ru/article/n/methods-of-processing-the-uzbek-language-corpus-texts}
 
-\bibitem[Gao(2023)]{gao2023federated}
-\dinatlabel{Gao 2023} \textsc{Gao}, Yan:
-\newblock \emph{Federated XGBoost with bagging aggregation}.
-\newblock
-  \url{https://flower.ai/blog/2023-11-29-federated-xgboost-with-bagging-aggregation/}.
-\newblock November 2023. --
-\newblock Zugriff am 16. Mai 2025
-
 \bibitem[G{\'e}ron(2019)]{geron2019}
 \dinatlabel{G{\'e}ron 2019} \textsc{G{\'e}ron}, Aur{\'e}lien:
 \newblock \emph{Hands-On Machine Learning with Scikit-Learn, Keras, and
@@ -330,6 +322,15 @@
   Documents.
 \newblock In: \emph{International Journal of Computer Applications}
 \newblock 181 (2018), 07
+
+\bibitem[Rainio u.\,a.(2024)Rainio, Teuho und Kl{\'e}n]{Rainio:2024aa}
+\dinatlabel{Rainio u.\,a. 2024} \textsc{Rainio}, Oona~; \textsc{Teuho}, Jarmo~;
+  \textsc{Kl{\'e}n}, Riku:
+\newblock Evaluation metrics and statistical tests for machine learning.
+\newblock In: \emph{Scientific Reports}
+\newblock 14 (2024), Nr.~1, S.~6086. --
+\newblock URL \url{https://doi.org/10.1038/s41598-024-56706-x}.
+\newblock ISBN 2045-2322
 
 \bibitem[Sabir u.\,a.(2025)Sabir, Khan und Azam]{sabir2025}
 \dinatlabel{Sabir u.\,a. 2025} \textsc{Sabir}, Muhammad~; \textsc{Khan},
