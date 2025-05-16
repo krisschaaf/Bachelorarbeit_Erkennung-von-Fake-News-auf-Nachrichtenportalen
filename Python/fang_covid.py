@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 # Pfad zu deinem Ordner mit den CSV-Dateien
-ordnerpfad = "/Users/krisschaaf/Documents/Uni/Bachelorarbeit/ml_zum_erkennen_von_fake_news/Datasets/FANG-COVID_DATASET/not_preprocessed"  # z. B. "C:/Users/DeinName/Dokumente/csv_daten"
+ordnerpfad = "../Datasets/FANG-COVID_DATASET/not_preprocessed"  # z. B. "C:/Users/DeinName/Dokumente/csv_daten"
 
 # Alle CSV-Dateien im Ordner auflisten
 csv_dateien = [f for f in os.listdir(ordnerpfad) if f.endswith('.csv')]
