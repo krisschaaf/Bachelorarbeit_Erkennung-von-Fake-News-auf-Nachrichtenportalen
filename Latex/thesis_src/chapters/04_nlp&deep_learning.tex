@@ -495,12 +495,10 @@ für die Interpretation und Analyse spielt.
 
 \subsubsection{XGBoost}
 
-Beim XGBoost (eXtreme Gradient Boosting) wird das Modell durch die Addition mehrerer Entscheidungsbäume aufgebaut. 
-Diese Entscheidungsbäume fungieren als schwache Lernalgorithmen (base learners) und werden 
-nicht gleichzeitig, sondern sequentiell trainiert (siehe Abbildung \ref{fig:xgboost}).
-
+Beim XGBoost (eXtreme Gradient Boosting) wird das Modell durch die Addition mehrerer Entscheidungsbäume aufgebaut, welche als
+schwache Lernalgorithmen (base learners) fungieren.
 Anders als bei Random Forests, bei denen Bäume unabhängig voneinander trainiert und aggregiert werden, 
-lernen die Bäume in XGBoost aufeinander aufbauend. Die Vorhersage für ein Beispiel ergibt sich aus der Summe der 
+lernen die Bäume in XGBoost aufeinander aufbauend (siehe Abbildung \ref{fig:xgboost}). Die Vorhersage für ein Beispiel ergibt sich aus der Summe der 
 Ausgaben aller zuvor gelernten Bäume. Dadurch entsteht ein starkes Modell, das schrittweise durch Fehlerkorrektur 
 verbessert wird \cite{petrovic2024,chen2016xgboost,aslam2022}.
 
@@ -562,7 +560,7 @@ aus der verschiedene Bewertungsmetriken abgeleitet werden können.
 \end{figure}
 \footnotetext{\url{https://www.datacamp.com/de/tutorial/what-is-a-confusion-matrix-in-machine-learning}}
 
-Nach \cite{Rainio:2024aa} sind die relevantesten Metriken für binäre Klassifikationen Accuracy, Sensitivity, 
+Nach \cite{kivimaeki2025, Rainio:2024aa} sind die relevantesten Metriken für binäre Klassifikationen Accuracy, Recall (Sensitivity in \cite{Rainio:2024aa}), 
 Specificity und Precision. 
 
 \subsubsection{Accuracy}
@@ -573,7 +571,7 @@ Die Accuracy gibt den Anteil korrekt klassifizierter Instanzen an.
     \text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
 \end{equation}
 
-\subsubsection{Sensitivity (Recall)}
+\subsubsection{Recall}
 
 Der Recall gibt den Anteil korrekt erkannter positiver Fälle an.
 
@@ -619,7 +617,11 @@ Der Recall wäre in diesem Fall 0 und somit auch der F1-Score.
 
 \subsubsection{Word2Vec}
 
+\cite{Deshai:2023aa}
+
 \subsubsection{GloVe}
+
+\cite{Wang:2020aa}
 
 \subsubsection{BERT-Tokenisierung}
 
@@ -631,6 +633,8 @@ Der Recall wäre in diesem Fall 0 und somit auch der F1-Score.
 
 \subsubsection{LSTM}
 
+\subsubsection{BiLSTM}
+
 \subsubsection{Transformer: BERT}
 
 
@@ -638,6 +642,10 @@ Der Recall wäre in diesem Fall 0 und somit auch der F1-Score.
 \label{sec:hybride_modelle}
 
 \subsection{convolutional neural network (CNN) along with bi-directional LSTM}
+
+\subsection{XGBoost und BERT}
+
+\cite{sharma2025}
 
 \cite{Buddhadev2025}
 

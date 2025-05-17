@@ -1,4 +1,4 @@
-\begin{thebibliography}{49}
+\begin{thebibliography}{53}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -130,6 +130,16 @@
 \newblock (2023). --
 \newblock URL \url{https://arxiv.org/pdf/2308.04037}
 
+\bibitem[Deshai und Bhaskara~Rao(2023)]{Deshai:2023aa}
+\dinatlabel{Deshai und Bhaskara~Rao 2023} \textsc{Deshai}, N.~;
+  \textsc{Bhaskara~Rao}, B.:
+\newblock Unmasking deception: a CNN and adaptive PSO approach to detecting
+  fake online reviews.
+\newblock In: \emph{Soft Computing}
+\newblock 27 (2023), Nr.~16, S.~11357--11378. --
+\newblock URL \url{https://doi.org/10.1007/s00500-023-08507-z}.
+\newblock ISBN 1433-7479
+
 \bibitem[for Developers(2025{\natexlab{a}})]{chrome2025popups}
 \dinatlabel{for Developers 2025{\natexlab{a}}} \textsc{Developers}, Chrome for:
 \newblock \emph{Add Popup}.
@@ -250,6 +260,16 @@
 \newblock \emph{5: Logistic Regression}.
 \newblock In: \emph{Speech and Language Processing}, 2025
 
+\bibitem[Kivim{\"a}ki u.\,a.(2025)Kivim{\"a}ki, Bia{\l}ek, Kuberski und
+  Nurminen]{kivimaeki2025}
+\dinatlabel{Kivim{\"a}ki u.\,a. 2025} \textsc{Kivim{\"a}ki}, Juhani~;
+  \textsc{Bia{\l}ek}, Jakub~; \textsc{Kuberski}, Wojtek~; \textsc{Nurminen},
+  Jukka~K.:
+\newblock \emph{Performance Estimation in Binary Classification Using
+  Calibrated Confidence}.
+\newblock 2025. --
+\newblock URL \url{https://arxiv.org/abs/2505.05295}
+
 \bibitem[Lieb(2023)]{Lieb2023}
 \dinatlabel{Lieb 2023} \textsc{Lieb}, Wolfgang:
 \newblock \emph{Wandel des Mediensystems -- Kann das Internet die klassischen
@@ -262,6 +282,14 @@
 \newblock Wiesbaden~: Springer Fachmedien Wiesbaden, 2023. --
 \newblock URL \url{https://doi.org/10.1007/978-3-658-41039-1_21}. --
 \newblock ISBN 978-3-658-41039-1
+
+\bibitem[Matheven und Kumar(2022)]{matheven2022}
+\dinatlabel{Matheven und Kumar 2022} \textsc{Matheven}, Anand~; \textsc{Kumar},
+  Burra Venkata~D.:
+\newblock Fake News Detection Using Deep Learning and Natural Language
+  Processing.
+\newblock In: \emph{2022 9th International Conference on Soft Computing and
+  Machine Intelligence (ISCMI)}, 2022, S.~11--14
 
 \bibitem[Noble(2006)]{Noble:2006aa}
 \dinatlabel{Noble 2006} \textsc{Noble}, William~S.:
@@ -423,6 +451,15 @@
 \newblock 44 (2010), Nr.~4, S.~421--424. --
 \newblock URL \url{https://doi.org/10.1007/s10579-010-9124-x}.
 \newblock ISBN 1574-0218
+
+\bibitem[Wang u.\,a.(2020)Wang, Zhou und Jiang]{Wang:2020aa}
+\dinatlabel{Wang u.\,a. 2020} \textsc{Wang}, Shirui~; \textsc{Zhou}, Wenan~;
+  \textsc{Jiang}, Chao:
+\newblock A survey of word embeddings based on deep learning.
+\newblock In: \emph{Computing}
+\newblock 102 (2020), Nr.~3, S.~717--740. --
+\newblock URL \url{https://doi.org/10.1007/s00607-019-00768-7}.
+\newblock ISBN 1436-5057
 
 \bibitem[Webb u.\,a.(2010)Webb, Keogh und Miikkulainen]{webb2010naive}
 \dinatlabel{Webb u.\,a. 2010} \textsc{Webb}, Geoffrey~I.~; \textsc{Keogh},
