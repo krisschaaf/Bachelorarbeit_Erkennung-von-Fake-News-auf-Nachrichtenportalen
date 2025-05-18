@@ -1,4 +1,4 @@
-\begin{thebibliography}{60}
+\begin{thebibliography}{63}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -30,7 +30,7 @@
   E.~D.~; \textsc{Prabowo}, D.~P.:
 \newblock Document Preprocessing with TF-IDF to Improve the Polarity
   Classification Performance.
-\newblock In: \emph{Kinetik: Game Technology, Information System, Computer
+\newblock In: \emph{Kinetik Game Technology, Information System, Computer
   Network, Computing, Electronics, and Control}
 \newblock (2020). --
 \newblock URL
@@ -177,6 +177,14 @@
 \newblock 2025. --
 \newblock Zugriff am 11. Mai 2025
 
+\bibitem[Devlin u.\,a.(2019)Devlin, Chang, Lee und Toutanova]{devlin2019}
+\dinatlabel{Devlin u.\,a. 2019} \textsc{Devlin}, Jacob~; \textsc{Chang},
+  Ming-Wei~; \textsc{Lee}, Kenton~; \textsc{Toutanova}, Kristina:
+\newblock \emph{BERT: Pre-training of Deep Bidirectional Transformers for
+  Language Understanding}.
+\newblock 2019. --
+\newblock URL \url{https://arxiv.org/abs/1810.04805}
+
 \bibitem[Domeniconi u.\,a.(2016)Domeniconi, Moro, Pasolini und
   Sartori]{Domenico2016}
 \dinatlabel{Domeniconi u.\,a. 2016} \textsc{Domeniconi}, Giacomo~;
@@ -214,6 +222,13 @@
 \newblock (2023). --
 \newblock URL
   \url{https://cyberleninka.ru/article/n/methods-of-processing-the-uzbek-language-corpus-texts}
+
+\bibitem[Face(2025)]{huggingface2025wordpiece}
+\dinatlabel{Face 2025} \textsc{Face}, Hugging:
+\newblock \emph{WordPiece tokenization}.
+\newblock 2025. --
+\newblock \url{https://huggingface.co/learn/llm-course/chapter6/6} [Accessed:
+  18.05.2025]
 
 \bibitem[G{\'e}ron(2019)]{geron2019}
 \dinatlabel{G{\'e}ron 2019} \textsc{G{\'e}ron}, Aur{\'e}lien:
@@ -525,6 +540,13 @@
 \newblock Na{\"\i}ve Bayes.
 \newblock In: \emph{Encyclopedia of machine learning}
 \newblock 15 (2010), Nr.~1, S.~713--714
+
+\bibitem[Wettig u.\,a.(2023)Wettig, Gao, Zhong und Chen]{wettig2023}
+\dinatlabel{Wettig u.\,a. 2023} \textsc{Wettig}, Alexander~; \textsc{Gao},
+  Tianyu~; \textsc{Zhong}, Zexuan~; \textsc{Chen}, Danqi:
+\newblock \emph{Should You Mask 15 percent in Masked Language Modeling}.
+\newblock 2023. --
+\newblock URL \url{https://arxiv.org/abs/2202.08005}
 
 \bibitem[Zhang(2004)]{zhang2004}
 \dinatlabel{Zhang 2004} \textsc{Zhang}, Harry:

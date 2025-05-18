@@ -11,11 +11,14 @@
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Bsp. für Word Embeddings in einem dreidimensionalen Vektorraums \cite {ibm2024wordembeddings}\relax }}{26}{figure.caption.48}%
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Vergleich CBOW und Skip-gram \cite {mikolov2013}\relax }}{27}{figure.caption.51}%
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Co-Occurrence-Wahrscheinlichkeiten für die Zielwörter „ice“ und „steam“ mit ausgewählten Kontextwörtern aus einem Korpus mit 6 Milliarden Tokens \cite {pennington2014glove}\relax }}{28}{figure.caption.54}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Architektur des BERT Modells \cite {Wang:2020aa}\relax }}{29}{figure.caption.57}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Zusammensetzung eines Input Tokens im BERT Modell \cite {devlin2019}\relax }}{31}{figure.caption.58}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Bsp. zum MLM \cite {wettig2023}\relax }}{31}{figure.caption.59}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Vergleich ... \cite {sharma2025}\relax }}{31}{figure.caption.65}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Vergleich ... \cite {sharma2025}\relax }}{34}{figure.caption.68}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Sequenzdiagramm Hauptkomponente\relax }}{37}{figure.caption.77}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Sequenzdiagramm Hauptkomponente\relax }}{40}{figure.caption.80}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

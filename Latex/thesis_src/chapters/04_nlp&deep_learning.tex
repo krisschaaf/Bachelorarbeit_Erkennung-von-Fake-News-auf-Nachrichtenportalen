@@ -618,14 +618,14 @@ Der Recall wäre in diesem Fall 0 und somit auch der F1-Score.
 Die klassischen Merkmalsextraktionen in Kapitel \ref{sec:merkmalextraktion} eignen sich gut für klassische Machine Learning Modelle, wie
 Support Vector Machines oder Logistische Regression.
 Im Vergleich zu Word Embeddings erfassen diese aber keine semantischen Beziehungen.
-Word Embeddings verstehen die Bedeutung der einzelnen Wörter im gesamten Kontext \cite{Deshai:2023aa}
+Word Embeddings verstehen die Bedeutung der einzelnen Wörter je nach Word Embedding in Teilen oder im gesamten Kontext \cite{Deshai:2023aa}
 und repräsentieren dabei das ursprüngliche Wort in einem neuen Vektorraum, wobei aber die Eigenschaften des Wortes und seine Verbindungen 
 zu anderen Wörtern bestmöglich bewahrt werden \cite{Schaer2023}.
 Dabei werden mit maschinellen Lerntechniken verschiedene dichte Vektoren mit einer festgelegten Dimension gebildet.
 Word Embeddings sind gegenüber zu BOW (Sparse Matrizen) deutlich speicherschonender.
 
 Das Wort „Bank“ zum Beispiel hat in den Sätzen „Ich setze mich auf die Bank.“ und „Ich raube die Bank aus.“ zwei unterschiedliche Bedeutungen. 
-Word Embeddings erkennt diese und erstellt für die zwei Kontexte/Wörter zwei verschiedene Vektoren \cite{skopos2023wordembeddings}.
+Moderne Word Embeddings erkennt diese und erstellt für die zwei Kontexte/Wörter zwei verschiedene Vektoren \cite{skopos2023wordembeddings}.
 
 In Abbildung \ref{fig:bsp_word_embeddings} wird jedes Wort eines Korpus mit 6 Wörtern als dreidimensionaler Vektor dargestellt.
 Ziel von Word2Vec ist hierbei, dass Wörter mit ähnlichen Bedeutungen oder Kontexten ähnliche Vektordarstellungen haben. 
@@ -640,6 +640,7 @@ hingegen zeigen in entgegengesetzte Richtungen, was auf ihre gegensätzlichen Be
 \end{figure}
 
 \subsubsection{Word2Vec}
+\label{sec:word2vec}
 
 Das Word Embedding Word2vec verwendet ein neuronales Netzwerk und erfasst numerisch die Ähnlichkeiten zwischen Wörtern aufgrund ihrer 
 kontextuellen Merkmale. Am häufigsten wird sie zur Analyse der semantischen Verbindungen zwischen Wörtern in einem Textkorpus 
@@ -702,6 +703,92 @@ Für $k=gas$ ist der Wert 0.085. „gas“ passt folglich besser zu „steam“ 
 
 \subsubsection{BERT-Tokenisierung}
 
+Im Beispiel in Kapitel \ref{sec:word_embeddings} „Ich setze mich auf die Bank.“ und „Ich raube die Bank aus.“ wurde betont, dass moderne
+Word Embeddings unterscheiden könne, dass das Wort „Bank“ in diesem Fall zwei verschiedene Bedeutungen hat.
+
+GloVe und Word2Vec erstellen einen festen Vektor für das Wort „Bank“, egal in welchem Satz es steht.
+Bei GloVe ist Vektor ein Mittelwert aus allen Bedeutungen, die „Bank“ im Korpus je hatte.
+Der Vektor liegt folglich irgendwo zwischen Sitzmöbel und Finanzinstitut – er repräsentiert keine der beiden Bedeutungen exakt.
+
+BERT (Bidirectional Encoder Representations from Transformers) löst dieses Problem. 
+Es verwendet während des Pre-Trainings Masked Language Modeling, um den Kontext und die Bedeutung von Wörtern im Satz zu verstehen.
+Anschließend wird es auf einem Datensatz mit gelabelten Bewertungen feinjustiert, um zum Beispiel zu lernen, echte von gefälschten 
+Rezensionen zu unterscheiden. Dabei weist es wichtigen Wörtern und Phrasen im Text höhere Gewichtungen zu \cite{Deshai:2023aa}.
+
+BERT nutzt die bi-direktionale Transformer-Architektur (siehe Abbildung \ref{fig:architecture_bert}), bei welcher tiefe semantische Informationen 
+eines Satzes erfasst werden können.
+Der Vorteil besteht darin, dass die gelernten Repräsentationen den Kontext in beide Richtungen integrieren können \cite{Wang:2020aa}.
+
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.3]{static/architecture_bert.png}
+        \caption{\label{fig:architecture_bert} Architektur des BERT Modells \cite{Wang:2020aa}}
+    \end{center}
+\end{figure}
+
+Für das Erstellen der Wortvektoren werden bei diesem Embedding WordPiece Embeddings genutzt.
+Es wurde von Google speziell für BERT entwickelt, um auch seltene oder unbekannte Wörter sinnvoll verarbeiten zu können.
+WordPiece ist ein Tokenisierungsverfahren, das Wörter in kleinere Einheiten zerlegt.
+
+Folgendes Beispiel für ein WordPiece Embedding (aus \cite{huggingface2025wordpiece}):
+\begin{enumerate}
+    \item Das \textbf{Startvokabular} besteht aus einem Vokabular aus Einzelbuchstaben 
+    (z.B. \texttt{h}, \texttt{\#\#e}, \texttt{\#\#l}, \texttt{\#\#o} für ``hello''), 
+    wobei alle Buchstaben außer dem Ersten mit \texttt{\#\#} markiert werden, um zu zeigen, dass sie nicht am Wortanfang stehen.
+
+    \item \textbf{Häufigkeitsanalyse:} Identifiziert häufig gemeinsam auftretende Buchstabenpaare, 
+    z.B. \texttt{("\#\#g", "\#\#s")} in ``hugs''.
+
+    \item \textbf{Mergeregeln:} Zum Zusammenfügen berechnet WordPiece einen Score:
+
+    \begin{equation}
+        \text{Score} = \frac{\text{Häufigkeit des Paares}}{\text{Häufigkeit Teil 1} \times \text{Häufigkeit Teil 2}}
+    \end{equation}
+
+    Dadurch werden eher seltene Kombinationen zusammengefügt, die besser charakteristische Subwörter ergeben.
+
+    \item \textbf{Merge-Iterationen:} Das Zusammenfügen wird so lange wiederholt, bis das gewünschte Vokabular erreicht ist.
+\end{enumerate}
+
+\textbf{Beim Zerlegen neuer Wörter:}
+\begin{enumerate}
+    \item Suche das längste Subwort im Vokabular, das am Wortanfang passt.
+    \item Markiere alles danach mit \texttt{\#\#} und wiederhole.
+    \item Wenn gar kein Teil im Vokabular ist, kommt das Sondertoken \texttt{[UNK]} (unbekannt) zum Einsatz.
+\end{enumerate}
+
+\textbf{Beispiele:}
+\begin{itemize}
+    \item \texttt{"hugs"} $\rightarrow$ \texttt{["hug", "\#\#s"]}
+    \item \texttt{"bugs"} $\rightarrow$ \texttt{["b", "\#\#u", "\#\#gs"]}
+    \item \texttt{"mug"} $\rightarrow$ \texttt{[UNK]}, falls \texttt{\#\#m} nicht im Vokabular ist
+\end{itemize}
+
+Zusätzlich werden Positions- und Segment-Embeddings hinzugefügt (siehe Abbildung \ref{fig:bert_tokenizierung}).
+
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.4]{static/bert_tokenizierung.png}
+        \caption{\label{fig:bert_tokenizierung} Zusammensetzung eines Input Tokens im BERT Modell \cite{devlin2019}}
+    \end{center}
+\end{figure}
+
+Das Input Token ergibt sich aus dem Token-, Position- und Segment-Embedding. Das Position-Embedding stellt hierbei die jeweilige
+Position im Satz dar und das Segment-Embedding ordnet den Token dem entsprechenden Satz zu.
+
+Ein weiterer zentraler Bestandteil der BERT-Tokenisierung ist das Masked Language Model (MLM), welches in der Trainingsphase genutzt wird.
+Dabei wird ein bestimmer Teil der Wörter in der Eingabesequenz zufällig maskiert (siehe Abbildung \ref{fig:mlm_bert}), 
+und das Modell muss diese verdeckten Wörter korrekt vorhersagen.
+
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.5]{static/mlm_bert.png}
+        \caption{\label{fig:mlm_bert} Bsp. zum MLM \cite{wettig2023}}
+    \end{center}
+\end{figure}
+
+Aufgrund der Bidirektionalität des BERT Modells ist dieses bei späteren Vorhersagen effektiver \cite{wettig2023}. 
+\cite{devlin2019} zeigt, wie relevant bidirektionalen Pretrainings für qualitativ hochwertige Sprachrepräsentationen sind.
 
 \subsection{Deep Learning-Modelle}
 \label{sec:deep_learning_modelle}
