@@ -1,4 +1,4 @@
-\begin{thebibliography}{53}
+\begin{thebibliography}{60}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -63,6 +63,13 @@
 \newblock URL \url{https://www.mdpi.com/2076-0760/9/10/185}. --
 \newblock ISSN 2076-0760
 
+\bibitem[Barnard(2024)]{ibm2024wordembeddings}
+\dinatlabel{Barnard 2024} \textsc{Barnard}, Joel:
+\newblock \emph{Was sind Worteinbettungen?}
+\newblock 2024. --
+\newblock \url{https://www.ibm.com/de-de/think/topics/word-embeddings}
+  [Accessed: 18.05.2025]
+
 \bibitem[Blockeel u.\,a.(2023)Blockeel, Devos, Fr{\'e}nay, Nanfack und
   Nijssen]{10.3389/frai.2023.1124553}
 \dinatlabel{Blockeel u.\,a. 2023} \textsc{Blockeel}, Hendrik~; \textsc{Devos},
@@ -104,6 +111,12 @@
 \newblock (KDD '16), S.~785--794. --
 \newblock URL \url{https://doi.org/10.1145/2939672.2939785}. --
 \newblock ISBN 9781450342322
+
+\bibitem[CHURCH(2017)]{CHURCH_2017}
+\dinatlabel{CHURCH 2017} \textsc{CHURCH}, KENNETH~W.:
+\newblock Word2Vec.
+\newblock In: \emph{Natural Language Engineering}
+\newblock 23 (2017), Nr.~1, S.~155--162
 
 \bibitem[Cichosz(2018)]{cichosz2018forum}
 \dinatlabel{Cichosz 2018} \textsc{Cichosz}, Piotr:
@@ -172,6 +185,15 @@
 \newblock A Comparison of Term Weighting Schemes for Text Classification and
   Sentiment Analysis with a Supervised Variant of tf.idf, 02 2016, S.~39--. --
 \newblock ISBN 978-3-319-30162-4
+
+\bibitem[ELEMENTS(2023)]{skopos2023wordembeddings}
+\dinatlabel{ELEMENTS 2023} \textsc{ELEMENTS}, SKOPOS:
+\newblock \emph{Von Woertern zur Bedeutung: Wie Word Embeddings die
+  Sprachverarbeitung revolutionieren}.
+\newblock 2023. --
+\newblock
+  \url{https://skopos-elements.de/wissen/blog/maschinelles-lernen/word-embeddings}
+  [Accessed: 18.05.2025]
 
 \bibitem[Elhachimi u.\,a.(2025)Elhachimi, Mohamed, Benksim, Ibanni und
   Cherkaoui]{elchami2025}
@@ -291,6 +313,13 @@
 \newblock In: \emph{2022 9th International Conference on Soft Computing and
   Machine Intelligence (ISCMI)}, 2022, S.~11--14
 
+\bibitem[Mikolov u.\,a.(2013)Mikolov, Chen, Corrado und Dean]{mikolov2013}
+\dinatlabel{Mikolov u.\,a. 2013} \textsc{Mikolov}, Tomas~; \textsc{Chen}, Kai~;
+  \textsc{Corrado}, Greg~; \textsc{Dean}, Jeffrey:
+\newblock \emph{Efficient Estimation of Word Representations in Vector Space}.
+\newblock 2013. --
+\newblock URL \url{https://arxiv.org/abs/1301.3781}
+
 \bibitem[Noble(2006)]{Noble:2006aa}
 \dinatlabel{Noble 2006} \textsc{Noble}, William~S.:
 \newblock What is a support vector machine?
@@ -323,6 +352,14 @@
 \newblock In: \emph{5th International Conference on Artificial Intelligence and
   Data Science}, URL
   \url{https://ieeexplore.ieee.org/abstract/document/10493890/}, 2024
+
+\bibitem[Pennington u.\,a.(2014)Pennington, Socher und
+  Manning]{pennington2014glove}
+\dinatlabel{Pennington u.\,a. 2014} \textsc{Pennington}, Jeffrey~;
+  \textsc{Socher}, Richard~; \textsc{Manning}, Christopher~D.:
+\newblock GloVe: Global Vectors for Word Representation.
+\newblock In: \emph{Empirical Methods in Natural Language Processing (EMNLP)},
+  URL \url{http://www.aclweb.org/anthology/D14-1162}, 2014, S.~1532--1543
 
 \bibitem[Petrovic u.\,a.(2024)Petrovic, Perisic, Jovanovic, Zivkovic,
   Antonijevic und Bacanin]{petrovic2024}
@@ -376,6 +413,27 @@
   \url{https://towardsdatascience.com/a-practitioners-guide-to-natural-language-processing-part-i-processing-understanding-text-9f4abfd13e72/}.
 \newblock 2018. --
 \newblock Zugriff am 12. Mai 2025
+
+\bibitem[Schaer(2023)]{Schaer2023}
+\dinatlabel{Schaer 2023} \textsc{Schaer}, Philipp:
+\newblock \emph{C 9 Sprachmodelle und neuronale Netze im Information
+  Retrieval}.
+\newblock S.~455--466.
+\newblock In: \textsc{Kuhlen}, Rainer (Hrsg.)~; \textsc{Lewandowski}, Dirk
+  (Hrsg.)~; \textsc{Semar}, Wolfgang (Hrsg.)~; \textsc{Womser-Hacker}, Christa
+  (Hrsg.): \emph{Grundlagen der Informationswissenschaft}.
+\newblock Berlin, Boston~: De Gruyter Saur, 2023. --
+\newblock URL \url{https://doi.org/10.1515/9783110769043-039}. --
+\newblock ISBN 9783110769043
+
+\bibitem[Schumacher(2024)]{schumacher2024word2vec}
+\dinatlabel{Schumacher 2024} \textsc{Schumacher}, Mareike:
+\newblock Methodenbeitrag: word2vec.
+\newblock In: \emph{forTEXT}
+\newblock 1 (2024), Nr.~10. --
+\newblock URL \url{https://fortext.net/routinen/methoden/word2vec-1}. --
+\newblock Erstver{\"o}ffentlichung: 19.04.2023 auf fortext.net, offizielle
+  Publikation am 30.10.2024
 
 \bibitem[{Scikit-learn contributors}(2024)]{knnparams2024}
 \dinatlabel{{Scikit-learn contributors} 2024} \textsc{{Scikit-learn

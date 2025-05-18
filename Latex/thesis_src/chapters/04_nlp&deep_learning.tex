@@ -16,10 +16,10 @@
     obwohl sie semantisch gleich sind. Das Entfernen dieser erhöht die Generalisierung. Sonderzeichen stören einfache Tokenizer (z. B. bei Bag-of-Words), führen zu vielen seltenen Tokens und zu 
     überdimensionierten Vektoren (siehe \ref{sec:bag_of_words}).
 
-    \item \textbf{Alle Buchstaben zu Kleinbuchstaben konvertieren \cite{sabir2025} \cite{SUDHAKAR2024101028101028} \cite{aslam2022}}: Ähnlich wie zum vorherigen Punkt
+    \item \textbf{Alle Buchstaben zu Kleinbuchstaben konvertieren \cite{sabir2025} \cite{SUDHAKAR2024101028} \cite{aslam2022}}: Ähnlich wie zum vorherigen Punkt
     erhöht die durchgehende Kleinschreibung aller Buchstaben die Generalisierung und verhindert somit unnötige Duplikate im Vokabular.
 
-    \item \textbf{Leere Spalten entfernen \cite{SUDHAKAR2024101028101028}}: Leere Spalten enthalten keine Information. 
+    \item \textbf{Leere Spalten entfernen \cite{SUDHAKAR2024101028}}: Leere Spalten enthalten keine Information. 
     Sie können bei der Vektorisierung oder Modellerstellung Fehler verursachen und werden als einfache Datenbereinigungsmaßnahme entfernt.
 
     \item \textbf{Kontraktionen auflösen (ans -> an das) \cite{Buddhadev2025}}: Im deutschen sind Kontradiktionen zwar nicht so häufig wie im englischen,
@@ -671,77 +671,34 @@ das Skip-gram-Modell anzuwenden \cite{schumacher2024word2vec}.
 
 Word2Vec fokussiert sich auf Informationen aus lokalen Kontextfenster, wobei globale Informationen hierbei nicht ausreichend genutzt werden.
 GloVe (Global Vectors for Word Representation) verwendet diese globalen Informationen, wodurch semantische Beziehungen zwischen Wörtern erfasst werden.
-Diese werden in einer globalen Co-Occurrence-Matrix zusammengefasst, die darstellt, wie oft Wörter zusammen im Korpus vorkommen 
-\cite{Wang:2020aa}.
+Wie oft diese zusammen im Korpus vorkommen, wird in einer globalen Co-Occurrence-Matrix zusammengefasst \cite{Wang:2020aa}.
 
-Nach Erstellung der Matrix wird eine Zielfunktion formuliert, die die Beziehung zwischen den Wortvektoren und ihren 
-Koinzidenzwahrscheinlichkeiten beschreibt .
+Sei $X$ eine Co-Occurrence-Matrix.
+Für jedes Wortpaar $(i, j)$ zeigt $X_{ij}$, wie häufig das Wort $w_j$ im Kontext von $w_i$ erscheint.
 
-Die Zielfunktion wird mithilfe von Gradientenabstieg oder anderen Optimierungsalgorithmen optimiert. Das Ziel ist es, 
-die Wortvektoren und Verzerrungen so anzupassen, dass die quadratische Differenz zwischen der vorhergesagten und der 
-tatsächlichen logarithmischen Wahrscheinlichkeit des gemeinsamen Auftretens minimiert wird \cite{ibm2024wordembeddings}.
+Die bedingte Wahrscheinlichkeit, dass Wort $j$ im Kontext von $i$ erscheint, ist:
 
+\begin{equation}
+    P(j \mid i) = \frac{X_{ij}}{X_i}
+\end{equation}
 
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.3]{static/glove_matrix.png}
+        \caption{\label{fig:glove_matrix} Co-Occurrence-Wahrscheinlichkeiten für die Zielwörter „ice“ und „steam“ mit ausgewählten Kontextwörtern aus einem Korpus mit 6 Milliarden Tokens \cite{pennington2014glove}}
+    \end{center}
+\end{figure}
 
-Gegeben ein Korpus mit $U$ Wörtern, dann ist die Kookkurrenzmatrix $X \in \mathbb{R}^{U \times U}$.  
-Das Element $X_{ij}$ steht für die Häufigkeit, mit der das Wort $w_j$ im Kontext von $w_i$ auftritt.
-
-Die bedingte Wahrscheinlichkeit:
-
-\[
-P(j|i) = \frac{X_{ij}}{X_i}
-\]
-
-\subsection*{2. Verhältnis von Wahrscheinlichkeiten}
-
-Zur Modellierung semantischer Relationen vergleicht GloVe Wahrscheinlichkeitsverhältnisse:
+Zur Modellierung semantischer Beziehungen vergleicht GloVe Wahrscheinlichkeitsverhältnisse:
 
 \[
 \frac{P_{ik}}{P_{jk}} = \frac{X_{ik} / X_i}{X_{jk} / X_j}
 \]
 
-Dies hilft zu beurteilen, ob $w_i$ (z.\,B.\ „ice“) näher an $k$ (z.\,B.\ „solid“) liegt als $w_j$ (z.\,B.\ „gas“).
-
-\subsection*{3. Vektorielle Darstellung}
-
-Um Vektoren und Wahrscheinlichkeitsverhältnisse zu verbinden, wird folgende Gleichung verwendet:
-
-\[
-\vec{w}_i^T \vec{\tilde{w}}_j + b_i + \tilde{b}_j = \log(X_{ij})
-\]
-
-Dabei sind:
-\begin{itemize}
-  \item $\vec{w}_i, \vec{\tilde{w}}_j$ die Vektoren (Embeddings) der Wörter $i$ und $j$,
-  \item $b_i, \tilde{b}_j$ Bias-Terme.
-\end{itemize}
-
-\subsection*{4. Gewichtete Kostenfunktion}
-
-Um seltene Wortpaare weniger stark zu gewichten, wird eine Gewichtungsfunktion $f(X_{ij})$ verwendet:
-
-\[
-J = \sum_{i,j=1}^U f(X_{ij}) \left( \vec{w}_i^T \vec{\tilde{w}}_j + b_i + \tilde{b}_j - \log(X_{ij}) \right)^2
-\]
-
-Typisch ist:
-\[
-f(x) = \begin{cases}
-(x/x_{\text{max}})^\alpha & \text{wenn } x < x_{\text{max}} \\
-1 & \text{sonst}
-\end{cases}
-\quad \text{mit } \alpha = 0.75
-\]
-
-\subsection*{5. Vorteile von GloVe}
-
-\begin{itemize}
-  \item Nutzt globale Kookkurrenzstatistik (anders als Word2Vec).
-  \item Robust gegenüber seltenen Wörtern.
-  \item Gut für Analogieaufgaben geeignet.
-\end{itemize}
-
-\end{document}
+In Abbildung \ref{fig:glove_matrix} zu erkennen ist, dass Werte > 1 gut mit Eigenschaften, die spezifisch für „ice“ sind
+und Werte < 1 gut mit Eigenschaften, die spezifisch für „steam“ sind korrelieren.
+Für $k=solid$ ist der Quotient 8.9. „solid“ hat somit eine größere semantische Beziehung mit „ice“ als mit „steam“.
+Für $k=gas$ ist der Wert 0.085. „gas“ passt folglich besser zu „steam“ als zu „ice“.
 
 \subsubsection{BERT-Tokenisierung}
 
