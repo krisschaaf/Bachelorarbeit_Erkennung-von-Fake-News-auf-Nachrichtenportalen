@@ -615,13 +615,133 @@ Der Recall wäre in diesem Fall 0 und somit auch der F1-Score.
 \subsection{Word Embeddings}
 \label{sec:word_embeddings}
 
+Die klassischen Merkmalsextraktionen in Kapitel \ref{sec:merkmalextraktion} eignen sich gut für klassische Machine Learning Modelle, wie
+Support Vector Machines oder Logistische Regression.
+Im Vergleich zu Word Embeddings erfassen diese aber keine semantischen Beziehungen.
+Word Embeddings verstehen die Bedeutung der einzelnen Wörter im gesamten Kontext \cite{Deshai:2023aa}
+und repräsentieren dabei das ursprüngliche Wort in einem neuen Vektorraum, wobei aber die Eigenschaften des Wortes und seine Verbindungen 
+zu anderen Wörtern bestmöglich bewahrt werden \cite{Schaer2023}.
+Dabei werden mit maschinellen Lerntechniken verschiedene dichte Vektoren mit einer festgelegten Dimension gebildet.
+Word Embeddings sind gegenüber zu BOW (Sparse Matrizen) deutlich speicherschonender.
+
+Das Wort „Bank“ zum Beispiel hat in den Sätzen „Ich setze mich auf die Bank.“ und „Ich raube die Bank aus.“ zwei unterschiedliche Bedeutungen. 
+Word Embeddings erkennt diese und erstellt für die zwei Kontexte/Wörter zwei verschiedene Vektoren \cite{skopos2023wordembeddings}.
+
+In Abbildung \ref{fig:bsp_word_embeddings} wird jedes Wort eines Korpus mit 6 Wörtern als dreidimensionaler Vektor dargestellt.
+Ziel von Word2Vec ist hierbei, dass Wörter mit ähnlichen Bedeutungen oder Kontexten ähnliche Vektordarstellungen haben. 
+Die Ähnlichkeit der Vektoren „Katze“ und „Hund“ zeigt die semantische Beziehung zueinander. Die Vektoren „glücklich“ und „traurig“ 
+hingegen zeigen in entgegengesetzte Richtungen, was auf ihre gegensätzlichen Bedeutungen hinweist \cite{ibm2024wordembeddings}.
+
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.6]{static/bsp_word_embeddings.png}
+        \caption{\label{fig:bsp_word_embeddings} Bsp. für Word Embeddings in einem dreidimensionalen Vektorraums \cite{ibm2024wordembeddings}}
+    \end{center}
+\end{figure}
+
 \subsubsection{Word2Vec}
 
-\cite{Deshai:2023aa}
+Das Word Embedding Word2vec verwendet ein neuronales Netzwerk und erfasst numerisch die Ähnlichkeiten zwischen Wörtern aufgrund ihrer 
+kontextuellen Merkmale. Am häufigsten wird sie zur Analyse der semantischen Verbindungen zwischen Wörtern in einem Textkorpus 
+eingesetzt \cite{schumacher2024word2vec}.
+
+Im Beispielsatz 'Mann verhält sich zu Frau wie König zu x.' erkennt Word2vec, dass für $x = \text{Königin}$ gilt. 
+Word2Vec löst solche Aufgaben, indem es alle Wörter $x'$ im Gesamtvokabular $V$ ausprobiert 
+und das Wort findet, das folgende Gleichung maximiert \cite{CHURCH_2017}:
+
+\begin{equation}
+    \hat{x} = \underset{x' \in V}{\operatorname{argmax}} \; \text{sim}(x', \vec{\text{king}} + \vec{\text{woman}} - \vec{\text{man}})
+\end{equation}
+
+Wie in Abbildung \ref{fig:cbow_skipgram} zu sehen, gibt es für Word2Vec zwei verschiedene Implementierungen.
+Im CBOW-Modell (continuous bag-of-words) wird ein Wort aufgrund seines Kontextes vorhergesagt.
+Im Skip-gram-Modell wird hingegen Kontexte aufgrund eines Wortes vorhergesagt.
+
+Bei einem relativ kleines Korpus, empfiehlt Google aufgrund seiner ausgeprägten Fähigkeit mit niedrigfrequenten Wörtern zu arbeiten, 
+das Skip-gram-Modell anzuwenden \cite{schumacher2024word2vec}.
+
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.6]{static/cbow_skipgram.png}
+        \caption{\label{fig:cbow_skipgram} Vergleich CBOW und Skip-gram \cite{mikolov2013}}
+    \end{center}
+\end{figure}
 
 \subsubsection{GloVe}
 
-\cite{Wang:2020aa}
+Word2Vec fokussiert sich auf Informationen aus lokalen Kontextfenster, wobei globale Informationen hierbei nicht ausreichend genutzt werden.
+GloVe (Global Vectors for Word Representation) verwendet diese globalen Informationen, wodurch semantische Beziehungen zwischen Wörtern erfasst werden.
+Diese werden in einer globalen Co-Occurrence-Matrix zusammengefasst, die darstellt, wie oft Wörter zusammen im Korpus vorkommen 
+\cite{Wang:2020aa}.
+
+Nach Erstellung der Matrix wird eine Zielfunktion formuliert, die die Beziehung zwischen den Wortvektoren und ihren 
+Koinzidenzwahrscheinlichkeiten beschreibt .
+
+Die Zielfunktion wird mithilfe von Gradientenabstieg oder anderen Optimierungsalgorithmen optimiert. Das Ziel ist es, 
+die Wortvektoren und Verzerrungen so anzupassen, dass die quadratische Differenz zwischen der vorhergesagten und der 
+tatsächlichen logarithmischen Wahrscheinlichkeit des gemeinsamen Auftretens minimiert wird \cite{ibm2024wordembeddings}.
+
+
+
+Gegeben ein Korpus mit $U$ Wörtern, dann ist die Kookkurrenzmatrix $X \in \mathbb{R}^{U \times U}$.  
+Das Element $X_{ij}$ steht für die Häufigkeit, mit der das Wort $w_j$ im Kontext von $w_i$ auftritt.
+
+Die bedingte Wahrscheinlichkeit:
+
+\[
+P(j|i) = \frac{X_{ij}}{X_i}
+\]
+
+\subsection*{2. Verhältnis von Wahrscheinlichkeiten}
+
+Zur Modellierung semantischer Relationen vergleicht GloVe Wahrscheinlichkeitsverhältnisse:
+
+\[
+\frac{P_{ik}}{P_{jk}} = \frac{X_{ik} / X_i}{X_{jk} / X_j}
+\]
+
+Dies hilft zu beurteilen, ob $w_i$ (z.\,B.\ „ice“) näher an $k$ (z.\,B.\ „solid“) liegt als $w_j$ (z.\,B.\ „gas“).
+
+\subsection*{3. Vektorielle Darstellung}
+
+Um Vektoren und Wahrscheinlichkeitsverhältnisse zu verbinden, wird folgende Gleichung verwendet:
+
+\[
+\vec{w}_i^T \vec{\tilde{w}}_j + b_i + \tilde{b}_j = \log(X_{ij})
+\]
+
+Dabei sind:
+\begin{itemize}
+  \item $\vec{w}_i, \vec{\tilde{w}}_j$ die Vektoren (Embeddings) der Wörter $i$ und $j$,
+  \item $b_i, \tilde{b}_j$ Bias-Terme.
+\end{itemize}
+
+\subsection*{4. Gewichtete Kostenfunktion}
+
+Um seltene Wortpaare weniger stark zu gewichten, wird eine Gewichtungsfunktion $f(X_{ij})$ verwendet:
+
+\[
+J = \sum_{i,j=1}^U f(X_{ij}) \left( \vec{w}_i^T \vec{\tilde{w}}_j + b_i + \tilde{b}_j - \log(X_{ij}) \right)^2
+\]
+
+Typisch ist:
+\[
+f(x) = \begin{cases}
+(x/x_{\text{max}})^\alpha & \text{wenn } x < x_{\text{max}} \\
+1 & \text{sonst}
+\end{cases}
+\quad \text{mit } \alpha = 0.75
+\]
+
+\subsection*{5. Vorteile von GloVe}
+
+\begin{itemize}
+  \item Nutzt globale Kookkurrenzstatistik (anders als Word2Vec).
+  \item Robust gegenüber seltenen Wörtern.
+  \item Gut für Analogieaufgaben geeignet.
+\end{itemize}
+
+\end{document}
 
 \subsubsection{BERT-Tokenisierung}
 
@@ -629,7 +749,7 @@ Der Recall wäre in diesem Fall 0 und somit auch der F1-Score.
 \subsection{Deep Learning-Modelle}
 \label{sec:deep_learning_modelle}
 
-\subsubsection{CNN}
+\subsubsection{CNN/RNN}
 
 \subsubsection{LSTM}
 

@@ -8,13 +8,6 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Auswertung verschiedener NLP Algorithmen \cite {prom2024}\relax }}{22}{figure.caption.33}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces XGBoost}}{23}{figure.caption.36}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Konfusionsmatrix}}{24}{figure.caption.37}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Vergleich ... \cite {sharma2025}\relax }}{28}{figure.caption.62}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Sequenzdiagramm Hauptkomponente\relax }}{34}{figure.caption.74}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Bsp. für Word Embeddings in einem dreidimensionalen Vektorraums \cite {ibm2024wordembeddings}\relax }}{26}{figure.caption.48}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Vergleich CBOW und Skip-gram \cite {mikolov2013}\relax }}{27}{figure.caption.51}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
