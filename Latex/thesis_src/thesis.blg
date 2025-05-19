@@ -12,45 +12,45 @@ Warning--empty booktitle in Domenico2016
 Warning--no proper publisher, using url in parmar2024stacking
 Warning--empty pages in parmar2024stacking
 Warning--no proper publisher, using url in pennington2014glove
-You've used 63 entries,
+You've used 66 entries,
             3552 wiz_defined-function locations,
-            1203 strings with 20076 characters,
-and the built_in function-call counts, 49648 in all, are:
-= -- 6173
-> -- 711
-< -- 1321
-+ -- 1660
-- -- 475
-* -- 4648
-:= -- 8287
-add.period$ -- 87
-call.type$ -- 63
-change.case$ -- 348
-chr.to.int$ -- 61
-cite$ -- 67
-duplicate$ -- 1199
-empty$ -- 3351
-format.name$ -- 867
-if$ -- 9711
+            1225 strings with 20828 characters,
+and the built_in function-call counts, 52710 in all, are:
+= -- 6558
+> -- 762
+< -- 1425
++ -- 1792
+- -- 515
+* -- 4946
+:= -- 8815
+add.period$ -- 91
+call.type$ -- 66
+change.case$ -- 370
+chr.to.int$ -- 64
+cite$ -- 70
+duplicate$ -- 1265
+empty$ -- 3514
+format.name$ -- 935
+if$ -- 10273
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 123
-newline$ -- 434
-num.names$ -- 255
-pop$ -- 432
+missing$ -- 133
+newline$ -- 455
+num.names$ -- 267
+pop$ -- 457
 preamble$ -- 1
-purify$ -- 338
+purify$ -- 360
 quote$ -- 0
-skip$ -- 2065
+skip$ -- 2202
 stack$ -- 0
-substring$ -- 4581
-swap$ -- 308
-text.length$ -- 158
+substring$ -- 4853
+swap$ -- 328
+text.length$ -- 171
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 648
+type$ -- 681
 warning$ -- 4
-while$ -- 517
+while$ -- 546
 width$ -- 0
-write$ -- 752
+write$ -- 788
 (There were 4 warnings)

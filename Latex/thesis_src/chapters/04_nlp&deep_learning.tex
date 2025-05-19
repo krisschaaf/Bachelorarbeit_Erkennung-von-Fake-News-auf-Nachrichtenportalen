@@ -793,13 +793,54 @@ Aufgrund der Bidirektionalität des BERT Modells ist dieses bei späteren Vorher
 \subsection{Deep Learning-Modelle}
 \label{sec:deep_learning_modelle}
 
-\subsubsection{CNN/RNN}
+\subsubsection{CNN vs. RNN}
+
+Ein Convolutional Neural Network (CNN) ist ein Deep Learning Model (DNN) für Klassifikationsaufgaben,
+das Eingabedaten analysiert und dabei unterschiedlichen Merkmalen innerhalb der Daten Gewichtungen zuweist,
+um charakteristische Muster zu erkennen und verschiedene Klassen voneinander zu unterscheiden.
+Ein großer Vorteil von CNNs ist, dass sie wenig Datenvorverarbeitung benötigen, da sie Rohdaten direkt als Eingabe verarbeiten 
+können \cite{aslam2022}.
+
+Ein Recurrent Neural Network (RNN) ist ein DNN zur Verarbeitung sequentieller Daten.
+Im Vergleich zu CNNs können sich RNNs an frühere Eingaben erinnern, um aktuelle Vorhersagen zu beeinflussen \cite{Deshai:2023aa}.
+RNN nutzt dabei den aktuellen Eingabewert sowie den vorherigen Ausgabewert in jedem Zeitschritt 
+und trainiert sich damit selbst, indem es Fehler der Ausgabe zur Eingabe hinzu berechnet.
+RNN eignet sich somit besonders für Probleme in der natürlichen Sprachverarbeitung \cite{Wang:2020aa}, 
+da die Reihenfolge der Elemente in diesem Fall entscheidend ist.
+
+Ein zentrales Problem bei RNNs ist jedoch das sogenannte Vanishing Gradient Problem, welches das Lernen 
+langer Datenfolgen stark einschränken kann \cite{aslam2022}.
 
 \subsubsection{LSTM}
 
+Long Short-Term Memory (LSTM), ein RNN-Typ im Bereich der Sprachverarbeitung. Das Modell behebt das Problem des 
+Vanishing Gradient Problems in klassischen RNNs, indem sie spezielle Speicherzellen verwenden, die Informationen über 
+längere Zeiträume hinweg behalten können.
+Dadurch sind die LSTM-Modelle effektiv darin, langfristige Abhängigkeiten in sequenziellen Daten zu erfassen und
+Beziehungen zwischen Wörtern zu identifizieren \cite{Deshai:2023aa}.
+
+Ein LSTM-Modell besteht aus mehreren Zellen, die nicht nur eine, sondern drei Aktivierungsfunktionen enthalten.
+Jede dieser Zellen speichert den Zustand des Problems über mehrere Zeitintervalle, während die drei Tore den 
+Informationsfluss in die Zelle hinein und aus ihr heraus regulieren.
+Das Input-Gate, das Output-Gate und das Forget-Gate \cite{berrajaa2022nlp} (siehe Abbildung \ref{fig:rnnvslstm}).
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[scale=0.4]{static/RNNvsLSTM.png}
+    \caption[Vgl. RNN und LSTM]{Vgl. RNN (links) und LSTM (rechts) \footnotemark}\label{fig:rnnvslstm} 
+    \end{center}
+\end{figure}
+\footnotetext{\url{https://aiml.com/compare-the-different-sequence-models-rnn-lstm-gru-and-transformers/}}
+
+Das Forget-Gate bestimmt, welche Informationen nicht mehr relevant sind und gelöscht werden können. 
+Dies hilft, den Speicher der Zelle zu optimieren und unnötige Daten zu entfernen.
+
+Das Input- und Output-Gate bestimmen, welche neuen Daten hinzugefügt und welche bestehenden 
+Daten ausgegeben werden sollen. Sie arbeiten zusammen, um den Informationsfluss zu regulieren.
+
 \subsubsection{BiLSTM}
 
-\subsubsection{Transformer: BERT}
+\subsubsection{BERT}
 
 
 \section{Hybride Modelle}
@@ -807,11 +848,19 @@ Aufgrund der Bidirektionalität des BERT Modells ist dieses bei späteren Vorher
 
 \subsection{convolutional neural network (CNN) along with bi-directional LSTM}
 
+\cite{umer2020}
+
 \subsection{XGBoost und BERT}
+
+
 
 \cite{sharma2025}
 
 \cite{Buddhadev2025}
+
+\subsection{Transformer: GBERT}
+
+\cite{Dhiman:2024aa}
 
 % \section{Diskussion: White Box vs. Black Box-Ansätze zur Erklärbarkeit}
 % \label{sec:diskussion_erklaerbarkeit}

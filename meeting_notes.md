@@ -5,3 +5,4 @@
 - Die Gliederung ist lange nicht mehr so wie im Exposé, ist das okay?
 - Muss ich alle mathematischen Formeln perfekt erklären können?
 - Quellenangaben von Abbildungen aus dem Internet: Footnote oder Literaturverzeichnis
+- Können Internetseiten als Quellen angegeben werden für Text?

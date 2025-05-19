@@ -1,4 +1,4 @@
-\begin{thebibliography}{63}
+\begin{thebibliography}{66}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -69,6 +69,15 @@
 \newblock 2024. --
 \newblock \url{https://www.ibm.com/de-de/think/topics/word-embeddings}
   [Accessed: 18.05.2025]
+
+\bibitem[Berrajaa(2022)]{berrajaa2022nlp}
+\dinatlabel{Berrajaa 2022} \textsc{Berrajaa}, A.:
+\newblock Natural language processing for the analysis sentiment using a LSTM
+  model.
+\newblock In: \emph{International Journal of Advanced Computer Science and
+  Applications (IJACSA)}
+\newblock 13 (2022), Nr.~5. --
+\newblock URL \url{https://doi.org/10.14569/IJACSA.2022.0130589}
 
 \bibitem[Blockeel u.\,a.(2023)Blockeel, Devos, Fr{\'e}nay, Nanfack und
   Nijssen]{10.3389/frai.2023.1124553}
@@ -184,6 +193,18 @@
   Language Understanding}.
 \newblock 2019. --
 \newblock URL \url{https://arxiv.org/abs/1810.04805}
+
+\bibitem[Dhiman u.\,a.(2024)Dhiman, Kaur, Gupta, Juneja, Nauman und
+  Muhammad]{Dhiman:2024aa}
+\dinatlabel{Dhiman u.\,a. 2024} \textsc{Dhiman}, Pummy~; \textsc{Kaur},
+  Amandeep~; \textsc{Gupta}, Deepali~; \textsc{Juneja}, Sapna~;
+  \textsc{Nauman}, Ali~; \textsc{Muhammad}, Ghulam:
+\newblock GBERT: A hybrid deep learning model based on GPT-BERT for fake news
+  detection.
+\newblock In: \emph{Heliyon}
+\newblock 10 (2024), 2025/05/19, Nr.~16. --
+\newblock URL \url{https://doi.org/10.1016/j.heliyon.2024.e35865}.
+\newblock ISBN 2405-8440
 
 \bibitem[Domeniconi u.\,a.(2016)Domeniconi, Moro, Pasolini und
   Sartori]{Domenico2016}
@@ -505,6 +526,15 @@
 \newblock (2022). --
 \newblock URL
   \url{https://www.academia.edu/download/107531976/Mahmood_and_Haisal_pub2.pdf}
+
+\bibitem[Umer u.\,a.(2020)Umer, Imtiaz, Ullah, Mehmood, Choi und On]{umer2020}
+\dinatlabel{Umer u.\,a. 2020} \textsc{Umer}, Muhammad~; \textsc{Imtiaz},
+  Zainab~; \textsc{Ullah}, Saleem~; \textsc{Mehmood}, Arif~; \textsc{Choi},
+  Gyu~S.~; \textsc{On}, Byung-Won:
+\newblock Fake News Stance Detection Using Deep Learning Architecture (CNN
+  LSTM).
+\newblock In: \emph{IEEE Access}
+\newblock 8 (2020), S.~156695--156706
 
 \bibitem[Verma und Yadav(2024)]{Verma:2024aa}
 \dinatlabel{Verma und Yadav 2024} \textsc{Verma}, Birendra~K.~; \textsc{Yadav},
