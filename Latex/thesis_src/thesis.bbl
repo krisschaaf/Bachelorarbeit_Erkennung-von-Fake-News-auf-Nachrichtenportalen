@@ -1,4 +1,4 @@
-\begin{thebibliography}{66}
+\begin{thebibliography}{69}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -13,6 +13,16 @@
 \newblock 3rd.
 \newblock Wiley, 2018. --
 \newblock ISBN 9781119405269
+
+\bibitem[AIML.com(2025)]{aiml2025sequence}
+\dinatlabel{AIML.com 2025} \textsc{AIML.com}:
+\newblock \emph{Compare the different Sequence models: RNN, LSTM, GRU, and
+  Transformers}.
+\newblock April 2025. --
+\newblock URL
+  \url{https://aiml.com/compare-the-different-sequence-models-rnn-lstm-gru-and-transformers/}.
+  --
+\newblock Zuletzt abgerufen am 20. Mai 2025
 
 \bibitem[Al-Tarawneh u.\,a.(2025)Al-Tarawneh, Al-Khresheh, Al-Irr, Kulaglic,
   Danach, Kanj und Almahadin]{al-tarawneh2025}
@@ -356,6 +366,14 @@
 \newblock 2013. --
 \newblock URL \url{https://arxiv.org/abs/1301.3781}
 
+\bibitem[Namini u.\,a.(2019)Namini, Tavakoli und Namin]{siaminamini2019}
+\dinatlabel{Namini u.\,a. 2019} \textsc{Namini}, Sima~S.~; \textsc{Tavakoli},
+  Neda~; \textsc{Namin}, Akbar~S.:
+\newblock \emph{A Comparative Analysis of Forecasting Financial Time Series
+  Using ARIMA, LSTM, and BiLSTM}.
+\newblock 2019. --
+\newblock URL \url{https://arxiv.org/abs/1911.09512}
+
 \bibitem[Noble(2006)]{Noble:2006aa}
 \dinatlabel{Noble 2006} \textsc{Noble}, William~S.:
 \newblock What is a support vector machine?
@@ -497,6 +515,14 @@
 \newblock 14 (2024), Nr.~1, S.~120. --
 \newblock URL \url{https://doi.org/10.1007/s13278-024-01280-3}.
 \newblock ISBN 1869-5469
+
+\bibitem[Shen u.\,a.(2021)Shen, A.~Njock, Zhou und Lyu]{shen2021}
+\dinatlabel{Shen u.\,a. 2021} \textsc{Shen}, Shui-Long~; \textsc{A.~Njock},
+  Pierre~G.~; \textsc{Zhou}, Annan~; \textsc{Lyu}, Hai-Min:
+\newblock Dynamic prediction of jet grouted column diameter in soft soil using
+  BiLSTM deep learning.
+\newblock In: \emph{Acta Geotechnica}
+\newblock 16 (2021), 01
 
 \bibitem[Simone u.\,a.(2022)Simone, Oliver, Clara und Andreas]{Simone2022}
 \dinatlabel{Simone u.\,a. 2022} \textsc{Simone}, Sandler~; \textsc{Oliver},

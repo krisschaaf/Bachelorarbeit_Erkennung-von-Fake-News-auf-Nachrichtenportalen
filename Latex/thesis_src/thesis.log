@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.18)  19 MAY 2025 14:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.18)  20 MAY 2025 20:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1356,12 +1356,12 @@ chapter 3.
 [8
 
 ] [9]
-<./chapters//static/table_bow.png, id=354, 383.4325pt x 281.05pt>
+<./chapters//static/table_bow.png, id=360, 383.4325pt x 281.05pt>
 File: ./chapters//static/table_bow.png Graphic file (type png)
 <use ./chapters//static/table_bow.png>
 Package pdftex.def Info: ./chapters//static/table_bow.png  used on input line 82.
 (pdftex.def)             Requested size: 191.71577pt x 140.52464pt.
-<./chapters//static/table_tf-idf.png, id=358, 600.2425pt x 609.27625pt>
+<./chapters//static/table_tf-idf.png, id=364, 600.2425pt x 609.27625pt>
 File: ./chapters//static/table_tf-idf.png Graphic file (type png)
 <use ./chapters//static/table_tf-idf.png>
 Package pdftex.def Info: ./chapters//static/table_tf-idf.png  used on input line 87.
@@ -1377,13 +1377,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 175--176
  []
 
 [12]
-<./chapters//static/bow_vs_tfidf_vs_hashing.png, id=415, 514.92375pt x 316.18124pt>
+<./chapters//static/bow_vs_tfidf_vs_hashing.png, id=421, 514.92375pt x 316.18124pt>
 File: ./chapters//static/bow_vs_tfidf_vs_hashing.png Graphic file (type png)
 <use ./chapters//static/bow_vs_tfidf_vs_hashing.png>
 Package pdftex.def Info: ./chapters//static/bow_vs_tfidf_vs_hashing.png  used on input line 199.
 (pdftex.def)             Requested size: 257.46124pt x 158.09023pt.
  [13 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/bow_vs_tfidf_vs_hashing.png>] [14] [15] [16]
-<./chapters//static/fig_hyperplanes.png, id=474, 448.67625pt x 271.0125pt>
+<./chapters//static/fig_hyperplanes.png, id=480, 448.67625pt x 271.0125pt>
 File: ./chapters//static/fig_hyperplanes.png Graphic file (type png)
 <use ./chapters//static/fig_hyperplanes.png>
 Package pdftex.def Info: ./chapters//static/fig_hyperplanes.png  used on input line 323.
@@ -1404,72 +1404,77 @@ Underfull \hbox (badness 3701) in paragraph at lines 405--405
  []
 
 [19] [20]
-<./chapters//static/vgl_svm_knn_etc.png, id=552, 808.01875pt x 317.185pt>
+<./chapters//static/vgl_svm_knn_etc.png, id=558, 808.01875pt x 317.185pt>
 File: ./chapters//static/vgl_svm_knn_etc.png Graphic file (type png)
 <use ./chapters//static/vgl_svm_knn_etc.png>
 Package pdftex.def Info: ./chapters//static/vgl_svm_knn_etc.png  used on input line 486.
 (pdftex.def)             Requested size: 323.20177pt x 126.87173pt.
  [21]
-<./chapters//static/xgboost-pipeline.jpg, id=568, 1204.5pt x 752.8125pt>
+<./chapters//static/xgboost-pipeline.jpg, id=574, 1204.5pt x 752.8125pt>
 File: ./chapters//static/xgboost-pipeline.jpg Graphic file (type jpg)
 <use ./chapters//static/xgboost-pipeline.jpg>
 Package pdftex.def Info: ./chapters//static/xgboost-pipeline.jpg  used on input line 507.
 (pdftex.def)             Requested size: 301.12427pt x 188.20265pt.
  [22 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/vgl_svm_knn_etc.png>] [23 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/xgboost-pipeline.jpg>]
-<./chapters//static/confusion_matrix.png, id=590, 734.745pt x 651.43375pt>
+<./chapters//static/confusion_matrix.png, id=596, 734.745pt x 651.43375pt>
 File: ./chapters//static/confusion_matrix.png Graphic file (type png)
 <use ./chapters//static/confusion_matrix.png>
 Package pdftex.def Info: ./chapters//static/confusion_matrix.png  used on input line 557.
 (pdftex.def)             Requested size: 220.42519pt x 195.43163pt.
  [24 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/confusion_matrix.png>] [25]
-<./chapters//static/bsp_word_embeddings.png, id=633, 202.7575pt x 147.55125pt>
+<./chapters//static/bsp_word_embeddings.png, id=639, 202.7575pt x 147.55125pt>
 File: ./chapters//static/bsp_word_embeddings.png Graphic file (type png)
 <use ./chapters//static/bsp_word_embeddings.png>
 Package pdftex.def Info: ./chapters//static/bsp_word_embeddings.png  used on input line 637.
 (pdftex.def)             Requested size: 121.65543pt x 88.53142pt.
  [26 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/bsp_word_embeddings.png>]
-<./chapters//static/cbow_skipgram.png, id=648, 497.86pt x 263.98625pt>
+<./chapters//static/cbow_skipgram.png, id=654, 497.86pt x 263.98625pt>
 File: ./chapters//static/cbow_skipgram.png Graphic file (type png)
 <use ./chapters//static/cbow_skipgram.png>
 Package pdftex.def Info: ./chapters//static/cbow_skipgram.png  used on input line 666.
 (pdftex.def)             Requested size: 298.71829pt x 158.39296pt.
  [27 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/cbow_skipgram.png>]
-<./chapters//static/glove_matrix.png, id=662, 1041.8925pt x 206.7725pt>
+<./chapters//static/glove_matrix.png, id=668, 1041.8925pt x 206.7725pt>
 File: ./chapters//static/glove_matrix.png Graphic file (type png)
 <use ./chapters//static/glove_matrix.png>
 Package pdftex.def Info: ./chapters//static/glove_matrix.png  used on input line 688.
 (pdftex.def)             Requested size: 312.57016pt x 62.03223pt.
  [28 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/glove_matrix.png>]
-<./chapters//static/architecture_bert.png, id=678, 647.41875pt x 469.755pt>
+<./chapters//static/architecture_bert.png, id=684, 647.41875pt x 469.755pt>
 File: ./chapters//static/architecture_bert.png Graphic file (type png)
 <use ./chapters//static/architecture_bert.png>
 Package pdftex.def Info: ./chapters//static/architecture_bert.png  used on input line 724.
 (pdftex.def)             Requested size: 194.22711pt x 140.92758pt.
  [29 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/architecture_bert.png>]
-<./chapters//static/bert_tokenizierung.png, id=690, 928.46875pt x 292.09125pt>
+<./chapters//static/bert_tokenizierung.png, id=696, 928.46875pt x 292.09125pt>
 File: ./chapters//static/bert_tokenizierung.png Graphic file (type png)
 <use ./chapters//static/bert_tokenizierung.png>
 Package pdftex.def Info: ./chapters//static/bert_tokenizierung.png  used on input line 771.
 (pdftex.def)             Requested size: 371.38092pt x 116.83441pt.
  [30]
-<./chapters//static/mlm_bert.png, id=708, 697.60625pt x 162.6075pt>
+<./chapters//static/mlm_bert.png, id=714, 697.60625pt x 162.6075pt>
 File: ./chapters//static/mlm_bert.png Graphic file (type png)
 <use ./chapters//static/mlm_bert.png>
 Package pdftex.def Info: ./chapters//static/mlm_bert.png  used on input line 785.
 (pdftex.def)             Requested size: 348.80226pt x 81.30354pt.
  [31 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/bert_tokenizierung.png> </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/mlm_bert.png>]
-<./chapters//static/RNNvsLSTM.png, id=726, 834.11626pt x 376.40625pt>
+<./chapters//static/RNNvsLSTM.png, id=735, 834.11626pt x 376.40625pt>
 File: ./chapters//static/RNNvsLSTM.png Graphic file (type png)
 <use ./chapters//static/RNNvsLSTM.png>
 Package pdftex.def Info: ./chapters//static/RNNvsLSTM.png  used on input line 829.
 (pdftex.def)             Requested size: 333.6406pt x 150.55983pt.
- [32] [33 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/RNNvsLSTM.png>]) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/05_relevante_datensaetze_und_auswahlkriterien.tex [34]
+<./chapters//static/lstmvsbilstm.png, id=738, 853.1875pt x 350.30875pt>
+File: ./chapters//static/lstmvsbilstm.png Graphic file (type png)
+<use ./chapters//static/lstmvsbilstm.png>
+Package pdftex.def Info: ./chapters//static/lstmvsbilstm.png  used on input line 844.
+(pdftex.def)             Requested size: 341.26895pt x 140.12102pt.
+ [32] [33 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/RNNvsLSTM.png> </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//static/lstmvsbilstm.png>]) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/05_relevante_datensaetze_und_auswahlkriterien.tex [34]
 chapter 4.
 ) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/06_konzeption_der_softwareloesung.tex [35
 
 ]
 chapter 5.
-<./chapters//static/xgboost_bert.png, id=766, 793.96625pt x 220.825pt>
+<./chapters//static/xgboost_bert.png, id=777, 793.96625pt x 220.825pt>
 File: ./chapters//static/xgboost_bert.png Graphic file (type png)
 <use ./chapters//static/xgboost_bert.png>
 Package pdftex.def Info: ./chapters//static/xgboost_bert.png  used on input line 12.
@@ -1501,132 +1506,4 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--103
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
-[]|\T1/cmr/m/n/10.95 DOM-Zugriff
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 106--106
-[]|\T1/cmr/m/n/10.95 Einbindung
- []
-
-
-Underfull \hbox (badness 3439) in paragraph at lines 106--106
-\T1/cmr/m/n/10.95 auf \T1/pcr/l/it/10.95 bild.de
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 108--108
-[]|\T1/cmr/m/n/10.95 Installation
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 110--110
-[]|\T1/cmr/m/n/10.95 Komplexität
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--114
-[]|\T1/cmr/m/n/10.95 Performance
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
-\T1/cmr/m/n/10.95 Ver-brei-tung
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--120
-[]|\T1/cmr/m/n/10.95 API-Nutzung
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--120
-\T1/cmr/m/n/10.95 zur Fake-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--122
-[]|\T1/cmr/m/n/10.95 Entwickler-
- []
-
-
-Underfull \hbox (badness 1616) in paragraph at lines 122--122
-\T1/cmr/m/n/10.95 kontrolle über
- []
-
-[38]) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/07_umsetzung_des_prototyps.tex [39] [40]
-chapter 6.
-
-Overfull \hbox (13.0751pt too wide) in paragraph at lines 23--26
-\T1/cmr/m/n/10.95 auf das Ak-ti-ons-sym-bol der Er-wei-te-rung oder durch Drücken von chro-me.action.openPopup()
- []
-
-<./chapters//diagrams/hauptkomponente_sequenzdiagramm.png, id=841, 825.0825pt x 873.2625pt>
-File: ./chapters//diagrams/hauptkomponente_sequenzdiagramm.png Graphic file (type png)
-<use ./chapters//diagrams/hauptkomponente_sequenzdiagramm.png>
-Package pdftex.def Info: ./chapters//diagrams/hauptkomponente_sequenzdiagramm.png  used on input line 29.
-(pdftex.def)             Requested size: 412.54024pt x 436.63017pt.
-[41
-
-] [42 </Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/./chapters//diagrams/hauptkomponente_sequenzdiagramm.png>]) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/08_evaluation_und_ergebnisse.tex [43]
-chapter 7.
-) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/chapters/10_fazit_und_ausblick.tex [44
-
-]
-chapter 8.
-) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.bbl [45
-
-]
-chapter without number
-[46
-
-] [47] [48]
-Underfull \hbox (badness 1616) in paragraph at lines 263--274
-[]\T1/cmr/m/sc/10.95 Hartwig\T1/cmr/m/n/10.95 , Ka-trin ; \T1/cmr/m/sc/10.95 Reu-ter\T1/cmr/m/n/10.95 , Chris-ti-an:  \T1/cmr/m/it/10.95 Fa-ke News tech-nisch be-geg-nen --
- []
-
-[49] [50] [51] [52]) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/appendix/example_appendix.tex [53]
-chapter A.
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--23
-[][]
- []
-
-)
-No file thesis.gls.
-(../style/statement.tex [54
-
-]
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 7.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmss.fd
-File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [55
-
-]) (/Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.aux)
-
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 1.86pt have occurred.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
- ) 
-Here is how much of TeX's memory you used:
- 40077 strings out of 478994
- 792145 string characters out of 5858183
- 1474144 words of memory out of 5000000
- 56402 multiletter control sequences out of 15000+600000
- 439884 words of font info for 101 fonts, out of 8000000 for 9000
- 1142 hyphenation exceptions out of 8191
- 117i,21n,145p,10705b,2492s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx2986.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on /Users/krisschaaf/Documents/Uni/Bachelorarbeit/Inhalt/Latex/thesis_src/thesis.pdf (62 pages, 2669520 bytes).
-PDF statistics:
- 1316 PDF objects out of 1440 (max. 8388607)
- 1145 compressed objects within 12 object streams
- 336 named destinations out of 1000 (max. 500000)
- 578 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+Underfull \hbox (badness 10000) in pa

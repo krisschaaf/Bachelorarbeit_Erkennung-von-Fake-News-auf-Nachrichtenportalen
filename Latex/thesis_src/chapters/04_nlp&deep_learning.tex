@@ -707,13 +707,13 @@ Im Beispiel in Kapitel \ref{sec:word_embeddings} „Ich setze mich auf die Bank.
 Word Embeddings unterscheiden könne, dass das Wort „Bank“ in diesem Fall zwei verschiedene Bedeutungen hat.
 
 GloVe und Word2Vec erstellen einen festen Vektor für das Wort „Bank“, egal in welchem Satz es steht.
-Bei GloVe ist Vektor ein Mittelwert aus allen Bedeutungen, die „Bank“ im Korpus je hatte.
+Bei GloVe ist dieser Vektor ein Mittelwert aus allen Bedeutungen, die „Bank“ im Korpus je hatte.
 Der Vektor liegt folglich irgendwo zwischen Sitzmöbel und Finanzinstitut – er repräsentiert keine der beiden Bedeutungen exakt.
 
-BERT (Bidirectional Encoder Representations from Transformers) löst dieses Problem. 
+Bidirectional Encoder Representations from Transformers (BERT) löst dieses Problem. 
 Es verwendet während des Pre-Trainings Masked Language Modeling, um den Kontext und die Bedeutung von Wörtern im Satz zu verstehen.
-Anschließend wird es auf einem Datensatz mit gelabelten Bewertungen feinjustiert, um zum Beispiel zu lernen, echte von gefälschten 
-Rezensionen zu unterscheiden. Dabei weist es wichtigen Wörtern und Phrasen im Text höhere Gewichtungen zu \cite{Deshai:2023aa}.
+Anschließend wird es auf einem Datensatz mit gelabelten Bewertungen feinjustiert. 
+Dabei weist es wichtigen Wörtern und Phrasen im Text höhere Gewichtungen zu \cite{Deshai:2023aa}.
 
 BERT nutzt die bi-direktionale Transformer-Architektur (siehe Abbildung \ref{fig:architecture_bert}), bei welcher tiefe semantische Informationen 
 eines Satzes erfasst werden können.
@@ -827,10 +827,9 @@ Das Input-Gate, das Output-Gate und das Forget-Gate \cite{berrajaa2022nlp} (sieh
 \begin{figure}[htbp]
     \begin{center}
     \includegraphics[scale=0.4]{static/RNNvsLSTM.png}
-    \caption[Vgl. RNN und LSTM]{Vgl. RNN (links) und LSTM (rechts) \footnotemark}\label{fig:rnnvslstm} 
+    \caption{\label{fig:rnnvslstm} Vgl. RNN (links) und LSTM (rechts) \cite{aiml2025sequence}}
     \end{center}
 \end{figure}
-\footnotetext{\url{https://aiml.com/compare-the-different-sequence-models-rnn-lstm-gru-and-transformers/}}
 
 Das Forget-Gate bestimmt, welche Informationen nicht mehr relevant sind und gelöscht werden können. 
 Dies hilft, den Speicher der Zelle zu optimieren und unnötige Daten zu entfernen.
@@ -840,7 +839,25 @@ Daten ausgegeben werden sollen. Sie arbeiten zusammen, um den Informationsfluss 
 
 \subsubsection{BiLSTM}
 
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.4]{static/lstmvsbilstm.png}
+        \caption{\label{fig:lstmvsbilstm} Vgl. LSTM und BiLSTM \cite{shen2021}}
+    \end{center}
+\end{figure}
+
+Bidirectional-LSTMs (BiLSTMs) sind eine Erweiterung der LSTM-Modelle, bei der zwei LSTMs auf die Eingabedaten angewendet werden. 
+In der ersten Runde wird der Input von der ersten LSTM verarbeitet. Anschließend wird der Input in umgekehrter Form auf die zweite LSTM
+angewendet (siehe Abbildung \ref{fig:lstmvsbilstm}). Der Input wird somit vor- und rückwärts gelesen, was das Erlernen von 
+Langzeitabhängigkeiten verbessert und zu einer höheren Genauigkeit des Modells führt \cite{siaminamini2019}. 
+
+Der Hauptunterschied zwischen Bi-LSTMs und LSTMs besteht daher darin, dass Letztere nur 
+Informationen aus der Vergangenheit bewahren, während in Bi-LSTMs durch die Kombination der beiden verborgenen Zustände sowohl Informationen 
+aus der Vergangenheit als auch aus der Zukunft zu jedem Zeitpunkt erhalten bleiben können \cite{shen2021}.
+
 \subsubsection{BERT}
+
+Bidirectional Encoder Representations from Transformers (BERT) 
 
 
 \section{Hybride Modelle}
