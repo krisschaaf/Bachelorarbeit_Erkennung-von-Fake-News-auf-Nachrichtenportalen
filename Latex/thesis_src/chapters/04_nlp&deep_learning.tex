@@ -884,9 +884,37 @@ stellt hierbei die jeweilige Position im Satz dar und das Segment-Embedding ordn
 \section{Hybride Modelle}
 \label{sec:hybride_modelle}
 
-\subsection{convolutional neural network (CNN) along with bi-directional LSTM}
+\subsection{CNN und LSTM}
 
-\cite{umer2020}
+In \cite{umer2020} wird eine hybride neuronale Netzwerkarchitektur vorgeschlagen, die die Fähigkeiten von CNN und 
+LSTM kombiniert. Dabei kommen zwei unterschiedliche Verfahren zur Dimensionsreduktion zum Einsatz: 
+Hauptkomponentenanalyse (PCA) und Chi-Quadrat-Verfahren. 
+Diese Verfahren werden empfohlen, um die Dimensionalität der 
+Merkmalsvektoren zu verringern, bevor diese an den Klassifikator weitergeleitet werden.
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[scale=0.4]{static/cnn_lstm_pca.png}
+    \caption{\label{fig:cnn_lstm_pca} Ergebnisse der Klassifizierungen der verschiedenen CNN-LSTM Modelle \cite{umer2020}}
+    \end{center}
+\end{figure}
+
+Wie in Abbildung \ref{fig:cnn_lstm_pca} zu erkennen, werden verschiedenen Modelle miteinander verglichen. Einmal mit und ohne Vorverarbeitung
+der Daten und dann mit den verschiedenen Dimensionsreduktionen PCA und Chi-Quadrat.
+PCA schneidet mit einem F1-Score von 97,8\% am Besten ab, während keine Vorverarbeitung der Daten nur einen F1-Score von 81,9\% erreicht.
+
+Die Modelle wurden auf Basis des FNC-1 Datensatzes gemessen, in welchem 2.587 Artikeln etwa 300 verschiedenen Schlagzeilen zugeordnet werden sollen.
+Jeder Artikel wird in Bezug auf eine Schlagzeile einer von vier Klassen zugeordnet:
+
+\begin{itemize}
+    \item \textbf{Agree:} Artikel stimmt der Schlagzeile zu
+    \item \textbf{Disagree:} Artikel widerspricht der Schlagzeile
+    \item \textbf{Discuss:} Artikel diskutiert das Thema der Schlagzeile
+    \item \textbf{Unrelated:} Artikel ist thematisch nicht verwandt mit der Schlagzeile
+\end{itemize}
+
+Zum Vergleich wurden weitere Modelle wie BERT auf den Datensatz angewendet.
+Dieses erzielte eine Accuracy von 91,3\% während das hybride CNN-LSTM Modell eine Accuracy von 97,8\% erreichte.
 
 \subsection{XGBoost und BERT}
 
