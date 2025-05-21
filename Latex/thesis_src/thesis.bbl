@@ -1,4 +1,4 @@
-\begin{thebibliography}{69}
+\begin{thebibliography}{72}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -14,8 +14,8 @@
 \newblock Wiley, 2018. --
 \newblock ISBN 9781119405269
 
-\bibitem[AIML.com(2025)]{aiml2025sequence}
-\dinatlabel{AIML.com 2025} \textsc{AIML.com}:
+\bibitem[AIML(2025)]{aiml2025sequence}
+\dinatlabel{AIML 2025} \textsc{AIML}:
 \newblock \emph{Compare the different Sequence models: RNN, LSTM, GRU, and
   Transformers}.
 \newblock April 2025. --
@@ -85,7 +85,7 @@
 \newblock Natural language processing for the analysis sentiment using a LSTM
   model.
 \newblock In: \emph{International Journal of Advanced Computer Science and
-  Applications (IJACSA)}
+  Applications}
 \newblock 13 (2022), Nr.~5. --
 \newblock URL \url{https://doi.org/10.14569/IJACSA.2022.0130589}
 
@@ -209,10 +209,10 @@
 \dinatlabel{Dhiman u.\,a. 2024} \textsc{Dhiman}, Pummy~; \textsc{Kaur},
   Amandeep~; \textsc{Gupta}, Deepali~; \textsc{Juneja}, Sapna~;
   \textsc{Nauman}, Ali~; \textsc{Muhammad}, Ghulam:
-\newblock GBERT: A hybrid deep learning model based on GPT-BERT for fake news
+\newblock GBERT A hybrid deep learning model based on GPT-BERT for fake news
   detection.
 \newblock In: \emph{Heliyon}
-\newblock 10 (2024), 2025/05/19, Nr.~16. --
+\newblock 10 (2024), Nr.~16. --
 \newblock URL \url{https://doi.org/10.1016/j.heliyon.2024.e35865}.
 \newblock ISBN 2405-8440
 
@@ -268,6 +268,15 @@
 \newblock 2nd.
 \newblock O'Reilly Media, 2019. --
 \newblock ISBN 978-1492032649
+
+\bibitem[Ghojogh und Ghodsi(2020)]{ghojogh2020}
+\dinatlabel{Ghojogh und Ghodsi 2020} \textsc{Ghojogh}, Benyamin~;
+  \textsc{Ghodsi}, Ali:
+\newblock \emph{Attention Mechanism, Transformers, BERT, and GPT: Tutorial and
+  Survey}.
+\newblock Dezember 2020. --
+\newblock URL \url{https://hal.science/hal-04637647}. --
+\newblock working paper or preprint
 
 \bibitem[Hartwig und Reuter(2021)]{Hartwig2021}
 \dinatlabel{Hartwig und Reuter 2021} \textsc{Hartwig}, Katrin~;
@@ -327,6 +336,13 @@
   \textsc{Martin}, James~H.:
 \newblock \emph{5: Logistic Regression}.
 \newblock In: \emph{Speech and Language Processing}, 2025
+
+\bibitem[KiKaBeN(2021)]{kikaben2021transformer}
+\dinatlabel{KiKaBeN 2021} \textsc{KiKaBeN}:
+\newblock \emph{Transformers Encoder Decoder}.
+\newblock December 2021. --
+\newblock URL \url{https://kikaben.com/transformers-encoder-decoder/}. --
+\newblock Veröffentlicht am 12. Dezember 2021
 
 \bibitem[Kivim{\"a}ki u.\,a.(2025)Kivim{\"a}ki, Bia{\l}ek, Kuberski und
   Nurminen]{kivimaeki2025}
@@ -404,8 +420,8 @@
 \newblock Enhancing Text Classification Performance using Stacking Ensemble
   Method with TF-IDF Feature Extraction.
 \newblock In: \emph{5th International Conference on Artificial Intelligence and
-  Data Science}, URL
-  \url{https://ieeexplore.ieee.org/abstract/document/10493890/}, 2024
+  Data Science}, IEEE, 2024. --
+\newblock URL \url{https://ieeexplore.ieee.org/abstract/document/10493890/}
 
 \bibitem[Pennington u.\,a.(2014)Pennington, Socher und
   Manning]{pennington2014glove}
@@ -413,7 +429,8 @@
   \textsc{Socher}, Richard~; \textsc{Manning}, Christopher~D.:
 \newblock GloVe: Global Vectors for Word Representation.
 \newblock In: \emph{Empirical Methods in Natural Language Processing (EMNLP)},
-  URL \url{http://www.aclweb.org/anthology/D14-1162}, 2014, S.~1532--1543
+  ACL Anthology, 2014, S.~1532--1543. --
+\newblock URL \url{http://www.aclweb.org/anthology/D14-1162}
 
 \bibitem[Petrovic u.\,a.(2024)Petrovic, Perisic, Jovanovic, Zivkovic,
   Antonijevic und Bacanin]{petrovic2024}
@@ -561,6 +578,16 @@
   LSTM).
 \newblock In: \emph{IEEE Access}
 \newblock 8 (2020), S.~156695--156706
+
+\bibitem[Vaswani u.\,a.(2023)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
+  Kaiser und Polosukhin]{vaswani2023attentionneed}
+\dinatlabel{Vaswani u.\,a. 2023} \textsc{Vaswani}, Ashish~; \textsc{Shazeer},
+  Noam~; \textsc{Parmar}, Niki~; \textsc{Uszkoreit}, Jakob~; \textsc{Jones},
+  Llion~; \textsc{Gomez}, Aidan~N.~; \textsc{Kaiser}, Lukasz~;
+  \textsc{Polosukhin}, Illia:
+\newblock \emph{Attention Is All You Need}.
+\newblock 2023. --
+\newblock URL \url{https://arxiv.org/abs/1706.03762}
 
 \bibitem[Verma und Yadav(2024)]{Verma:2024aa}
 \dinatlabel{Verma und Yadav 2024} \textsc{Verma}, Birendra~K.~; \textsc{Yadav},

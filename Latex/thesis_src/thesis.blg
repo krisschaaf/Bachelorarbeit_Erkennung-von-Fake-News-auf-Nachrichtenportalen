@@ -9,48 +9,46 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: literature.bib
 Warning--empty booktitle in Domenico2016
-Warning--no proper publisher, using url in parmar2024stacking
 Warning--empty pages in parmar2024stacking
-Warning--no proper publisher, using url in pennington2014glove
-You've used 69 entries,
+You've used 72 entries,
             3552 wiz_defined-function locations,
-            1238 strings with 21420 characters,
-and the built_in function-call counts, 55011 in all, are:
-= -- 6846
-> -- 798
-< -- 1497
-+ -- 1883
-- -- 542
-* -- 5159
-:= -- 9212
-add.period$ -- 94
-call.type$ -- 69
-change.case$ -- 388
-chr.to.int$ -- 67
-cite$ -- 73
-duplicate$ -- 1319
-empty$ -- 3649
-format.name$ -- 978
-if$ -- 10703
+            1253 strings with 21888 characters,
+and the built_in function-call counts, 57544 in all, are:
+= -- 7174
+> -- 843
+< -- 1574
++ -- 1983
+- -- 576
+* -- 5400
+:= -- 9667
+add.period$ -- 97
+call.type$ -- 72
+change.case$ -- 410
+chr.to.int$ -- 70
+cite$ -- 74
+duplicate$ -- 1375
+empty$ -- 3787
+format.name$ -- 1038
+if$ -- 11174
 int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 136
-newline$ -- 474
-num.names$ -- 279
-pop$ -- 477
+newline$ -- 496
+num.names$ -- 291
+pop$ -- 501
 preamble$ -- 1
-purify$ -- 377
+purify$ -- 397
 quote$ -- 0
-skip$ -- 2305
+skip$ -- 2402
 stack$ -- 0
-substring$ -- 5053
-swap$ -- 343
-text.length$ -- 179
+substring$ -- 5250
+swap$ -- 361
+text.length$ -- 190
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 714
-warning$ -- 4
-while$ -- 569
+type$ -- 747
+warning$ -- 2
+while$ -- 595
 width$ -- 0
-write$ -- 820
-(There were 4 warnings)
+write$ -- 858
+(There were 2 warnings)

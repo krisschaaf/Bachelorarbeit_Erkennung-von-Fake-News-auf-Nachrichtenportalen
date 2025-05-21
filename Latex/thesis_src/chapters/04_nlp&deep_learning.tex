@@ -664,7 +664,7 @@ das Skip-gram-Modell anzuwenden \cite{schumacher2024word2vec}.
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[scale=0.6]{static/cbow_skipgram.png}
-        \caption{\label{fig:cbow_skipgram} Vergleich CBOW und Skip-gram \cite{mikolov2013}}
+        \caption{\label{fig:cbow_skipgram} Vergleich CBOW (links) und Skip-gram (rechts) \cite{mikolov2013}}
     \end{center}
 \end{figure}
 
@@ -701,94 +701,6 @@ und Werte < 1 gut mit Eigenschaften, die spezifisch für „steam“ sind korrel
 Für $k=solid$ ist der Quotient 8.9. „solid“ hat somit eine größere semantische Beziehung mit „ice“ als mit „steam“.
 Für $k=gas$ ist der Wert 0.085. „gas“ passt folglich besser zu „steam“ als zu „ice“.
 
-\subsubsection{BERT-Tokenisierung}
-
-Im Beispiel in Kapitel \ref{sec:word_embeddings} „Ich setze mich auf die Bank.“ und „Ich raube die Bank aus.“ wurde betont, dass moderne
-Word Embeddings unterscheiden könne, dass das Wort „Bank“ in diesem Fall zwei verschiedene Bedeutungen hat.
-
-GloVe und Word2Vec erstellen einen festen Vektor für das Wort „Bank“, egal in welchem Satz es steht.
-Bei GloVe ist dieser Vektor ein Mittelwert aus allen Bedeutungen, die „Bank“ im Korpus je hatte.
-Der Vektor liegt folglich irgendwo zwischen Sitzmöbel und Finanzinstitut – er repräsentiert keine der beiden Bedeutungen exakt.
-
-Bidirectional Encoder Representations from Transformers (BERT) löst dieses Problem. 
-Es verwendet während des Pre-Trainings Masked Language Modeling, um den Kontext und die Bedeutung von Wörtern im Satz zu verstehen.
-Anschließend wird es auf einem Datensatz mit gelabelten Bewertungen feinjustiert. 
-Dabei weist es wichtigen Wörtern und Phrasen im Text höhere Gewichtungen zu \cite{Deshai:2023aa}.
-
-BERT nutzt die bi-direktionale Transformer-Architektur (siehe Abbildung \ref{fig:architecture_bert}), bei welcher tiefe semantische Informationen 
-eines Satzes erfasst werden können.
-Der Vorteil besteht darin, dass die gelernten Repräsentationen den Kontext in beide Richtungen integrieren können \cite{Wang:2020aa}.
-
-\begin{figure}[htbp]
-    \begin{center}
-        \includegraphics[scale=0.3]{static/architecture_bert.png}
-        \caption{\label{fig:architecture_bert} Architektur des BERT Modells \cite{Wang:2020aa}}
-    \end{center}
-\end{figure}
-
-Für das Erstellen der Wortvektoren werden bei diesem Embedding WordPiece Embeddings genutzt.
-Es wurde von Google speziell für BERT entwickelt, um auch seltene oder unbekannte Wörter sinnvoll verarbeiten zu können.
-WordPiece ist ein Tokenisierungsverfahren, das Wörter in kleinere Einheiten zerlegt.
-
-Folgendes Beispiel für ein WordPiece Embedding (aus \cite{huggingface2025wordpiece}):
-\begin{enumerate}
-    \item Das \textbf{Startvokabular} besteht aus einem Vokabular aus Einzelbuchstaben 
-    (z.B. \texttt{h}, \texttt{\#\#e}, \texttt{\#\#l}, \texttt{\#\#o} für ``hello''), 
-    wobei alle Buchstaben außer dem Ersten mit \texttt{\#\#} markiert werden, um zu zeigen, dass sie nicht am Wortanfang stehen.
-
-    \item \textbf{Häufigkeitsanalyse:} Identifiziert häufig gemeinsam auftretende Buchstabenpaare, 
-    z.B. \texttt{("\#\#g", "\#\#s")} in ``hugs''.
-
-    \item \textbf{Mergeregeln:} Zum Zusammenfügen berechnet WordPiece einen Score:
-
-    \begin{equation}
-        \text{Score} = \frac{\text{Häufigkeit des Paares}}{\text{Häufigkeit Teil 1} \times \text{Häufigkeit Teil 2}}
-    \end{equation}
-
-    Dadurch werden eher seltene Kombinationen zusammengefügt, die besser charakteristische Subwörter ergeben.
-
-    \item \textbf{Merge-Iterationen:} Das Zusammenfügen wird so lange wiederholt, bis das gewünschte Vokabular erreicht ist.
-\end{enumerate}
-
-\textbf{Beim Zerlegen neuer Wörter:}
-\begin{enumerate}
-    \item Suche das längste Subwort im Vokabular, das am Wortanfang passt.
-    \item Markiere alles danach mit \texttt{\#\#} und wiederhole.
-    \item Wenn gar kein Teil im Vokabular ist, kommt das Sondertoken \texttt{[UNK]} (unbekannt) zum Einsatz.
-\end{enumerate}
-
-\textbf{Beispiele:}
-\begin{itemize}
-    \item \texttt{"hugs"} $\rightarrow$ \texttt{["hug", "\#\#s"]}
-    \item \texttt{"bugs"} $\rightarrow$ \texttt{["b", "\#\#u", "\#\#gs"]}
-    \item \texttt{"mug"} $\rightarrow$ \texttt{[UNK]}, falls \texttt{\#\#m} nicht im Vokabular ist
-\end{itemize}
-
-Zusätzlich werden Positions- und Segment-Embeddings hinzugefügt (siehe Abbildung \ref{fig:bert_tokenizierung}).
-
-\begin{figure}[htbp]
-    \begin{center}
-        \includegraphics[scale=0.4]{static/bert_tokenizierung.png}
-        \caption{\label{fig:bert_tokenizierung} Zusammensetzung eines Input Tokens im BERT Modell \cite{devlin2019}}
-    \end{center}
-\end{figure}
-
-Das Input Token ergibt sich aus dem Token-, Position- und Segment-Embedding. Das Position-Embedding stellt hierbei die jeweilige
-Position im Satz dar und das Segment-Embedding ordnet den Token dem entsprechenden Satz zu.
-
-Ein weiterer zentraler Bestandteil der BERT-Tokenisierung ist das Masked Language Model (MLM), welches in der Trainingsphase genutzt wird.
-Dabei wird ein bestimmer Teil der Wörter in der Eingabesequenz zufällig maskiert (siehe Abbildung \ref{fig:mlm_bert}), 
-und das Modell muss diese verdeckten Wörter korrekt vorhersagen.
-
-\begin{figure}[htbp]
-    \begin{center}
-        \includegraphics[scale=0.5]{static/mlm_bert.png}
-        \caption{\label{fig:mlm_bert} Bsp. zum MLM \cite{wettig2023}}
-    \end{center}
-\end{figure}
-
-Aufgrund der Bidirektionalität des BERT Modells ist dieses bei späteren Vorhersagen effektiver \cite{wettig2023}. 
-\cite{devlin2019} zeigt, wie relevant bidirektionalen Pretrainings für qualitativ hochwertige Sprachrepräsentationen sind.
 
 \subsection{Deep Learning-Modelle}
 \label{sec:deep_learning_modelle}
@@ -855,10 +767,119 @@ Der Hauptunterschied zwischen Bi-LSTMs und LSTMs besteht daher darin, dass Letzt
 Informationen aus der Vergangenheit bewahren, während in Bi-LSTMs durch die Kombination der beiden verborgenen Zustände sowohl Informationen 
 aus der Vergangenheit als auch aus der Zukunft zu jedem Zeitpunkt erhalten bleiben können \cite{shen2021}.
 
+
 \subsubsection{BERT}
 
-Bidirectional Encoder Representations from Transformers (BERT) 
+Bidirectional Encoder Representations from Transformers (BERT) ist eine Form der Transformer.
+Diese sind erweiterte Deep-Learning-Modelle, welche sich aus einem Encoder und einem Decoder zusammensetzen (siehe Abbildung 
+\ref{fig:transformeroverview}) und den sogenannten Self-Attention Mechanismus nutzen \cite{vaswani2023attentionneed}.
 
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[scale=0.4]{static/transformer-overview.png}
+    \caption{\label{fig:transformeroverview} Eine Übersicht der Transformer Architektur \cite{kikaben2021transformer} 
+    - vereinfacht von \cite{vaswani2023attentionneed}}
+    \end{center}
+\end{figure}
+
+Dieser Mechanismus, betrachtet für jedes Wort in einer Sequenz alle anderen Wörter, um zu entscheiden, 
+wie wichtig sie für seine Bedeutung sind.
+In dem Satz „Die Bank hat heute geschlossen.“ erkennt Self-Attention zum Beispiel, dass „Bank“ im Kontext von „geschlossen“ eher ein Gebäude 
+und kein Möbelstück ist. %TODO: bsp erzeugt durch scholargpt
+Im Vergleich zu RNNs, welche Kontexte nur von links nach rechts erkennen können (bzw. bi-direktional in BiLSTMs) kann der Kontext in Transformern
+global erkannt werden \cite{ghojogh2020}.
+
+Angenommen der Transformer würde zum maschinellen Übersetzen eines Textes genutzt werden, dann besitzt das Encoding das Sprachverständnis, 
+während das Decoding die Texgenerierung vornimmt. BERT ist ein reiner, für Sprachverständnis optimierter, Encoder-Transformer \cite{devlin2019}.
+
+Während CNNs und RNNs externe Word Embeddings wie Word2Vec oder GloVe verwenden, nutzt BERT eigene lernbare Embeddings.
+Dazu noch einmal das Beispiel aus Kapitel \ref{sec:word_embeddings}: „Ich setze mich auf die Bank.“ und „Ich raube die Bank aus.“
+
+GloVe und Word2Vec erstellen einen festen Vektor für das Wort „Bank“, egal in welchem Satz es steht.
+Bei GloVe ist dieser Vektor ein Mittelwert aus allen Bedeutungen, die „Bank“ im Korpus je hatte.
+Der Vektor liegt folglich irgendwo zwischen Sitzmöbel und Finanzinstitut und repräsentiert keine der beiden Bedeutungen exakt.
+
+BERT löst dieses Problem indem es kontextabhängige Embeddings erzeugt. So wird ein Vektor für das Wort „Bank“ erzeugt, der zur Bedeutung
+Sitzmöbel passt und ein weiterer für die Bedeutung Finanzinstitut.
+
+Es verwendet während des Trainings Masked Language Modeling (MLM), um den Kontext und die Bedeutung von Wörtern im Satz zu verstehen.
+Anschließend wird es auf einem Datensatz mit gelabelten Bewertungen feinjustiert. 
+Dabei verbindet es jedes Eingabeelement mit jedem Ausgabeelement und 
+weist dabei wichtigen Wörtern und Phrasen im Text höhere Gewichtungen zu \cite{Deshai:2023aa}.
+
+Im MLM wird ein bestimmer Teil der Wörter in der Eingabesequenz zufällig maskiert (siehe Abbildung \ref{fig:mlm_bert}), 
+und das Modell muss diese verdeckten Wörter korrekt vorhersagen.
+
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.5]{static/mlm_bert.png}
+        \caption{\label{fig:mlm_bert} Bsp. zum MLM \cite{wettig2023}}
+    \end{center}
+\end{figure}
+
+Aufgrund der Bidirektionalität des BERT Modells ist dieses bei späteren Vorhersagen effektiver \cite{wettig2023}. 
+\cite{devlin2019} zeigt, wie relevant bidirektionalen Pretrainings für qualitativ hochwertige Sprachrepräsentationen sind.
+
+BERT nutzt die bi-direktionale Transformer-Architektur (siehe Abbildung \ref{fig:architecture_bert}), bei welcher tiefe semantische Informationen 
+eines Satzes erfasst werden können.
+Der Vorteil besteht darin, dass die gelernten Repräsentationen den Kontext in beide Richtungen integrieren können \cite{Wang:2020aa}.
+
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.3]{static/architecture_bert.png}
+        \caption{\label{fig:architecture_bert} Architektur des BERT Modells \cite{Wang:2020aa}}
+    \end{center}
+\end{figure}
+
+Für das Erstellen der Wortvektoren werden bei diesem Embedding WordPiece Embeddings genutzt.
+Es wurde von Google speziell für BERT entwickelt, um auch seltene oder unbekannte Wörter sinnvoll verarbeiten zu können.
+WordPiece ist ein Tokenisierungsverfahren, das Wörter in kleinere Einheiten zerlegt.
+
+Folgendes Beispiel für ein WordPiece Embedding (aus \cite{huggingface2025wordpiece}):
+\begin{enumerate}
+    \item Das \textbf{Startvokabular} besteht aus einem Vokabular aus Einzelbuchstaben 
+    (z.B. \texttt{h}, \texttt{\#\#e}, \texttt{\#\#l}, \texttt{\#\#o} für ``hello''), 
+    wobei alle Buchstaben außer dem Ersten mit \texttt{\#\#} markiert werden, um zu zeigen, dass sie nicht am Wortanfang stehen.
+
+    \item \textbf{Häufigkeitsanalyse:} Identifiziert häufig gemeinsam auftretende Buchstabenpaare, 
+    z.B. \texttt{("\#\#g", "\#\#s")} in ``hugs''.
+
+    \item \textbf{Mergeregeln:} Zum Zusammenfügen berechnet WordPiece einen Score:
+
+    \begin{equation}
+        \text{Score} = \frac{\text{Häufigkeit des Paares}}{\text{Häufigkeit Teil 1} \times \text{Häufigkeit Teil 2}}
+    \end{equation}
+
+    Dadurch werden eher seltene Kombinationen zusammengefügt, die besser charakteristische Subwörter ergeben.
+
+    \item \textbf{Merge-Iterationen:} Das Zusammenfügen wird so lange wiederholt, bis das gewünschte Vokabular erreicht ist.
+\end{enumerate}
+
+\textbf{Beim Zerlegen neuer Wörter:}
+\begin{enumerate}
+    \item Suche das längste Subwort im Vokabular, das am Wortanfang passt.
+    \item Markiere alles danach mit \texttt{\#\#} und wiederhole.
+    \item Wenn gar kein Teil im Vokabular ist, kommt das Sondertoken \texttt{[UNK]} (unbekannt) zum Einsatz.
+\end{enumerate}
+
+\textbf{Beispiele:}
+\begin{itemize}
+    \item \texttt{"hugs"} $\rightarrow$ \texttt{["hug", "\#\#s"]}
+    \item \texttt{"bugs"} $\rightarrow$ \texttt{["b", "\#\#u", "\#\#gs"]}
+    \item \texttt{"mug"} $\rightarrow$ \texttt{[UNK]}, falls \texttt{\#\#m} nicht im Vokabular ist
+\end{itemize}
+
+Zusätzlich werden Positions- und Segment-Embeddings hinzugefügt (siehe Abbildung \ref{fig:bert_tokenizierung}).
+
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.4]{static/bert_tokenizierung.png}
+        \caption{\label{fig:bert_tokenizierung} Zusammensetzung eines Input Tokens im BERT Modell \cite{devlin2019}}
+    \end{center}
+\end{figure}
+
+Das Input Token ergibt sich aus dem Token-, Position- und Segment-Embedding. Das Position-Embedding (Position Encoding in Abbildung \ref{fig:transformeroverview}) 
+stellt hierbei die jeweilige Position im Satz dar und das Segment-Embedding ordnet den Token dem entsprechenden Satz zu.
 
 \section{Hybride Modelle}
 \label{sec:hybride_modelle}

@@ -46,35 +46,34 @@
 \contentsline {subsection}{\numberline {3.2.1}Word Embeddings}{26}{subsection.3.2.1}%
 \contentsline {subsubsection}{\nonumberline Word2Vec}{27}{subsubsection*.50}%
 \contentsline {subsubsection}{\nonumberline GloVe}{28}{subsubsection*.53}%
-\contentsline {subsubsection}{\nonumberline BERT-Tokenisierung}{29}{subsubsection*.56}%
-\contentsline {subsection}{\numberline {3.2.2}Deep Learning-Modelle}{31}{subsection.3.2.2}%
-\contentsline {subsubsection}{\nonumberline CNN vs. RNN}{31}{subsubsection*.61}%
-\contentsline {subsubsection}{\nonumberline LSTM}{32}{subsubsection*.63}%
-\contentsline {subsubsection}{\nonumberline BiLSTM}{33}{subsubsection*.66}%
-\contentsline {subsubsection}{\nonumberline BERT}{34}{subsubsection*.69}%
-\contentsline {section}{\numberline {3.3}Hybride Modelle}{34}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}convolutional neural network (CNN) along with bi-directional LSTM}{34}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}XGBoost und BERT}{34}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Transformer: GBERT}{34}{subsection.3.3.3}%
-\contentsline {chapter}{\numberline {4}Relevante Datensätze und Auswahlkriterien}{35}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Vorstellung verfügbarer deutscher Fake-News-Datensätze}{35}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Auswahl und Begründung des finalen Datensatzes}{35}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Herausforderungen bei deutschen Textdaten (Klassenverteilung, Quellenvielfalt)}{35}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Konzeption der Softwarelösung}{36}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Machine Learning Modell}{36}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Welches Modell für Fake News Erkennung?}{36}{subsection.5.1.1}%
-\contentsline {subsubsection}{\nonumberline XGBoost}{36}{subsubsection*.72}%
-\contentsline {section}{\numberline {5.2}Hauptkomponente}{37}{section.5.2}%
-\contentsline {paragraph}{\nonumberline Als Beispiel die Seite Bild.de:}{37}{paragraph*.74}%
-\contentsline {chapter}{\numberline {6}Umsetzung des Prototyps}{41}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Implementierung der Chrome Erweiterung}{41}{section.6.1}%
-\contentsline {paragraph}{\nonumberline Service Worker}{41}{paragraph*.77}%
-\contentsline {paragraph}{\nonumberline Content Scripts}{41}{paragraph*.79}%
-\contentsline {paragraph}{\nonumberline Pop-ups}{41}{paragraph*.81}%
-\contentsline {chapter}{\numberline {7}Evaluation und Ergebnisse}{44}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Fazit und Ausblick}{45}{chapter.8}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{46}{chapter*.83}%
+\contentsline {subsection}{\numberline {3.2.2}Deep Learning-Modelle}{29}{subsection.3.2.2}%
+\contentsline {subsubsection}{\nonumberline CNN vs. RNN}{29}{subsubsection*.56}%
+\contentsline {subsubsection}{\nonumberline LSTM}{29}{subsubsection*.58}%
+\contentsline {subsubsection}{\nonumberline BiLSTM}{30}{subsubsection*.61}%
+\contentsline {subsubsection}{\nonumberline BERT}{31}{subsubsection*.64}%
+\contentsline {section}{\numberline {3.3}Hybride Modelle}{35}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}convolutional neural network (CNN) along with bi-directional LSTM}{35}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}XGBoost und BERT}{35}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Transformer: GBERT}{35}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {4}Relevante Datensätze und Auswahlkriterien}{36}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Vorstellung verfügbarer deutscher Fake-News-Datensätze}{36}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Auswahl und Begründung des finalen Datensatzes}{36}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Herausforderungen bei deutschen Textdaten (Klassenverteilung, Quellenvielfalt)}{36}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Konzeption der Softwarelösung}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Machine Learning Modell}{37}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Welches Modell für Fake News Erkennung?}{37}{subsection.5.1.1}%
+\contentsline {subsubsection}{\nonumberline XGBoost}{37}{subsubsection*.71}%
+\contentsline {section}{\numberline {5.2}Hauptkomponente}{38}{section.5.2}%
+\contentsline {paragraph}{\nonumberline Als Beispiel die Seite Bild.de:}{38}{paragraph*.73}%
+\contentsline {chapter}{\numberline {6}Umsetzung des Prototyps}{42}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Implementierung der Chrome Erweiterung}{42}{section.6.1}%
+\contentsline {paragraph}{\nonumberline Service Worker}{42}{paragraph*.76}%
+\contentsline {paragraph}{\nonumberline Content Scripts}{42}{paragraph*.78}%
+\contentsline {paragraph}{\nonumberline Pop-ups}{42}{paragraph*.80}%
+\contentsline {chapter}{\numberline {7}Evaluation und Ergebnisse}{45}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Fazit und Ausblick}{46}{chapter.8}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{47}{chapter*.82}%
 \contentsline {chapter}{\numberline {A}Anhang}{55}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Verwendete Hilfsmittel}{55}{section.A.1}%
-\contentsline {chapter}{Selbstständigkeitserklärung}{56}{section*.85}%
+\contentsline {chapter}{Selbstständigkeitserklärung}{56}{section*.84}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
