@@ -884,7 +884,7 @@ stellt hierbei die jeweilige Position im Satz dar und das Segment-Embedding ordn
 \section{Hybride Modelle}
 \label{sec:hybride_modelle}
 
-\subsection{CNN und LSTM}
+\subsection{CNN und LSTM mit PCA}
 
 In \cite{umer2020} wird eine hybride neuronale Netzwerkarchitektur vorgeschlagen, die die Fähigkeiten von CNN und 
 LSTM kombiniert. Dabei kommen zwei unterschiedliche Verfahren zur Dimensionsreduktion zum Einsatz: 
@@ -916,13 +916,30 @@ Jeder Artikel wird in Bezug auf eine Schlagzeile einer von vier Klassen zugeordn
 Zum Vergleich wurden weitere Modelle wie BERT auf den Datensatz angewendet.
 Dieses erzielte eine Accuracy von 91,3\% während das hybride CNN-LSTM Modell eine Accuracy von 97,8\% erreichte.
 
-\subsection{XGBoost und BERT}
+\subsection{CNN und LSTM mit GloVe}
 
+Ein weiteres in \cite{Buddhadev2025} vorgestelltes hybrides Modell ist zusammengesetzt aus CNN und LSTM. Zusätzlich werden die Daten
+mit dem GloVe Embedding vorverarbeitet.
 
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[scale=0.5]{static/cnn_lstm_glove.png}
+    \caption{\label{fig:cnn_lstm_glove} Ergebnisse verschiedener Modelle mit GloVe Embedding \cite{Buddhadev2025}}
+    \end{center}
+\end{figure}
 
-\cite{sharma2025}
+Getestet wurden die Modelle CNN mit LSTM, GRU und LSTM. Genutzt wurden zwei verschiedene Datensätze. Ein manuell erzeugter aus über 1500 Quellen basierend auf
+ca. 9000 Artikeln mit Falschinhalten und ca. 9000 echten Artikeln und ein erweiteter, welcher zusätzlich mit Inhalten aus anderen Datensätzen von Kaggle oder
+GitHub bereichert wurde.
+Durch die zusätzliche Nutzung von GloVe Embeddings wird in dieser Arbeit das Overfitting reduziert (siehe Abbildung \ref{fig:cnn_lstm_glove}).
+Vergleichsweise ist die Accuracy beim erweiterten Datensätz mit dem Keras Embedding bei 98,4\% im Training und bei 89,5\% beim Test (CNN mit LSTM).
 
-\cite{Buddhadev2025}
+\cite{Buddhadev2025} stellt außerdem fest, dass Wort-Embeddings wie GloVe die Semantik des Textes deutlich besser erfassen als Techniken zur Merkmalsextraktion 
+wie Bag-of-Words oder TF-IDF. In Kombination mit Deep-Learning-Modellen liefern sie eine höhere Genauigkeit als herkömmliche Machine-Learning-Modelle.
+
+\subsection{LSTM, BERT und GloVe}
+
+\cite{saini2023}
 
 \subsection{Transformer: GBERT}
 
