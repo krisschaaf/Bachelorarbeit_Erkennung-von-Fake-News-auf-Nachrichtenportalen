@@ -881,7 +881,7 @@ Zusätzlich werden Positions- und Segment-Embeddings hinzugefügt (siehe Abbildu
 Das Input Token ergibt sich aus dem Token-, Position- und Segment-Embedding. Das Position-Embedding (Position Encoding in Abbildung \ref{fig:transformeroverview}) 
 stellt hierbei die jeweilige Position im Satz dar und das Segment-Embedding ordnet den Token dem entsprechenden Satz zu.
 
-\section{Hybride Modelle}
+\section{Hybride Modelle für Fake News Erkennung}
 \label{sec:hybride_modelle}
 
 \subsection{CNN und LSTM mit PCA}
@@ -937,13 +937,136 @@ Vergleichsweise ist die Accuracy beim erweiterten Datensätz mit dem Keras Embed
 \cite{Buddhadev2025} stellt außerdem fest, dass Wort-Embeddings wie GloVe die Semantik des Textes deutlich besser erfassen als Techniken zur Merkmalsextraktion 
 wie Bag-of-Words oder TF-IDF. In Kombination mit Deep-Learning-Modellen liefern sie eine höhere Genauigkeit als herkömmliche Machine-Learning-Modelle.
 
-\subsection{LSTM, BERT und GloVe}
+\subsection{BERT und CNN (FakeBERT)}
+\label{sec:fakebert}
 
-\cite{saini2023}
+Ein von \cite{Kaliyar:2021aa} vorgestelltes Modell trägt den Namen \textit{FakeBERT} und setzt sich aus den Modellen BERT und CNN zusammen.
+BERT analysiert den Text und versteht den 
+Zusammenhang der Wörter, während mehrere kleine CNNs gleichzeitig verschiedene Merkmale aus dem Text herausfiltern. Die Ergebnisse dieser 
+CNNs werden zusammengeführt, weiterverarbeitet und klassifiziert. Entschieden wird auch in diesem Modell ob es sich um echte oder falsche 
+Nachrichten handelt. Das Modell erkennt durch diese Architektur sowohl den allgemeinen Sinn als auch feine sprachliche Muster im Text.
 
-\subsection{Transformer: GBERT}
+Gearbeitet wurde mit dem \textit{fake-and-real-news-dataset} von Kaggle. Dieser besteht aus 20.800 Nachrichtenartikeln, die während der US-Präsidentschaftswahl 2016 gesammelt wurden. 
+Enthalten sind unter anderem Merkmale wie Titel, Autor, Textinhalt. Klassifiziert werden die Nachrichten als echt oder gefälscht. 
+Im Datensatz gibt es 10.540 echte und 10.260 gefälschte Artikel.
 
-\cite{Dhiman:2024aa}
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[scale=0.5]{static/bert_cnn_fakebert.png}
+    \caption{\label{fig:bert_cnn_fakebert} Ergebnisse der verschiedenen Modelle bei Validierung \cite{Kaliyar:2021aa}}
+    \end{center}
+\end{figure}
+
+\cite{Kaliyar:2021aa} zeigt, dass das vorgeschlagene Modell FakeBERT mit einer Genauigkeit von 98,90\% (siehe Abbildung \ref{fig:bert_cnn_fakebert} 
+deutlich besser abschneidet als klassische Machine-Learning-Modelle und bis 2021 bestehende Deep-Learning-Ansätze. Durch die Kombination von BERT als 
+kontextuelles Sprachmodell mit mehreren parallel laufenden CNN-Blöcken zur Merkmalsextraktion können sowohl globale Bedeutungszusammenhänge als auch 
+lokale sprachliche Muster zuverlässig erfasst werden.
+
+\subsection{BERT und CNN (MCred)}
+
+Wie auch in Kapitel \ref{sec:fakebert} entwickelt \cite{Verma:2023aa} in seiner Arbeit ein weiteres hybrides Modell aus BERT und CNN.
+Dieses trägt den Namen \textit{MCred}.
+
+Es wird auf vier verschiedenen Datensätzen trainiert:
+\begin{itemize}
+  \item \textbf{WELFake:} Enthält 37.106 gefälschte und 35.028 echte Nachrichten und dient als Hauptdatensatz für das MCred-Modell.
+  \item \textbf{Kaggle Fake News Dataset:} Umfasst 10.369 gefälschten und 10.349 echte Nachrichten mit den Merkmalen Titel, Text und Autor. 
+  \item \textbf{McIntire Dataset:} Besteht aus 3.164 gefälschten und 3.171 echten Nachrichtenartikeln zur US-Präsidentschaftswahl 2016.
+  \item \textbf{FakeNewsNet:} Enthält 24.396 gefälschte und 13.614 echte Nachrichten. Stammt aus diversen Quellen und deckt zahlreiche Themenfelder ab.
+\end{itemize}
+
+FakeBERT kombiniert BERT direkt mit parallelen CNNs zur Merkmalsextraktion, während MCred BERT und CNN getrennt verarbeitet und 
+ihre Ausgaben später zusammenführt. Zudem nutzt MCred zusätzlich GloVe-Embeddings, was FakeBERT nicht tut. 
+Wie in Abbildung \ref{fig:bert_cnn_mcred} zu erkennen erreicht MCred dadurch im Kaggle Datensatz mit einer Accuracy von 99,46\% 
+einen besseren Wert als FakeBERT (Rohit Kumar Kaliyar and Narang (2021)) mit 98,90\%.
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[scale=0.49]{static/bert_cnn_mcred.png}
+    \caption{\label{fig:bert_cnn_mcred} Ergebnisse der verschiedenen Modelle \cite{Verma:2023aa}}
+    \end{center}
+\end{figure}
+
+In \cite{Dhiman:2024aa} wurde MCred im August 2024 mit einer Accuracy von 99,01\% als zweitbeste State-of-the-Art-Technik benannt.
+
+\subsection{BERT und LSTM}
+
+\cite{RAI202298} schlägt ein hybrides Modell vor, welches BERT und LSTM kombiniert. Hierbei fungiert BERT nachdem die Daten bereinigt wurden als Tokenizer und
+Basismodell durch seine Fähigkeit zur tiefen und kontextuellen Wortrepräsentationen (siehe Abbildung \ref{fig:bert_lstm_architecture}). 
+Anschließend werden die erzeugten Embeddings in ein LSTM gegeben, in welchem dessen Zellen die Langzeitabhängigkeiten aus den Sequenzen speichern.
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[scale=0.34]{static/bert_lstm_architecture.png}
+    \caption{\label{fig:bert_lstm_architecture} Architekture des vorgeschlagenen hybriden Modells  \cite{RAI202298}}
+    \end{center}
+\end{figure}
+
+Ziel des Papers ist es, die semantische Tiefe von BERT mit der temporalen Lernfähigkeit von LSTM zu verbinden, um Fake-News besser erkennen zu können.
+
+Für die Evaluation wurde der FakeNewsNet-Datensatz verwendet. Dieser besteht aus dem PolitiFact- und dem GossipCop-Datensatz. 
+PolitiFact enthält politisch orientierte Nachrichten, während GossipCop Nachrichten aus dem Unterhaltungsbereich beinhaltet. 
+In beiden Datensätzen sind die Inhalte kategorisiert in echte und gefälschte Nachrichten. 
+Die Datensätze bestehen aus Nachrichtentiteln. PolitiFact umfasst 432 falsche und 624 echte Titel, GossipCop 5323 falsche und 16.817 echte Titel.
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[scale=0.5]{static/bert_lstm_politifact.png}
+    \caption{\label{fig:bert_lstm_politifact} Ergebnisse der verschiedenen Modelle mit dem PolitiFact Datensatz \cite{RAI202298}}
+    \end{center}
+\end{figure}
+
+Das vorgeschlagene Modell, übertrifft klassische Methoden und auch reines BERT in der Fake-News-Erkennung. 
+Auf dem PolitiFact-Datensatz erreicht es 88,75\% Genauigkeit (siehe Abbildung \ref{fig:bert_lstm_politifact}, bei reinem BERT sind es nur 86,25\%.
+Der LSTM-Layer verbessert dabei die Nutzung der kontextuellen BERT-Embeddings, insbesondere bei der Analyse sprachlicher Muster in Newstiteln.
+
+\subsection{BERT und BiLSTM}
+
+\cite{wang2021covid19fakenewsdetection} stellt ein hybrides BERT und BiLSTM Modell vor. Hierbei wird ein vortrainiertes BERT-Modell als 
+Merkmalsencoder genutzt. Dabei bleiben alle internen Gewichte und Parameter von BERT unverändert und werden nicht weiter trainiert. 
+Zusätzlich wird ein BiLSTM Modell für die weitere Verarbeitung der BERT-Ausgaben trainiert (siehe Abbildung \ref{fig:bert_bilstm_architecture}).
+
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.45]{static/bert_bilstm_architecture.png}
+        \caption{\label{fig:bert_bilstm_architecture} Vgl. RNN (links) und LSTM (rechts) \cite{wang2021covid19fakenewsdetection}}
+    \end{center}
+\end{figure}
+
+Verwendet wurde ein COVID-19 Fake News Dataset von Kaggle, bestehend aus 6.420 Trainings- und 2.140 Testeinträgen. 
+Jeder Eintrag enthält die Merkmale Tweet-ID, den Text des Tweets und ein Label (echt oder gefälscht).
+Augrund der Größe dieses Datensatzes werden die internen Gewichte und Parameter von BERT nicht weiter trainiert.
+Durch die etwa 8.500 Einträge ist der COVID-19-Datensatz zu klein, um das BERT-Modell effektiv und ohne Overfitting neu zu trainieren.
+Durch das Einfrieren wird verhindert, dass die vortrainierten Sprachmuster überschrieben werden. 
+So bleibt die allgemeine Sprachkompetenz von BERT erhalten, während das darauf aufbauende BiLSTM lernt, 
+diese Informationen für die Fake-News-Erkennung zu nutzen.
+
+Verglichen wurde von \cite{wang2021covid19fakenewsdetection} folgende Modelle:
+\begin{itemize}
+    \item \textbf{Modell 1:} Feinjustiertes BERT-Modell (ohne zusätzliche Schichten)
+    \item \textbf{Modell 2:} BERT mit eingefrorenen Parametern + CNN-Schichten
+    \item \textbf{Modell 3:} BERT mit nicht eingefrorenen Parametern + CNN-Schichten
+    \item \textbf{Modell 4:} BERT mit eingefrorenen Parametern + BiLSTM-Schichten
+    \item \textbf{Modell 5:} BERT mit nicht eingefrorenen Parametern + BiLSTM-Schichten
+\end{itemize}
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[scale=0.4]{static/bert_bilstm_results.png}
+    \caption{\label{fig:bert_bilstm_results} Vgl. RNN (links) und LSTM (rechts) \cite{wang2021covid19fakenewsdetection}}
+    \end{center}
+\end{figure}
+
+Wie in Abbildung \ref{fig:bert_bilstm_results} zu sehen, hat das Modell 4 mit einer Test Accuracy von 96,14\% und einem F1-Score von 96,46\%
+das beste Ergebnis.
+Die Kombination aus dem beiden BERT und BiLSTM-Schichten liefert folglich den besten Ansatz zur COVID-19-Fake-News-Erkennung. 
+Die Ergebnisse zeigen, dass sich die semantische Tiefe von BERT und sequentielle Kontextverarbeitung von BiLSTM gut ergänzen.
+
+\subsection{BERT und LightGBM}
+
+\cite{Essa:2023aa}
+
+\cite{Dhiman:2024aa} nennt dieses Modell im August 2024 mit einer Accuracy von 99,06\% die beste State-of-the-Art-Technik.
 
 % \section{Diskussion: White Box vs. Black Box-Ansätze zur Erklärbarkeit}
 % \label{sec:diskussion_erklaerbarkeit}
