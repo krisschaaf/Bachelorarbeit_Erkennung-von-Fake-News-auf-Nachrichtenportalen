@@ -495,8 +495,9 @@ für die Interpretation und Analyse spielt.
 
 \subsubsection{XGBoost}
 
-Beim XGBoost (eXtreme Gradient Boosting) wird das Modell durch die Addition mehrerer Entscheidungsbäume aufgebaut, welche als
-schwache Lernalgorithmen (base learners) fungieren.
+eXtreme Gradient Boosting (XGBoost) ist eine Implementierung von Gradient Boosting Decision Trees (GBDT).
+Beim XGBoost wird das Modell durch die Addition mehrerer Entscheidungsbäume aufgebaut, welche als
+schwache Lernalgorithmen (base learners) fungieren. 
 Anders als bei Random Forests, bei denen Bäume unabhängig voneinander trainiert und aggregiert werden, 
 lernen die Bäume in XGBoost aufeinander aufbauend (siehe Abbildung \ref{fig:xgboost}). Die Vorhersage für ein Beispiel ergibt sich aus der Summe der 
 Ausgaben aller zuvor gelernten Bäume. Dadurch entsteht ein starkes Modell, das schrittweise durch Fehlerkorrektur 
@@ -525,6 +526,27 @@ Beide Regularisierungen sind in die sogenannte Ziel- oder Kostenfunktion eingebe
 In Anwendungen der natürlichen Sprachverarbeitung (NLP) hilft diese Kombination, besonders bei großen Textmerkmalräumen (z.B. TF-IDF), 
 relevante Merkmale herauszufiltern und gleichzeitig stabile Modelle zu trainieren\cite{chen2016xgboost}.
 
+\subsubsection{LightGBM}
+
+Das von \cite{ke2017} entwickelte Modell \textit{Light Gradient-Boosting Machine (LightGBM)} ist eine hocheffiziente Implementierung eines GBDT. 
+In Bezug auf dieses Modell wurden zwei zentrale Innovationen eingeführt, um das Training bei großen und hochdimensionalen Datensätzen zu beschleunigen, 
+ohne die Modellgenauigkeit zu beeinträchtigen:
+
+\paragraph{Gradient-based One-Side Sampling (GOSS)} reduziert den Rechenaufwand von GBDT, indem es nur einen Teil der Dateninstanzen für die Berechnung 
+der Informationsgewinne nutzt. Instanzen mit großen Gradienten (hohem Fehler) werden vollständig beibehalten, während aus den Instanzen mit kleinen 
+Gradienten eine Stichprobe gezogen wird. Ein Gewichtungsschritt stellt sicher, dass die Verteilung der Daten korrekt bleibt. Dies führt zu einer
+deutlich schnelleren Trainingszeit bei nahezu gleichbleibender Genauigkeit.
+
+\paragraph{Exclusive Feature Bundling (EFB)} adressiert das Problem vieler hochdimensionaler Datensätze, in denen viele Merkmale nur selten 
+(sogenannte \textit{sparse} Features) oder nie gleichzeitig (\textit{mutually exclusive}) aktiv sind. 
+\textit{Sparse} bedeutet, dass die meisten Werte in einem Merkmal Null sind, während \textit{mutually exclusive} bedeutet, dass bestimmte Merkmale sich 
+gegenseitig ausschließen – also nicht gleichzeitig einen von Null verschiedenen Wert annehmen. 
+EFB fasst solche Merkmale zu sogenannten Bundles zusammen, wodurch sich die Anzahl der zu verarbeitenden Merkmale stark reduziert. 
+Das Bündelungsproblem wird als Graphfärbungsproblem modelliert und mit einem Greedy-Algorithmus angenähert.
+Dadurch wird der Histogrammaufbau effizienter und das Training insgesamt beschleunigt.
+
+Sowohl \cite{ke2017} als auch \cite{hu2020} zeigen, dass LightGBM gegenüber XGBoost effizienter trainiert, eine bessere Vorhersage gibt, weniger
+Merkmale benötigt und Kktegorische Daten einfacher bearbeiten kann, dementsprechend also auch kein One-Hot-Encoding benötigt.
 
 \subsection{Metriken}
 
@@ -1029,7 +1051,7 @@ Zusätzlich wird ein BiLSTM Modell für die weitere Verarbeitung der BERT-Ausgab
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[scale=0.45]{static/bert_bilstm_architecture.png}
-        \caption{\label{fig:bert_bilstm_architecture} Vgl. RNN (links) und LSTM (rechts) \cite{wang2021covid19fakenewsdetection}}
+        \caption{\label{fig:bert_bilstm_architecture} Architektur des hybriden Modells \cite{wang2021covid19fakenewsdetection}}
     \end{center}
 \end{figure}
 
@@ -1053,7 +1075,7 @@ Verglichen wurde von \cite{wang2021covid19fakenewsdetection} folgende Modelle:
 \begin{figure}[htbp]
     \begin{center}
     \includegraphics[scale=0.4]{static/bert_bilstm_results.png}
-    \caption{\label{fig:bert_bilstm_results} Vgl. RNN (links) und LSTM (rechts) \cite{wang2021covid19fakenewsdetection}}
+    \caption{\label{fig:bert_bilstm_results} Ergebnisse der verschiedenen Modelle \cite{wang2021covid19fakenewsdetection}}
     \end{center}
 \end{figure}
 
@@ -1064,8 +1086,40 @@ Die Ergebnisse zeigen, dass sich die semantische Tiefe von BERT und sequentielle
 
 \subsection{BERT und LightGBM}
 
-\cite{Essa:2023aa}
+\cite{Essa:2023aa} entwickelte ein weiteres hybrides Modell welches das BERT-Embedding und ein LightGBM Modell nutzt.
+Das Modell kombiniert die tiefen semantischen Sprachmerkmale von BERT mit der schnellen, skalierbaren Klassifikationsfähigkeit von LightGBM.
+Im vorgestellten hybriden Modell wird die Eingabe mittels BERT verarbeitet (siehe Abbildung \ref{fig:bert_lightgbt_architecture}). 
+Dabei wird der [CLS]-Token aus den letzten drei Encoderschichten extrahiert und zu einem einzigen Merkmalsvektor zusammengeführt. 
+Dieser Vektor dient als Eingabe für LightGBM, das eine binäre Klassifikation in „wahr“ oder „falsch“ vornimmt.
 
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[scale=0.32]{static/bert_lightgbt_architecture.png}
+    \caption{\label{fig:bert_lightgbt_architecture} Architektur des hybriden Modells \cite{Essa:2023aa}}
+    \end{center}
+\end{figure}
+
+Genutzt werden in dem Paper folgende drei Datensätze:
+\begin{itemize}
+  \item \textbf{ISOT}: Enthält ca. 45.000 Artikel, gleichmäßig auf echte und gefälschte Nachrichten verteilt. 
+  Die echten Artikel stammen von Reuters, die gefälschten von fragwürdigen Quellen laut PolitiFact. 
+  Themenschwerpunkte sind Politik und Weltgeschehen (2016–2017).
+
+  \item \textbf{TI-CNN}: Besteht aus 20.015 Artikeln (8074 echt, 11.941 falsch). Die echten Nachrichten stammen von renommierten Medien 
+  wie der New York Times, die gefälschten von über 240 inoffiziellen Webseiten.
+
+  \item \textbf{FNC (Fake News Corpus)}: Umfasst Millionen Artikel von über 1000 Domains. Für die Experimente wurde ein ausgeglichener 
+  Datensatz aus je 500.000 echten und gefälschten Artikeln erstellt. Enthält zusätzliche Metadaten wie Titel, Autor und URL.
+\end{itemize}
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[scale=0.4]{static/bert_lightgbt_results.png}
+    \caption{\label{fig:bert_lightgbt_results} Ergebnisse der verschiedenen Modelle auf dem FNC-Datensatz \cite{Essa:2023aa}}
+    \end{center}
+\end{figure}
+
+In Abbildung \ref{fig:bert_lightgbt_results} zu sehen ist, dass dieses Modell anderen gerade bei großen Datenmengen überlegen ist.
 \cite{Dhiman:2024aa} nennt dieses Modell im August 2024 mit einer Accuracy von 99,06\% die beste State-of-the-Art-Technik.
 
 % \section{Diskussion: White Box vs. Black Box-Ansätze zur Erklärbarkeit}
