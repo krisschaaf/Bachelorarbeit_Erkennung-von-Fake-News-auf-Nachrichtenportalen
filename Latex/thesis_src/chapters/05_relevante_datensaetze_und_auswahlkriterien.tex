@@ -4,8 +4,81 @@
 \section{Vorstellung verfügbarer deutscher Fake-News-Datensätze}
 \label{sec:vorstellung_verfuegbare_deutsche_fake_news_datensaetze}
 
+\begin{table}[ht]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|p{1.9cm}|p{2.3cm}|p{1.3cm}|p{1.3cm}|p{3.3cm}|p{1.5cm}|}
+        \hline
+        \textbf{Datensatz} & \textbf{Quelle} & \textbf{Anzahl Zeilen} & \textbf{Anteil Fake (\%)} & \textbf{Besonderheiten / Einschränkungen} & \textbf{Eignung} \\
+        \hline
+        \textbf{Fake News Dataset German} & University of Applied Sciences Upper Austria & 63.868 & 7{,}24\,\% & Geringer Anteil an Fake-News $\rightarrow$ unausgewogene Klassenverteilung & Weniger geeignet \\
+        \hline
+        \textbf{German-Fake NC} & Fraunhofer-Institut für Sichere Informationstechnologie SIT & 489 & 100\,\% & Enthält nur Referenzen, keine Texte $\rightarrow$ keine direkte Textauswertung möglich & Nicht geeignet \\
+        \hline
+        \textbf{FANG-COVID} & Association for Computational Linguistics & 41.242 & 31{,}97\,\% & Ausgewogene Klassen, vollständige Texte, viele Metadaten (Titel, Header, Label) & \textbf{Sehr geeignet} \\
+        \hline
+        \textbf{DeFaktS} & FZI Forschungszentrum Informatik & -- & -- & Kein Zugang $\rightarrow$ Nutzung ausgeschlossen & Nicht verfügbar \\
+        \hline
+    \end{tabular}
+    \caption{Vergleich deutscher Fake-News-Datensätze}
+    \label{tab:deutsche-fake-news-datensaetze}
+\end{table}
+
+In der Tabelle \ref{tab:deutsche-fake-news-datensaetze} sind verschiedene deutsche Fake-News-Datensätze gelistet.
+Die Eignung bezieht sich darauf, wie sinnvoll die Nutzung dieser jeweiligen Datensätze für das Trainieren eines Modells zum Erkennen von Fake News ist.
+
+%TODO: kurze beschreibung für jeden datensatz 
+
+\section{Nutzung englischer Datensätze}
+
+Eine in \cite{Simone2022} angewandte Lösung ist die Erstellung eines großen Datensatzes mit englischen Artikeln. Das Modell wurde entsprechend auf Englisch 
+trainiert und die deutschen Artikel in der späteren Anwendung vor der Vorhersage übersetzt.
+Fake News haben oft stilistische, semantische oder rhetorisch manipulierende Muster, welche sich je nach Sprache unterscheiden können.
+Selbst mit modernen Transformern können diese Muster nicht sicher mit übersetzt werden, da diese einen übersetzen Artikel einer anderen Domäne zuordnen könnten
+als den ursprünglichen Artikel \cite{hong2023disentanglingstructurestylepolitical}. 
+Ein typisches Beispiel ist der Satz: „Natürlich wird das RKI bald neue Lockdowns empfehlen – die haben ja auch sonst nichts zu tun.“ 
+Die Übersetzung ins Englische („Of course, the RKI will soon recommend new lockdowns – they have nothing else to do anyway“) wirkt sprachlich korrekt, 
+verliert jedoch die ironisch-sarkastische Eigenschaft.
+Das Ergebnis ist eine eher sachliche Aussage, welche vom englischen Modell sehr wahrscheinlich nicht mehr als Fake-News klassifiziert wird.
+Solche stilistischen Abschwächungen sind ein Merkmal von maschinellen Übersetzungen, was sie in diesem Fall problematisch
+für den Einsatz in der Fake-News-Erkennung macht \cite{kuehn2024enhancingrhetoricalfigureannotation}. %TODO: ChatGPT Beispiel
+
 \section{Auswahl und Begründung des finalen Datensatzes}
 \label{sec:auswahl_und_begruendung_finaler_datensatz}
 
-\section{Herausforderungen bei deutschen Textdaten (Klassenverteilung, Quellenvielfalt)}
-\label{sec:herausforderungen_deutsche_textdaten}
+Da der DeFaktS Datensatz nicht öffentlich verfügbar ist fällt dieser aus der Auswahl. 
+Um ein Modell zu trainierien werden viele Daten benötigt. Im Kapitel \ref{sec:bert_lightgbm} umfassen die Datensätze von 20.000 bis hin zu Millionen Artikeln.
+Deshalb entfällt auch der GermanFakeNC Datensatz.
+
+Ein Problem, dass der Fake News Dataset German Datensatz (FNDG) bringt, ist die stark unausgewogene Klassenverteilung. Nur 7,24\% der 64.868 Einträge sind 
+als Fake-News gekennzeichnet. Dadurch kann es beim Trainieren eines Modells dazu kommen, dass es überwiegend die häufiger vorkommenen echten Artikel 
+lernt und Fake-News kaum oder gar nicht erkennt. 
+Ein Modell könnte beispielsweise stets „echt“ vorhersagen und damit auf diesem Datensatz eine hohe Accuracy erreichen.
+Bei späterer Anwendung würde es aber die entscheidenden Fälle nicht mehr differenzieren können. 
+Das führt zu einem guten Accuracy-Wert, während Recall und F1-Score für die Fake-Klasse deutlich leiden. 
+Das Modell verfehlt somit genau die Einträge, die für die Anwendung zentral sind.
+Inhaltlich sind die Einträge aber auf einem breiten Gebiet verteilt, was einen Teil dieses Datensatzes für die Auswahl interessant macht.
+
+Der verbleibende FANG-COVID Datensatz \cite{mattern-etal-2021-fang} fällt aufgrund seiner vielen Einträge und guter Klassenausgewogenheit
+in die engere Auswahl. Problematisch bei diesem Datensatz ist aber, dass sich alle Einträge im COVID-19 Pandemie Kontext befinden.
+Es besteht die Gefahr einer thematischen Überanpassung. Das Modell lernt vor allem, typische Begriffe, Erzählmuster und 
+Formulierungen im Zusammenhang mit Pandemie-Fake-News zu erkennen. Dazu können zum Beispiel Impfgegner-Rhetorik, Verschwörungen oder auch Begriffe 
+wie „PCR-Test“, „Lockdown“ oder „RKI“ gehören. In anderen Themenbereichen wie Politik, Migration oder Klima erkennt es dagegen manipulierte Inhalte 
+unter Umständen nicht, da es diese Muster nie gelernt hat.
+Außerdem kann das Modell semantische Verzerrungen entwickeln. Wörter, die in Pandemie-Fake-News häufig auftreten, könnten fälschlich als 
+Indiz für eine Fake Klassifierung gewertet werden, auch wenn sie in neutralem oder echtem Kontext auftreten \cite{chen2023, nan2022improvingfakenewsdetection}. 
+Dadurch steigt die Gefahr von False Positives bei echten Nachrichten außerhalb des COVID-Kontexts.
+Ein Modell, das nur mit COVID-bezogenen Daten trainiert wurde, kann inhaltlich und stilistisch stark eingeschränkt generalisieren und 
+verfehlt damit das Ziel, Fake News themenübergreifend zuverlässig zu erkennen.
+
+Durch die Analyse der Datensätze ergeben sich folgende Möglichkeiten für das Trainieren eines Modells zur Fake-News Erkennung:
+\begin{itemize}
+    \item Nur FANG-COVID mit allen 41.242 Einträgen, aber 31,97\% Klassenausgewogenheit
+    \item FANG-COVID mit ca. 26.000 Einträgen aber dafür 50/50 Klassenausgewogenheit
+    \item FANG-COVID und FNDG kombiniert für bessere Generalisierung (105.110 Einträge, aber 16,94\% Klassenausgewogenheit)
+    \item FANG-COVID und alle Fake Artikel von FNDG kombiniert für bessere Klassenausgewogenheit und mehr Daten
+    (45.866 Einträge mit 38.82\% Klassenausgewogenheit)
+    \item Alle Fake Einträge aus FANG-COVID und FNDG kombiniert (17.809 Fake Einträge) kombiniert mit Stichproben aus sowohl FANG-COVID als auch FNDG
+    um eine sinnvolle Klassenausgewogenheit mit vielen Daten und einer guten Generalisierung zu erreichen (45.866 Einträge mit 38.82\% Klassenausgewogenheit,
+    aber 28.057 echten Einträgen zu 50/50 aus FANG-COVID und FNDG).
+\end{itemize}
