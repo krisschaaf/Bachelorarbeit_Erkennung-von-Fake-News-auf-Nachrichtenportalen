@@ -1,4 +1,4 @@
 *node_modules
 .venv
 __pycache__
-publish_flask.sh
+flask/publish_flask.sh
