@@ -24,3 +24,4 @@ Obsolete/
 Code/Machine Learning Model/logic/test
 Code/Machine Learning Model/logic/datasets/FANG-COVID_DATASET
 Code/Machine Learning Model/logic/datasets/fake_news_dataset_german.csv
+.env

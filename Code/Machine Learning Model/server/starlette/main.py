@@ -3,6 +3,7 @@ from starlette.responses import JSONResponse
 from starlette.routing import Route
 from transformers import pipeline, TFAutoModelForSequenceClassification, AutoTokenizer
 import asyncio
+import os
 
 
 async def homepage(request):
@@ -15,7 +16,8 @@ async def homepage(request):
 
 
 async def server_loop(q):
-    model = TFAutoModelForSequenceClassification.from_pretrained("yelp_review_full_bert")
+    access_token = os.getenv("ACCESS_TOKEN_HUGGING_FACE")
+    model = TFAutoModelForSequenceClassification.from_pretrained("krisschaaf/yelp_review_full_bert", token=access_token)
     tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
 
     pipe = pipeline("text-classification", model=model, tokenizer=tokenizer)
