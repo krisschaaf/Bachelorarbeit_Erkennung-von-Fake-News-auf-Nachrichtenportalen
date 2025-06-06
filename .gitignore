@@ -1,8 +1,11 @@
 .DS_Store
-Datasets/news.csv
-Python/.idea
-Python/__pycache__/
-Python/venv/
+
+.idea
+.env
+.venv
+*node_modules
+__pycache__
+
 Latex/thesis_src/thesis.acn
 Latex/thesis_src/thesis.aux
 Latex/thesis_src/thesis.bbl
@@ -20,8 +23,6 @@ Latex/thesis_src/thesis.slo
 Latex/thesis_src/thesis.synctex.gz
 Latex/thesis_src/thesis.toc
 Latex/thesis_src/thesis.xdv
+
 Obsolete/
 Code/Machine Learning Model/logic/test
-Code/Machine Learning Model/logic/datasets/FANG-COVID_DATASET
-Code/Machine Learning Model/logic/datasets/fake_news_dataset_german.csv
-.env

@@ -1,4 +1,2 @@
 *.csv filter=lfs diff=lfs merge=lfs -text
-Code/Machine[[:space:]]Learning[[:space:]]Model/server/starlette/yelp_review_full_bert/* filter=lfs diff=lfs merge=lfs -text
-Code/Machine[[:space:]]Learning[[:space:]]Model/logic/playground/yelp_review_full_bert/* filter=lfs diff=lfs merge=lfs -text
 Code/Machine[[:space:]]Learning[[:space:]]Model/logic/datasets filter=lfs diff=lfs merge=lfs -text
