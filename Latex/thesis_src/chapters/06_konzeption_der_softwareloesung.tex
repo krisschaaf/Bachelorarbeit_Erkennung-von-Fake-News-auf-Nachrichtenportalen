@@ -30,6 +30,38 @@ was ihn zum leistungsfähigsten klassischen ML-Modell gegenüber SVM und Random 
 Die Studie nutzte unigram-basierte TF-IDF-Features und zeigte, dass XGBoost bei ausgeglichener Klassenzuordnung besonders effektiv ist.
 
 
+\section{Machine Learning Modell} \label{sec:06:machine_learning_model}
+
+\subsection{Datenvorverarbeitung für BERT}
+
+BERT lernt den Kontext der verschiedenen Artikel. Dafür müssen möglichst viele Informationen erhalten bleiben. 
+Wie in Kapitel \ref{sec04:bert} beschrieben, erstellt BERT sein eigenes Word Embedding.
+
+Der FNDG Datensatz enthält die Merkmale 'id', 'url', 'Titel', 'Body', 'Kategorie', 'Datum', 'Quelle', 'Fake' und 'Art'.
+Hiervon beinhalten die drei Merkmale 'Titel', 'Body' und 'Fake' die relevanten Informationen für diese Anwendung.
+In 'Titel' steht die jeweilige Überschrift des Artikels und in 'Body' der eigentliche Inhalt. Das Merkmal 'Fake' gibt in der Nominalskala
+an ob der Artikel als gefälscht klassifiziert ist oder nicht (1 für Fake, 0 für echt).
+
+Im FANG-COVID Datensatz sind die Merkmale 'Unnamed: 0.1', 'Unnamed: 0', 'article', 'date', 'header', 'label', 'url', 'hist', 'tweeet', 'repl', 'retw', 'like' und 'quote'
+enthalten. 'article', 'header' und 'label' sind hierbei relevant. 'header' und 'article' sind analog zum FNDG Datensatz Überschrift und Inhalt
+des Artikels. 'label' enthält entweder den Wert 'real' um den Artikel als echt oder 'fake' um den Artikel als gefälscht zu klassifizieren.
+
+Die beiden Datensatze werden zur Weiterverarbeitung zusammengefasst. Überschrift und Inhalt werden konkateniert, da das BERT Modell nur
+einen Wert pro Label verarbeiten kann. Dieses Merkmal wird umbenannt zu 'text'. 
+Für die Klassifizierungskennzeichnung wird die Nominalskala des FNDG Datensatzes und der Titel des FANG-Covid Datensatzes übernommen.
+
+Danach folgt die Aufteilung der Daten in Trainings-, Validierungs- und Testdatensätze. 
+80\% des Gesamtdatensatzes werden für das Training genutzt und jeweils 10\% für das Validierung und Testen.
+
+\subsection{BERT Model Training}
+
+BERT bietet viele bereits vortrainierte Modelle an. Diese sind unüberwacht trainiert worden. 
+
+
+\subsection{LightGBM Model Training}
+
+\subsection{Gesamtarchitektur}
+
 \section{Hauptkomponente} \label{sec:06:hauptkomponente}
 
 Die Hauptkomponente hat die Aufgabe die Artikel auf den verschiedenen Nachrichtenportalen zu lesen und zu ergänzen.
