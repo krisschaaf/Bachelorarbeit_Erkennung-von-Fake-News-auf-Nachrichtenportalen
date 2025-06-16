@@ -1123,5 +1123,33 @@ Genutzt werden in dem Paper folgende drei Datensätze:
 In Abbildung \ref{fig:bert_lightgbt_results} zu sehen ist, dass dieses Modell anderen gerade bei großen Datenmengen überlegen ist.
 \cite{Dhiman:2024aa} nennt dieses Modell im August 2024 mit einer Accuracy von 99,06\% die beste State-of-the-Art-Technik.
 
-% \section{Diskussion: White Box vs. Black Box-Ansätze zur Erklärbarkeit}
-% \label{sec:diskussion_erklaerbarkeit}
+
+\subsection{RoBERTa und LightGBM}
+\label{sec:roberta_lightgbm}
+
+%TODO: schreiben
+
+Aufbauend auf dem hybriden BERT und LightGBM Model zeigt \cite{V_G_2024} die Vorteile eines hybriden RoBERTa-LightGBM Modells.
+
+RoBERTa ist eine weiterentwickelte und leistungsstärkere Version von BERT, die durch effizienteres Training und größere Datenbasis 
+bessere Ergebnisse in der Fake-News-Erkennung erzielt. 
+Statt mit den 16GB Textdaten des BERT Modells wurde RoBERTa mit über 160GB trainiert, wodurch eine deutlich bessere Generalisierungsfähigkeit besteht.
+Außerdem nutzt RoBERTa nicht mehr das statische maskieren (MLM) wie BERT, sondern ein fortgeschritteneres dynamisches maskieren.
+Hierbei wird jedes mal genau dann ein Maskierungspattern generiert, wenn eine Sequenz einem Modell hinzugefügt wird \cite{roberta:main}.
+
+Das Paper verwendet den „Fake News Detection Dataset“ zum Training. 
+Die Daten stammen von reuters.com und umfassen jeweils 12.600 Artikel, gesammelt in den Jahren 2016 bis 2017.
+
+Nach der Vorverarbeitung wurden die Daten tokenisiert und mit Roberta in Vektor-Embeddings umgewandelt.
+Verwendet wird der [CLS] Token aus den letzten drei Hidden Layers, um den gesamten Text zu repräsentieren.
+Durch Self Attention liefert dies eine feste, dichte Vektor-Repräsentation pro Artikel.
+Diese Embeddings dienten anschließend als Eingabe für LightGBM zur binären Klassifikation.
+
+RoBERTa-LightGBM erzielt eine Verbesserung gegenüber BERT-LightGBM von bis zu 21\% (siehe Abbildung \ref{fig:roberta_lightgbm_auc_roc_value}).
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[scale=0.5]{static/roberta_lightgbm_auc_roc_value.png}
+    \caption{\label{fig:roberta_lightgbm_auc_roc_value} Auswertung der verschiedenen AUC ROC Werte \cite{V_G_2024}}
+    \end{center}
+\end{figure}

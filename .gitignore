@@ -26,3 +26,5 @@ Latex/thesis_src/thesis.xdv
 
 Obsolete/
 Code/Machine Learning Model/logic/test
+
+*.pkl

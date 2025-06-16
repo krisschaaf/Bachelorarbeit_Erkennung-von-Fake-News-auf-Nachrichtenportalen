@@ -1,41 +1,54 @@
 \chapter{Konzeption der Softwarelösung}
 \label{chap:konzeption_der_softwareloesung}
 
-\section{Machine Learning Modell} %TODO: eigenes chapter hierfür! (Analyse der verschiedenen NLP Modelle in Bezug auf Fake News Erkennung)
-
-\subsection{Welches Modell für Fake News Erkennung?}
-
-% TODO: eventuell BERT + BiLSTM 
-
-% TODO: oder gbert mit lightgbm mit dem fang covid und dem fake news german dataset (langchain zum verbinden in python)
-
-\subsubsection{XGBoost}
-
-%TODO: Informationen prüfen
-
-
-In der Studie von \cite{petrovic2024} wurde XGBoost mit der TF-IDF-Vektorisierung kombiniert, 
-um Fake News aus textuellen Inhalten zu identifizieren. Durch eine zusätzliche Hyperparameter-Optimierung mittels eines 
-metaheuristischen Verfahrens (VNS) konnte die Modellleistung weiter verbessert werden. Die Autoren betonen, 
-dass XGBoost durch die Integration von Regularisierung und adaptiver Lernstrategie eine exzellente Eignung für textklassifikatorische 
-Aufgaben zeigt.
-
-In einer weiteren aktuellen Studie wurde XGBoost in Kombination mit BERT eingesetzt, um Sarkasmus in Texten zu erkennen. 
-Diese hybride Architektur kombinierte semantische Einbettungen mit der Klassifikationsstärke von XGBoost und lieferte deutlich bessere 
-Ergebnisse als Deep-Learning-Modelle allein \cite{sharma2025}.
-
-Auch in der Emotionserkennung aus Textdaten wurde XGBoost erfolgreich eingesetzt. 
-In einer experimentellen Vergleichsstudie erzielte XGBoost einen durchschnittlichen F1-Score von 97{,}86\%, 
-was ihn zum leistungsfähigsten klassischen ML-Modell gegenüber SVM und Random Forest machte\cite{paksoy2024}. 
-Die Studie nutzte unigram-basierte TF-IDF-Features und zeigte, dass XGBoost bei ausgeglichener Klassenzuordnung besonders effektiv ist.
-
-
 \section{Machine Learning Modell} \label{sec:06:machine_learning_model}
 
-\subsection{Datenvorverarbeitung für BERT}
+\subsection{XML-RoBERTa-large}
 
-BERT lernt den Kontext der verschiedenen Artikel. Dafür müssen möglichst viele Informationen erhalten bleiben. 
-Wie in Kapitel \ref{sec04:bert} beschrieben, erstellt BERT sein eigenes Word Embedding.
+%TODO: https://huggingface.co/FacebookAI/xlm-roberta-large
+
+\subsubsection{Cross-lingual Language Model (XML)}
+
+In Kapitel \ref{sec04:bert} wurde bereits die Funktionsweise des MLMs erklärt. Kurz gefasst werden hierbei Wörter im Text zufällig maskiert, damit das Modell 
+diese anschließend als Training erraten muss. BERT basiert auf diesem Ansatz. Die Erweiterung von MLM ist das Translation Language Model (TLM).
+Im TLM werden statt einzelner Sätze (wie im MLM) übersetzte Satzpaare verwendet. Wörter in beiden Sprachen werden maskiert, und das Modell lernt, 
+sie mithilfe beider Sprachversionen zu erraten (siehe Abbildung \ref{fig:translation_language_modeling}). So lernt es, die Bedeutungen über Sprachgrenzen hinweg zu 
+verbinden.
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[scale=0.32]{static/translation_language_modeling.png}
+    \caption{\label{fig:translation_language_modeling} Auswertung eines bilingualen Satzpaares von TLM \cite{NEURIPS2019_c04c19c2}}
+    \end{center}
+\end{figure}
+
+XLM ist ein mehrsprachiges Sprachmodell, das darauf ausgelegt ist, Sprachverständnis über mehrere Sprachen hinweg zu ermöglichen.
+Vortrainiert wird es mit MLM und zusätzlich TLM.
+Durch diese Kombination kann das Modell lernen, ähnliche Inhalte in verschiedenen Sprachen miteinander zu verknüpfen \cite{NEURIPS2019_c04c19c2}.
+
+\subsubsection{Sentence Piece Tokenizer} \label{subsec:sentencepiece}
+
+Im Vergleich zum BERT Modell, welches den Word Piece Tokenizer nutzt, muss XML-RoBERTa den Sentence Piece Tokenizer nutzen. Dieser arbeitet sprachunabhängig, benötigt
+keine vorab segmentierten Daten und funktioniert auch auf rohem Unicode-Text. 
+Besonders wichtig ist das Konzept der Lossless Tokenization, das Segmentierung vollständig reversibel macht \cite{kudo-richardson-2018-sentencepiece}.
+Sentence Piece setzt sich aus vier Hauptkomponenten zusammen. Dem Normalizer, Trainer, Encoder und Decoder. 
+
+\begin{enumerate}
+    \item Der \textbf{Normalizer} wandelt unter anderem alle Zeichen in ASCII um, normalisiert Leerzeichen und ersetzt alle Groß- mit Kleinbuchstaben.
+    \item Der \textbf{Trainer} erstellt aus diesen normalisierten Daten daraufhin ein Subwort-Modell. Jedes Subwort bekommt eine eindeutige ID.
+    \textless s \textgreater markiert den Start eines Satzes und hat immer die ID 0. Das \_ steht für ein Leerzeichen und markiert somit den Wortanfang.
+    \item Der \textbf{Encoder} kodiert nun einen übergebenen Input basierend auf dem erstellten Subwort-Modell in eine ID-Sequenz.
+    item Der \textbf{Decoder} dekodiert eine erstellte ID-Sequenz zurück in einen lesbaren Input.
+\end{enumerate}
+
+\subsubsection{conll2003 Datensatz}
+
+%TODO: https://huggingface.co/datasets/eriktks/conll2003
+
+\subsection{Datenvorverarbeitung}
+
+RoBERTa lernt den Kontext der verschiedenen Artikel. Dafür müssen möglichst viele Informationen erhalten bleiben. 
+Wie in Kapitel \ref{subsec:sentencepiece} beschrieben, erstellt RoBERTa analog zu BERT sein eigenes Word Embedding.
 
 Der FNDG Datensatz enthält die Merkmale 'id', 'url', 'Titel', 'Body', 'Kategorie', 'Datum', 'Quelle', 'Fake' und 'Art'.
 Hiervon beinhalten die drei Merkmale 'Titel', 'Body' und 'Fake' die relevanten Informationen für diese Anwendung.
@@ -46,16 +59,19 @@ Im FANG-COVID Datensatz sind die Merkmale 'Unnamed: 0.1', 'Unnamed: 0', 'article
 enthalten. 'article', 'header' und 'label' sind hierbei relevant. 'header' und 'article' sind analog zum FNDG Datensatz Überschrift und Inhalt
 des Artikels. 'label' enthält entweder den Wert 'real' um den Artikel als echt oder 'fake' um den Artikel als gefälscht zu klassifizieren.
 
-Die beiden Datensatze werden zur Weiterverarbeitung zusammengefasst. Überschrift und Inhalt werden konkateniert, da das BERT Modell nur
+Die beiden Datensatze werden zur Weiterverarbeitung zusammengefasst. Überschrift und Inhalt werden konkateniert, da das RoBERTa Modell nur
 einen Wert pro Label verarbeiten kann. Dieses Merkmal wird umbenannt zu 'text'. 
 Für die Klassifizierungskennzeichnung wird die Nominalskala des FNDG Datensatzes und der Titel des FANG-Covid Datensatzes übernommen.
 
 Danach folgt die Aufteilung der Daten in Trainings-, Validierungs- und Testdatensätze. 
 80\% des Gesamtdatensatzes werden für das Training genutzt und jeweils 10\% für das Validierung und Testen.
 
-\subsection{BERT Model Training}
 
-BERT bietet viele bereits vortrainierte Modelle an. Diese sind unüberwacht trainiert worden. 
+
+
+\subsection{RoBERTa Model fine-tuning}
+
+RoBERTa bietet viele bereits vortrainierte Modelle an. Diese sind unüberwacht trainiert worden. 
 
 
 \subsection{LightGBM Model Training}
