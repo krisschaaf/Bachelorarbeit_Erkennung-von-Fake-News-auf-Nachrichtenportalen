@@ -839,21 +839,25 @@ und das Modell muss diese verdeckten Wörter korrekt vorhersagen.
     \end{center}
 \end{figure}
 
-Aufgrund der Bidirektionalität des BERT Modells ist dieses bei späteren Vorhersagen effektiver \cite{wettig2023}. 
-\cite{devlin2019} zeigt, wie relevant bidirektionalen Pretrainings für qualitativ hochwertige Sprachrepräsentationen sind.
-
 BERT nutzt die bi-direktionale Transformer-Architektur (siehe Abbildung \ref{fig:architecture_bert}), bei welcher tiefe semantische Informationen 
-eines Satzes erfasst werden können.
+eines Satzes erfasst werden können. Aufgrund dieser Bidirektionalität ist das Modell bei späteren Vorhersagen effektiver \cite{wettig2023}. 
 Der Vorteil besteht darin, dass die gelernten Repräsentationen den Kontext in beide Richtungen integrieren können \cite{Wang:2020aa}.
+\cite{devlin2019} zeigt, wie relevant bidirektionalen Pretrainings für qualitativ hochwertige Sprachrepräsentationen sind.
 
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[scale=0.3]{static/architecture_bert.png}
-        \caption{\label{fig:architecture_bert} Architektur des BERT Modells \cite{Wang:2020aa}}
+        \caption{\label{fig:architecture_bert} Bidirektionalität des BERT Modells \cite{Wang:2020aa}}
     \end{center}
 \end{figure}
 
-Für das Erstellen der Wortvektoren werden bei diesem Embedding WordPiece Embeddings genutzt.
+Zwei wichtige Bestandteile der BERT Architektur sind die \textit{Self Attention Heads} und die \textit{Hidden Layers}
+(siehe Abbildung \ref{fig:BERT_visualization} und \ref{fig:multi_head_attention_visualization}).
+
+%TODO: layering und multihead attention erklären
+%TODO: (ein anderer Stelle) erklären mit welchen daten bert trainiert wurde!
+
+Für das Erstellen der Wortvektoren nutzt BERT WordPiece Embeddings genutzt.
 Es wurde von Google speziell für BERT entwickelt, um auch seltene oder unbekannte Wörter sinnvoll verarbeiten zu können.
 WordPiece ist ein Tokenisierungsverfahren, das Wörter in kleinere Einheiten zerlegt.
 
@@ -902,6 +906,82 @@ Zusätzlich werden Positions- und Segment-Embeddings hinzugefügt (siehe Abbildu
 
 Das Input Token ergibt sich aus dem Token-, Position- und Segment-Embedding. Das Position-Embedding (Position Encoding in Abbildung \ref{fig:transformeroverview}) 
 stellt hierbei die jeweilige Position im Satz dar und das Segment-Embedding ordnet den Token dem entsprechenden Satz zu.
+
+\subsection{RoBERTa}
+
+Aufgrund der Annahme, dass das in Kapitel \ref{sec04:bert} beschriebene BERT Modell nicht ausreichend trainiert wurde, entwickelte 
+\cite{DBLP:journals/corr/abs-1907-11692} das RoBERTa Modell.
+
+Statt WordPiece nutzt RoBERTa Byte-Pair-Encoding (BPE) zum Tokenisieren wobei ein Vokabular von 50.000 Token verwendet wird.
+
+BPE besteht aus folgenden, in \cite{sennrich2015} erklärten, Schritten:
+\begin{enumerate}
+  \item Zerlege jedes Wort in einzelne Zeichen und hänge ein Endsymbol „·“ an (z.\,B.\ \texttt{``lower''} → \texttt{[l, o, w, e, r, ·]}).
+  \item Zähle alle benachbarten Zeichenpaare im Korpus (z.\,B.\ \texttt{(l,o)}, \texttt{(o,w)}, \texttt{(w,e)}, \dots).
+  \item Führe das häufigste Paar zu einem neuen Symbol zusammen (z.\,B.\ \texttt{(l,o)} → \texttt{``lo''}).
+  \item Wiederhole Schritt 2–3 für eine feste Anzahl von Merges (z.\,B.\ \texttt{``lo'' + ``w'' → ``low''} → \texttt{[low, e, r, ·]}).
+  \item Speichere die entstandenen Merge-Regeln und wende sie auf neue Wörter an.
+\end{enumerate}
+
+Die Eingaben bestehen aus Abschnitten von 512 aufeinanderfolgenden Token, die sich auch über mehrere Dokumente erstrecken können. 
+Der Beginn und das Ende eines Dokuments werden durch spezielle Markierungen <s> und </s> gekennzeichnet. 
+Während des Pretrainings werden 15\% der Token maskiert – in 80\% der Fälle durch <mask>, in 10\% durch 
+ein zufälliges anderes Token und in den restlichen 10\% bleiben sie unverändert. 
+Anders als bei BERT erfolgt die Maskierung dynamisch, also in jeder Epoche neu.
+
+Das RoBERTa-Modell wurde auf einer Zusammenführung von fünf Datensätzen vortrainiert: dem BookCorpus mit über 11.000 
+unveröffentlichten Büchern, der englischen Wikipedia (ohne Listen, Tabellen und Überschriften), 
+CC-News mit 63 Millionen englischsprachigen Nachrichtenartikeln aus dem Zeitraum September 2016 bis Februar 2019, 
+OpenWebText als Open-Source-Rekonstruktion des WebText-Datensatzes von GPT-2 sowie dem Stories-Datensatz, 
+einem nach erzählerischem Stil gefilterten Ausschnitt aus CommonCrawl-Daten. Insgesamt umfassen diese Datensätze 160 GB an Text.
+
+\subsection{XML-RoBERTa}
+
+Im Gegensatz zu RoBERTa, das ausschließlich auf englischen Texten trainiert wurde, ist XLM-RoBERTa ein mehrsprachiges 
+Transformer-basiertes Sprachmodell, das auf 100 Sprachen trainiert wurde. 
+Die Trainingsdaten umfassen über 2 Terabyte gefilterter CommonCrawl-Texte.
+Auch die Vokabulargröße ist mit 250.000 Token deutlich größer als die 50.000 Token bei RoBERTa \cite{DBLP:journals/corr/abs-1911-02116}.
+
+Statt Byte-Pair-Encoding (BPE) wie bei RoBERTa verwendet XLM-RoBERTa den SentencePiece Tokenizer.
+Dieser arbeitet sprachunabhängig, benötigt keine vorab segmentierten Daten und funktioniert auch auf rohem Unicode-Text. 
+Besonders wichtig ist das Konzept der Lossless Tokenization, das Segmentierung vollständig reversibel macht \cite{kudo-richardson-2018-sentencepiece}.
+Sentence Piece setzt sich aus vier Hauptkomponenten zusammen. Dem Normalizer, Trainer, Encoder und Decoder. 
+
+\begin{enumerate}
+    \item Der \textbf{Normalizer} wandelt unter anderem alle Zeichen in ASCII um, normalisiert Leerzeichen und ersetzt alle Groß- mit Kleinbuchstaben.
+    \item Der \textbf{Trainer} erstellt aus diesen normalisierten Daten daraufhin ein Subwort-Modell. Jedes Subwort bekommt eine eindeutige ID.
+    \textless s \textgreater markiert den Start eines Satzes und hat immer die ID 0. Das \_ steht für ein Leerzeichen und markiert somit den Wortanfang.
+    \item Der \textbf{Encoder} kodiert nun einen übergebenen Input basierend auf dem erstellten Subwort-Modell in eine ID-Sequenz.
+    item Der \textbf{Decoder} dekodiert eine erstellte ID-Sequenz zurück in einen lesbaren Input.
+\end{enumerate}
+
+In Kapitel \ref{sec04:bert} wurde bereits die Funktionsweise des MLMs erklärt. Kurz gefasst werden hierbei Wörter im Text zufällig maskiert, damit das Modell 
+diese anschließend als Training erraten muss. BERT basiert auf diesem Ansatz. Die Erweiterung von MLM ist das Translation Language Model (TLM).
+Im TLM werden statt einzelner Sätze (wie im MLM) übersetzte Satzpaare verwendet. Wörter in beiden Sprachen werden maskiert, und das Modell lernt, 
+sie mithilfe beider Sprachversionen zu erraten (siehe Abbildung \ref{fig:translation_language_modeling}). So lernt es, die Bedeutungen über Sprachgrenzen hinweg zu 
+verbinden.
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[scale=0.32]{static/translation_language_modeling.png}
+    \caption{\label{fig:translation_language_modeling} Auswertung eines bilingualen Satzpaares von TLM \cite{NEURIPS2019_c04c19c2}}
+    \end{center}
+\end{figure}
+
+XLM ist ein mehrsprachiges Sprachmodell, das darauf ausgelegt ist, Sprachverständnis über mehrere Sprachen hinweg zu ermöglichen.
+Vortrainiert wird es mit MLM und zusätzlich TLM.
+Durch diese Kombination kann das Modell lernen, ähnliche Inhalte in verschiedenen Sprachen miteinander zu verknüpfen \cite{NEURIPS2019_c04c19c2}.
+
+\subsubsection{XML-RoBERTa (German)}
+
+XML-RoBERTa-large-finetuned-conll03-german
+
+FacebookAI \cite{conneau2019unsupervised}
+
+%TODO: conll2003 Datensatz https://huggingface.co/datasets/eriktks/conll2003
+
+
+In \ref{tab:bert_models} angehängt, findet sich ein tabellarischer Vergleich der vier verschiedenen BERT- und RoBERTa-Modelle.
 
 \section{Hybride Modelle für Fake News Erkennung}
 \label{sec:hybride_modelle}
@@ -1126,8 +1206,6 @@ In Abbildung \ref{fig:bert_lightgbt_results} zu sehen ist, dass dieses Modell an
 
 \subsection{RoBERTa und LightGBM}
 \label{sec:roberta_lightgbm}
-
-%TODO: schreiben
 
 Aufbauend auf dem hybriden BERT und LightGBM Model zeigt \cite{V_G_2024} die Vorteile eines hybriden RoBERTa-LightGBM Modells.
 

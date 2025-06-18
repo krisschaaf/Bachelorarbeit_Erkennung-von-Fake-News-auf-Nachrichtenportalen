@@ -3,48 +3,6 @@
 
 \section{Machine Learning Modell} \label{sec:06:machine_learning_model}
 
-\subsection{XML-RoBERTa-large}
-
-%TODO: https://huggingface.co/FacebookAI/xlm-roberta-large
-
-\subsubsection{Cross-lingual Language Model (XML)}
-
-In Kapitel \ref{sec04:bert} wurde bereits die Funktionsweise des MLMs erklärt. Kurz gefasst werden hierbei Wörter im Text zufällig maskiert, damit das Modell 
-diese anschließend als Training erraten muss. BERT basiert auf diesem Ansatz. Die Erweiterung von MLM ist das Translation Language Model (TLM).
-Im TLM werden statt einzelner Sätze (wie im MLM) übersetzte Satzpaare verwendet. Wörter in beiden Sprachen werden maskiert, und das Modell lernt, 
-sie mithilfe beider Sprachversionen zu erraten (siehe Abbildung \ref{fig:translation_language_modeling}). So lernt es, die Bedeutungen über Sprachgrenzen hinweg zu 
-verbinden.
-
-\begin{figure}[htbp]
-    \begin{center}
-    \includegraphics[scale=0.32]{static/translation_language_modeling.png}
-    \caption{\label{fig:translation_language_modeling} Auswertung eines bilingualen Satzpaares von TLM \cite{NEURIPS2019_c04c19c2}}
-    \end{center}
-\end{figure}
-
-XLM ist ein mehrsprachiges Sprachmodell, das darauf ausgelegt ist, Sprachverständnis über mehrere Sprachen hinweg zu ermöglichen.
-Vortrainiert wird es mit MLM und zusätzlich TLM.
-Durch diese Kombination kann das Modell lernen, ähnliche Inhalte in verschiedenen Sprachen miteinander zu verknüpfen \cite{NEURIPS2019_c04c19c2}.
-
-\subsubsection{Sentence Piece Tokenizer} \label{subsec:sentencepiece}
-
-Im Vergleich zum BERT Modell, welches den Word Piece Tokenizer nutzt, muss XML-RoBERTa den Sentence Piece Tokenizer nutzen. Dieser arbeitet sprachunabhängig, benötigt
-keine vorab segmentierten Daten und funktioniert auch auf rohem Unicode-Text. 
-Besonders wichtig ist das Konzept der Lossless Tokenization, das Segmentierung vollständig reversibel macht \cite{kudo-richardson-2018-sentencepiece}.
-Sentence Piece setzt sich aus vier Hauptkomponenten zusammen. Dem Normalizer, Trainer, Encoder und Decoder. 
-
-\begin{enumerate}
-    \item Der \textbf{Normalizer} wandelt unter anderem alle Zeichen in ASCII um, normalisiert Leerzeichen und ersetzt alle Groß- mit Kleinbuchstaben.
-    \item Der \textbf{Trainer} erstellt aus diesen normalisierten Daten daraufhin ein Subwort-Modell. Jedes Subwort bekommt eine eindeutige ID.
-    \textless s \textgreater markiert den Start eines Satzes und hat immer die ID 0. Das \_ steht für ein Leerzeichen und markiert somit den Wortanfang.
-    \item Der \textbf{Encoder} kodiert nun einen übergebenen Input basierend auf dem erstellten Subwort-Modell in eine ID-Sequenz.
-    item Der \textbf{Decoder} dekodiert eine erstellte ID-Sequenz zurück in einen lesbaren Input.
-\end{enumerate}
-
-\subsubsection{conll2003 Datensatz}
-
-%TODO: https://huggingface.co/datasets/eriktks/conll2003
-
 \subsection{Datenvorverarbeitung}
 
 RoBERTa lernt den Kontext der verschiedenen Artikel. Dafür müssen möglichst viele Informationen erhalten bleiben. 
