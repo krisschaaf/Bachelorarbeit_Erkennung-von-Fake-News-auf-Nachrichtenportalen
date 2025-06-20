@@ -1,2 +1,57 @@
 \chapter{Evaluation und Ergebnisse}
 \label{chap:evaluation_und_ergebnisse}
+
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{lcccc}
+    \toprule
+    \textbf{Modell} & \textbf{Accuracy} & \textbf{F1-Score} & \textbf{Loss} & \textbf{Eval-Zeit (s)} \\
+    \midrule
+    XLM-RoBERTa-Large & 0.9795 & 0.9795 & 0.1070 & 13.96 \\
+    RoBERTa-Large     & 0.9765 & 0.9764 & 0.1395 & 14.04 \\
+    RoBERTa-Base      & 0.9751 & 0.9751 & 0.1273 & 5.86 \\
+    XLM-RoBERTa-Base  & 0.9717 & 0.9716 & 0.1527 & 5.77 \\
+    BERT-Base-Uncased & 0.9533 & 0.9531 & 0.1952 & 6.33 \\
+    \bottomrule
+\end{tabular}
+\caption{Direktes Fine-Tuning – Testergebnisse der Modelle}
+\end{table}
+
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{lcc}
+    \toprule
+    \textbf{Embedding-Modell} & \textbf{Accuracy} & \textbf{F1-Score} \\
+    \midrule
+    XLM-RoBERTa-Large & 0.9784 & 0.9773 \\
+    XLM-RoBERTa-Base  & 0.9753 & 0.9738 \\
+    RoBERTa-Large     & 0.9753 & 0.9738 \\
+    RoBERTa-Base      & 0.9729 & 0.9713 \\
+    BERT-Base-Uncased & 0.9472 & 0.9439 \\
+    \bottomrule
+\end{tabular}
+\caption{LightGBM-Ergebnisse auf Embeddings der Modelle}
+\end{table}
+
+
+\begin{table}[!ht]
+\centering
+\caption{Accuracy und F1-Score: Fine-Tuning vs. LightGBM auf Embeddings}
+\begin{tabular}{lcccc}
+\toprule
+\multirow{2}{*}{\textbf{Modell}} &
+\multicolumn{2}{c}{\textbf{Transformer}} &
+\multicolumn{2}{c}{\textbf{LightGBM}} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+ & \textbf{Accuracy} & \textbf{F1} & \textbf{Accuracy} & \textbf{F1} \\
+\midrule
+XLM-RoBERTa-Large & 0.9795 & 0.9795 & 0.9784 & 0.9773 \\
+RoBERTa-Large     & 0.9765 & 0.9764 & 0.9753 & 0.9738 \\
+RoBERTa-Base      & 0.9751 & 0.9751 & 0.9729 & 0.9713 \\
+XLM-RoBERTa-Base  & 0.9717 & 0.9716 & 0.9753 & 0.9738 \\
+BERT-Base-Uncased & 0.9533 & 0.9531 & 0.9472 & 0.9439 \\
+\bottomrule
+\end{tabular}
+\end{table}
