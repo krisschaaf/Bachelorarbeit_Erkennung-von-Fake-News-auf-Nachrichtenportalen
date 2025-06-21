@@ -29,14 +29,7 @@ Die Kommunikation mit den Service Worker erfolgt über die Extension-API \textit
 Sie werden durch ein Tastenkürzel, durch Klicken auf das Aktionssymbol der Erweiterung oder durch Drücken von chrome.action.openPopup() ausgelöst. 
 Pop-ups werden automatisch geschlossen, wenn der Nutzer sich auf einen Bereich des Browsers außerhalb des Pop-ups konzentriert \cite{chrome2025popups}.
 
-\begin{figure}[htbp]
-    \begin{center}
-        \includegraphics[scale=0.5]{diagrams/hauptkomponente_sequenzdiagramm.png}
-        \caption{\label{fig:seq_hauptkomponente} Sequenzdiagramm Hauptkomponente}
-    \end{center}
-\end{figure}
-
-In Abbildung \ref{fig:seq_hauptkomponente} zu sehen ist das Sequenzdiagramm der Hauptkomponente. Wie in Kapitel \ref{sec:06:hauptkomponente} beschrieben
+In Abbildung \ref{fig:seq_hauptkomponente} zu sehen ist das Sequenzdiagramm des Webagents. Wie in Kapitel \ref{sec:06:hauptkomponente} beschrieben
 wird zuerst die URL geprüft. Erfüllt diese die vorgegebenen Bedingungen wird der geöffnete Artikel gelesen und von einer weiteren Anwendung
 analysiert. Anschließend wird das Ergebnis der Analyse in einem \textit{div}-Container über dem Artikel eingefügt.
 
