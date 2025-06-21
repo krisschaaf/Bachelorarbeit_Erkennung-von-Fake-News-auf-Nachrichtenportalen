@@ -3,7 +3,7 @@
 \section{Verwendete Hilfsmittel}
 In der Tabelle \ref{tab:tooling} sind die im Rahmen der Bearbeitung des Themas der \IthesisKindDE~verwendeten Werkzeuge und Hilfsmittel aufgelistet.
 
-\begin{table}[h!]
+\begin{table}[h!] %TODO: ausfüllen
 \caption{Verwendete Hilfsmittel und Werkzeuge}
 \begin{tabular}{|l|l|}
 \hline 
@@ -33,6 +33,48 @@ In der Tabelle \ref{tab:tooling} sind die im Rahmen der Bearbeitung des Themas d
     \end{center}
 \end{figure}
 
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.5]{diagrams/hauptkomponente_sequenzdiagramm.png}
+        \caption{\label{fig:seq_hauptkomponente} Sequenzdiagramm Webagent}
+    \end{center}
+\end{figure}
+
+\section{Tabellen}
+
+\begin{table}[ht]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+        \hline
+        \textbf{Kriterium} & \textbf{Chrome Extension} & \textbf{Userscript (Tampermonkey)} & \textbf{Proxy-Server} & \textbf{Scraper + Plattform} \\
+        \hline
+        DOM-Zugriff beim Nutzer & Ja & Ja & Nein & Nein \\
+        \hline
+        Einbindung auf \texttt{bild.de} direkt & Ja & Ja & Ja (indirekt) & Nein \\
+        \hline
+        Installation durch Nutzer & Mittel & Einfach & Nicht erforderlich & Nicht erforderlich\\
+        \hline
+        Komplexität der Umsetzung & Mittel & Gering & Hoch & Mittel \\
+        \hline
+        Wartbarkeit \& Updates & Gut & Gut & Aufwändig & Mittel \\
+        \hline
+        Performance beim Nutzer & Hoch & Hoch & Hoch & Hoch \\
+        \hline
+        Skalierbarkeit & Hoch & Eingeschränkt & Mittel & Hoch \\
+        \hline
+        Für öffentliche Verbreitung geeignet & Ja & Eingeschränkt & Eingeschränkt & Ja \\
+        \hline
+        API-Nutzung zur Fake-Erkennung & Ja & Ja & Ja & Ja \\
+        \hline
+        Entwickler-kontrolle über UI & Hoch & Mittel & Hoch & Mittel \\
+        \hline
+    \end{tabular}
+    \caption{Vergleich möglicher Technologien für den Webagenten}
+    \label{table:technischeAnsaetze}
+\end{table} %TODO: ChatGPT
+
+
 \begin{sidewaystable}[htbp]
 \centering
     \begin{tabular}{|p{3.5cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
@@ -55,11 +97,4 @@ In der Tabelle \ref{tab:tooling} sind die im Rahmen der Bearbeitung des Themas d
 \caption{Vergleich der verschiedenen BERT- und RoBERTa-Modelle}
 \label{tab:bert_models}
 \end{sidewaystable}
-
-\begin{figure}[htbp]
-    \begin{center}
-        \includegraphics[scale=0.5]{diagrams/hauptkomponente_sequenzdiagramm.png}
-        \caption{\label{fig:seq_hauptkomponente} Sequenzdiagramm Webagent}
-    \end{center}
-\end{figure}
 
