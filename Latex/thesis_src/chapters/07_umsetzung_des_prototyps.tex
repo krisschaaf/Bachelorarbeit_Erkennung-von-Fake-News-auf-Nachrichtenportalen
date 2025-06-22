@@ -3,7 +3,97 @@
 
 \section{Implementierung des Machine Learning Modells}
 
-In \ref{tab:bert_models} angehängt, findet sich ein tabellarischer Vergleich der verschiedenen BERT- und RoBERTa-Modelle.
+\subsection{Fine-tuning der Transfomer Modelle}
+
+Für das \textit{fine-tuning} (Training) der verschiedenen Modelle werden die Transformers-Bibliothek von Hugging Face, Python und das Deep-Learning-Framework PyTorch verwendet.
+
+Trainiert werden fünf verschiedene Transformer Modelle mit dem Datensatz aus Kapitel \ref{sec6:datenvorverarbeitung}:
+\begin{itemize}
+    \item Bert base
+    \item RoBERTa base
+    \item RoBERTa large
+    \item XML-RoBERTa base
+    \item XML-RoBERTa large
+\end{itemize}
+
+In \ref{tab:bert_models} angehängt, findet sich ein tabellarischer Vergleich der verschiedenen BERT- und RoBERTa-Modelle mit deren verschiedenen technischen Eigenschaften.
+
+Das Tokenisieren erfolgt über den jeweiligen mitgelieferten Tokenizer.
+
+Eine Übersicht der für das \textit{fine-tuning} genutzten Hyperparameter findet sich im Anhang (siehe Tabelle \ref{tab:transformer-hyperparameter}).
+
+Zur dynamischen Anpassung der Lernrate während des Trainings, wird ein linearer Learning Rate Scheduler mit Warmup verwendet.
+Zu Beginn des Trainings wird die Lernrate über 10\% der Trainingsschritte schrittweise erhöht, um das Modell zu stabilisieren. 
+Anschließend wird sie linear bis zum Ende des Trainings wieder abgesenkt. Dieses Vorgehen hilft dabei, Konvergenzprobleme zu vermeiden und die Modellleistung zu verbessern.
+Konvergenzprobleme entstehen, wenn das Modell beim Training nicht richtig lernt und die Fehler (\textit{loss}) nicht zuverlässig kleiner werden.
+
+Das Training wird auf einer Google Colab Laufzeit mit einer A100 GPU mit erweitertem RAM Speicher durchgeführt.
+Die trainierten Modelle werden jeweils als einzelnen Repository im \textit{Hugging Face Hub} gespeichert.
+
+\subsection{Erzeugung der Embeddings}
+
+Für das Erzeugen der Embeddings wird der Datensatz aus Kapitel \ref{sec6:datenvorverarbeitung} in Trainings- (80\%) und Testdaten (20\%) aufgeteilt und tokenisiert.
+
+Diese Datensätze durchlaufen anschließend folgende Schritte: 
+
+\begin{enumerate}
+  \item \textbf{Vorbereitung des Modells:}  
+  Das Transformer Modell wird in den Evaluationsmodus gesetzt und auf die A100 GPU verschoben, um eine effiziente Berechnung sicherzustellen.
+
+  \item \textbf{Erstellung eines \textit{DataLoaders}:}  
+    Die tokenisierten Eingabesequenzen (bestehend aus \texttt{input\_ids}, \texttt{attention\_mask} und \texttt{labels}) werden zu Batches zusammengefügt,
+    welche von der GPU parallel verarbeitet werden können. Diese werden in einem sogenannten, von \textit{PyTorch} zur Verfügung gestelltem, \textit{DataLoader} gespeichert.
+
+  \item \textbf{Vorwärtspass:}  
+  Die Batches des \textit{DataLoaders} werden in das Modell eingespeist, um Vorhersagen bzw. Zwischenrepräsentationen zu berechnen.
+  Hierbei wird keine Gradientenberechnung (Backpropagation) durchgeführt, das Modell lernt also nicht von den Eingaben.
+
+  \item \textbf{Extraktion der \textit{hidden states}:}  
+  Für jedes Batch wird die Ausgabe aller versteckten Schichten (\texttt{hidden layer}) der Tranformer Modelle berechnet. 
+  Jedes \textit{hidden layer} erzeugt einen \textit{hidden state}
+
+  \item \textbf{Pooling über die letzten vier Schichten:}  
+  Die letzten vier \textit{hidden state}-Schichten werden ausgewählt und über eine Mittelwertbildung (Average Pooling) zusammengefasst, 
+  um eine robustere Token-Repräsentation zu erhalten.
+
+  \item \textbf{Maskierung und Mittelung über Tokens:}  
+  Mithilfe der \texttt{attention\_mask} werden \texttt{[PAD]}-Tokens ausgeschlossen. 
+  Die verbleibenden Token-Embeddings werden über die Sequenzlänge gemittelt, sodass ein einziger Vektor pro Eingabesequenz entsteht.
+
+  \item \textbf{Speicherung der Embeddings:}  
+  Die resultierenden Satz-Embeddings sowie die zugehörigen Labels werden gesammelt und in \textit{NuMpy}-Arrays konvertiert.
+
+  \item \textbf{Finaler Output:}  
+  Nach Verarbeitung aller Batches werden die Satz-Embeddings und Labels aller Beispiele zu zwei großen Arrays (Embeddings und Label) zusammengefügt.
+\end{enumerate} %TODO: ChatGPT
+
+Nach Durchlaufen der Schritte werden die Embeddings und Label der Trainings- und Testdaten in einem Python \textit{Dictionary} gespeichert.
+
+\subsection{Nutzung der Embeddings im LightGBM Modell}
+
+Die Python LightGBM-Bibliothek stellt ein einfach zu implementierendes Modell zur Verfügung.
+Dieses wirdauf den verschiedenen erzeugten Embeddings trainiert.
+
+Eine Übersicht der im Modell genutzten Hyperparameter findet sich im Anhang (siehe Tabelle \ref{tab:lightgbm-hyperparameter}).
+Zur Wahl der geeignetsten Hyperparameter wird einmalig die \textit{Optuna}-Bibliothek genutzt.
+Dabei werden mithilfe von K-Fold-Cross-Validation (siehe Abbildung \ref{fig:k-fold_cross-validation}) verschiedene Kombinationen von LightGBM-Hyperparametern getestet, 
+um das Modell mit dem höchsten F1-Score zu finden.
+
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.4]{static/k-fold_cross-validation.png}
+        \caption{\label{fig:k-fold_cross-validation} K-Fold-Cross-Validation \cite{isaac2021}}
+    \end{center}
+\end{figure}
+
+Anhand von dem, in der Bibliothek zur Verfügung gestellten, \textit{early-stopping} wird das Training des Modells überwacht und frühzeitig gestoppt, wenn bestimmte 
+Anforderungen erreicht sind. 
+Die Parameter sind in diesem Fall so definiert, dass das Training beendet wird, sobald sich der logarithmische Verlust (\textit{Logloss}) auf den 
+Validierungsdaten über 100 aufeinanderfolgende Iterationen hinweg nicht mehr verbessert. %TODO: ergänzende erklärung?
+
+\subsection{Gesamtarchitektur}
+
+%TODO: tbd
 
 
 \section{Implementierung der Chrome Erweiterung}

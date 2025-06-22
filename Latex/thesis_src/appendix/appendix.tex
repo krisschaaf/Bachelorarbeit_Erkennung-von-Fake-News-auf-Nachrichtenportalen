@@ -42,7 +42,7 @@ In der Tabelle \ref{tab:tooling} sind die im Rahmen der Bearbeitung des Themas d
 
 \section{Tabellen}
 
-\begin{table}[ht]
+\begin{table}[htbp]
     \centering
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
@@ -76,7 +76,8 @@ In der Tabelle \ref{tab:tooling} sind die im Rahmen der Bearbeitung des Themas d
 
 
 \begin{sidewaystable}[htbp]
-\centering
+    \centering
+    \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{|p{3.5cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
         \hline
         \textbf{Merkmal} & \textbf{BERT Base} & \textbf{RoBERTa\newline Base} & \textbf{RoBERTa Large} & \textbf{XLM-RoBERTa Base} & \textbf{XLM-RoBERTa Large} \\
@@ -98,3 +99,71 @@ In der Tabelle \ref{tab:tooling} sind die im Rahmen der Bearbeitung des Themas d
 \label{tab:bert_models}
 \end{sidewaystable}
 
+\begin{table}[htbp]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|p{3cm}|l|p{6cm}|}
+        \hline
+        \textbf{Parameter} & \textbf{Wert} & \textbf{Beschreibung} \\
+        \hline
+        Anzahl Trainingsepochen & \texttt{5} & Das gesamte Trainingsset wird fünfmal vollständig durchlaufen. \\
+        \hline
+        Batch-Größe & \texttt{32} & Anzahl der Beispiele, die gleichzeitig in einem Schritt verarbeitet werden. \\
+        \hline
+        Lernrate & \texttt{2e-5} & Bestimmt die Schrittweite der Modellaktualisierung bei jedem Optimierungsschritt. \\
+        \hline
+        Optimierungs-verfahren & \texttt{AdamW} & Variante des Adam-Optimierers mit Weight Decay, automatisch in Hugging Face integriert. \\
+        \hline
+        Gewichtsabnahme (Weight Decay) & \texttt{0.01} & Reguliert große Gewichtswerte, um Überanpassung zu vermeiden. \\
+        \hline
+        Lernraten-Scheduler & \texttt{Linear, 10\% Warmup} & Die Lernrate steigt linear an und wird anschließend schrittweise reduziert. \\
+        \hline
+        Kriterium für bestes Modell & \texttt{F1-Score} & Das Modell mit dem besten F1-Score auf den Validierungsdaten wird gespeichert. \\
+        \hline
+        Hardware-Beschleunigung & \texttt{fp16 aktiviert} & Angepasst auf A100 GPU zur Beschleunigung des Trainings. \\
+        \hline
+    \end{tabular}
+    \caption{Überblick über die gewählten Hyperparameter der Transformer-Modelle}
+    \label{tab:transformer-hyperparameter}
+\end{table}
+
+
+\begin{table}[htbp]
+    \centering
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabular}{|p{3cm}|l|p{7cm}|}
+        \hline
+        \textbf{Parameter} & \textbf{Wert} & \textbf{Beschreibung} \\
+        \hline
+        Ziel (\texttt{objective}) & \texttt{binary} & Binäre Klassifikation (z.\,B. „echt“ oder „fake“). \\
+        \hline
+        Metrik (\texttt{metric}) & \texttt{binary\_logloss} & Verlustfunktion zur Bewertung der Modellgüte während des Trainings. \\
+        \hline
+        Boosting-Typ (\texttt{boosting\_type}) & \texttt{gbdt} & Verwendung von Gradient Boosted Decision Trees als Lernverfahren. \\
+        \hline
+        Prozessor-Kerne (\texttt{n\_jobs}) & \texttt{-1} & Nutzt alle verfügbaren CPU-Kerne für paralleles Training. \\
+        \hline
+        Lernrate (\texttt{learning\_rate}) & \texttt{0.0865} & Schrittweite beim Anpassen der Modellgewichte. \\
+        \hline
+        Anzahl Blätter (\texttt{num\_leaves}) & \texttt{63} & Maximale Anzahl von Blättern pro Entscheidungsbaum. \\
+        \hline
+        Maximale Tiefe (\texttt{max\_depth}) & \texttt{20} & Begrenzt die Tiefe der Bäume zur Kontrolle der Komplexität. \\
+        \hline
+        Min. Samples pro Blatt (\texttt{min\_child\_samples}) & \texttt{80} & Minimale Anzahl an Trainingsbeispielen pro Blatt. \\
+        \hline
+        Subsample-Rate (\texttt{subsample}) & \texttt{0.9818} & Anteil der Trainingsdaten, der zufällig pro Baum verwendet wird. \\
+        \hline
+        Merkmalsauswahl pro Baum (\texttt{colsample\_bytree}) & \texttt{0.9684} & Anteil der Merkmale, die pro Baum zufällig ausgewählt werden. \\
+        \hline
+        $L_1$-Regularisierung (\texttt{reg\_alpha}) & \texttt{0.2989} & Bestraft große Gewichtswerte zur Förderung einfacher Modelle. \\
+        \hline
+        $L_2$-Regularisierung (\texttt{reg\_lambda}) & \texttt{0.4609} & Stabilisiert das Modell durch Bestrafung großer Gewichtssummen. \\
+        \hline
+        Zufallsstart (\texttt{random\_state}) & \texttt{42} & Sichert Reproduzierbarkeit der Ergebnisse. \\
+        \hline
+        Anzahl Bäume (\texttt{n\_estimators}) & \texttt{2000} & Maximale Anzahl an Bäumen; Early Stopping begrenzt effektiv. \\
+        \hline
+    \end{tabular}
+    \caption{Überblick über die gewählten Hyperparameter des LightGBM-Modells}
+    \label{tab:lightgbm-hyperparameter}
+\end{table}

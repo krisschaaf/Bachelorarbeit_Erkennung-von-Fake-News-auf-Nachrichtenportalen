@@ -50,6 +50,14 @@ Der finale Datensatz umfasst 45869 Artikel mit jeweils dessen \textit{text} und 
 Die Aufteilung der Daten erfolgt in Trainings-, Validierungs- und Testdatensätze. 
 80\% des Gesamtdatensatzes werden für das Training genutzt und jeweils 10\% für das Validierung und Testen.
 
+\subsection{Fine-tuning der Transfomer Modelle}
+
+Transformer Modelle wie zum Beispiel BERT sind in der Regel vortrainiert. Dabei werden sie auf großen Mengen unannotierter Textdaten trainiert, um ein allgemeines Sprachverständnis 
+zu erlernen. Dieser gesamte Prozess erfolgt unüberwacht.
+Um die vortrainierten Transformer Modelle für die Fake-News Erkennung nutzbar zu machen, müssen sie einmalig an die spezifische Aufgabe angepasst werden (\textit{Fine-Tuning}).
+Hierfür wird das Modell auf dem in Kapitel \ref{sec6:datenvorverarbeitung} erzeugtem Datensatz weitertrainiert. Dabei wird die zugrundeliegenden Sprachrepräsentationen auf 
+die konkrete Zielaufgabe, der Fake-News Klassifizierung übertragen.
+
 \subsection{Erzeugung der Embeddings}
 
 Nach der Aufteilung des Datensatzes, werden diese Daten von den Transformer Modellen in Embeddings umgewandelt.
@@ -60,21 +68,15 @@ Alle diese Tokenizer zerteilen Wörter unterschiedlich, was zu verschiedenen Tok
 Eine wichtige Eigenschaft der drei Transformer Modelle ist, dass nach dem Tokenisieren maximal 512 Token pro Eingabe verarbeitet werden können.
 Was genau ein Token ist, hängt in diesem Fall vom genutzten Tokenizer ab. Es kann sowohl ein Wort als auch nur ein Wortfragment sein.
 Alle Token einer zu verarbeitenden Eingabe, die nach dem 512. Token kommen, werden abgeschnitten.
+Eingabesequenzen, welche kürzer als 512 Token sind, werden mit angehängten \texttt{[PAD]}-Tokens aufgefüllt, damit alle Eingaben die gleiche Länge haben.
 
 \cite{sun2020finetuneberttextclassification} testet verschiedene \textit{Truncation}-Methoden und zeigt für BERT, dass bei Filmrezensionen und Nachrichtenartikeln eine 
 Zusammensetzung der ersten 256 und letzten 256 Token am effektivstem ist. Der Unterschied zur Nutzung der ersten 512 Token ist aber minimal, daher wird in dieser Arbeit letzteres
 implementiert.
 
-Transformer Modelle wie zum Beispiel BERT sind in der Regel vortrainiert. Dabei werden sie auf großen Mengen unannotierter Textdaten trainiert, um ein allgemeines Sprachverständnis 
-zu erlernen. Dieser gesamte Prozess erfolgt unüberwacht.
-Um die vortrainierten Transformer Modelle für die Fake-News Erkennung nutzbar zu machen, müssen sie einmalig an die spezifische Aufgabe angepasst werden (\textit{Fine-Tuning}).
-Hierfür wird das Modell auf dem in Kapitel \ref{sec6:datenvorverarbeitung} erzeugtem Datensatz weitertrainiert. Dabei wird die zugrundeliegenden Sprachrepräsentationen auf 
-die konkrete Zielaufgabe, der Fake-News Klassifizierung übertragen.
-
-Anschließend werden die erzeugten Token von den jeweiligen angepassten Modellen in dichte Vektoren verarbeitet.
+Die erzeugten Token werden von den jeweiligen angepassten Transformer Modellen in dichte Vektoren verarbeitet.
 Diese Vektoren bilden die Grundlage für die nachfolgenden \textit{Self-Attention}-Mechanismen, die kontextabhängige, semantisch reichhaltige Embeddings erzeugen.
-
-Diese kontextualisierten Embeddings entstehen über mehrere aufeinanderfolgende \textit{hidden layers}, wobei jede Schicht die Repräsentation weiter verfeinert und anreichert. %TODO: Formulierung?
+Diese Embeddings entstehen über mehrere aufeinanderfolgende \textit{hidden layers}, wobei jede Schicht die Werte weiter verfeinert und anreichert.
 
 Um die Ausgabe der verschiedenen Embeddings der \textit{hidden layer} zusammenzufassen kann zum Beispiel der \texttt{[CLS]}-Token aus einer oder mehreren Schichten extrahiert oder 
 ein Durchschnitt aller Token-Embeddings gebildet werden.
@@ -96,7 +98,7 @@ Das trainierte LightGBM Modell kann anschließend neu erzeugte Embeddings effizi
 
 \subsection{Gesamtarchitektur}
 
-Für die finale Anwendung dieser Arbeit wird ein Webserver aufgesetzt, welcher Nachrichtenartikel empfängt und diese anhand der konfigurierten Modelle tokenisiert, embedded und
+Für die finale Anwendung dieser Arbeit wird ein Webserver aufgesetzt, welcher Nachrichtenartikel empfängt und diese anhand der konfigurierten Modelle tokenisiert, eingebettet und
 klassifiziert (siehe Abbildung \ref{fig:beispielablauf_gesamt}).
 
 \begin{figure}[htbp]
@@ -159,12 +161,13 @@ Ob ein Artikel geöffnet ist, kann also anhand der Anzahl der \textit{article}-E
 \end{lstlisting}
 
 Der Titel und Inhalt des Artikels kann den entsprechenden html-Elementen entnommen werden.
-Diese werden dann an die API gesendet und dort verarbeitet. 
+Diese werden anschließend an die API gesendet und dort verarbeitet. 
 Der Rückgabewert der API enthält dann die Info ob der Artikel falsch oder echt ist.
 Diese wird in einem vom Webagent erzeugten \textit{div}-Container über dem Artikel eingefügt.
 
+%TODO: nicht eher umsetzung?
 Zur Bestimmung des geeignetsten Tools für diese Anforderungen,
- wurden verschiedene Technologien verglichen (siehe Tabelle \ref{table:technischeAnsaetze}).
+wurden verschiedene Technologien verglichen (siehe Tabelle \ref{table:technischeAnsaetze}).
 Aufgrund des begrenzten Zugriffs auf die zu analysierende Seiten, bieten sich die beiden Client-seitigen Umsetzungen 
 eine Chrome Extension zu implementieren oder über Tampermonkey Userscripts auszuführen am ehesten an.
 
