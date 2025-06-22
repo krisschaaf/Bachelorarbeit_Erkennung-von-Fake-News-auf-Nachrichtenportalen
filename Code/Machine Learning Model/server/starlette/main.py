@@ -14,6 +14,8 @@ from pathlib import Path
 from starlette.applications import Starlette
 from starlette.routing import Route
 from starlette.responses import JSONResponse
+from starlette.middleware import Middleware
+from starlette.middleware.cors import CORSMiddleware
 
 HF_MODEL_ID = "krisschaaf/xlm-roberta-large-fake-news-german"
 HF_TOKEN     = os.getenv("ACCESS_TOKEN_HUGGING_FACE")  # or None for public models
@@ -124,13 +126,29 @@ async def homepage(request):
     if not service.ready:
         return JSONResponse({"detail": "Starting server"}, status_code=503)
 
-    text = (await request.body()).decode("utf-8")
-    result = await service.classify_text(text)
+    payload = await request.json()          # {'text': '…'}
+    result  = await service.classify_text(payload.get("text", ""))
     return JSONResponse(result)
 
 
+# ----------  middleware (cors) ------------------------------------------------
+middleware = [
+    Middleware(
+        CORSMiddleware,
+        allow_origins=[
+            "https://m.bild.de",
+            "https://bild.de",
+            "chrome-extension://*",
+            "*"       # whatever else you need
+        ],
+        allow_methods=["POST", "OPTIONS"],
+        allow_headers=["*"],
+        allow_credentials=True,
+    ),
+    ]
+
 # ----------  Starlette app ----------------------------------------------------
-app = Starlette(routes=[Route("/", homepage, methods=["POST"])])
+app = Starlette(routes=[Route("/", homepage, methods=["POST"])], middleware=middleware)
 
 
 @app.on_event("startup")
