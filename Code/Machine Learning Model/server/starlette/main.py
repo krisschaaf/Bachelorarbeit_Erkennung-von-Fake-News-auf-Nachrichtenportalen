@@ -7,13 +7,19 @@ import torch
 import numpy as np
 from transformers import AutoModel, AutoTokenizer
 
+import joblib
+import lightgbm as lgb
+from pathlib import Path
+
 from starlette.applications import Starlette
 from starlette.routing import Route
 from starlette.responses import JSONResponse
 
-HF_MODEL_ID = "krisschaaf/xml-roberta-base-fake-news-german"
+HF_MODEL_ID = "krisschaaf/xlm-roberta-large-fake-news-german"
 HF_TOKEN     = os.getenv("ACCESS_TOKEN_HUGGING_FACE")  # or None for public models
 
+BASE_DIR = Path(__file__).resolve().parent
+LGBM_MODEL_PATH = BASE_DIR / "lightgbm_xml-roberta-large_last-4-layers-avg_early-stopping_hyperparameter-finetuned.pkl"
 
 # ----------  model service ----------------------------------------------------
 class EmbeddingService:
@@ -25,9 +31,19 @@ class EmbeddingService:
         self._ready = asyncio.Event()
         self.model:  AutoModel     | None = None
         self.tok:    AutoTokenizer | None = None
+        self.classifier: lgb.LGBMClassifier | None = None
 
     # ---- public API ---------------------------------------------------------
     async def startup(self) -> None:
+        if not LGBM_MODEL_PATH.exists():
+            raise FileNotFoundError(
+                f"LightGBM-Modell nicht gefunden: {LGBM_MODEL_PATH}\n"
+                "Kopiere die .pkl-Datei an diesen Ort oder passe den Pfad an."
+            )
+
+        # Laden (kostet praktisch keine Zeit)
+        self.classifier = joblib.load(LGBM_MODEL_PATH)
+
         """Download weights, allocate on the right device, run one dummy pass."""
         loop = asyncio.get_running_loop()
 
@@ -58,6 +74,17 @@ class EmbeddingService:
         )
         return self._get_embedding(tokenized)
 
+    async def classify_text(self, text: str) -> dict:
+        await self._ready.wait()
+        emb = await self.embed_text(text)
+        emb = emb.reshape(1, -1)  # LightGBM expects shape (1, n_features)
+        proba = self.classifier.predict_proba(emb)[0, 1]
+        pred = self.classifier.predict(emb)[0]
+        return {
+            "label": int(pred),
+            "probability": float(proba),
+        }
+    
     @property
     def ready(self) -> bool:
         return self._ready.is_set()
@@ -98,9 +125,8 @@ async def homepage(request):
         return JSONResponse({"detail": "Starting server"}, status_code=503)
 
     text = (await request.body()).decode("utf-8")
-    emb  = await service.embed_text(text)
-    # For demo purposes we cast to list so it is JSON-serialisable
-    return JSONResponse({"embedding": emb.tolist()})
+    result = await service.classify_text(text)
+    return JSONResponse(result)
 
 
 # ----------  Starlette app ----------------------------------------------------
