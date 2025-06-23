@@ -1,15 +1,40 @@
 \chapter{Fazit}
 \label{chap:fazit}
 
+Ziel dieser Arbeit war die Konzeption und prototypische Umsetzung einer Anwendung zur automatisierten Erkennung von Falschmeldungen in Online-Nachrichtenartikeln. 
+Aufbauend auf aktuellen gesellschaftlichen Herausforderungen im Umgang mit Fake News wurde ein Prototyp konzipiert, 
+implementiert und evaluiert, der moderne Methoden des Natural Language Processing (NLP) mit klassischem maschinellen Lernen kombiniert.
+
+Im Mittelpunkt der Arbeit standen zwei Modellierungsansätze: Einerseits wurden vortrainierte Transformer-Modelle (BERT, RoBERTa, XLM-RoBERTa) 
+direkt per Fine-Tuning für die binäre Klassifikation optimiert. Andererseits wurden Embeddings dieser Modelle extrahiert und als Feature-Vektor 
+für LightGBM-Modelle verwendet. Ergänzend dazu wurde ein eigener deutschsprachiger Datensatz zusammengestellt, um die Modelle praxisnah zu trainieren und zu testen.
+Zur Umsetzung kamen aktuelle Frameworks wie Python, Hugging Face Transformers sowie PyTorch zum Einsatz.
+
+Die Evaluation zeigte, dass insbesondere das Modell XLM-RoBERTa-Large im direkten Fine-Tuning mit einer Accuracy und einem F1-Score von jeweils 97,95\% 
+die besten Resultate erzielte. Auch im hybriden Ansatz mit LightGBM auf Basis von Transformer-Embeddings erreichte dieses Modell hohe Werte (Accuracy: 97,84\%). 
+Über alle Experimente hinweg zeigte sich, dass die \textit{Large}-Varianten der Modelle tendenziell bessere Resultate liefern als die \textit{Base}-Versionen. 
+Allerdings mit erhöhtem Rechenaufwand.
+
+Entgegen der ursprünglichen Annahme, dass die Kombination aus Transformer-Embeddings und LightGBM-Classifiern eine bessere Generalisierungsleistung %TODO: das muss mit ins kapitel hybride modelle roberta/bert lightgbm
+ermöglichen könnte, schnitten die hybriden Modelle insgesamt leicht schlechter ab als die direkt feinjustierten Transformer. 
+Diese Beobachtung legt nahe, dass das direkte Fine-Tuning – trotz potenziell höherer Rechenkosten – die leistungsstärkere Strategie für die Fake-News-Klassifikation 
+darstellt. Der Vergleich mit verwandten Studien unterstreicht die Wettbewerbsfähigkeit der entwickelten Modelle, auch wenn unterschiedliche Datensätze und 
+Modellkonfigurationen einen direkten Leistungsvergleich erschweren.
+
+Mit dem entwickelten funktionsfähigen Prototypen wurde ein wichtiges Ziel der Arbeit erreicht: 
+Eine praxistaugliche Anwendung, die durch automatisierte Klassifikation Fake News erkennen kann.
+
+Insgesamt zeigt diese Arbeit, dass transformerbasierte Modelle alleinstehend oder in Kombination mit modernen Frameworks eine effektive Grundlage 
+für die automatisierte Fake-News-Erkennung darstellen.
 
 \chapter{Ausblick}
 \label{chap:ausblick}
 
 - Verwendung eines aktuelleren Datensatzes mit domänenübergreifenden Themen
-- Verwendung eines RoBERTa Modells, welches auch mit deutschen Daten vortrainiert wurde.
 - Verwendung des RoBERTA Modells "xml-roberta-xl"
 - Nutzung von Modellen mit erhöhter Inputlänge (mehr als 512 Token) oder Kombination verschiedener Eingaben (head + tail \cite{sun2020finetuneberttextclassification})
-- Vergleich mehrerer Modelle
+- vergleich max/avg der letzten 4 layer - cls, etc. 
+- Vergleich mehrerer Modelle (CNN FakeBert)
 - Implementierung FakeBert mit XML-RoBERTa
 - Deployment der Anwendung und Integration mehrerer Nachrichtenportalen
 - Entwicklung einer eigenen Website in welcher die Nachrichtenartikel gepostet werden können.

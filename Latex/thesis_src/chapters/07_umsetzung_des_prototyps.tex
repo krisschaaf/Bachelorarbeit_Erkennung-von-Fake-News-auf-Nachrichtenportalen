@@ -72,7 +72,7 @@ Nach Durchlaufen der Schritte werden die Embeddings und Label der Trainings- und
 \subsection{Nutzung der Embeddings im LightGBM Modell}
 
 Die Python LightGBM-Bibliothek stellt ein einfach zu implementierendes Modell zur Verfügung.
-Dieses wirdauf den verschiedenen erzeugten Embeddings trainiert.
+Dieses wird auf den verschiedenen erzeugten Embeddings trainiert.
 
 Eine Übersicht der im Modell genutzten Hyperparameter findet sich im Anhang (siehe Tabelle \ref{tab:lightgbm-hyperparameter}).
 Zur Wahl der geeignetsten Hyperparameter wird einmalig die \textit{Optuna}-Bibliothek genutzt.
@@ -93,10 +93,22 @@ Validierungsdaten über 100 aufeinanderfolgende Iterationen hinweg nicht mehr ve
 
 \subsection{Gesamtarchitektur}
 
-%TODO: tbd
+Der Webserver wird mit der Python \textit{starlette}-Bibliothek implementiert und mit Docker containerisiert.
+Nach dem Starten werden zuerst die Transformer und LightGBM Modelle geladen, danach wird das \textit{ready}-Flag gesetzt und der Server kann Anfragen empfangen.
+Die einzige Klasse ist das Singleton \textit{EmbeddingService} (siehe Abbildung \ref{fig:uml_webserver}). Dieses erzeugt das Embedding und klassifiziert es anschließend.
+Zurückgegeben wird ein \textit{json}-Objekt mit den Informationen \textit{label} und \textit{probability}. Das \textit{label} enthält den klassifizierten Binärwert 
+(1 bedeutet Fake, 0 bedeutet Echt). Die \textit{probability} enthält die Wahrscheinlichkeit der korrekten Klassifizierung in Prozent.
 
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=0.55]{static/uml_webserver.png}
+        \caption{\label{fig:uml_webserver} UML des Webservers} %TODO: generiert mit ChatGPT und PlantText
+    \end{center}
+\end{figure}
 
-\section{Implementierung der Chrome Erweiterung}
+Eine Modellierung der Architektur des Webservers findet sich im Anhang \ref{fig:gesamtarchitektur}.
+
+\section{Implementierung des Webagenten}
 
 Die Chrome Erweiterung wurde mit der Version Manifest 3 implementiert.
 Genutzt wurden ein \textit{Service Worker} ein \textit{Content Script} pro Nachrichtenportal und ein \textit{Popup}.

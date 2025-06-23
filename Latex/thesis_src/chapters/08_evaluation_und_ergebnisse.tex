@@ -1,7 +1,41 @@
 \chapter{Evaluation und Ergebnisse}
 \label{chap:evaluation_und_ergebnisse}
 
-%TODO: verschiedenen Embeddings mit finalem Model testen (cls last layer, vs. last4 avg etc. )
+\section{Leistungs-Analyse der Transformer- und LightGBM-Modelle}
+
+Tabelle \ref{tab:overfitting_check} vergleicht die Accuracy- und F1-Werte der Trainings- und Testphase für alle fünf untersuchten Transformer-Modelle. 
+Die zusätzlich angegebenen Differenzwerte ($\Delta$) zeigen den Unterschied zwischen Test- und Trainingsergebnissen. 
+Da die Abweichungen in beiden Metriken bei allen Modellen sehr klein ist, lässt sich daraus schließen, dass kein Overfitting vorliegt. 
+Die Modelle generalisieren gut und zeigen eine stabile Leistung auf bislang ungesehenen Daten.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcccccc}
+    \toprule
+    \multirow{2}{*}{Modell} & 
+    \multicolumn{2}{c}{Training} & 
+    \multicolumn{2}{c}{Test} & 
+    \multicolumn{2}{c}{$\Delta$ (Test - Train)} \\
+    \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(l){6-7}
+    & Accuracy & F1 & Accuracy & F1 & $\Delta$ Acc & $\Delta$ F1 \\
+    \midrule
+    XLM-RoBERTa-Large   & 0.9780 & 0.9780 & 0.9795 & 0.9795 & +0.0015 & +0.0015 \\
+    XLM-RoBERTa-Base    & 0.9730 & 0.9729 & 0.9717 & 0.9716 & $-$0.0013 & $-$0.0013 \\
+    RoBERTa-Large       & 0.9795 & 0.9795 & 0.9765 & 0.9764 & $-$0.0030 & $-$0.0031 \\
+    RoBERTa-Base        & 0.9771 & 0.9771 & 0.9751 & 0.9751 & $-$0.0020 & $-$0.0020 \\
+    BERT-Base-Uncased   & 0.9507 & 0.9505 & 0.9533 & 0.9531 & +0.0026 & +0.0026 \\
+    \bottomrule
+\end{tabular}
+\caption{Vergleich von Training und Test: Accuracy und F1 zur Überprüfung von Overfitting}
+\label{tab:overfitting_check}
+\end{table}
+
+Tabelle \ref{tab:vergleich_der_transformer_modelle} zeigt die Testergebnisse der fünf untersuchten Transformer-Modelle nach dem Fine-Tuning auf dem 
+Klassifikationsdatensatz. 
+Dargestellt sind Accuracy, F1-Score, Loss sowie die durchschnittliche Evaluationszeit. Das Modell XLM-RoBERTa-Large erzielt mit einer 
+Accuracy und einem F1-Score von jeweils 97,95\% die besten Resultate, gefolgt von RoBERTa-Large und RoBERTa-Base. 
+Das schwächste Ergebnis liefert BERT-Base-Uncased mit einem Accuracy-Wert von 95,33\%. Insgesamt zeigt sich, dass die \textit{Large}-Varianten
+der Tranformer Modelle bessere Ergebnisse erzielen, allerdings auch mit einem erhöhten Evaluationsaufwand verbunden sind.
 
 \begin{table}[!ht]
 \centering
@@ -16,9 +50,17 @@
     BERT-Base-Uncased & 0.9533 & 0.9531 & 0.1952 & 6.33 \\
     \bottomrule
 \end{tabular}
-\caption{Direktes Fine-Tuning – Testergebnisse der Modelle}
+\caption{Testergebnisse der Transformer Modelle nach dem Fine-Tuning}
+\label{tab:vergleich_der_transformer_modelle}
 \end{table}
 
+In Tabelle \ref{tab:vergleich_lightgbm_modelle} dargestellt, sind die Metriken verschiedener LightGBM-Modells, welche auf den neu erzeugten 
+Embeddings der verschiedenen Transformer-Modellen trainiert wurden.
+Dabei wurden jeweils die letzten vier Schichten der Modelle gemittelt und als Input für den LightGBM-Classifier verwendet. 
+Auch in diesem Setup erzielt XLM-RoBERTa-Large mit einer Accuracy von 97,84\% und einem F1-Score von 97,73\% die besten Ergebnisse. 
+Es folgen die \textit{Base}-Varianten von XLM-RoBERTa und RoBERTa mit sehr ähnlichen Werten. Deutlich schwächer schneidet BERT-Base-Uncased ab, 
+was auf eine geringere Qualität der erzeugten Embeddings hinweist. Insgesamt zeigt sich, dass die Qualität der Repräsentationen der Transformer-Modelle 
+einen wesentlichen Einfluss auf die nachgelagerte Klassifikationsleistung hat – selbst bei identischer LightGBM-Architektur.
 
 \begin{table}[!ht]
 \centering
@@ -33,26 +75,81 @@
     BERT-Base-Uncased & 0.9472 & 0.9439 \\
     \bottomrule
 \end{tabular}
-\caption{LightGBM-Ergebnisse auf Embeddings der Modelle}
+\caption{Testergebnisse der LightGBM-Modelle nach dem Training auf den Embeddings}
+\label{tab:vergleich_lightgbm_modelle}
 \end{table}
 
+Tabelle \ref{tab:transformer_vs_lightgbm} vergleicht die Accuracy- und F1-Werte der Transformer und LightGBM Modelle.
+Der Differenzwert ($\Delta$) zeigt den Unterschied zwischen den beiden Modellen.
+Es zeigt sich, dass die direkt feinjustierten Transformer-Modelle in fast allen Fällen leicht bessere Ergebnisse erzielen als die Kombination aus 
+Embeddings und LightGBM.
 
 \begin{table}[!ht]
 \centering
-\begin{tabular}{lcccc}
+\begin{tabular}{lcccccc}
     \toprule
     \multirow{2}{*}{\textbf{Modell}} &
     \multicolumn{2}{c}{\textbf{Transformer}} &
-    \multicolumn{2}{c}{\textbf{LightGBM}} \\
-    \cmidrule(lr){2-3} \cmidrule(lr){4-5}
-    & \textbf{Accuracy} & \textbf{F1} & \textbf{Accuracy} & \textbf{F1} \\
+    \multicolumn{2}{c}{\textbf{LightGBM}} &
+    \multicolumn{2}{c}{$\Delta$ (LGBM - TF)} \\
+    \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(l){6-7}
+    & \textbf{Accuracy} & \textbf{F1} & \textbf{Accuracy} & \textbf{F1} & $\Delta$ Acc & $\Delta$ F1 \\
     \midrule
-    XLM-RoBERTa-Large & 0.9795 & 0.9795 & 0.9784 & 0.9773 \\
-    RoBERTa-Large     & 0.9765 & 0.9764 & 0.9753 & 0.9738 \\
-    RoBERTa-Base      & 0.9751 & 0.9751 & 0.9729 & 0.9713 \\
-    XLM-RoBERTa-Base  & 0.9717 & 0.9716 & 0.9753 & 0.9738 \\
-    BERT-Base-Uncased & 0.9533 & 0.9531 & 0.9472 & 0.9439 \\
+    XLM-RoBERTa-Large & 0.9795 & 0.9795 & 0.9784 & 0.9773 & $-$0.0011 & $-$0.0022 \\
+    RoBERTa-Large     & 0.9765 & 0.9764 & 0.9753 & 0.9738 & $-$0.0012 & $-$0.0026 \\
+    RoBERTa-Base      & 0.9751 & 0.9751 & 0.9729 & 0.9713 & $-$0.0022 & $-$0.0038 \\
+    XLM-RoBERTa-Base  & 0.9717 & 0.9716 & 0.9753 & 0.9738 & +0.0036 & +0.0022 \\
+    BERT-Base-Uncased & 0.9533 & 0.9531 & 0.9472 & 0.9439 & $-$0.0061 & $-$0.0092 \\
     \bottomrule
 \end{tabular}
-\caption{Accuracy und F1-Score: Transformer Fine-Tuning vs. LightGBM auf Embeddings}
+\caption{Vergleich von Transformer- und LightGBM-Modellen: Accuracy, F1 und Differenz}
+\label{tab:transformer_vs_lightgbm}
 \end{table}
+
+%TODO: erklären warum reine transformer bessere ergebnisse erzielen
+
+\section{Vergleich mit verwandten Arbeiten}
+
+Tabelle \ref{tab:vergleich_literatur} vergleicht die Accuracy- und F1-Scores der in dieser Arbeit entwickelten Modelle mit den besten Resultaten zweier 
+verwandter Studien. Während \cite{Essa:2023aa} ihre Modelle auf drei unterschiedlichen Fake-News-Datensätzen getestet hat 
+(ISOT, TI-CNN, FNC), stammen die Ergebnisse aus \cite{V_G_2024} vom FNDD-Datensatz. In dieser Arbeit wurde ein weiterer selbst entwickelter Datensatz verwendet. 
+Aufgrund dieser Unterschiede ist ein direkter Vergleich daher nur bedingt sinnvoll.
+
+Auffällig ist, dass in den Arbeiten von \cite{Essa:2023aa} und \cite{V_G_2024} ausschließlich Ergebnisse für klassifikatorgestützte Ansätze 
+(z.,B. BERT-Embeddings mit LightGBM oder LSTM) berichtet werden. Es fehlen dort jedoch vergleichbare Kennzahlen für direkt feinjustierte Transformer-Modelle 
+wie sie in dieser Arbeit durchgeführt wurden. Ein direkter Leistungsvergleich mit reinem Transformer-Fine-Tuning ist folglich nicht möglich.
+
+Trotzdem lässt sich beobachten, dass das in dieser Arbeit durchgeführte Fine-Tuning des XLM-RoBERTa-Large-Modells mit einer Accuracy und einem F1-Score von 
+jeweils 97,95\% sehr gute Ergebnisse erzielt und damit nahe an den besten LightGBM-Kombinationen der Vergleichsarbeiten liegt. 
+Auch das LightGBM-Modell auf Basis der XLM-RoBERTa-Embeddings erreicht mit 97,84\% (Accuracy) und 97,73\% (F1) ein konkurrenzfähiges Niveau.
+
+Die teils noch höheren Werte in \cite{Essa:2023aa} könnten unter anderem auf Unterschiede in den Datensätzen zurückzuführen sein. 
+So ist beispielsweise der ISOT-Datensatz stark strukturiert und enthält viele sich wiederholende Phrasen, was klassische Embedding-Modelle begünstigen kann \cite{s22186970}. 
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{p{2.4cm} p{3.1cm} p {4cm} cc}
+    \toprule
+    \textbf{Arbeit} & \textbf{Datensatz} & \textbf{Bestes Modell} & \textbf{Acc. (\%)} & \textbf{F1 (\%)} \\
+    \midrule
+    \cite{Essa:2023aa}  & ISOT    & BERT + LightGBM            & 99.88 & 99.88 \\
+    \cite{Essa:2023aa}  & FNC     & BERT + LightGBM             & 99.06 & 99.05 \\
+    \textbf{Diese Arbeit} & Eigener Datensatz & XLM-RoBERTa-Large & 97.95 & 97.95 \\
+    \textbf{Diese Arbeit} & Eigener Datensatz & XLM-RoBERTa-Large + LightGBM & 97.84 & 97.73 \\
+    \textbf{Diese Arbeit} & Eigener Datensatz & RoBERTa-Large + LightGBM & 97.53 & 97.38 \\
+    \cite{Essa:2023aa}  & TI-CNN  & BERT + LightGBM           & 96.94 & 97.42 \\
+    \cite{V_G_2024}     & FNDD    & RoBERTa + LightGBM           & 96.54 & 97.60 \\
+    \textbf{Diese Arbeit} & Eigener Datensatz & BERT + LightGBM & 94.72 & 94.39 \\
+    \bottomrule
+\end{tabular}
+\caption{Vergleich der erzielten Accuracy- und F1-Scores mit verwandten Arbeiten}
+\label{tab:vergleich_literatur}
+\end{table}
+
+Zusammenfassend zeigen die Ergebnisse, dass die in dieser Arbeit verfolgten Methoden sowohl im direkten Fine-Tuning als auch im kombinierten
+LightGBM-Ansatz mit aktuellen Forschungsarbeiten konkurrenzfähig sind.
+Zudem wird aber auch deutlich, dass ein sinnvoller Vergleich verschiedener Modellarchitekturen sehr schwer fällt.
+So liefert zum Beispiel die Kombination von BERT und LightGBM in dieser Arbeit mit 94,72\% (Accuracy) das schlechteste Ergebniss, während die gleiche Kombination
+in \cite{Essa:2023aa} 5,16\% mehr erzielt.
+Mögliche Ursachen hierfür können zum Beispiel die unterschiedlichen Konfigurationen der Hyperparameter beim Modelltraining oder die Bildung der Embeddings aus den
+\textit{hidden states} sein. 

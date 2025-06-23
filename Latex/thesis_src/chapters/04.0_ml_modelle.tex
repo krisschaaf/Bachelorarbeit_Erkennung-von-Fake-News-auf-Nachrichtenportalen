@@ -7,6 +7,8 @@
 \subsection{Textbereinigung und Vorverarbeitung}
 \label{sec:text_vorverarbeitung}
 
+%TODO: Einleitung oder entfernen!
+
 \begin{itemize}
     \item \textbf{Titel und Inhalt der Artikel zusammenfügen \cite{Buddhadev2025}}: Damit keine wichtigen Informationen verloren gehen,
     werden Titel und Inhalt des Artikels zusammengefasst. Gerade der Titel kann durch z.B. Clickbait (siehe \ref{sec:wie_definieren_sich_fake_news})
@@ -159,6 +161,7 @@ In der IF-IDF wird für IDF wird nun also RF eingesetzt und es ergibt sich folge
 \subsubsection{Vergleich Bag-of-words und TF-IDF}
 
 \begin{table}[!ht]
+    \renewcommand{\arraystretch}{1.3}
     \centering
         \begin{tabular}{|p{6.6cm}|p{6.6cm}|}
             \hline
@@ -175,7 +178,7 @@ In der IF-IDF wird für IDF wird nun also RF eingesetzt und es ergibt sich folge
             Nützlich für einfache Klassifikatoren & Bessere Klassifikationsergebnisse in Kombination mit SVM oder Logistic Regression \cite{iyer2024sentiment} \\
             \hline
         \end{tabular}
-    \caption{Vergleich der Vor- und Nachteile von BoW und TF-IDF}
+    \caption{Vergleich der Vor- und Nachteile von BoW und TF-IDF} %TODO: ChatGPT ?
     \label{tab:vergleich}
 \end{table}
 
@@ -393,6 +396,7 @@ Vorhersage diskreter Zielwerte genutzt \cite{aslam2022}. Die Tabelle \ref{tab:li
 benötigten Zielvariablen.
 
 \begin{table}[ht]
+        \renewcommand{\arraystretch}{1.3}
     \centering
         \begin{tabular}{|p{4.4cm}|p{4.4cm}|p{4.4cm}|}
         \hline
@@ -408,7 +412,7 @@ benötigten Zielvariablen.
         \hline
         \end{tabular}
 \caption{Übersicht von Aktivierungsfunktion in der logistischen Regression \cite{jurafsky2023, hastie2009, agresti2018cda}}
-\label{tab:linkfunktionen}
+\label{tab:linkfunktionen}  %TODO: ChatGPT ?
 \end{table}
 
 Das Ziel der logistischen Regression ist es, eine Funktion zu finden, die die Wahrscheinlichkeit \( P \) berechnet, 
@@ -509,7 +513,7 @@ verbessert wird \cite{petrovic2024,chen2016xgboost,aslam2022}.
         \caption[XGBoost]{\label{fig:xgboost} XGBoost\footnotemark}
     \end{center}
 \end{figure}
-\footnotetext{\url{https://flower.ai/blog/2023-11-29-federated-xgboost-with-bagging-aggregation/}}
+\footnotetext{\url{https://flower.ai/blog/2023-11-29-federated-xgboost-with-bagging-aggregation/}} %TODO: remove footnote
 
 Ein zentraler Vorteil von XGBoost ist die integrierte Regularisierung, mit der das Modell Overfitting vermeiden kann. 
 Dabei werden zwei Arten von Regularisierung eingesetzt:
@@ -545,7 +549,42 @@ EFB fasst solche Merkmale zu sogenannten Bundles zusammen, wodurch sich die Anza
 Das Bündelungsproblem wird als Graphfärbungsproblem modelliert und mit einem Greedy-Algorithmus angenähert.
 Dadurch wird der Histogrammaufbau effizienter und das Training insgesamt beschleunigt.
 
-Sowohl \cite{ke2017} als auch \cite{hu2020} zeigen, dass LightGBM gegenüber XGBoost effizienter trainiert, eine bessere Vorhersage gibt, weniger
-Merkmale benötigt und Kktegorische Daten einfacher bearbeiten kann, dementsprechend also auch kein One-Hot-Encoding benötigt.
+Im Vergleich zu XGBoost, welches die Bäume gleichmäßig pro Ebene aufbaut, wählt LightGBM bei jedem Schritt das Blatt mit dem höchsten Fehler zur Aufspaltung
+(siehe Abbildung \ref{fig:lightgbm_vs_xgboost}). Das kann bei LightGBM zu tiefen, asymmetrischen Baumstrukturen führen.
 
-%TODO: ablauf eventuell bildlich erklären?
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[scale=1.5]{static/lightgbm_vs_xgboost.jpg}
+        \caption{\label{fig:lightgbm_vs_xgboost} \textit{level-wise} (XGBoost) vs. \textit{leaf-wise} (LightGBM) \cite{sheng2022}}
+    \end{center}
+\end{figure}
+
+Folgendes Beispiel einer Fake News Klassifizierung zum Verständnis der Funktionsweise von LightGBM:
+\begin{enumerate}
+    \item \textbf{Startschätzung:}  
+    Das Modell beginnt ohne Entscheidungsbäume. Es trifft eine einfache Anfangsschätzung, z.B. dass jeder Artikel mit gleicher Wahrscheinlichkeit echt 
+    oder gefälscht ist (z.B. 50:50-Verteilung).
+
+    \item \textbf{Fehleridentifikation:}  
+    Es wird überprüft, welche Artikel falsch klassifiziert wurden. Zum Beispiel: Ein Artikel mit dem Titel „\emph{SCHOCKIEREND: Politiker gesteht alles!}“ 
+    wird fälschlicherweise als echt eingestuft, obwohl es sich um eine Falschmeldung handelt.
+
+    \item \textbf{Erzeugung eines ersten Entscheidungsbaums:}  
+    Basierend auf den erkannten Fehlern wird der erste Baum trainiert, um die fehlerhaften Vorhersagen zu korrigieren. 
+    Dabei lernt das Modell etwa, dass reißerische Sprache mit Fake News korreliert.
+
+    \item \textbf{Anpassung der Vorhersage:}  
+    Das Modell passt seine ursprüngliche Schätzung anhand der Regeln des neu erzeugten Baums an. Dieser Baum liefert eine kleine Korrektur, die – 
+    positiv oder negativ – zur bestehenden Vorhersage hinzugefügt wird. So wird die Bewertung des Artikels differenzierter und genauer.
+
+    \item \textbf{Weitere Iterationen und Baum-Erzeugung:}  
+    Nach jeder Anpassung wird erneut überprüft, wo Fehler verbleiben. Ein weiterer Baum wird erzeugt, um diese Fehler zu korrigieren. 
+    Dieser Vorgang wird iterativ wiederholt.
+
+    \item \textbf{Fertiges Modell:}  
+    Das finale Modell besteht aus der Summe aller trainierten Bäume. Neue Artikel durchlaufen sämtliche Entscheidungsbäume, 
+    deren kombinierte Vorhersagen ergeben eine Wahrscheinlichkeitsaussage.
+\end{enumerate} %TODO: ChatGPT
+
+Sowohl \cite{ke2017} als auch \cite{hu2020} zeigen, dass LightGBM gegenüber XGBoost effizienter trainiert, eine bessere Vorhersage gibt, weniger
+Merkmale benötigt und kategorische Daten einfacher bearbeiten kann.

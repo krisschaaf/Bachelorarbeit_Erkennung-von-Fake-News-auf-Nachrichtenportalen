@@ -1,7 +1,7 @@
 \chapter{Konzeption der Softwarelösung}
 \label{chap:konzeption_der_softwareloesung}
 
-\section{Machine Learning Modell} \label{sec:06:machine_learning_model}
+\section{Konzeption des Machine Learning Modells} \label{sec:06:machine_learning_model}
 
 \subsection{Auswahl und Begründung der genutzten Modelle} 
 
@@ -81,9 +81,8 @@ Diese Embeddings entstehen über mehrere aufeinanderfolgende \textit{hidden laye
 Um die Ausgabe der verschiedenen Embeddings der \textit{hidden layer} zusammenzufassen kann zum Beispiel der \texttt{[CLS]}-Token aus einer oder mehreren Schichten extrahiert oder 
 ein Durchschnitt aller Token-Embeddings gebildet werden.
 
-\cite{sun2020finetuneberttextclassification} zeigt für BERT, dass die letzten Layer die meisten Informationen beinhalten und
-besonders die Kombination der letzten vier Layer mit anschließender Bildung des Maximums das beste Ergebnis erzielt.
-In dieser Arbeit werden verschiedene Kombinationen getestet.
+\cite{sun2020finetuneberttextclassification} zeigt für BERT, dass die letzten Layer die meisten Informationen beinhalten.
+In dieser Arbeit wird aus den letzten vier Layern ein Durchschnittswert gebildet.
 
 \subsection{Nutzung der Embeddings im LightGBM Modell}
 
@@ -108,7 +107,7 @@ klassifiziert (siehe Abbildung \ref{fig:beispielablauf_gesamt}).
     \end{center}
 \end{figure}
 
-\section{Webagent} \label{sec:06:hauptkomponente}
+\section{Konzeption des Webagenten} \label{sec:06:hauptkomponente}
 
 Der Webagent hat die Aufgabe die Artikel auf den verschiedenen Nachrichtenportalen zu lesen und zu ergänzen.
 Hierfür muss erkannt werden auf welcher Seite sich der Nutzer befindet. Außerdem muss das html dieser Seite ausgelesen und analysiert werden können.

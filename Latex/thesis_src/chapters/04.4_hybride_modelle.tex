@@ -145,13 +145,6 @@ Der LSTM-Layer verbessert dabei die Nutzung der kontextuellen BERT-Embeddings, i
 Merkmalsencoder genutzt. Dabei bleiben alle internen Gewichte und Parameter von BERT unverändert und werden nicht weiter trainiert. 
 Zusätzlich wird ein BiLSTM Modell für die weitere Verarbeitung der BERT-Ausgaben trainiert (siehe Abbildung \ref{fig:bert_bilstm_architecture}).
 
-\begin{figure}[htbp]
-    \begin{center}
-        \includegraphics[scale=0.45]{static/bert_bilstm_architecture.png}
-        \caption{\label{fig:bert_bilstm_architecture} Architektur des hybriden Modells \cite{wang2021covid19fakenewsdetection}}
-    \end{center}
-\end{figure}
-
 Verwendet wurde ein COVID-19 Fake News Dataset von Kaggle, bestehend aus 6.420 Trainings- und 2.140 Testeinträgen. 
 Jeder Eintrag enthält die Merkmale Tweet-ID, den Text des Tweets und ein Label (echt oder gefälscht).
 Augrund der Größe dieses Datensatzes werden die internen Gewichte und Parameter von BERT nicht weiter trainiert.
