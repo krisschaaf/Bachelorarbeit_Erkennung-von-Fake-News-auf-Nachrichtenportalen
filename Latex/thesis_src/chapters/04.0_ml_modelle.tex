@@ -1,13 +1,26 @@
 \chapter{Natural Language Processing}
 \label{chap:nlp}
 
+Natural Language Processing (NLP) ist ein Teilgebiet der Künstlichen Intelligenz, das sich mit der automatisierten Verarbeitung und dem Verständnis
+natürlicher Sprache durch Computer beschäftigt. In der Fake-News-Erkennung spielt NLP eine zentrale Rolle, da Fake News oft sprachliche 
+Merkmale und manipulative Formulierungen enthalten, die sich mit NLP-Methoden analysieren lassen. Durch Verfahren wie Textklassifikation, 
+Sentiment-Analyse oder semantische Textverarbeitung können relevante Muster erkannt werden, um zwischen glaubwürdigen und manipulierten Inhalten zu unterscheiden.
+
+Im Bereich des NLPs kommen verschiedene Ansätze zum Einsatz – darunter klassische Machine-Learning-Modelle, Deep-Learning-Methoden 
+sowie moderne Transformer-Architekturen, die aktuell den Stand der Technik darstellen.
+
 \section{Machine Learning}
 \label{sec:ml}
+
+Im Folgenden werden verschiedene Verfahren des maschinellen Lernens vorgestellt.
 
 \subsection{Textbereinigung und Vorverarbeitung}
 \label{sec:text_vorverarbeitung}
 
-%TODO: Einleitung oder entfernen!
+Ein zentraler Schritt bei der Anwendung von NLP-Methoden, gerade beim maschinellen Lernen, ist die Bereinigung und Vorverarbeitung von Textdaten. 
+Ziel ist es, den Text in eine strukturierte Form zu überführen, die für nachgelagerte Klassifikations- oder Analyseverfahren nutzbar ist.
+
+Folgende Schritte sollten bei der Vorbereitung unstrukturierter Textdaten von Nachrichtenartikeln beachtet werden:
 
 \begin{itemize}
     \item \textbf{Titel und Inhalt der Artikel zusammenfügen \cite{Buddhadev2025}}: Damit keine wichtigen Informationen verloren gehen,
@@ -41,23 +54,16 @@
     Dies ist eine Grundvoraussetzung für alle weiteren NLP-Schritte wie TF-IDF oder Word Embeddings.
 \end{itemize}
 
-\subsubsection{Nutzung einer dualen Feature-Pipeline} %TODO: ChatGPT oder sogar wegnehmen?
-
-Ein Problem welches das Entfernen der Akzente und Sonderzeichen und das Konvertieren aller Buchstaben zu Kleinbuchstaben mit sich bringt
-ist, dass viele wichtige Hinweise zum Erkennen von Fake News verloren gehen. Wie in Kapitel \ref{sec:potenzielle_indikatoren} beschrieben,
-sind fortlaufende Großschreibung, übermäßige Nutzung von Satzzeichen und falsche Zeichensetzung am Satzende potenzielle Indikatoren für Fake News.
-
-Eine duale Feature-Pipeline kann dieses Problem lösen. Implementiert wird eine „cleaned“ Version (z.B. für inhaltliche Bedeutung) mit 
-standardisierten, inhaltlichen Features und eine „rohe“ Version (z.B. für Stilmerkmale) mit stilistischen, rohen Textfeatures.
-
-So werden semantische und stilistische Hinweise genau so genutzt wie ein Mensch es beim Lesen macht.
-
-Die Notwendigkeit der Stilmerkmale ist aber diskutierbar. Die Datensätze werden ausschließlich aus Artikeln von offiziellen
-Nachrichtenportalen zusammengesetzt. Diese schreiben meist sauber, ohne Caps-Lock oder auffällige Sonderzeichen. Stilistische Merkmale wie viele 
-Ausrufezeichen, Emojis oder absichtliche Rechtschreibfehler kommen dort nicht vor – also sind sie in diesem Fall auch keine verlässlichen Fake-News-Signale.
 
 \subsection{Merkmalextraktion}
 \label{sec:merkmalextraktion}
+
+Nach der Bereinigung und Vorverarbeitung der Textdaten folgt die Extraktion relevanter Merkmale, um die Inhalte in eine mathematisch verwertbare 
+Repräsentation zu überführen. 
+Diese Merkmale bilden die Grundlage für die nachfolgenden maschinellen Lernprozesse, da sie den inhaltlichen und strukturellen Charakter der Texte 
+in numerischer Form abbilden. 
+Je nach gewähltem Verfahren können unterschiedliche sprachliche Eigenschaften erfasst 
+und für Klassifikationsmodelle zugänglich gemacht werden.
 
 
 \subsubsection{Bag-of-words}
@@ -165,7 +171,7 @@ In der IF-IDF wird für IDF wird nun also RF eingesetzt und es ergibt sich folge
     \centering
         \begin{tabular}{|p{6.6cm}|p{6.6cm}|}
             \hline
-            \textbf{Bag-of-Words (BoW)} & \textbf{TF-IDF} \\
+            \rowcolor{lightgray} \textbf{Bag-of-Words (BoW)} & \textbf{TF-IDF} \\
             \hline
             Einfache Implementierung \cite{cichosz2018forum} & Berücksichtigt Wortwichtigkeit in gesamter Matrix  \cite{elov2023uzbek} \\
             \hline
@@ -178,7 +184,7 @@ In der IF-IDF wird für IDF wird nun also RF eingesetzt und es ergibt sich folge
             Nützlich für einfache Klassifikatoren & Bessere Klassifikationsergebnisse in Kombination mit SVM oder Logistic Regression \cite{iyer2024sentiment} \\
             \hline
         \end{tabular}
-    \caption{Vergleich der Vor- und Nachteile von BoW und TF-IDF} %TODO: ChatGPT ?
+    \caption{Vergleich der Vor- und Nachteile von BoW und TF-IDF}
     \label{tab:vergleich}
 \end{table}
 
@@ -400,7 +406,7 @@ benötigten Zielvariablen.
     \centering
         \begin{tabular}{|p{4.4cm}|p{4.4cm}|p{4.4cm}|}
         \hline
-        \textbf{Typ} & \textbf{Aktivierungsfunktion} & \textbf{Typ der Zielvariable}\\
+        \rowcolor{lightgray} \textbf{Typ} & \textbf{Aktivierungsfunktion} & \textbf{Typ der Zielvariable}\\
         \hline
         Binäre logistische Regression & Logit (Sigmoid): $\frac{1}{1 + e^{-z}}$ & Binär (0/1) \\
         \hline
@@ -412,7 +418,7 @@ benötigten Zielvariablen.
         \hline
         \end{tabular}
 \caption{Übersicht von Aktivierungsfunktion in der logistischen Regression \cite{jurafsky2023, hastie2009, agresti2018cda}}
-\label{tab:linkfunktionen}  %TODO: ChatGPT ?
+\label{tab:linkfunktionen}
 \end{table}
 
 Das Ziel der logistischen Regression ist es, eine Funktion zu finden, die die Wahrscheinlichkeit \( P \) berechnet, 
@@ -510,10 +516,9 @@ verbessert wird \cite{petrovic2024,chen2016xgboost,aslam2022}.
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[scale=0.25]{static/xgboost-pipeline.jpg}
-        \caption[XGBoost]{\label{fig:xgboost} XGBoost\footnotemark}
+        \caption[XGBoost]{\label{fig:xgboost} XGBoost \cite{Gao2023FederatedXGBoost}}
     \end{center}
 \end{figure}
-\footnotetext{\url{https://flower.ai/blog/2023-11-29-federated-xgboost-with-bagging-aggregation/}} %TODO: remove footnote
 
 Ein zentraler Vorteil von XGBoost ist die integrierte Regularisierung, mit der das Modell Overfitting vermeiden kann. 
 Dabei werden zwei Arten von Regularisierung eingesetzt:
@@ -584,7 +589,7 @@ Folgendes Beispiel einer Fake News Klassifizierung zum Verständnis der Funktion
     \item \textbf{Fertiges Modell:}  
     Das finale Modell besteht aus der Summe aller trainierten Bäume. Neue Artikel durchlaufen sämtliche Entscheidungsbäume, 
     deren kombinierte Vorhersagen ergeben eine Wahrscheinlichkeitsaussage.
-\end{enumerate} %TODO: ChatGPT
+\end{enumerate}
 
 Sowohl \cite{ke2017} als auch \cite{hu2020} zeigen, dass LightGBM gegenüber XGBoost effizienter trainiert, eine bessere Vorhersage gibt, weniger
 Merkmale benötigt und kategorische Daten einfacher bearbeiten kann.

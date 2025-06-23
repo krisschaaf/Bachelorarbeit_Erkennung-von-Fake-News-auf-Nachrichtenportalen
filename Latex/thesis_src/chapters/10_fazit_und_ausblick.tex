@@ -15,7 +15,7 @@ die besten Resultate erzielte. Auch im hybriden Ansatz mit LightGBM auf Basis vo
 Über alle Experimente hinweg zeigte sich, dass die \textit{Large}-Varianten der Modelle tendenziell bessere Resultate liefern als die \textit{Base}-Versionen. 
 Allerdings mit erhöhtem Rechenaufwand.
 
-Entgegen der ursprünglichen Annahme, dass die Kombination aus Transformer-Embeddings und LightGBM-Classifiern eine bessere Generalisierungsleistung %TODO: das muss mit ins kapitel hybride modelle roberta/bert lightgbm
+Entgegen der ursprünglichen Annahme, dass die Kombination aus Transformer-Embeddings und LightGBM-Classifiern eine bessere Generalisierungsleistung
 ermöglichen könnte, schnitten die hybriden Modelle insgesamt leicht schlechter ab als die direkt feinjustierten Transformer. 
 Diese Beobachtung legt nahe, dass das direkte Fine-Tuning – trotz potenziell höherer Rechenkosten – die leistungsstärkere Strategie für die Fake-News-Klassifikation 
 darstellt. Der Vergleich mit verwandten Studien unterstreicht die Wettbewerbsfähigkeit der entwickelten Modelle, auch wenn unterschiedliche Datensätze und 
@@ -30,11 +30,39 @@ für die automatisierte Fake-News-Erkennung darstellen.
 \chapter{Ausblick}
 \label{chap:ausblick}
 
-- Verwendung eines aktuelleren Datensatzes mit domänenübergreifenden Themen
-- Verwendung des RoBERTA Modells "xml-roberta-xl"
-- Nutzung von Modellen mit erhöhter Inputlänge (mehr als 512 Token) oder Kombination verschiedener Eingaben (head + tail \cite{sun2020finetuneberttextclassification})
-- vergleich max/avg der letzten 4 layer - cls, etc. 
-- Vergleich mehrerer Modelle (CNN FakeBert)
-- Implementierung FakeBert mit XML-RoBERTa
-- Deployment der Anwendung und Integration mehrerer Nachrichtenportalen
-- Entwicklung einer eigenen Website in welcher die Nachrichtenartikel gepostet werden können.
+Die in dieser Arbeit entwickelte Anwendung bildet eine solide Grundlage für die automatisierte Klassifikation von Nachrichtenartikeln. 
+Gleichzeitig ergeben sich aus den gewonnenen Erkenntnissen viele Ansatzpunkte für eine weiterführende Forschung und technische Weiterentwicklung.
+
+Ein zentraler Aspekt für zukünftige Arbeiten ist der Einsatz eines aktuelleren, domänenübergreifenden Datensatzes, der verschiedene Themengebiete abdeckt 
+und damit eine verbesserte Generalisierungsfähigkeit der Modelle ermöglicht. Der in dieser Arbeit verwendete, eigens zusammengestellte Datensatz 
+beinhaltet einen starken Fokus auf den COVID-19 Pandemie Kontext und auch der zweite verwendete Datensatz stammt aus dem Jahr 2020. 
+Eine Ausweitung auf weitere thematische und aktuellere Domänen könnte die Robustheit der Modelle signifikant erhöhen.
+
+Des Weiteren bietet sich der Einsatz leistungsfähigerer Transformer-Modelle wie XLM-RoBERTa-XL an. Dieses Modell stellt eine noch größere Variante des in 
+dieser Arbeit bereits erfolgreich getesteten XLM-RoBERTa-Large dar und könnte insbesondere bei umfangreicheren Texten eine noch tiefere semantische 
+Repräsentation ermöglichen. Gescheitert ist die Verwendung dieses Modells an nicht ausreichenden Hardwaremöglichkeiten.
+
+Ein bedeutender Limitationsfaktor vieler aktueller Transformer-Modelle ist die Beschränkung auf eine maximale Inputlänge von 512 Tokens. 
+Künftig könnten entweder Modelle mit erweiterter Kontextlänge (z.B. Longformer oder BigBird) oder Strategien zur Input-Segmentierung, 
+wie die Kombination von Head- und Tail-Abschnitten eines Dokuments \cite{sun2020finetuneberttextclassification}, eingesetzt werden. 
+Auf diese Weise ließen sich längere Nachrichtenartikel ohne Informationsverlust verarbeiten.
+
+Auch auf der Ebene der Repräsentationserzeugung aus den Transformer-Modellen bieten sich Optimierungsmöglichkeiten. 
+In dieser Arbeit wurden die Mittelwerte der letzten vier Hidden Layers genutzt, doch es existieren weitere Alternativen wie z.B. die Verwendung des 
+\texttt{[CLS]}-Tokens, der maximale Layer-Wert, oder unterschiedliche Gewichtungen der Layer-Repräsentationen. 
+Ein systematischer Vergleich dieser Methoden könnte zu einer verbesserten Repräsentationsqualität führen.
+
+Darüber hinaus wäre ein Vergleich mit alternativen Modellarchitekturen auf Deep-Learning-Basis von Interesse – etwa dem Ansatz FakeBERT \cite{Kaliyar:2021aa}, 
+welcher CNNs mit BERT kombiniert. Besonders vielversprechend erscheint die Kombination von FakeBERT mit XLM-RoBERTa als Embedding-Modell,
+um die semantische Tiefe transformerbasierter Repräsentationen mit den extraktiven Fähigkeiten von Convolutional Layers zu verbinden.
+
+Auf Anwendungsebene eröffnet sich weiteres Potenzial durch das Deployment der entwickelten Anwendung, um diese nicht nur lokal zu demonstrieren.
+Durch die Integration zusätzlicher Nachrichtenportale ließe sich ein vielfältiges Spektrum des deutschsprachigen Journalismus automatisiert erfassen, 
+analysieren und klassifizieren.
+Ergänzend dazu könnte eine eigene Webplattform entwickelt werden, auf der Nutzer:innen Artikel posten und direkt eine Echtzeit-Klassifikation 
+erhalten. Dies würde nicht nur die Nutzbarkeit verbessern, sondern auch einen konkreten gesellschaftlichen Mehrwert leisten.
+
+Insgesamt bieten sich zahlreiche Perspektiven zur Weiterentwicklung sowohl im Hinblick auf Modellarchitektur als auch auf Anwendungsintegration. 
+Die hier vorgestellte Arbeit kann somit als Ausgangspunkt für praxisnahe, hochskalierbare und transparente Systeme zur Bekämpfung von Desinformation 
+im digitalen Raum dienen.
+

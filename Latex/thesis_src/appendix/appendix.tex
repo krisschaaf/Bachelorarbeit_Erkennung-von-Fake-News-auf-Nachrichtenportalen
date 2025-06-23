@@ -3,46 +3,147 @@
 \section{Verwendete Hilfsmittel}
 In der Tabelle \ref{tab:tooling} sind die im Rahmen der Bearbeitung des Themas der \IthesisKindDE~verwendeten Werkzeuge und Hilfsmittel aufgelistet.
 
-\begin{table}[h!] %TODO: ausfüllen
-\caption{Verwendete Hilfsmittel und Werkzeuge}
-\begin{tabular}{|l|l|}
-\hline 
-\rowcolor{lightgray} Tool & Verwendung \\
-\hline
-\LaTeX & Textsatz- und Layout-Werkzeug verwendet zur Erstellung dieses Dokuments \\
-\hline
- & \\
-\hline
-\end{tabular}
-\label{tab:tooling}
+\begin{table}[!ht]
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|p{3cm}|p{10.5cm}|}
+        \hline 
+        \rowcolor{lightgray} \textbf{Tool} & \textbf{Verwendung} \\
+        \hline
+        \LaTeX & Textsatz- und Layout-Werkzeug zur Erstellung des Dokuments \\
+        \hline
+        ChatGPT & KI-gestützter Assistent zur Textgenerierung, Überarbeitung und Ideenfindung \\
+        \hline
+        ScholarGPT & Spezialisierte KI-Version zur Analyse wissenschaftlicher Quellen \\
+        \hline
+        Gemini & KI-Tool zur Unterstützung bei Recherche und Programmierung \\
+        \hline
+        Draw.io & Tool zur Erstellung von Diagrammen und technischen Skizzen \\
+        \hline
+        Google Colab & Cloudbasierte Python-Umgebung für Datenanalyse und Modellierung \\
+        \hline
+        Visual Studio Code & Quellcode-Editor zur Entwicklung und Bearbeitung von Programmdateien \\
+        \hline
+        Git & Versionskontrollsystem zur Nachverfolgung von Änderungen im Quellcode \\
+        \hline
+        Manifest v3 & Technische Spezifikation für die Erstellung von Chrome-Erweiterungen \\
+        \hline
+        HTML / CSS / JavaScript & Webtechnologien zur Umsetzung der Benutzeroberfläche \\
+        \hline
+    \end{tabular}
+    \caption{Verwendete Hilfsmittel und Werkzeuge}
+    \label{tab:tooling}
 \end{table}
+
+\newpage
+
+In Tabelle \ref{tab:libs} folgen die verwendeten Bibliotheken und Frameworks.
+
+\begin{table}[!ht]
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|p{3cm}|p{10.5cm}|}
+        \hline 
+        \rowcolor{lightgray} \textbf{Bibliothek / Framework} & \textbf{Verwendung} \\
+        \hline
+        Python & Programmiersprache zur Analyse, Automatisierung und Modellierung \\
+        \hline
+        pandas & Datenmanipulation und -analyse in Tabellenform \\
+        \hline
+        matplotlib & Erstellung von Diagrammen und Visualisierungen \\
+        \hline
+        numpy & Unterstützung für numerische Operationen und Arrays \\
+        \hline
+        scikit-learn & Implementierung klassischer ML-Algorithmen (z.B. Klassifikation) \\
+        \hline
+        transformers & Zugriff auf vortrainierte Sprachmodelle (z.B. BERT, GPT) \\
+        \hline
+        torch & Deep-Learning-Framework zur Implementierung neuronaler Netze \\
+        \hline
+        Hugging Face & Plattform und Bibliothek zur Bereitstellung von NLP-Modellen \\
+        \hline
+    \end{tabular}
+    \caption{Verwendete Bibliotheken und Frameworks}
+    \label{tab:libs}
+\end{table}
+
+\newpage
+
+\section{Deklaration zur Nutzung von KI-gestützten Tools}
+
+Tabelle \ref{tab:ki_nutzung} zeigt eine explizite Auflistung an welchen Stellen KI-Technologien verwendet wurden.
+
+\begin{table}[!ht]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|p{3cm}|p{10.5cm}|}
+        \hline
+        \rowcolor{lightgray} \textbf{Abschnitt / Kapitel} & \textbf{Art der Unterstützung durch KI} \\
+        \hline
+        Kapitel \ref{chap:einleitung} & 
+            \begin{itemize}[leftmargin=*,noitemsep,topsep=0pt,partopsep=0pt]
+                \item Ideenfindung zum Aufbau des Kapitels
+                \item Zusammenfassen wissenschaftlicher Arbeiten
+            \end{itemize} \\
+        \hline
+        Kapitel \ref{chap:nlp} & 
+            \begin{itemize}[leftmargin=*,noitemsep,topsep=0pt,partopsep=0pt]
+                \item Formulierung von Einleitungen
+                \item Unterstützung bei der sprachlichen Glättung und Terminologieerklärung zu den verschiedenen Modellen
+                \item Erstellung von Tabelle \ref{tab:vergleich} und Tabelle \ref{tab:linkfunktionen}
+                \item Schrittweise Erklärung der Funktionalität von SVM, LightGBM, Self-Attention und Hidden-Layer
+                \item Beispiel WordPiece Embedding und BPE
+                \item Zusammenfassen wissenschaftlicher Arbeiten
+                \item Self-Attention Beispiel in Kapitel \ref{sec:self_attention}
+                \item Übersetzung der Dokumentation von RoBERTa in Kapitel \ref{sec04:roberta}
+            \end{itemize} \\
+        \hline
+        Kapitel \ref{chap:relevante_datensaetze_und_auswahlkriterien} & 
+        \begin{itemize}[leftmargin=*,noitemsep,topsep=0pt,partopsep=0pt]
+                \item RKI-Satz Beispiel in Kapitel \ref{sec:english_datasets}
+            \end{itemize} \\
+        \hline
+        Kapitel \ref{chap:konzeption_der_softwareloesung} & Erstellung von Tabelle \ref{table:technischeAnsaetze} \\
+        \hline
+        Kapitel \ref{chap:umsetzung_des_prototyps} &
+            \begin{itemize}[leftmargin=*,noitemsep,topsep=0pt,partopsep=0pt]
+                \item Schrittweise Erklärung des Codes in Kapitel \ref{sec:erzeugung_der_embeddings}
+                \item Erstellung der UML Klasse (Abbildung \ref{fig:uml_webserver})
+            \end{itemize} \\
+        \hline
+        Kapitel \ref{chap:evaluation_und_ergebnisse} & 
+            \begin{itemize}[leftmargin=*,noitemsep,topsep=0pt,partopsep=0pt]
+                \item Erstellung der Latex Tabellen anhand von Logging Daten und Outputs
+                \item Teilweise Erstellungen von schriftlichen Beschreibungen und Vergleichen der Tabellen
+            \end{itemize} \\
+        \hline
+        Kapitel \ref{chap:fazit} \& Kapitel \ref{chap:ausblick} & Ausformulieren von gesammelten Stichpunkten \\
+        \hline
+    \end{tabular}
+    \caption{Dokumentation der Nutzung KI-gestützter Hilfsmittel (z.\,B. ChatGPT)}
+    \label{tab:ki_nutzung}
+\end{table}
+
+In dieser wissenschaftlichen Arbeit wurden Künstliche-Intelligenz (KI-Technologien) zur Unterstützung verschiedener Aspekte der Forschung eingesetzt. 
+Die Nutzung umfasste unter anderem die Analyse und Auswertung von Literatur, die Unterstützung bei der Datenauswertung sowie die Generierung von Ideen und Inhalten.
+
+Es wird ausdrücklich darauf hingewiesen, dass die endgültige Verantwortung für die inhaltliche Richtigkeit, die kritische Reflexion und die Interpretation der 
+Ergebnisse beim Autor dieser Arbeit liegt.
+
+Die KI diente lediglich als Werkzeug und nicht als Ersatz für das kritische und analytische Denken des Forschenden.
+
+\newpage
 
 \section{Abbildungen}
 
 \begin{figure}[htbp]
     \begin{center}
-        \includegraphics[scale=0.45]{static/bert_bilstm_architecture.png}
+        \includegraphics[scale=0.6]{static/bert_bilstm_architecture.png}
         \caption{\label{fig:bert_bilstm_architecture} Architektur des hybriden Modells \cite{wang2021covid19fakenewsdetection}}
     \end{center}
 \end{figure}
 
 \begin{figure}[htbp]
     \begin{center}
-        \includegraphics[scale=0.5]{static/BERT_visualization.png}
-        \caption{\label{fig:BERT_visualization} Architektur des BERT Modells \cite{peltarion2020bert}}
-    \end{center}
-\end{figure}
-
-\begin{figure}[htbp]
-    \begin{center}
-        \includegraphics[scale=0.5]{static/multi-head_attention_visualization.png}
-        \caption{\label{fig:multi_head_attention_visualization} Multi-Head Attention \cite{peltarion2020bert}}
-    \end{center}
-\end{figure}
-
-\begin{figure}[htbp]
-    \begin{center}
-        \includegraphics[scale=0.5]{diagrams/hauptkomponente_sequenzdiagramm.png}
+        \includegraphics[width=\linewidth]{diagrams/hauptkomponente_sequenzdiagramm.png}
         \caption{\label{fig:seq_hauptkomponente} Sequenzdiagramm Webagent}
     \end{center}
 \end{figure}
@@ -53,6 +154,8 @@ In der Tabelle \ref{tab:tooling} sind die im Rahmen der Bearbeitung des Themas d
         \caption{\label{fig:gesamtarchitektur} Gesamtarchitektur des Webservers}
     \end{center}
 \end{figure}
+
+\newpage
 
 \section{Tabellen}
 
@@ -86,7 +189,7 @@ In der Tabelle \ref{tab:tooling} sind die im Rahmen der Bearbeitung des Themas d
     \end{tabular}
     \caption{Vergleich möglicher Technologien für den Webagenten}
     \label{table:technischeAnsaetze}
-\end{table} %TODO: ChatGPT
+\end{table}
 
 
 \begin{sidewaystable}[htbp]

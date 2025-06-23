@@ -1,21 +1,21 @@
 \section{Transformer}
 \label{sec:transformer}
 
-\subsection{Grundlagen der Transformer Architektur}
-
 Transformer sind erweiterte Deep-Learning-Modelle, welche sich aus einem Encoder und einem Decoder zusammensetzen (siehe Abbildung 
 \ref{fig:transformeroverview}) und den sogenannten Self-Attention Mechanismus nutzen \cite{vaswani2023attentionneed}.
 
 \begin{figure}[htbp]
     \begin{center}
-    \includegraphics[scale=0.4]{static/transformer-overview.png}
-    \caption{\label{fig:transformeroverview} Eine Übersicht der Transformer Architektur \cite{kikaben2021transformer} 
-    - vereinfacht von \cite{vaswani2023attentionneed}}
+        \includegraphics[scale=0.4]{static/transformer-overview.png}
+        \caption{\label{fig:transformeroverview} Eine Übersicht der Transformer Architektur \cite{kikaben2021transformer} 
+        - vereinfacht von \cite{vaswani2023attentionneed}}
     \end{center}
 \end{figure}
 
 Im Vergleich zu RNNs, welche Kontexte nur von links nach rechts erkennen können (bzw. bi-direktional in BiLSTMs) kann der Kontext in Transformern
 global erkannt werden \cite{ghojogh2020}.
+
+\subsection{Grundlagen der Transformer Architektur}
 
 \subsubsection{Self-Attention} \label{sec:self_attention}
 
@@ -25,7 +25,7 @@ Jede Position, also z.B. ein Wort in einem Satz, kann dabei auf alle anderen Pos
 die globale Abhängigkeiten widerspiegelt.
 
 In dem Satz „Die Bank hat heute geschlossen.“ erkennt Self-Attention zum Beispiel, dass „Bank“ im Kontext von „geschlossen“ eher ein Gebäude 
-und kein Möbelstück ist. %TODO: bsp erzeugt durch scholargpt
+und kein Möbelstück ist.
 
 Folgende Schritte erklären, wie Self-Attention laut \cite{vaswani2023attentionneed} funktioniert:
 
@@ -44,7 +44,7 @@ Folgende Schritte erklären, wie Self-Attention laut \cite{vaswani2023attentionn
     Diese Softmax-Gewichte bestimmen, wie stark eine Position auf andere achten soll.
 
     \item \textbf{Neues Repräsentationsvektor:} \\
-    Die gewichteten Werte ($V$) werden aufsummiert und bilden so eine neue Darstellung für jede Position. %TODO: zusammengefasst durch scholargpt
+    Die gewichteten Werte ($V$) werden aufsummiert und bilden so eine neue Darstellung für jede Position. 
 \end{enumerate}
 
 Statt nur eine Self-Attention zu berechnen, verwenden Transformer mehrere parallele \textit{Heads}. Jeder \textit{Head} lernt eine andere Perspektive auf die Sequenz. 
@@ -68,7 +68,7 @@ Diese lesen die Eingabe von vorne und hinten \cite{bahdanau2016neuralmachinetran
 Im von \cite{vaswani2023attentionneed} vorgestelltem Transformer-Modell werden RNNs durch Self-Attention ersetzt. 
 
 
-\subsection{Hidden Layer} \label{sec:hidden_layer}
+\subsubsection{Hidden Layer} \label{sec:hidden_layer}
 
 In einem Transformer-Modell \cite{vaswani2023attentionneed} bestehen die \textit{hidden layers} aus mehreren Encoder- und/oder Decoder-Schichten.
 Die erste Schicht erhält den Input und die letzte Schicht gibt den Output aus. Alle anderern Schichten sind versteckt und werden
@@ -98,7 +98,7 @@ Im Falle eines Encoding Transformers wie BERT (siehe Kapitel \ref{sec04:bert}) f
         \item Das letzte \textit{hidden Layer} liefert eine kontext-sensitive Repräsentation für jeden Token.
         \item In diesem Fall kann diese für Aufgaben wie Klassifikation, Fragebeantwortung oder Named Entity Recognition verwendet werden.
     \end{itemize}
-\end{enumerate} %TODO: zusammengefasst durch ChatGPT
+\end{enumerate} 
 
 
 \subsection{Transformer Modelle}
@@ -108,7 +108,7 @@ Im Falle eines Encoding Transformers wie BERT (siehe Kapitel \ref{sec04:bert}) f
 
 Bidirectional Encoder Representations from Transformers (BERT) ist ein reiner, für Sprachverständnis optimierter, Encoder-Transformer \cite{devlin2019}.
 Zwei wichtige Bestandteile der BERT Architektur sind die \textit{Self Attention Heads} und die \textit{Hidden Layers}
-(siehe Kapitel \ref{sec:self_attention} \& Abbildung \ref{fig:BERT_visualization} und Kapitel \ref{sec:hidden_layer} \& Abbildung \ref{fig:multi_head_attention_visualization}).
+(siehe Kapitel \ref{sec:self_attention} und Kapitel \ref{sec:hidden_layer}).
 
 Während CNNs und RNNs externe Word Embeddings wie Word2Vec oder GloVe verwenden, nutzt BERT eigene lernbare Embeddings.
 
@@ -189,7 +189,7 @@ Zusätzlich werden Positions- und Segment-Embeddings hinzugefügt (siehe Abbildu
 
 \begin{figure}[htbp]
     \begin{center}
-        \includegraphics[scale=0.4]{static/bert_tokenizierung.png}
+        \includegraphics[width=\linewidth]{static/bert_tokenizierung.png}
         \caption{\label{fig:bert_tokenizierung} Zusammensetzung eines Input Tokens im BERT Modell \cite{devlin2019}}
     \end{center}
 \end{figure}
@@ -226,7 +226,7 @@ Das RoBERTa-Modell wurde auf einer Zusammenführung von fünf Datensätzen vortr
 unveröffentlichten Büchern, der englischen Wikipedia (ohne Listen, Tabellen und Überschriften), 
 CC-News mit 63 Millionen englischsprachigen Nachrichtenartikeln aus dem Zeitraum September 2016 bis Februar 2019, 
 OpenWebText als Open-Source-Rekonstruktion des WebText-Datensatzes von GPT-2 sowie dem Stories-Datensatz, 
-einem nach erzählerischem Stil gefilterten Ausschnitt aus CommonCrawl-Daten. Insgesamt umfassen diese Datensätze 160 GB an Text. %TODO: übersetzt mit chatgpt
+einem nach erzählerischem Stil gefilterten Ausschnitt aus CommonCrawl-Daten. Insgesamt umfassen diese Datensätze 160 GB an Text.
 
 \subsubsection{XML-RoBERTa} \label{sec04:xml_roberta}
 
@@ -255,7 +255,7 @@ verbinden.
 
 \begin{figure}[htbp]
     \begin{center}
-    \includegraphics[scale=0.32]{static/translation_language_modeling.png}
+    \includegraphics[width=\linewidth]{static/translation_language_modeling.png}
     \caption{\label{fig:translation_language_modeling} Auswertung eines bilingualen Satzpaares von TLM \cite{NEURIPS2019_c04c19c2}}
     \end{center}
 \end{figure}

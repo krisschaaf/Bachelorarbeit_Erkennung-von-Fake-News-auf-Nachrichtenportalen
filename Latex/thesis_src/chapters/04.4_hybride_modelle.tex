@@ -1,6 +1,10 @@
 \section{Hybride Modelle zur Fake News Erkennung}
 \label{sec:hybride_modelle}
 
+Hybride Modelle kombinieren die Stärken verschiedener Machine- und Deep-Learning-Ansätze, um die Erkennungsgenauigkeit bei Fake News weiter 
+zu verbessern und sowohl semantische als auch stilistische Merkmale effektiv auszuwerten.  
+Im Folgenden werden verschiedene hybride Ansätze vorgestellt.
+
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 
 \subsection{CNN und LSTM mit PCA}
@@ -101,7 +105,7 @@ einen besseren Wert als FakeBERT (Rohit Kumar Kaliyar and Narang (2021)) mit 98,
 
 \begin{figure}[htbp]
     \begin{center}
-    \includegraphics[scale=0.49]{static/bert_cnn_mcred.png}
+    \includegraphics[width=\linewidth]{static/bert_cnn_mcred.png}
     \caption{\label{fig:bert_cnn_mcred} Ergebnisse der verschiedenen Modelle \cite{Verma:2023aa}}
     \end{center}
 \end{figure}
@@ -116,7 +120,7 @@ Anschließend werden die erzeugten Embeddings in ein LSTM gegeben, in welchem de
 
 \begin{figure}[htbp]
     \begin{center}
-    \includegraphics[scale=0.34]{static/bert_lstm_architecture.png}
+    \includegraphics[width=\linewidth]{static/bert_lstm_architecture.png}
     \caption{\label{fig:bert_lstm_architecture} Architekture des vorgeschlagenen hybriden Modells  \cite{RAI202298}}
     \end{center}
 \end{figure}
@@ -176,8 +180,6 @@ Die Ergebnisse zeigen, dass sich die semantische Tiefe von BERT und sequentielle
 
 \subsection{BERT und LightGBM}
 \label{sec:bert_lightgbm}
-
-%TODO: Warum bert und lightGBM kombinieren?
 
 \cite{Essa:2023aa} entwickelte ein weiteres hybrides Modell welches das BERT-Embedding und ein LightGBM Modell nutzt.
 Das Modell kombiniert die tiefen semantischen Sprachmerkmale von BERT mit der schnellen, skalierbaren Klassifikationsfähigkeit von LightGBM.

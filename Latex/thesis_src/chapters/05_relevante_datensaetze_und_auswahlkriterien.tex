@@ -12,7 +12,7 @@ Die Eignung bezieht sich darauf, wie sinnvoll die Nutzung dieser jeweiligen Date
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{|p{1.9cm}|p{2.3cm}|p{1.3cm}|p{1.3cm}|p{3.3cm}|p{1.5cm}|}
         \hline
-        \textbf{Datensatz} & \textbf{Quelle} & \textbf{Anzahl Zeilen} & \textbf{Anteil Fake (\%)} & \textbf{Besonderheiten / Einschränkungen} & \textbf{Eignung} \\
+        \rowcolor{lightgray} \textbf{Datensatz} & \textbf{Quelle} & \textbf{Anzahl Zeilen} & \textbf{Anteil Fake (\%)} & \textbf{Besonderheiten / Einschränkungen} & \textbf{Eignung} \\
         \hline
         \textbf{Fake News Dataset German} & University of Applied Sciences Upper Austria & 63.868 & 7{,}24\,\% & Geringer Anteil an Fake-News $\rightarrow$ unausgewogene Klassenverteilung & Weniger geeignet \\
         \hline
@@ -29,7 +29,7 @@ Die Eignung bezieht sich darauf, wie sinnvoll die Nutzung dieser jeweiligen Date
 
 %TODO: kurze beschreibung für jeden datensatz (Merkmale, Kontex)
 
-\section{Nutzung englischer Datensätze}
+\section{Nutzung englischer Datensätze} \label{sec:english_datasets}
 
 Eine in \cite{Simone2022} angewandte Lösung ist die Erstellung eines großen Datensatzes mit englischen Artikeln. Das Modell wurde entsprechend auf Englisch 
 trainiert und die deutschen Artikel in der späteren Anwendung vor der Vorhersage übersetzt.
@@ -41,7 +41,7 @@ Die Übersetzung ins Englische („Of course, the RKI will soon recommend new lo
 verliert jedoch die ironisch-sarkastische Eigenschaft.
 Das Ergebnis ist eine eher sachliche Aussage, welche vom englischen Modell sehr wahrscheinlich nicht mehr als Fake-News klassifiziert wird.
 Solche stilistischen Abschwächungen sind ein Merkmal von maschinellen Übersetzungen, was sie in diesem Fall problematisch
-für den Einsatz in der Fake-News-Erkennung macht \cite{kuehn2024enhancingrhetoricalfigureannotation}. %TODO: ChatGPT Beispiel
+für den Einsatz in der Fake-News-Erkennung macht \cite{kuehn2024enhancingrhetoricalfigureannotation}.
 
 \section{Auswahl und Begründung des finalen Datensatzes}
 \label{sec:auswahl_und_begruendung_finaler_datensatz}

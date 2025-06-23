@@ -30,7 +30,7 @@ Konvergenzprobleme entstehen, wenn das Modell beim Training nicht richtig lernt 
 Das Training wird auf einer Google Colab Laufzeit mit einer A100 GPU mit erweitertem RAM Speicher durchgeführt.
 Die trainierten Modelle werden jeweils als einzelnen Repository im \textit{Hugging Face Hub} gespeichert.
 
-\subsection{Erzeugung der Embeddings}
+\subsection{Erzeugung der Embeddings} \label{sec:erzeugung_der_embeddings}
 
 Für das Erzeugen der Embeddings wird der Datensatz aus Kapitel \ref{sec6:datenvorverarbeitung} in Trainings- (80\%) und Testdaten (20\%) aufgeteilt und tokenisiert.
 
@@ -65,7 +65,7 @@ Diese Datensätze durchlaufen anschließend folgende Schritte:
 
   \item \textbf{Finaler Output:}  
   Nach Verarbeitung aller Batches werden die Satz-Embeddings und Labels aller Beispiele zu zwei großen Arrays (Embeddings und Label) zusammengefügt.
-\end{enumerate} %TODO: ChatGPT
+\end{enumerate}
 
 Nach Durchlaufen der Schritte werden die Embeddings und Label der Trainings- und Testdaten in einem Python \textit{Dictionary} gespeichert.
 
@@ -102,7 +102,7 @@ Zurückgegeben wird ein \textit{json}-Objekt mit den Informationen \textit{label
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[scale=0.55]{static/uml_webserver.png}
-        \caption{\label{fig:uml_webserver} UML des Webservers} %TODO: generiert mit ChatGPT und PlantText
+        \caption{\label{fig:uml_webserver} UML des Webservers}
     \end{center}
 \end{figure}
 
