@@ -1,10 +1,13 @@
 \chapter{Relevante Datensätze und Auswahlkriterien}
 \label{chap:relevante_datensaetze_und_auswahlkriterien}
 
+Die in dieser Arbeit entwickelte Anwendung benötigt einen Datenbasis um das Erkennen von Fake News erfolgreich zu lernen.
+Hierfür werden verschiedene Datensätze vorgestellt und analysiert.
+
 \section{Vorstellung verfügbarer deutscher Fake-News-Datensätze}
 \label{sec:vorstellung_verfuegbare_deutsche_fake_news_datensaetze}
 
-In der Tabelle \ref{tab:deutsche-fake-news-datensaetze} sind verschiedene deutsche Fake-News-Datensätze gelistet.
+In den Tabellen \ref{tab:deutsche-fake-news-datensaetze} und \ref{tab:deutsche-fake-news-datensaetze-inhalt} sind verschiedene deutsche Fake-News-Datensätze gelistet.
 Die Eignung bezieht sich darauf, wie sinnvoll die Nutzung dieser jeweiligen Datensätze für das Trainieren eines Modells zum Erkennen von Fake News ist.
 
 \begin{table}[ht]
@@ -14,20 +17,38 @@ Die Eignung bezieht sich darauf, wie sinnvoll die Nutzung dieser jeweiligen Date
         \hline
         \rowcolor{lightgray} \textbf{Datensatz} & \textbf{Quelle} & \textbf{Anzahl Zeilen} & \textbf{Anteil Fake (\%)} & \textbf{Besonderheiten / Einschränkungen} & \textbf{Eignung} \\
         \hline
-        \textbf{Fake News Dataset German} & University of Applied Sciences Upper Austria & 63.868 & 7{,}24\,\% & Geringer Anteil an Fake-News $\rightarrow$ unausgewogene Klassenverteilung & Weniger geeignet \\
+        \textbf{Fake News Dataset German} & University of Applied Sciences Upper Austria & 63.868 & 7{,}24\,\% & Geringer Anteil an Fake-News $\rightarrow$ unausgewogene Klassenverteilung; veraltet & Weniger geeignet \\
         \hline
-        \textbf{German-Fake NC} & Fraunhofer-Institut für Sichere Informationstechnologie SIT & 489 & 100\,\% & Enthält nur Referenzen, keine Texte $\rightarrow$ keine direkte Textauswertung möglich & Nicht geeignet \\
+        \textbf{German-Fake NC} & Fraunhofer-Institut für Sichere Informationstechnologie SIT & 489 & 100\,\% & Enthält nur Referenzen, keine Texte $\rightarrow$ keine direkte Textauswertung möglich; veraltet & Nicht geeignet \\
         \hline
-        \textbf{FANG-COVID} & Association for Computational Linguistics & 41.242 & 31{,}97\,\% & Ausgewogene Klassen, vollständige Texte, viele Metadaten (Titel, Header, Label) & \textbf{Sehr geeignet} \\
+        \textbf{FANG-COVID} & Association for Computational Linguistics & 41.242 & 31{,}97\,\% & Ausgewogene Klassen, vollständige Texte, viele Metadaten; veraltet & \textbf{Sehr geeignet} \\
         \hline
         \textbf{DeFaktS} & FZI Forschungszentrum Informatik & -- & -- & Kein Zugang $\rightarrow$ Nutzung ausgeschlossen & Nicht verfügbar \\
         \hline
     \end{tabular}
-    \caption{Vergleich deutscher Fake-News-Datensätze}
+    \caption{Vergleich deutscher Fake-News-Datensätze hinsichtlich Umfang, Quellenlage und praktischer Eignung}
     \label{tab:deutsche-fake-news-datensaetze}
 \end{table}
 
-%TODO: kurze beschreibung für jeden datensatz (Merkmale, Kontex)
+\begin{table}[ht]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|p{3cm}|p{2cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray} \textbf{Datensatz} & \textbf{Kontext} & \textbf{Relevante Features} \\
+        \hline
+        \textbf{Fake News Dataset German} & nicht spezifisch & 'url', 'Titel', 'Body', 'Kategorie', 'Datum', 'Quelle', 'Fake', 'Art' \\
+        \hline
+        \textbf{German-Fake NC} & nicht spezifisch & 'Date', 'URL', 'False Statement 1 Location', 'False Statement 1 Index', 'Ratio of Fake Statements', 'Overall Rating' \\
+        \hline
+        \textbf{FANG-COVID} & COVID-19 Pandemie & 'article', 'date', 'header', 'label', 'url' \\
+        \hline
+        \textbf{DeFaktS} & -- &  -- \\
+        \hline
+    \end{tabular}
+    \caption{Vergleich deutscher Fake-News-Datensätze hinsichtlich Kontext und relevanter Features}
+    \label{tab:deutsche-fake-news-datensaetze-inhalt}
+\end{table}
 
 \section{Nutzung englischer Datensätze} \label{sec:english_datasets}
 

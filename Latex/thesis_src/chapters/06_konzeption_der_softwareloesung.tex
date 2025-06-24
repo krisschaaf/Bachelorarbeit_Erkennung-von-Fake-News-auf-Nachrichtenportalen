@@ -1,6 +1,12 @@
 \chapter{Konzeption der Softwarelösung}
 \label{chap:konzeption_der_softwareloesung}
 
+Die entwickelte Anwendung ist aufgeteilt in zwei Komponenten. Die erste Komponente, das Machine Learning Modell,
+klassifiziert die Nachrichtenartikel und gibt das entsprechende Label zurück. Die zweite Komponenten ist der Webagent, welcher
+die Artikel auf den Nachrichtenportalen liest, an das Machine Learning Modell schickt und die Antwort in das Portal integriert.
+
+Im folgenden Kapitel werden das jeweilige Konzept dieser beiden Komponenten vorgestellt.
+
 \section{Konzeption des Machine Learning Modells} \label{sec:06:machine_learning_model}
 
 \subsection{Auswahl und Begründung der genutzten Modelle} 
@@ -163,20 +169,6 @@ Der Titel und Inhalt des Artikels kann den entsprechenden html-Elementen entnomm
 Diese werden anschließend an die API gesendet und dort verarbeitet. 
 Der Rückgabewert der API enthält dann die Info ob der Artikel falsch oder echt ist.
 Diese wird in einem vom Webagent erzeugten \textit{div}-Container über dem Artikel eingefügt.
-
-%TODO: nicht eher umsetzung?
-Zur Bestimmung des geeignetsten Tools für diese Anforderungen,
-wurden verschiedene Technologien verglichen (siehe Tabelle \ref{table:technischeAnsaetze}).
-Aufgrund des begrenzten Zugriffs auf die zu analysierende Seiten, bieten sich die beiden Client-seitigen Umsetzungen 
-eine Chrome Extension zu implementieren oder über Tampermonkey Userscripts auszuführen am ehesten an.
-
-Im Vergleich zu Usercripts unterstützt die Extension mehrere Komponenten (Content Scripts, Background Scripts, Popup, Optionsseite).
-Anhand dieser können der DOM beobachtet, ein persistenter Speicher genutzt, Kontextmenüs erstellt und auf Browseraktionen reagiert werden (z.B. Tabwechsel, Navigation).
-Ein Userscript hingegen ist ein einfaches Script, das nur beim Laden einer Seite aktiv ist und dementsprechend keine Hintergrundverarbeitung und keine erweiterten UI-Komponenten
-zur Verfügung stellt.
-
-Zur Implementierung des Webagents wird also eine Chrome Extension genutzt.
-
     
     
     

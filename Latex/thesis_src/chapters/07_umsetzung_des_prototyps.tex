@@ -1,6 +1,8 @@
 \chapter{Umsetzung der Softwarelösung}
 \label{chap:umsetzung_des_prototyps}
 
+Basierend auf den vorgestellten Konzepten folgt die technische Erläuterung der Anwendung.
+
 \section{Implementierung des Machine Learning Modells}
 
 \subsection{Fine-tuning der Transfomer Modelle}
@@ -89,7 +91,8 @@ um das Modell mit dem höchsten F1-Score zu finden.
 Anhand von dem, in der Bibliothek zur Verfügung gestellten, \textit{early-stopping} wird das Training des Modells überwacht und frühzeitig gestoppt, wenn bestimmte 
 Anforderungen erreicht sind. 
 Die Parameter sind in diesem Fall so definiert, dass das Training beendet wird, sobald sich der logarithmische Verlust (\textit{Logloss}) auf den 
-Validierungsdaten über 100 aufeinanderfolgende Iterationen hinweg nicht mehr verbessert. %TODO: ergänzende erklärung?
+Validierungsdaten über 100 aufeinanderfolgende Iterationen hinweg nicht mehr verbessert.
+Dadurch wird Overfitting verhindert und eine bessere Generalisierung auf unbekannte Texte ermöglicht.
 
 \subsection{Gesamtarchitektur}
 
@@ -110,8 +113,19 @@ Eine Modellierung der Architektur des Webservers findet sich im Anhang \ref{fig:
 
 \section{Implementierung des Webagenten}
 
-Die Chrome Erweiterung wurde mit der Version Manifest 3 implementiert.
-Genutzt wurden ein \textit{Service Worker} ein \textit{Content Script} pro Nachrichtenportal und ein \textit{Popup}.
+Zur Bestimmung des geeignetsten Tools für den Webagenten,
+wurden verschiedene Technologien verglichen (siehe Tabelle \ref{table:technischeAnsaetze}).
+Aufgrund des begrenzten Zugriffs auf die zu analysierende Seiten, bieten sich die beiden Client-seitigen Umsetzungen 
+eine Chrome Extension zu implementieren oder über Tampermonkey Userscripts auszuführen am ehesten an.
+
+Im Vergleich zu Usercripts unterstützt die Extension mehrere Komponenten (Content Scripts, Background Scripts, Popup, Optionsseite).
+Anhand dieser können der DOM beobachtet, ein persistenter Speicher genutzt, Kontextmenüs erstellt und auf Browseraktionen reagiert werden (z.B. Tabwechsel, Navigation).
+Ein Userscript hingegen ist ein einfaches Script, das nur beim Laden einer Seite aktiv ist und dementsprechend keine Hintergrundverarbeitung und keine erweiterten UI-Komponenten
+zur Verfügung stellt.
+
+Basierend auf der Auswertung wird zur Implementierung des Webagents eine Chrome Extension (Manifest V3) verwendet.
+
+Genutzt wird ein \textit{Service Worker} ein \textit{Content Script} pro Nachrichtenportal und ein \textit{Popup}.
 
 \paragraph{Service Worker} steuern eine Seite genau dann, wenn ein Service Worker auf dieser Netzwerkanfragen in seinem Namen abfangen kann. 
 Der Service Worker kann dann Aufgaben für die Seite innerhalb eines bestimmten Scopes ausführen
@@ -135,7 +149,7 @@ In Abbildung \ref{fig:seq_hauptkomponente} zu sehen ist das Sequenzdiagramm des 
 wird zuerst die URL geprüft. Erfüllt diese die vorgegebenen Bedingungen wird der geöffnete Artikel gelesen und von einer weiteren Anwendung
 analysiert. Anschließend wird das Ergebnis der Analyse in einem \textit{div}-Container über dem Artikel eingefügt.
 
-Um die Veränderungen im Browser zu überwachen wurde die \textit{tabs}-API von Chrome genutzt. Anhand dieser kann das Tab-System eines Browsers überwacht
+Um die Veränderungen im Browser zu überwachen wird die \textit{tabs}-API von Chrome genutzt. Anhand dieser kann das Tab-System eines Browsers überwacht
 und zum Beispiel auch auf jede Veränderung der URL reagiert werden.
 Außerdem ermöglicht die API das Versenden von Nachrichten an alle aktiven Content Scripts. Diese werden dann im jeweiligen Content Script über die
 \textit{runtime}-API empfangen und ausgelesen.

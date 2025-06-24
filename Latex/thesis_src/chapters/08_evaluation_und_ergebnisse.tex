@@ -106,7 +106,11 @@ Embeddings und LightGBM.
 \label{tab:transformer_vs_lightgbm}
 \end{table}
 
-%TODO: erklären warum reine transformer bessere ergebnisse erzielen
+Ein möglicher Grund für die leicht schlechteren Metriken bei der Verwendung von LightGBM könnte in der hohen semantischen Dichte und Dimension der 
+Transformer-Embeddings liegen. Diese enthalten sehr viele komplexe, kontextuelle Informationen, die zwar für überwachte Modelle direkt nutzbar sind, 
+klassische Modelle wie LightGBM jedoch nur eingeschränkt verarbeiten können.
+\cite{reimers-gurevych-2019-sentence} erklärt, dass die Architektur von BERT für die Anwendung in weiteren unüberwachte Verfahren problematisch ist.
+Es lässt sich vermuten, dass gleiches auch für überwachte Modelle gilt.
 
 \section{Vergleich mit verwandten Arbeiten}
 
