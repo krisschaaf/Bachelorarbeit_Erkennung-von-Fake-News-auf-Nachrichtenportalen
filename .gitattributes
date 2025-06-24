@@ -1,2 +1,2 @@
 *.csv filter=lfs diff=lfs merge=lfs -text
-Code/Machine[[:space:]]Learning[[:space:]]Model/logic/datasets filter=lfs diff=lfs merge=lfs -text
+Code/Machine[[:space:]]Learning[[:space:]]Transformer-LightGBM/logic/datasets filter=lfs diff=lfs merge=lfs -text
