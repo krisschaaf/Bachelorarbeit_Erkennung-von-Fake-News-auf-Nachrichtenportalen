@@ -18,3 +18,38 @@ ja
 15CP
 
 Länge 60-80 Seiten
+
+
+## Fragen zum Termin 24.06.2025:
+
+
+- Ist das KI Verzeichnis i.O.?
+
+
+- Ist es okay alle überwachten Modelle in der Arbeit zu lassen oder bildet das zu viel Overhead?
+
+
+- Passt die Länge der Arbeit?
+
+
+- Ist der Aufbau soweit i.O.?
+
+
+- Meine Ergebnisse sind nicht so wie erwartet. Wie gehe ich damit am besten um?
+
+
+- Ablauf der Abgabe und Vorbereitung für das Kolloquium 
+
+    Veröffentlichkeitshinweis scannen und an sarstedt schicken (vor Abgabe)
+    Selbstständigkeitserklärung
+    pdf der finalen fassung an starstedt und tropmann frick
+
+    kolloquium vor dem 14.:
+        25 minuten vortrag von mir über präsentation
+        anschließend fragerunde
+
+        insgesamt eine stunde
+
+- TODO: screenshot der anwendung in die ergebnisse 
+
+- Generelle Tipps oder Dinge die ich jetzt noch beachten sollte.

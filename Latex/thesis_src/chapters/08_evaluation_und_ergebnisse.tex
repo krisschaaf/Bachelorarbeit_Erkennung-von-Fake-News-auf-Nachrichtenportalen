@@ -110,7 +110,7 @@ Ein möglicher Grund für die leicht schlechteren Metriken bei der Verwendung vo
 Transformer-Embeddings liegen. Diese enthalten sehr viele komplexe, kontextuelle Informationen, die zwar für überwachte Modelle direkt nutzbar sind, 
 klassische Modelle wie LightGBM jedoch nur eingeschränkt verarbeiten können.
 \cite{reimers-gurevych-2019-sentence} erklärt, dass die Architektur von BERT für die Anwendung in weiteren unüberwachte Verfahren problematisch ist.
-Es lässt sich vermuten, dass gleiches auch für überwachte Modelle gilt.
+Es lässt sich vermuten, dass Gleiches auch für überwachte Modelle gilt.
 
 \section{Vergleich mit verwandten Arbeiten}
 
@@ -155,5 +155,27 @@ LightGBM-Ansatz mit aktuellen Forschungsarbeiten konkurrenzfähig sind.
 Zudem wird aber auch deutlich, dass ein sinnvoller Vergleich verschiedener Modellarchitekturen sehr schwer fällt.
 So liefert zum Beispiel die Kombination von BERT und LightGBM in dieser Arbeit mit 94,72\% (Accuracy) das schlechteste Ergebniss, während die gleiche Kombination
 in \cite{Essa:2023aa} 5,16\% mehr erzielt.
-Mögliche Ursachen hierfür können zum Beispiel die unterschiedlichen Konfigurationen der Hyperparameter beim Modelltraining oder die Bildung der Embeddings aus den
+Mögliche Ursachen hierfür können außerdem die unterschiedlichen Konfigurationen der Hyperparameter beim Modelltraining oder die Bildung der Embeddings aus den
 \textit{hidden states} sein. 
+
+\section{Ergebnisse der finalen Anwendung}
+
+Die bereitgestellte Anwendung liefert einen automatischen Klassifizierungsservice für Nachrichtenartikel auf den Seiten 
+\textit{BILD.de}, \textit{taz.de} und \textit{spiegel.de}.
+
+Die in Abbildung \ref{fig:screenshot_anwendung} dargestellten Beispiele verdeutlichen, dass die vorgenommenen Klassifizierungen noch Optimierungspotenzial aufweisen.
+Ein möglicher Grund hierfür liegt in der unzureichenden Abdeckung aktueller Themen in den für das Training verwendeten Datensätzen. Infolgedessen verfügen die Modelle nicht 
+über ausreichenden Kontext, um die abgefragten Domänen adäquat bewerten zu können.
+
+Ein exemplarischer Fall ist der Artikel auf BILD.de mit dem Titel „Trump geht plötzlich auf Israel los“. Obwohl der Inhalt des Artikels faktisch korrekt ist, 
+wird er vom Modell fälschlicherweise als falsch eingestuft.
+
+Diese Fehleinschätzung könnte durch semantische oder stilistische Merkmale in der Überschrift bedingt sein. Um diesen Einfluss näher zu untersuchen, wäre es denkbar, 
+Titelvariationen wie „Trump kritisiert Israel – eine Kehrtwende in seiner bisherigen Haltung“ zu testen.
+
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[width=\linewidth]{static/screenshots_anwendung.png}
+        \caption{\label{fig:screenshot_anwendung} Screenshots der Anwendung auf den verschiedenen Nachrichtenportalen - faktisch sind alle Artikel korrekt}
+    \end{center}
+\end{figure}

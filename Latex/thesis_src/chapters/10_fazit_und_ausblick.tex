@@ -24,7 +24,11 @@ Modellkonfigurationen einen direkten Leistungsvergleich erschweren.
 Mit dem entwickelten funktionsfähigen Prototypen wurde ein wichtiges Ziel der Arbeit erreicht: 
 Eine praxistaugliche Anwendung, die durch automatisierte Klassifikation Fake News erkennen kann.
 
-Insgesamt zeigt diese Arbeit, dass transformerbasierte Modelle alleinstehend oder in Kombination mit modernen Frameworks eine effektive Grundlage 
+Dennoch wurde im Verlauf der Arbeit deutlich, dass insbesondere im Kontext der Fake-News-Erkennung ein breit gefächerter und aktueller Trainingsdatensatz essenziell ist.
+Nur durch eine thematisch vielfältige und zeitnahe Datenbasis kann das Modell ausreichend kontextuelles Wissen aufbauen, um Nachrichteninhalte zuverlässig und differenziert 
+klassifizieren zu können.
+
+Insgesamt beweist diese Arbeit, dass transformerbasierte Modelle alleinstehend oder in Kombination mit modernen Frameworks eine effektive Grundlage 
 für die automatisierte Fake-News-Erkennung darstellen.
 
 \chapter{Ausblick}
@@ -35,7 +39,7 @@ Gleichzeitig ergeben sich aus den gewonnenen Erkenntnissen viele Ansatzpunkte f�
 
 Ein zentraler Aspekt für zukünftige Arbeiten ist der Einsatz eines aktuelleren, domänenübergreifenden Datensatzes, der verschiedene Themengebiete abdeckt 
 und damit eine verbesserte Generalisierungsfähigkeit der Modelle ermöglicht. Der in dieser Arbeit verwendete, eigens zusammengestellte Datensatz 
-beinhaltet einen starken Fokus auf den COVID-19 Pandemie Kontext und auch der zweite verwendete Datensatz stammt aus dem Jahr 2020. 
+beinhaltet einen starken Fokus auf den COVID-19 Pandemie Kontext und ist außerdem stark veraltet. 
 Eine Ausweitung auf weitere thematische und aktuellere Domänen könnte die Robustheit der Modelle signifikant erhöhen.
 
 Des Weiteren bietet sich der Einsatz leistungsfähigerer Transformer-Modelle wie XLM-RoBERTa-XL an. Dieses Modell stellt eine noch größere Variante des in 
@@ -55,6 +59,7 @@ Ein systematischer Vergleich dieser Methoden könnte zu einer verbesserten Repr�
 Darüber hinaus wäre ein Vergleich mit alternativen Modellarchitekturen auf Deep-Learning-Basis von Interesse – etwa dem Ansatz FakeBERT \cite{Kaliyar:2021aa}, 
 welcher CNNs mit BERT kombiniert. Besonders vielversprechend erscheint die Kombination von FakeBERT mit XLM-RoBERTa als Embedding-Modell,
 um die semantische Tiefe transformerbasierter Repräsentationen mit den extraktiven Fähigkeiten von Convolutional Layers zu verbinden.
+Generell können Kombinationen aus allen in Kapitel \ref{chap:nlp} genannten Modellen erprobt werden.
 
 Auf Anwendungsebene eröffnet sich weiteres Potenzial durch das Deployment der entwickelten Anwendung, um diese nicht nur lokal zu demonstrieren.
 Durch die Integration zusätzlicher Nachrichtenportale ließe sich ein vielfältiges Spektrum des deutschsprachigen Journalismus automatisiert erfassen, 

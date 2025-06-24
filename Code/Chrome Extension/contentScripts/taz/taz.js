@@ -29,49 +29,72 @@ const analyseArticle = async () => {
         }
     })
 
+    let subtitleText = "";
+    article.querySelectorAll("p.typo-r-subline-detail").forEach((subtitle) => {
+        subtitleTrimmed = subtitle.textContent.trim() ?? "";
+        if (subtitleTrimmed !== "") {
+            subtitleText += subtitleTrimmed + "; ";
+        }
+    });
+
+    let bodyText = "";
+    article.querySelectorAll("p.bodytext.paragraph.typo-bodytext").forEach(p => {
+        const text = p.textContent.trim();
+        if (text.length > 0) {
+            bodyText += text + " ";
+        }
+    });
+
+    const concatenatedText = `${headlineText} ${subtitleText} ${bodyText}`.trim();
+
     console.log(`headlineText: ${headlineText}`);
+    console.log(`subtitleText: ${subtitleText}`);
+    console.log(`bodyText: ${bodyText}`);
+    console.log(`concatenatedText: ${concatenatedText}`);
     
     if (headlineText === "") {
         console.log("No headline found...returning")
         return;
     }
 
-    await globalThis.fetchDataTest().then(data => {
-        appendDataToDOM(data, headlineText, article);
-    }).catch(err => {
+    try {
+        const data = await globalThis.classifyArticle(headlineText);
+        appendDataToDOM(data, article);
+    } catch (err) {
         console.error("Error fetching data:", err);
     }
-    );
 }
 
-const appendDataToDOM = (data, headlineText, article) => {
-    if (!document.getElementById("analyse-container")) {
-        console.log("Container not found, creating new one");
+const appendDataToDOM = (data, article) => {
+  const prozent = (data.probability * 100).toFixed(2);
+  const text    = `Der Artikel ist zu einer Wahrscheinlichkeit von ${prozent}% ` +
+                  (data.label === 1 ? "fake." : "echt.");
 
-        const container = document.createElement("div");
-        container.id = "analyse-container";
+  let container = document.getElementById("analyse-container");
+  if (!container) {
+    container        = document.createElement("div");
+    container.id     = "analyse-container";
+    article.parentNode.insertBefore(container, article);
+  }
 
-        const p = document.createElement("p");
-        p.textContent = `${headlineText} and ${JSON.stringify(data)}`;
-        p.id = "analyse-paragraph";
+  // Apply styles based on the label
+  if (data.label === 1) {
+    container.style.borderColor = "red";
+    container.style.backgroundColor = "#fff0f0";
+  } else {
+    container.style.borderColor = "green";
+    container.style.backgroundColor = "#f0fff0";
+  }
 
-        container.appendChild(p);
-        article.parentNode.insertBefore(container, article);
-    }
-}
+  let p = document.getElementById("analyse-paragraph");
+  if (!p) {
+    p      = document.createElement("p");
+    p.id   = "analyse-paragraph";
+    container.appendChild(p);
+  }
 
-//   const async postArticle = (headlineText) => {
-//     const data = {};
-//     try {
-//         const res = await fetch("http://localhost:4000/test", {
-//             method: "POST",
-//             headers: { "Accept": "application/json" },
-//             body: JSON.stringify({ headline: headlineText })
-//         });
-//         data = await res.json();
-//         console.log("Response data:", data);
-//     } catch (err) {
-//         console.error("Fehler beim Abrufen der Daten:", err);
-//     }
-//     return data;
-//   }
+  p.textContent = text;
+
+  // Apply text color based on label
+  p.style.color = data.label === 1 ? "red" : "green";
+};

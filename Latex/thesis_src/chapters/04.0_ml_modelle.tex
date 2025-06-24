@@ -213,6 +213,8 @@ Bei LR steigt der Wert auch von 0.87 und 0.88.
 \subsection{Machine Learning Modelle}
 \label{sec:ml_modelle}
 
+Folgende Modelle kommen bei der Klassifizierung von Nachrichtenartikeln zum Einsatz.
+
 \subsubsection{Naive-Bayes}
 
 Der Naive-Bayes-Algorithmus ist ein einfacher, aber leistungsfähiger Klassifikator, der auf dem Satz von Bayes basiert. 
@@ -248,11 +250,11 @@ Er basiert auf einer baumartigen Struktur, bei der jeder Knoten bzw. Ast ein Mer
 Diese Struktur ermöglicht es, schrittweise Entscheidungen zu treffen, die schließlich zu einer Klassenzuordnung an einem Blattknoten führen \cite{10.3389/frai.2023.1124553}.
 
 Der Baum wird durch Auswahl von Merkmalen aufgebaut, die die Daten am besten aufspalten. 
-Dieses Auswahlkriterium basiert auf dem Konzept der \textbf{Entropie} und dem daraus abgeleiteten \textbf{Informationsgewinn}. 
+Dieses Auswahlkriterium basiert auf dem Konzept der Entropie und dem daraus abgeleiteten Informationsgewinn. 
 Ziel ist es, bei jeder Entscheidung im Baum das Merkmal auszuwählen, das die größte Reduktion an Unsicherheit bietet.
 
 Die Entropie misst die Unreinheit oder Unbestimmtheit eines Datensatzes. Sie ist dann maximal, 
-wenn alle Klassen gleichverteilt sind, und minimal (d.h. null), wenn alle Daten zur selben Klasse gehören. 
+wenn alle Klassen gleichverteilt sind, und minimal, wenn alle Daten zur selben Klasse gehören. 
 Die Entropie \( E(S) \) eines Datensatzes \( S \) wird wie folgt berechnet:
 
 \begin{equation}
@@ -296,7 +298,7 @@ Dabei ist:
     \item \( T \) die Gesamtanzahl der Entscheidungsbäume \cite{aslam2022}.
 \end{itemize}
 
-Wichtige Hyperparameter sind hier:
+\textbf{Wichtige Hyperparameter für dieses Modell sind:}
 \begin{itemize}
     \item \texttt{n\_estimators}: Anzahl der Entscheidungsbäume im Wald.
     \item \texttt{max\_depth}: Maximale Tiefe der Bäume.
@@ -312,20 +314,9 @@ höhere Genauigkeit \cite{al-tarawneh2025}.
 Support Vector Machines (SVMs) sind überwachte Lernalgorithmen, die besonders effektiv für Klassifikationsaufgaben sind. 
 Sie finden breite Anwendung in Bereichen wie Bioinformatik, Textklassifikation und 
 insbesondere in der Erkennung von Fake News. 
-Das Ziel einer SVM ist es, eine Trennlinie --- oder in höherdimensionalen Räumen ein Trenn-Hyperplane --- zu finden, 
-das Datenpunkte verschiedener Klassen mit maximalem Abstand (Margin) voneinander trennt  \cite{Noble:2006aa, Buddhadev2025, sabir2025, jakkula2006tutorial}.
-
-\textbf{1. Ziel: Eine Trennebene finden}
-Eine SVM sucht eine Gerade (in 2D), Ebene (in 3D) oder Hyperplane, die die Klassen voneinander trennt:
-\begin{equation}
-w^T x + b = 0
-\end{equation}
-
-\textbf{2. Bedingung für korrekte Trennung}
-Für jeden Punkt \( x_i \) mit zugehörigem Label \( y_i \in \{-1, +1\} \) gilt:
-\begin{equation}
-y_i(w^T x_i + b) \geq 1
-\end{equation}
+Das Ziel einer SVM ist es eine Gerade (in 2D), Ebene (in 3D) oder Hyperplane zu finden, 
+die Datenpunkte verschiedener Klassen mit maximalem Abstand (Margin) voneinander trennen (siehe Abbildung \ref{fig:hyperplanes}) 
+\cite{Noble:2006aa, Buddhadev2025, sabir2025, jakkula2006tutorial}.
 
 \begin{figure}[htbp]
     \begin{center}
@@ -334,47 +325,7 @@ y_i(w^T x_i + b) \geq 1
     \end{center}
 \end{figure}
 
-\textbf{3. Margin maximieren}
-Der Margin ist der Abstand der nächsten Punkte beider Klassen zur Trennebene:
-\begin{equation}
-M = \frac{2}{\|w\|}
-\end{equation}
-
-Daher wird zur Maximierung des Margins folgende Zielfunktion minimiert:
-\begin{equation}
-\min_{w, b} \quad \frac{1}{2} \|w\|^2
-\quad \text{mit} \quad y_i(w^T x_i + b) \geq 1
-\end{equation}
-
-\textbf{4. Fehler zulassen – Soft Margin}
-
-Bei nicht perfekt trennbaren Daten werden sogenannte Slack-Variablen \( \xi_i \) eingeführt:
-\begin{equation}
-y_i(w^T x_i + b) \geq 1 - \xi_i, \quad \xi_i \geq 0
-\end{equation}
-
-Ziel ist es, Fehler klein zu halten, gleichzeitig aber den Margin möglichst groß:
-\begin{equation}
-\min \left( \frac{1}{2} \|w\|^2 + C \sum \xi_i \right)
-\end{equation}
-
-\textbf{5. Nichtlineare Trennung – Kernel-Trick}
-
-Bei komplexen Datensätzen wird das Problem durch eine Funktion \( \phi \) in höhere Dimensionen überführt, ohne sie explizit zu berechnen \cite{jakkula2006tutorial}:
-\begin{equation}
-K(x_i, x_j) = \phi(x_i)^T \phi(x_j) 
-\end{equation}
-
-Gängige Kernel-Funktionen:
-\begin{itemize}
-  \item Linearkernel: \( K(x, x') = x^T x' \)
-  \item Polynomial: \( K(x, x') = (x^T x' + 1)^d \)
-  \item Radial Basis Function (RBF): \( K(x, x') = \exp(-\gamma \|x - x'\|^2) \) \cite{jakkula2006tutorial}
-\end{itemize}
-\cite{Noble:2006aa} zeigt, dass durch geeignete Wahl eines Kernels auch komplex strukturierte Daten erfolgreich klassifiziert werden können.
-
-\textbf{Es ergibt sich folgender Ablauf:}
-
+\textbf{Folgende Schritte erklären den mathematischen Ablauf des Modells:}
 \begin{enumerate}
   \item Definiere Trennebene: \( w^T x + b = 0 \)
   \item Erzwinge korrekte Trennung: \( y_i(w^T x_i + b) \geq 1 \)
@@ -382,6 +333,18 @@ Gängige Kernel-Funktionen:
   \item Erlaube kleine Fehler: \( \min \frac{1}{2} \|w\|^2 + C \sum \xi_i \)
   \item Wende ggf. Kernel an: \( K(x_i, x_j) = \phi(x_i)^T \phi(x_j) \)
 \end{enumerate}
+
+\textbf{Kernel-Trick}
+
+Bei komplexen Datensätzen wird das Problem durch eine Funktion \( \phi \) in höhere Dimensionen überführt, ohne sie explizit zu berechnen \cite{jakkula2006tutorial}.
+
+Gängige Kernel-Funktionen sind:
+\begin{itemize}
+  \item Linearkernel: \( K(x, x') = x^T x' \)
+  \item Polynomial: \( K(x, x') = (x^T x' + 1)^d \)
+  \item Radial Basis Function (RBF): \( K(x, x') = \exp(-\gamma \|x - x'\|^2) \) \cite{jakkula2006tutorial}
+\end{itemize}
+\cite{Noble:2006aa} zeigt, dass durch geeignete Wahl eines Kernels auch komplex strukturierte Daten erfolgreich klassifiziert werden können.
 
 \textbf{Vorteile von SVMs sind:}
 
@@ -446,62 +409,6 @@ In \cite{elchami2025} wurde der Intercept explizit deaktiviert, wodurch sich die
   \item \textbf{Flexibilität}: LR lässt sich für binäre, multinomiale und ordinale Klassifikationsprobleme erweitern \cite{SUDHAKAR2024101028}.
   \item \textbf{Breite Anwendbarkeit}: Sie wird in zahlreichen Bereichen eingesetzt, von der Medizin bis zur Textklassifikation \cite{aslam2022, elchami2025}.
 \end{itemize}
-
-\subsubsection{K-Nearest Neighbor}
-
-Der K-Nearest Neighbor (KNN) Algorithmus ist ein überwachter Lernalgorithmus, der unter anderem für Klassifikationsprobleme eingesetzt wird. 
-Er gehört zur Gruppe der sogenannten lazy learners, da kein expliziter Trainingsprozess stattfindet. 
-Stattdessen wird der Trainingsdatensatz während der Vorhersage verwendet \cite{Verma:2024aa}.
-
-KNN klassifiziert neue Instanzen auf Basis ihrer Ähnlichkeit mit bereits bekannten Beispielen. 
-Dazu berechnet es die Distanz zwischen dem Testpunkt und allen Trainingspunkten. 
-Anschließend werden die \( K \) ähnlichsten Punkte ausgewählt und die Vorhersage erfolgt bei Klassifikation durch 
-Mehrheitsentscheidung \cite{aslam2022}.
-
-Die Distanzmessung erfolgt in der Regel über die \textbf{euklidische Distanz}, mit der gemessen wird, 
-wie weit zwei Punkte im Merkmalsraum voneinander entfernt sind. Die Formel lautet:
-
-\begin{equation}
-    E_d = \sqrt{ \sum_{i=1}^{k} (x_i - y_i)^2 }
-\end{equation}
-
-Dabei sind:
-\begin{itemize}
-    \item \( x_i \): der \( i \)-te Wert des zu klassifizierenden Punkts
-    \item \( y_i \): der entsprechende \( i \)-te Wert eines bekannten Trainingspunkts
-    \item \( k \): die Anzahl der Merkmale (Dimensionen), z.B. bei Textdaten die Länge des Vektors
-\end{itemize}
-
-Je kleiner der Wert \( E_d \), desto ähnlicher sind sich die beiden Punkte.
-
-Der KNN-Algorithmus verwendet mehrere wichtige Hyperparameter:
-
-\begin{enumerate}
-    \item \textbf{n\_neighbors}: Gibt an, wie viele der nächsten Trainingspunkte zur Klassifikation berücksichtigt werden. 
-    Der Wert (oft als \( K \) bezeichnet) sollte basierend auf den Eigenschaften des Datensatzes gewählt werden \cite{Verma:2024aa, aslam2022}.
-
-    \item \textbf{weights}: Bestimmt, ob allen Nachbarn das gleiche Gewicht gegeben wird oder ob näher gelegene Punkte stärker 
-    gewichtet werden \cite{knnparams2024}.
-
-    \item \textbf{metric}: Die Distanzmetrik zur Berechnung der Ähnlichkeit. Standardmäßig wird die euklidische Distanz verwendet, 
-    möglich sind aber auch Manhattan, Minkowski oder andere Metriken \cite{aslam2022}
-\end{enumerate}
-
-Auch wenn KNN einfach und intuitiv zu implementieren ist und keinen Trainingsprozess benötigt, zeigt Abbildung \ref{fig:nlp_models}, 
-dass es im Vergleich mit Naive Bayes (NB), logistischer Regression (LG) und Support Vector Machines (SVM) ein vergleichsweise ineffektives Model 
-für NLP ist.
-
-\begin{figure}[htbp]
-    \begin{center}
-        \includegraphics[scale=0.4]{static/vgl_svm_knn_etc.png}
-        \caption{\label{fig:nlp_models} Auswertung verschiedener NLP Algorithmen \cite{prom2024}}
-    \end{center}
-\end{figure}
-
-Hier wurde KNN zur Klassifikation in einem Stimmungserkennungs-System für die Amtssprache Kambodschas eingesetzt. 
-Dabei diente KNN dem Vergleich mit anderen Ansätzen wie SVM und wurde insbesondere hinsichtlich seiner Leistung bei der 
-Klassifikation von Textdaten bewertet, bei denen die Reihenfolge, der Zeitpunkt oder der Verlauf über die Zeit eine wichtige Rolle 
-für die Interpretation und Analyse spielt.
 
 \subsubsection{XGBoost}
 

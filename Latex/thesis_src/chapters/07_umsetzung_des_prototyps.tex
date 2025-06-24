@@ -18,7 +18,7 @@ Trainiert werden fünf verschiedene Transformer Modelle mit dem Datensatz aus Ka
     \item XML-RoBERTa large
 \end{itemize}
 
-In \ref{tab:bert_models} angehängt, findet sich ein tabellarischer Vergleich der verschiedenen BERT- und RoBERTa-Modelle mit deren verschiedenen technischen Eigenschaften.
+In \ref{tab:bert_models} angehängt, findet sich ein tabellarischer Vergleich der verschiedenen BERT- und RoBERTa-Modelle mit deren jeweiligen technischen Eigenschaften.
 
 Das Tokenisieren erfolgt über den jeweiligen mitgelieferten Tokenizer.
 
@@ -30,7 +30,7 @@ Anschließend wird sie linear bis zum Ende des Trainings wieder abgesenkt. Diese
 Konvergenzprobleme entstehen, wenn das Modell beim Training nicht richtig lernt und die Fehler (\textit{loss}) nicht zuverlässig kleiner werden.
 
 Das Training wird auf einer Google Colab Laufzeit mit einer A100 GPU mit erweitertem RAM Speicher durchgeführt.
-Die trainierten Modelle werden jeweils als einzelnen Repository im \textit{Hugging Face Hub} gespeichert.
+Die trainierten Modelle werden jeweils als einzelnen Repository im Hugging Face Hub gespeichert.
 
 \subsection{Erzeugung der Embeddings} \label{sec:erzeugung_der_embeddings}
 
@@ -69,7 +69,7 @@ Diese Datensätze durchlaufen anschließend folgende Schritte:
   Nach Verarbeitung aller Batches werden die Satz-Embeddings und Labels aller Beispiele zu zwei großen Arrays (Embeddings und Label) zusammengefügt.
 \end{enumerate}
 
-Nach Durchlaufen der Schritte werden die Embeddings und Label der Trainings- und Testdaten in einem Python \textit{Dictionary} gespeichert.
+Nach Durchlaufen der Schritte werden die Embeddings und Label der Trainings- und Testdaten in einem Python Dictionary gespeichert.
 
 \subsection{Nutzung der Embeddings im LightGBM Modell}
 
@@ -77,7 +77,7 @@ Die Python LightGBM-Bibliothek stellt ein einfach zu implementierendes Modell zu
 Dieses wird auf den verschiedenen erzeugten Embeddings trainiert.
 
 Eine Übersicht der im Modell genutzten Hyperparameter findet sich im Anhang (siehe Tabelle \ref{tab:lightgbm-hyperparameter}).
-Zur Wahl der geeignetsten Hyperparameter wird einmalig die \textit{Optuna}-Bibliothek genutzt.
+Zur Wahl der geeignetsten Hyperparameter wird einmalig die Optuna-Bibliothek genutzt.
 Dabei werden mithilfe von K-Fold-Cross-Validation (siehe Abbildung \ref{fig:k-fold_cross-validation}) verschiedene Kombinationen von LightGBM-Hyperparametern getestet, 
 um das Modell mit dem höchsten F1-Score zu finden.
 
@@ -96,7 +96,7 @@ Dadurch wird Overfitting verhindert und eine bessere Generalisierung auf unbekan
 
 \subsection{Gesamtarchitektur}
 
-Der Webserver wird mit der Python \textit{starlette}-Bibliothek implementiert und mit Docker containerisiert.
+Der Webserver wird mit der Python Starlette-Bibliothek implementiert und mit Docker containerisiert.
 Nach dem Starten werden zuerst die Transformer und LightGBM Modelle geladen, danach wird das \textit{ready}-Flag gesetzt und der Server kann Anfragen empfangen.
 Die einzige Klasse ist das Singleton \textit{EmbeddingService} (siehe Abbildung \ref{fig:uml_webserver}). Dieses erzeugt das Embedding und klassifiziert es anschließend.
 Zurückgegeben wird ein \textit{json}-Objekt mit den Informationen \textit{label} und \textit{probability}. Das \textit{label} enthält den klassifizierten Binärwert 

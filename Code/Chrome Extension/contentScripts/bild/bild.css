@@ -7,14 +7,14 @@
     justify-content: center;
     margin-bottom: 1em;
     padding: 10px;
-    border: 2px solid red; /* ← hier wird der Rahmen gesetzt */
+    border: 2px solid;
     border-radius: 8px;     /* optional: abgerundete Ecken */
-    background-color: #fff0f0; /* optional: dezenter Hintergrund */
+    /* background-color:#fff0f0; optional: dezenter Hintergrund */
   }
 
 #analyse-paragraph {
     font-family: 'Roboto', sans-serif;
-    color: red;
+    /* color: red; */
     font-weight: bold;
     text-align: center;
     font-size: 30px;

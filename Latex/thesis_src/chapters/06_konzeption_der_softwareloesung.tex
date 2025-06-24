@@ -76,15 +76,15 @@ Was genau ein Token ist, hängt in diesem Fall vom genutzten Tokenizer ab. Es ka
 Alle Token einer zu verarbeitenden Eingabe, die nach dem 512. Token kommen, werden abgeschnitten.
 Eingabesequenzen, welche kürzer als 512 Token sind, werden mit angehängten \texttt{[PAD]}-Tokens aufgefüllt, damit alle Eingaben die gleiche Länge haben.
 
-\cite{sun2020finetuneberttextclassification} testet verschiedene \textit{Truncation}-Methoden und zeigt für BERT, dass bei Filmrezensionen und Nachrichtenartikeln eine 
+\cite{sun2020finetuneberttextclassification} testet verschiedene Truncation-Methoden und zeigt für BERT, dass bei Filmrezensionen und Nachrichtenartikeln eine 
 Zusammensetzung der ersten 256 und letzten 256 Token am effektivstem ist. Der Unterschied zur Nutzung der ersten 512 Token ist aber minimal, daher wird in dieser Arbeit letzteres
 implementiert.
 
 Die erzeugten Token werden von den jeweiligen angepassten Transformer Modellen in dichte Vektoren verarbeitet.
-Diese Vektoren bilden die Grundlage für die nachfolgenden \textit{Self-Attention}-Mechanismen, die kontextabhängige, semantisch reichhaltige Embeddings erzeugen.
-Diese Embeddings entstehen über mehrere aufeinanderfolgende \textit{hidden layers}, wobei jede Schicht die Werte weiter verfeinert und anreichert.
+Diese Vektoren bilden die Grundlage für die nachfolgenden Self-Attention-Mechanismen, die kontextabhängige, semantisch reichhaltige Embeddings erzeugen.
+Diese Embeddings entstehen über mehrere aufeinanderfolgende Hidden Layer, wobei jede Schicht die Werte weiter verfeinert und anreichert.
 
-Um die Ausgabe der verschiedenen Embeddings der \textit{hidden layer} zusammenzufassen kann zum Beispiel der \texttt{[CLS]}-Token aus einer oder mehreren Schichten extrahiert oder 
+Um die Ausgabe der verschiedenen Embeddings der Hidden Layer zusammenzufassen kann zum Beispiel der \texttt{[CLS]}-Token aus einer oder mehreren Schichten extrahiert oder 
 ein Durchschnitt aller Token-Embeddings gebildet werden.
 
 \cite{sun2020finetuneberttextclassification} zeigt für BERT, dass die letzten Layer die meisten Informationen beinhalten.
@@ -92,7 +92,7 @@ In dieser Arbeit wird aus den letzten vier Layern ein Durchschnittswert gebildet
 
 \subsection{Nutzung der Embeddings im LightGBM Modell}
 
-Der für das Trainieren des LightGBM Modells benötigte Datensatz setzt sich aus der jeweiligen Zusammenfassung der \textit{hidden layer} und dem Klassifizierungslabel 
+Der für das Trainieren des LightGBM Modells benötigte Datensatz setzt sich aus der jeweiligen Zusammenfassung der Hidden Layer und dem Klassifizierungslabel 
 des Artikels, durch welches die Embeddings erzeugt wurden, zusammen. 
 
 Für das Training werden die Artikel des in Kapitel \ref{sec6:datenvorverarbeitung} erzeugten Datensatzes gemappt. 

@@ -16,7 +16,9 @@
   "permissions": ["tabs"],
   "host_permissions": [
     "*://*.bild.de/*",
-    "*://*.zeit.de/*"
+    "*://taz.de/*",
+    "*://www.spiegel.de/*"
+
   ],
   "background": {
     "service_worker": "serviceWorker/background.js"
@@ -38,6 +40,15 @@
         "contentScripts/backendService.js"
       ],
       "css": ["contentScripts/taz/taz.css"],
+      "run_at": "document_end"
+    },
+     {
+      "matches": ["https://www.spiegel.de/*"],
+      "js": [
+        "contentScripts/spiegel/spiegel.js",
+        "contentScripts/backendService.js"
+      ],
+      "css": ["contentScripts/spiegel/spiegel.css"],
       "run_at": "document_end"
     }
   ]

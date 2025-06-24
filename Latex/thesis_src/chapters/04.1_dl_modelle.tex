@@ -100,6 +100,8 @@ Für $k=gas$ ist der Wert 0.085. „gas“ passt folglich besser zu „steam“ 
 \subsection{Deep Learning Modelle}
 \label{sec:deep_learning_modelle}
 
+Folgende weitere Modelle werden für die Klassifizierung von Nachrichtenartikeln verwendet.
+
 \subsubsection{CNN vs. RNN}
 
 Ein Convolutional Neural Network (CNN) ist ein Deep Learning Model (DNN) für Klassifikationsaufgaben,
@@ -120,15 +122,15 @@ langer Datenfolgen stark einschränken kann \cite{aslam2022}.
 
 \subsubsection{LSTM}
 
-Long Short-Term Memory (LSTM), ein RNN-Typ im Bereich der Sprachverarbeitung. Das Modell behebt das Problem des 
+Long Short-Term Memory (LSTM) ist ein RNN-Typ im Bereich der Sprachverarbeitung. Das Modell behebt das Problem des 
 Vanishing Gradient Problems in klassischen RNNs, indem sie spezielle Speicherzellen verwenden, die Informationen über 
 längere Zeiträume hinweg behalten können.
 Dadurch sind die LSTM-Modelle effektiv darin, langfristige Abhängigkeiten in sequenziellen Daten zu erfassen und
 Beziehungen zwischen Wörtern zu identifizieren \cite{Deshai:2023aa}.
 
-Ein LSTM-Modell besteht aus mehreren Zellen, die nicht nur eine, sondern drei Aktivierungsfunktionen enthalten.
-Jede dieser Zellen speichert den Zustand des Problems über mehrere Zeitintervalle, während die drei Tore den 
-Informationsfluss in die Zelle hinein und aus ihr heraus regulieren.
+Ein LSTM-Modell besteht aus mehreren Zellen, welche drei Aktivierungsfunktionen enthalten.
+Jede dieser Zellen speichert den Zustand des Problems über mehrere Zeitintervalle, während drei Gates den 
+Informationsfluss in die Zelle hinein und wieder heraus regulieren.
 Das Input-Gate, das Output-Gate und das Forget-Gate \cite{berrajaa2022nlp} (siehe Abbildung \ref{fig:rnnvslstm}).
 
 \begin{figure}[htbp]
@@ -159,5 +161,5 @@ angewendet (siehe Abbildung \ref{fig:lstmvsbilstm}). Der Input wird somit vor- u
 Langzeitabhängigkeiten verbessert und zu einer höheren Genauigkeit des Modells führt \cite{siaminamini2019}. 
 
 Der Hauptunterschied zwischen Bi-LSTMs und LSTMs besteht daher darin, dass Letztere nur 
-Informationen aus der Vergangenheit bewahren, während in Bi-LSTMs durch die Kombination der beiden verborgenen Zustände sowohl Informationen 
+Informationen aus der Vergangenheit bewahren, während in Bi-LSTMs durch die Kombination der beiden Leserichtungen sowohl Informationen 
 aus der Vergangenheit als auch aus der Zukunft zu jedem Zeitpunkt erhalten bleiben können \cite{shen2021}.

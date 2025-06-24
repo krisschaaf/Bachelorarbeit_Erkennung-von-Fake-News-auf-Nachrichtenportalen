@@ -65,7 +65,6 @@ const analyseArticle = async () => {
 
 
 const appendDataToDOM = (data, article) => {
-  // ▸ Message bauen
   const prozent = (data.probability * 100).toFixed(2);
   const text    = `Der Artikel ist zu einer Wahrscheinlichkeit von ${prozent}% ` +
                   (data.label === 1 ? "fake." : "echt.");
@@ -77,11 +76,24 @@ const appendDataToDOM = (data, article) => {
     article.parentNode.insertBefore(container, article);
   }
 
+  // Apply styles based on the label
+  if (data.label === 1) {
+    container.style.borderColor = "red";
+    container.style.backgroundColor = "#fff0f0";
+  } else {
+    container.style.borderColor = "green";
+    container.style.backgroundColor = "#f0fff0";
+  }
+
   let p = document.getElementById("analyse-paragraph");
   if (!p) {
     p      = document.createElement("p");
     p.id   = "analyse-paragraph";
     container.appendChild(p);
   }
+
   p.textContent = text;
+
+  // Apply text color based on label
+  p.style.color = data.label === 1 ? "red" : "green";
 };

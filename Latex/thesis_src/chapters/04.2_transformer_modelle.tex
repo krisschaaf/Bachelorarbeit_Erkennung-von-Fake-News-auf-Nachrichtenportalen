@@ -47,8 +47,8 @@ Folgende Schritte erklären, wie Self-Attention laut \cite{vaswani2023attentionn
     Die gewichteten Werte ($V$) werden aufsummiert und bilden so eine neue Darstellung für jede Position. 
 \end{enumerate}
 
-Statt nur eine Self-Attention zu berechnen, verwenden Transformer mehrere parallele \textit{Heads}. Jeder \textit{Head} lernt eine andere Perspektive auf die Sequenz. 
-Die Ergebnisse aller \textit{Heads} werden anschließend in einem \textit{MultiHead} kombiniert:
+Statt nur eine Self-Attention zu berechnen, verwenden Transformer mehrere parallele Heads. Jeder Head lernt eine andere Perspektive auf die Sequenz. 
+Die Ergebnisse aller Heads werden anschließend in einem MultiHead kombiniert:
 
 \begin{equation}
    \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \ldots, \text{head}_h) W^O 
@@ -70,19 +70,19 @@ Im von \cite{vaswani2023attentionneed} vorgestelltem Transformer-Modell werden R
 
 \subsubsection{Hidden Layer} \label{sec:hidden_layer}
 
-In einem Transformer-Modell \cite{vaswani2023attentionneed} bestehen die \textit{hidden layers} aus mehreren Encoder- und/oder Decoder-Schichten.
+In einem Transformer-Modell \cite{vaswani2023attentionneed} bestehen die Hidden Layer aus mehreren Encoder- und/oder Decoder-Schichten.
 Die erste Schicht erhält den Input und die letzte Schicht gibt den Output aus. Alle anderern Schichten sind versteckt und werden
-als \textit{hidden layer} bezeichnet.
+als Hidden Layer bezeichnet.
 
-Im Falle eines Encoding Transformers wie BERT (siehe Kapitel \ref{sec04:bert}) funktionieren \textit{hidden layer} wie folgt \cite{DBLP:journals/corr/abs-1810-04805}:
+Im Falle eines Encoding Transformers wie BERT (siehe Kapitel \ref{sec04:bert}) funktionieren Hidden Layer wie folgt \cite{DBLP:journals/corr/abs-1810-04805}:
 
 \begin{enumerate}
     \item \textbf{Input-Einbettung:} Jeder Token wird in einen Zahlenvektor umgewandelt. 
     Zusätzlich werden Positions- und Segmentinformationen hinzugefügt.
     
-    \item \textbf{Verarbeitung durch Hidden Layers:} 
+    \item \textbf{Verarbeitung durch Hidden Layer:} 
     \begin{itemize}
-        \item Jedes \textit{hidden Layer} ist ein Transformer-Block mit Self-Attention.
+        \item Jedes Hidden Layer ist ein Transformer-Block mit Self-Attention.
         \item Jeder Token wird an allen anderen Tokens angepasst, um seine Bedeutung im Kontext zu erfassen.
         \item Diese Aufmerksamkeit ist bidirektional – sie bezieht sich auf Wörter davor und danach.
     \end{itemize}
@@ -95,7 +95,7 @@ Im Falle eines Encoding Transformers wie BERT (siehe Kapitel \ref{sec04:bert}) f
     
     \item \textbf{Ergebnis:} 
     \begin{itemize}
-        \item Das letzte \textit{hidden Layer} liefert eine kontext-sensitive Repräsentation für jeden Token.
+        \item Das letzte Hidden Layer liefert eine kontext-sensitive Repräsentation für jeden Token.
         \item In diesem Fall kann diese für Aufgaben wie Klassifikation, Fragebeantwortung oder Named Entity Recognition verwendet werden.
     \end{itemize}
 \end{enumerate} 
@@ -107,7 +107,7 @@ Im Falle eines Encoding Transformers wie BERT (siehe Kapitel \ref{sec04:bert}) f
 \subsubsection{BERT} \label{sec04:bert}
 
 Bidirectional Encoder Representations from Transformers (BERT) ist ein reiner, für Sprachverständnis optimierter, Encoder-Transformer \cite{devlin2019}.
-Zwei wichtige Bestandteile der BERT Architektur sind die \textit{Self Attention Heads} und die \textit{Hidden Layers}
+Zwei wichtige Bestandteile der BERT Architektur sind die Self Attention Heads und die Hidden Layer
 (siehe Kapitel \ref{sec:self_attention} und Kapitel \ref{sec:hidden_layer}).
 
 Während CNNs und RNNs externe Word Embeddings wie Word2Vec oder GloVe verwenden, nutzt BERT eigene lernbare Embeddings.
