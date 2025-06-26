@@ -70,14 +70,17 @@ Im von \cite{vaswani2023attentionneed} vorgestelltem Transformer-Modell werden R
 
 \subsubsection{Hidden Layer} \label{sec:hidden_layer}
 
-In einem Transformer-Modell \cite{vaswani2023attentionneed} bestehen die Hidden Layer aus mehreren Encoder- und/oder Decoder-Schichten.
+Ein Transformer-Modell \cite{vaswani2023attentionneed} besteht aus mehreren Encoder- und/oder Decoder-Schichten.
 Die erste Schicht erhält den Input und die letzte Schicht gibt den Output aus. Alle anderern Schichten sind versteckt und werden
 als Hidden Layer bezeichnet.
 
-Im Falle eines Encoding Transformers wie BERT (siehe Kapitel \ref{sec04:bert}) funktionieren Hidden Layer wie folgt \cite{DBLP:journals/corr/abs-1810-04805}:
+Im Falle eines Encoding Transformers wie BERT (siehe Kapitel \ref{sec04:bert}) werden Eingaben durch die verschiedenen Schichten wie folgt verarbeitet \cite{DBLP:journals/corr/abs-1810-04805}:
 
 \begin{enumerate}
-    \item \textbf{Input-Einbettung:} Jeder Token wird in einen Zahlenvektor umgewandelt. 
+    \item \textbf{Tokenisierung der Eingabe}: Jede Eingabe wird in Token umgewandelt. Das Verfahren der Tokenisierung hängt vom verwendeten Transformator Modell ab,
+    z.B. WordPiece beim BERT Modell (siehe Kapitel \ref{sec04:bert}).
+
+    \item \textbf{Token-Embedding:} Jeder Token wird anschließend in einen Zahlenvektor umgewandelt. 
     Zusätzlich werden Positions- und Segmentinformationen hinzugefügt.
     
     \item \textbf{Verarbeitung durch Hidden Layer:} 
@@ -95,7 +98,7 @@ Im Falle eines Encoding Transformers wie BERT (siehe Kapitel \ref{sec04:bert}) f
     
     \item \textbf{Ergebnis:} 
     \begin{itemize}
-        \item Das letzte Hidden Layer liefert eine kontext-sensitive Repräsentation für jeden Token.
+        \item Die letzte Schicht liefert eine kontext-sensitive Repräsentation für jeden Token.
         \item In diesem Fall kann diese für Aufgaben wie Klassifikation, Fragebeantwortung oder Named Entity Recognition verwendet werden.
     \end{itemize}
 \end{enumerate} 
@@ -107,11 +110,8 @@ Im Falle eines Encoding Transformers wie BERT (siehe Kapitel \ref{sec04:bert}) f
 \subsubsection{BERT} \label{sec04:bert}
 
 Bidirectional Encoder Representations from Transformers (BERT) ist ein reiner, für Sprachverständnis optimierter, Encoder-Transformer \cite{devlin2019}.
-Zwei wichtige Bestandteile der BERT Architektur sind die Self Attention Heads und die Hidden Layer
-(siehe Kapitel \ref{sec:self_attention} und Kapitel \ref{sec:hidden_layer}).
 
 Während CNNs und RNNs externe Word Embeddings wie Word2Vec oder GloVe verwenden, nutzt BERT eigene lernbare Embeddings.
-
 Dazu noch einmal das Beispiel aus Kapitel \ref{sec:word_embeddings}: „Ich setze mich auf die Bank.“ und „Ich raube die Bank aus.“:
 
 GloVe und Word2Vec erstellen einen festen Vektor für das Wort „Bank“, egal in welchem Satz es steht.
@@ -187,6 +187,8 @@ Folgendes Beispiel für ein WordPiece Embedding (aus \cite{huggingface2025wordpi
 
 Zusätzlich werden Positions- und Segment-Embeddings hinzugefügt (siehe Abbildung \ref{fig:bert_tokenizierung}).
 
+Das BERT-Modell umfasst insgesamt ein Vokabular von 30,522 Token. 
+
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=\linewidth]{static/bert_tokenizierung.png}
@@ -194,7 +196,7 @@ Zusätzlich werden Positions- und Segment-Embeddings hinzugefügt (siehe Abbildu
     \end{center}
 \end{figure}
 
-Das Input Token ergibt sich aus dem Token-, Position- und Segment-Embedding. Das Position-Embedding (Position Encoding in Abbildung \ref{fig:transformeroverview}) 
+Das Input Token ergibt sich aus dem Token-, Position- und Segment-Embedding. Das Position-Embedding (Positional Encoding in Abbildung \ref{fig:transformeroverview}) 
 stellt hierbei die jeweilige Position im Satz dar und das Segment-Embedding ordnet den Token dem entsprechenden Satz zu.
 
 Vortrainiert wurde das BERT-Modell auf dem BookCorpus, einem Datensatz bestehend aus 11.038 unveröffentlichten Büchern, sowie auf der englischsprachigen Wikipedia 
@@ -228,7 +230,7 @@ CC-News mit 63 Millionen englischsprachigen Nachrichtenartikeln aus dem Zeitraum
 OpenWebText als Open-Source-Rekonstruktion des WebText-Datensatzes von GPT-2 sowie dem Stories-Datensatz, 
 einem nach erzählerischem Stil gefilterten Ausschnitt aus CommonCrawl-Daten. Insgesamt umfassen diese Datensätze 160 GB an Text.
 
-\subsubsection{XML-RoBERTa} \label{sec04:xml_roberta}
+\subsubsection{XLM-RoBERTa} \label{sec04:xml_roberta}
 
 Im Gegensatz zu RoBERTa, das ausschließlich auf englischen Texten trainiert wurde, ist XLM-RoBERTa ein mehrsprachiges 
 Transformer-basiertes Sprachmodell, das auf 100 Sprachen trainiert wurde. 
@@ -243,7 +245,7 @@ Sentence Piece setzt sich aus vier Hauptkomponenten zusammen. Dem Normalizer, Tr
 \begin{enumerate}
     \item Der \textbf{Normalizer} wandelt unter anderem alle Zeichen in ASCII um, normalisiert Leerzeichen und ersetzt alle Groß- mit Kleinbuchstaben.
     \item Der \textbf{Trainer} erstellt aus diesen normalisierten Daten daraufhin ein Subwort-Modell. Jedes Subwort bekommt eine eindeutige ID.
-    \textless s \textgreater markiert den Start eines Satzes und hat immer die ID 0. Das \_ steht für ein Leerzeichen und markiert somit den Wortanfang.
+     <s> markiert den Start eines Satzes und hat immer die ID 0. Das \_ steht für ein Leerzeichen und markiert somit den Wortanfang.
     \item Der \textbf{Encoder} kodiert nun einen übergebenen Input basierend auf dem erstellten Subwort-Modell in eine ID-Sequenz.
     item Der \textbf{Decoder} dekodiert eine erstellte ID-Sequenz zurück in einen lesbaren Input.
 \end{enumerate}

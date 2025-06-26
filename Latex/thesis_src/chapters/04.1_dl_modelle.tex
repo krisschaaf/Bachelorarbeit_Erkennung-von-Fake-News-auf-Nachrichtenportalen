@@ -23,7 +23,7 @@ Das Wort „Bank“ zum Beispiel hat in den Sätzen „Ich setze mich auf die Ba
 Moderne Word Embeddings erkennt diese und erstellt für die zwei Kontexte/Wörter zwei verschiedene Vektoren \cite{skopos2023wordembeddings}.
 
 In Abbildung \ref{fig:bsp_word_embeddings} wird jedes Wort eines Korpus mit 6 Wörtern als dreidimensionaler Vektor dargestellt.
-Ziel von Word2Vec ist hierbei, dass Wörter mit ähnlichen Bedeutungen oder Kontexten ähnliche Vektordarstellungen haben. 
+Ziel eines Word Embedding Verfahrens ist hierbei, dass Wörter mit ähnlichen Bedeutungen oder Kontexten ähnliche Vektordarstellungen haben. 
 Die Ähnlichkeit der Vektoren „Katze“ und „Hund“ zeigt die semantische Beziehung zueinander. Die Vektoren „glücklich“ und „traurig“ 
 hingegen zeigen in entgegengesetzte Richtungen, was auf ihre gegensätzlichen Bedeutungen hinweist \cite{ibm2024wordembeddings}.
 
@@ -65,7 +65,7 @@ das Skip-gram-Modell anzuwenden \cite{schumacher2024word2vec}.
 
 \subsubsection{GloVe}
 
-Word2Vec fokussiert sich auf Informationen aus lokalen Kontextfenster, wobei globale Informationen hierbei nicht ausreichend genutzt werden.
+Word2Vec fokussiert sich auf Informationen aus lokalen Kontextfenstern, wobei globale Informationen hierbei nicht ausreichend genutzt werden.
 GloVe (Global Vectors for Word Representation) verwendet diese globalen Informationen, wodurch semantische Beziehungen zwischen Wörtern erfasst werden.
 Wie oft diese zusammen im Korpus vorkommen, wird in einer globalen Co-Occurrence-Matrix zusammengefasst \cite{Wang:2020aa}.
 
@@ -128,7 +128,7 @@ längere Zeiträume hinweg behalten können.
 Dadurch sind die LSTM-Modelle effektiv darin, langfristige Abhängigkeiten in sequenziellen Daten zu erfassen und
 Beziehungen zwischen Wörtern zu identifizieren \cite{Deshai:2023aa}.
 
-Ein LSTM-Modell besteht aus mehreren Zellen, welche drei Aktivierungsfunktionen enthalten.
+Ein LSTM-Modell besteht aus mehreren Zellen.
 Jede dieser Zellen speichert den Zustand des Problems über mehrere Zeitintervalle, während drei Gates den 
 Informationsfluss in die Zelle hinein und wieder heraus regulieren.
 Das Input-Gate, das Output-Gate und das Forget-Gate \cite{berrajaa2022nlp} (siehe Abbildung \ref{fig:rnnvslstm}).
@@ -143,7 +143,7 @@ Das Input-Gate, das Output-Gate und das Forget-Gate \cite{berrajaa2022nlp} (sieh
 Das Forget-Gate bestimmt, welche Informationen nicht mehr relevant sind und gelöscht werden können. 
 Dies hilft, den Speicher der Zelle zu optimieren und unnötige Daten zu entfernen.
 
-Das Input- und Output-Gate bestimmen, welche neuen Daten hinzugefügt und welche bestehenden 
+Input- und Output-Gate bestimmen, welche neuen Daten hinzugefügt und welche bestehenden 
 Daten ausgegeben werden sollen. Sie arbeiten zusammen, um den Informationsfluss zu regulieren.
 
 \subsubsection{BiLSTM}

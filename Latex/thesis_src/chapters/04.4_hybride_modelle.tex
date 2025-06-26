@@ -80,7 +80,7 @@ Im Datensatz gibt es 10.540 echte und 10.260 gefälschte Artikel.
     \end{center}
 \end{figure}
 
-\cite{Kaliyar:2021aa} zeigt, dass das vorgeschlagene Modell FakeBERT mit einer Genauigkeit von 98,90\% (siehe Abbildung \ref{fig:bert_cnn_fakebert} 
+\cite{Kaliyar:2021aa} zeigt, dass das vorgeschlagene Modell FakeBERT mit einer Genauigkeit von 98,90\% (siehe Abbildung \ref{fig:bert_cnn_fakebert})
 deutlich besser abschneidet als klassische Machine-Learning-Modelle und bis 2021 bestehende Deep-Learning-Ansätze. Durch die Kombination von BERT als 
 kontextuelles Sprachmodell mit mehreren parallel laufenden CNN-Blöcken zur Merkmalsextraktion können sowohl globale Bedeutungszusammenhänge als auch 
 lokale sprachliche Muster zuverlässig erfasst werden.
@@ -90,7 +90,7 @@ lokale sprachliche Muster zuverlässig erfasst werden.
 Wie auch in Kapitel \ref{sec:fakebert} entwickelt \cite{Verma:2023aa} in seiner Arbeit ein weiteres hybrides Modell aus BERT und CNN.
 Dieses trägt den Namen \textit{MCred}.
 
-Es wird auf vier verschiedenen Datensätzen trainiert:
+Es wurde auf vier verschiedenen Datensätzen trainiert:
 \begin{itemize}
   \item \textbf{WELFake:} Enthält 37.106 gefälschte und 35.028 echte Nachrichten und dient als Hauptdatensatz für das MCred-Modell.
   \item \textbf{Kaggle Fake News Dataset:} Umfasst 10.369 gefälschten und 10.349 echte Nachrichten mit den Merkmalen Titel, Text und Autor. 
@@ -151,10 +151,9 @@ Zusätzlich wird ein BiLSTM Modell für die weitere Verarbeitung der BERT-Ausgab
 
 Verwendet wurde ein COVID-19 Fake News Dataset von Kaggle, bestehend aus 6.420 Trainings- und 2.140 Testeinträgen. 
 Jeder Eintrag enthält die Merkmale Tweet-ID, den Text des Tweets und ein Label (echt oder gefälscht).
-Augrund der Größe dieses Datensatzes werden die internen Gewichte und Parameter von BERT nicht weiter trainiert.
-Durch die etwa 8.500 Einträge ist der COVID-19-Datensatz zu klein, um das BERT-Modell effektiv und ohne Overfitting neu zu trainieren.
-Durch das Einfrieren wird verhindert, dass die vortrainierten Sprachmuster überschrieben werden. 
-So bleibt die allgemeine Sprachkompetenz von BERT erhalten, während das darauf aufbauende BiLSTM lernt, 
+Mit etwa 8.500 Einträge ist der COVID-19-Datensatz zu klein, um das BERT-Modell effektiv und ohne Overfitting neu zu trainieren.
+Bei einem weiteren Training mit diesem Datensatz besteht die Gefahr, dass die vortrainierten Sprachmuster überschrieben werden. 
+Die allgemeine Sprachkompetenz von BERT bleibt erhalten, während das darauf aufbauende BiLSTM lernt, 
 diese Informationen für die Fake-News-Erkennung zu nutzen.
 
 Verglichen wurde von \cite{wang2021covid19fakenewsdetection} folgende Modelle:
@@ -226,8 +225,7 @@ Aufbauend auf dem hybriden BERT und LightGBM Model zeigt \cite{V_G_2024} die Vor
 RoBERTa ist eine weiterentwickelte und leistungsstärkere Version von BERT, die durch effizienteres Training und größere Datenbasis 
 bessere Ergebnisse in der Fake-News-Erkennung erzielt. 
 Statt mit den 16GB Textdaten des BERT Modells wurde RoBERTa mit über 160GB trainiert, wodurch eine deutlich bessere Generalisierungsfähigkeit besteht.
-Außerdem nutzt RoBERTa nicht mehr das statische maskieren (MLM) wie BERT, sondern ein fortgeschritteneres dynamisches maskieren.
-Hierbei wird jedes mal genau dann ein Maskierungspattern generiert, wenn eine Sequenz einem Modell hinzugefügt wird \cite{roberta:main}.
+Durch RoBERTAs fortgeschritteneres dynamisches Maskieren wird jedes mal genau dann ein Maskierungspattern generiert, wenn eine Sequenz einem Modell hinzugefügt wird \cite{roberta:main}.
 
 Das Paper verwendet den „Fake News Detection Dataset“ zum Training. 
 Die Daten stammen von reuters.com und umfassen jeweils 12.600 Artikel, gesammelt in den Jahren 2016 bis 2017.

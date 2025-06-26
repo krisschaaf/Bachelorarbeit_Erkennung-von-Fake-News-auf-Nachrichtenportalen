@@ -2,12 +2,19 @@
 \label{chap:konzeption_der_softwareloesung}
 
 Die entwickelte Anwendung ist aufgeteilt in zwei Komponenten. Die erste Komponente, das Machine Learning Modell,
-klassifiziert die Nachrichtenartikel und gibt das entsprechende Label zurück. Die zweite Komponenten ist der Webagent, welcher
+klassifiziert die Nachrichtenartikel und gibt das entsprechende Label zurück. Die zweite Komponente ist der Webagent, welcher
 die Artikel auf den Nachrichtenportalen liest, an das Machine Learning Modell schickt und die Antwort in das Portal integriert.
 
 Im folgenden Kapitel werden das jeweilige Konzept dieser beiden Komponenten vorgestellt.
 
 \section{Konzeption des Machine Learning Modells} \label{sec:06:machine_learning_model}
+
+Zur zuverlässigen Erkennung von Fake News stellt das Machine-Learning-Modell die zentrale Komponente der Softwarelösung dar.
+In diesem Abschnitt wird zunächst das konzeptionelle Vorgehen bei der Entwicklung des Modells beschrieben. Dabei wird erläutert, welche Modellarchitekturen zum Einsatz kommen und 
+auf welchen Grundlagen diese Auswahl basiert.
+Darauf aufbauend werden die wesentlichen Verarbeitungsschritte im Detail dargestellt. Diese umfassen die Datenvorverarbeitung, 
+das Fine-Tuning der vortrainierten Transformer-Modelle, die Erzeugung semantischer Embeddings sowie deren Weiterverarbeitung mittels des LightGBM-Klassifikators. 
+Abschließend wird die resultierende Gesamtarchitektur des Klassifikationssystems vorgestellt.
 
 \subsection{Auswahl und Begründung der genutzten Modelle} 
 
@@ -101,10 +108,18 @@ Das entsprechende Label wird als zweite Spalte ergänzt.
 
 Das trainierte LightGBM Modell kann anschließend neu erzeugte Embeddings effizient klassifizieren.
 
-\subsection{Gesamtarchitektur}
+\subsection{Konzeptionelle Systemarchitektur}
 
-Für die finale Anwendung dieser Arbeit wird ein Webserver aufgesetzt, welcher Nachrichtenartikel empfängt und diese anhand der konfigurierten Modelle tokenisiert, eingebettet und
-klassifiziert (siehe Abbildung \ref{fig:beispielablauf_gesamt}).
+Die zuvor beschriebenen Verarbeitungsschritte werden in einer Gesamtarchitektur gebündelt und als Webserver bereitgestellt. 
+Dieser Webserver übernimmt die Aufgabe, eingehende Nachrichtenartikel automatisiert zu analysieren und auf ihren Wahrheitsgehalt zu überprüfen.
+
+Abbildung \ref{fig:beispielablauf_gesamt} zeigt den beispielhaften Ablauf einer solchen Klassifikation. 
+Ein Artikel wird zunächst in einzelne Tokens zerlegt und anschließend durch ein vortrainiertes und feinjustiertes Transformer-Modell in einen semantischen Vektor überführt. 
+Der hierbei erzeugte \texttt{[CLS]}-Vektor – eine dichte, 768-dimensionale Repräsentation des gesamten Artikels – dient als Input für das LightGBM-Modell, 
+welches auf Grundlage dieses Vektors die finale Klassifikation vornimmt. Die Vorhersage (z.B. „Artikel ist wahr“) wird anschließend dem aufrufenden System zurückgegeben.
+
+Diese Architektur erlaubt es, neue Texte schnell und effizient zu bewerten, ohne dass jedes Mal das komplexe Transformer-Modell zur Klassifikation herangezogen werden muss. 
+Stattdessen erfolgt dies über das deutlich ressourcenschonendere LightGBM-Modell. Damit ist die Lösung sowohl skalierbar als auch in Echtzeit einsetzbar.
 
 \begin{figure}[htbp]
     \begin{center}

@@ -1,11 +1,25 @@
 \chapter{Relevante Datensätze und Auswahlkriterien}
 \label{chap:relevante_datensaetze_und_auswahlkriterien}
 
-Die in dieser Arbeit entwickelte Anwendung benötigt einen Datenbasis um das Erkennen von Fake News erfolgreich zu lernen.
+Die in dieser Arbeit entwickelte Anwendung benötigt eine Datenbasis um das Erkennen von Fake News erfolgreich zu lernen.
 Hierfür werden verschiedene Datensätze vorgestellt und analysiert.
 
-\section{Vorstellung verfügbarer deutscher Fake-News-Datensätze}
-\label{sec:vorstellung_verfuegbare_deutsche_fake_news_datensaetze}
+\section{Nutzung englischer Datensätze} \label{sec:english_datasets}
+
+Eine in \cite{Simone2022} angewandte Lösung ist die Erstellung eines großen Datensatzes mit englischen Artikeln. Das Modell wurde entsprechend auf Englisch 
+trainiert und die deutschen Artikel in der späteren Anwendung vor der Vorhersage übersetzt.
+Fake News haben oft stilistische, semantische oder rhetorisch manipulierende Muster, welche sich je nach Sprache unterscheiden können.
+Selbst mit modernen Transformern können diese Muster nicht sicher mit übersetzt werden, da diese einen übersetzen Artikel einer anderen Domäne zuordnen könnten
+als den ursprünglichen Artikel \cite{hong2023disentanglingstructurestylepolitical}. 
+Ein typisches Beispiel ist der Satz: „Natürlich wird das RKI bald neue Lockdowns empfehlen – die haben ja auch sonst nichts zu tun.“ 
+Die Übersetzung ins Englische („Of course, the RKI will soon recommend new lockdowns – they have nothing else to do") wirkt sprachlich korrekt, 
+verliert jedoch die ironisch-sarkastische Eigenschaft.
+Das Ergebnis ist eine eher sachliche Aussage, welche vom englischen Modell sehr wahrscheinlich nicht mehr als Fake-News klassifiziert wird.
+Solche stilistischen Abschwächungen sind ein Merkmal von maschinellen Übersetzungen, was sie in diesem Fall problematisch
+für den Einsatz in der Fake-News-Erkennung macht \cite{kuehn2024enhancingrhetoricalfigureannotation}.
+
+\section{Nutzung deutscher Datensätze}
+\label{sec:auswahl_und_begruendung_finaler_datensatz}
 
 In den Tabellen \ref{tab:deutsche-fake-news-datensaetze} und \ref{tab:deutsche-fake-news-datensaetze-inhalt} sind verschiedene deutsche Fake-News-Datensätze gelistet.
 Die Eignung bezieht sich darauf, wie sinnvoll die Nutzung dieser jeweiligen Datensätze für das Trainieren eines Modells zum Erkennen von Fake News ist.
@@ -50,24 +64,7 @@ Die Eignung bezieht sich darauf, wie sinnvoll die Nutzung dieser jeweiligen Date
     \label{tab:deutsche-fake-news-datensaetze-inhalt}
 \end{table}
 
-\section{Nutzung englischer Datensätze} \label{sec:english_datasets}
-
-Eine in \cite{Simone2022} angewandte Lösung ist die Erstellung eines großen Datensatzes mit englischen Artikeln. Das Modell wurde entsprechend auf Englisch 
-trainiert und die deutschen Artikel in der späteren Anwendung vor der Vorhersage übersetzt.
-Fake News haben oft stilistische, semantische oder rhetorisch manipulierende Muster, welche sich je nach Sprache unterscheiden können.
-Selbst mit modernen Transformern können diese Muster nicht sicher mit übersetzt werden, da diese einen übersetzen Artikel einer anderen Domäne zuordnen könnten
-als den ursprünglichen Artikel \cite{hong2023disentanglingstructurestylepolitical}. 
-Ein typisches Beispiel ist der Satz: „Natürlich wird das RKI bald neue Lockdowns empfehlen – die haben ja auch sonst nichts zu tun.“ 
-Die Übersetzung ins Englische („Of course, the RKI will soon recommend new lockdowns – they have nothing else to do anyway“) wirkt sprachlich korrekt, 
-verliert jedoch die ironisch-sarkastische Eigenschaft.
-Das Ergebnis ist eine eher sachliche Aussage, welche vom englischen Modell sehr wahrscheinlich nicht mehr als Fake-News klassifiziert wird.
-Solche stilistischen Abschwächungen sind ein Merkmal von maschinellen Übersetzungen, was sie in diesem Fall problematisch
-für den Einsatz in der Fake-News-Erkennung macht \cite{kuehn2024enhancingrhetoricalfigureannotation}.
-
-\section{Auswahl und Begründung des finalen Datensatzes}
-\label{sec:auswahl_und_begruendung_finaler_datensatz}
-
-Da der DeFaktS Datensatz nicht öffentlich verfügbar ist fällt dieser aus der Auswahl. 
+Da der DeFaktS Datensatz nicht öffentlich verfügbar ist, fällt dieser aus der Auswahl. 
 Um ein Modell zu trainierien werden viele Daten benötigt. Die in Kapitel \ref{sec:bert_lightgbm} vorgestellten Datensätze umfassen von 20.000 bis hin zu Millionen Artikeln.
 Aufrund der Größe entfällt der GermanFakeNC Datensatz.
 
@@ -93,13 +90,15 @@ Ein Modell, das nur mit COVID-bezogenen Daten trainiert wurde, kann inhaltlich u
 verfehlt damit das Ziel, Fake News themenübergreifend zuverlässig zu erkennen.
 
 Durch die Analyse der Datensätze ergeben sich folgende Möglichkeiten für das Trainieren eines Modells zur Fake-News Erkennung:
-\begin{itemize}
+\begin{enumerate}
     \item Nur FANG-COVID mit allen 41.242 Einträgen, aber 31,97\% Klassenausgewogenheit
     \item FANG-COVID mit ca. 26.000 Einträgen aber dafür 50/50 Klassenausgewogenheit
     \item FANG-COVID und FNDG kombiniert für bessere Generalisierung (105.110 Einträge, aber 16,94\% Klassenausgewogenheit)
     \item FANG-COVID und alle Fake Artikel von FNDG kombiniert für bessere Klassenausgewogenheit und mehr Daten
-    (45.866 Einträge mit 38.82\% Klassenausgewogenheit)
+    (45.866 Einträge mit 38.82\% Klassenausgewogenheit) %TODO: zahlen fixen
     \item Alle Fake Einträge aus FANG-COVID und FNDG kombiniert (17.809 Fake Einträge) kombiniert mit Stichproben aus sowohl FANG-COVID als auch FNDG
     um eine sinnvolle Klassenausgewogenheit mit vielen Daten und einer guten Generalisierung zu erreichen (45.866 Einträge mit 38.82\% Klassenausgewogenheit,
     aber 28.057 echten Einträgen zu 50/50 aus FANG-COVID und FNDG).
-\end{itemize}
+\end{enumerate}
+
+Aufgrund der %TODO: entscheidung begründen warum der letzte datensatz genutzt wurde

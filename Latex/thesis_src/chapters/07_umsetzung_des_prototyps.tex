@@ -5,6 +5,17 @@ Basierend auf den vorgestellten Konzepten folgt die technische Erläuterung der 
 
 \section{Implementierung des Machine Learning Modells}
 
+Die praktische Umsetzung des Machine Learning Modells basiert auf den konzeptionellen Grundlagen aus Kapitel \ref{chap:konzeption_der_softwareloesung}. 
+Ziel der Implementierung ist es, eine skalierbare und wiederverwendbare Pipeline zur automatisierten Klassifikation von Nachrichtenartikeln zu entwickeln.
+
+Dazu wird zunächst der Fine-Tuning-Prozess mehrerer vortrainierter Transformer-Modelle durchgeführt. 
+Dieser Prozess ermöglicht es, die Modelle auf die konkrete Zielaufgabe – die Unterscheidung zwischen echten und gefälschten Nachrichten – zu spezialisieren. 
+Anschließend werden aus den trainierten Modellen dichte Embeddings extrahiert, die den semantischen Gehalt eines Artikels komprimiert abbilden. 
+Diese Embeddings dienen als Eingabe für ein LightGBM-Modell, das für die finale Klassifikation verwendet wird.
+
+Im weiteren Verlauf dieses Abschnitts werden die technischen Details zur Modellanpassung, Embedding-Generierung sowie zur Integration der Komponenten in eine 
+produktionsreife Architektur beschrieben. Dabei kommen gängige Frameworks wie PyTorch, Hugging Face Transformers sowie LightGBM zum Einsatz.
+
 \subsection{Fine-tuning der Transfomer Modelle}
 
 Für das \textit{fine-tuning} (Training) der verschiedenen Modelle werden die Transformers-Bibliothek von Hugging Face, Python und das Deep-Learning-Framework PyTorch verwendet.
@@ -94,7 +105,7 @@ Die Parameter sind in diesem Fall so definiert, dass das Training beendet wird, 
 Validierungsdaten über 100 aufeinanderfolgende Iterationen hinweg nicht mehr verbessert.
 Dadurch wird Overfitting verhindert und eine bessere Generalisierung auf unbekannte Texte ermöglicht.
 
-\subsection{Gesamtarchitektur}
+\subsection{Technische Systemarchitektur}
 
 Der Webserver wird mit der Python Starlette-Bibliothek implementiert und mit Docker containerisiert.
 Nach dem Starten werden zuerst die Transformer und LightGBM Modelle geladen, danach wird das \textit{ready}-Flag gesetzt und der Server kann Anfragen empfangen.
