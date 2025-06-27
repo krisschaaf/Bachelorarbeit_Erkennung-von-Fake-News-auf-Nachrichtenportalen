@@ -6,7 +6,7 @@ natürlicher Sprache durch Computer beschäftigt. In der Fake-News-Erkennung spi
 Merkmale und manipulative Formulierungen enthalten, die sich mit NLP-Methoden analysieren lassen. Durch Verfahren wie Textklassifikation, 
 Sentiment-Analyse oder semantische Textverarbeitung können relevante Muster erkannt werden, um zwischen glaubwürdigen und manipulierten Inhalten zu unterscheiden.
 
-Im Bereich des NLPs kommen verschiedene Ansätze zum Einsatz – darunter klassische Machine-Learning-Modelle, Deep-Learning-Methoden 
+Im Bereich des NLPs kommen verschiedene Ansätze zum Einsatz. Darunter sind klassische Machine-Learning-Modelle, Deep-Learning-Methoden 
 sowie moderne Transformer-Architekturen, die den aktuellen Stand der Technik repräsentieren.
 
 \section{Machine Learning}
@@ -70,7 +70,7 @@ und für Klassifikationsmodelle zugänglich gemacht werden.
 \label{sec:bag_of_words}
 
 Das Bag-of-Words-Modell ist ein einfaches Verfahren zur Textrepräsentation, bei dem ein Dokument als Vektor der Häufigkeiten 
-einzelner Wörter dargestellt wird – unabhängig von deren Reihenfolge oder Kontext. Es zählt lediglich das Vorkommen jedes Wortes aus 
+einzelner Wörter dargestellt wird. Die Reihenfolge oder der Kontext der Wörter wird dabei nicht beachtet. Es zählt lediglich das Vorkommen jedes Wortes aus 
 einem festen Vokabular \cite{cichosz2018forum}.
 
 \subsubsection{TF-IDF}
@@ -173,18 +173,18 @@ In der IF-IDF wird für IDF wird nun also RF eingesetzt und es ergibt sich folge
             \hline
             \rowcolor{lightgray} \textbf{Bag-of-Words (BoW)} & \textbf{TF-IDF} \\
             \hline
-            Einfache Implementierung \cite{cichosz2018forum} & Berücksichtigt Wortwichtigkeit in gesamter Matrix  \cite{elov2023uzbek} \\
+            (+) Einfache Implementierung \cite{cichosz2018forum} & (+) Berücksichtigt Wortwichtigkeit in gesamter Matrix  \cite{elov2023uzbek} \\
             \hline
-            Keine Gewichtung — häufige Wörter dominieren & Seltener, aber informativer Inhalt wird stärker gewichtet \cite{das2023tfidf} \\
+            (–) Keine Gewichtung — häufige Wörter dominieren & (+) Seltener, aber informativer Inhalt wird stärker gewichtet \cite{das2023tfidf} \\
             \hline
-            Hohe Dimensionalität in Sparse Matrix (jedes Wort bekommt eine separate Dimension) \cite{ibm_bow} & Gleiches Problem, aber mit informativeren Werten \cite{alzami2020tfidf} \\
+            (–) Hohe Dimensionalität in Sparse Matrix (jedes Wort bekommt eine separate Dimension) \cite{ibm_bow} & (+) Gleiches Problem, aber mit informativeren Werten \cite{alzami2020tfidf} \\
             \hline
-            Ignoriert Wortreihenfolge und Kontext \cite{umar2022sentiment} & Gleiches Grundproblem, aber geringfügig bessere Performance \cite{parmar2024stacking} \\
+            (–) Ignoriert Wortreihenfolge und Kontext \cite{umar2022sentiment} & (+) Gleiches Grundproblem, aber geringfügig bessere Performance \cite{parmar2024stacking} \\
             \hline
-            Nützlich für einfache Klassifikatoren & Bessere Klassifikationsergebnisse in Kombination mit SVM oder Logistic Regression \cite{iyer2024sentiment} \\
+            (+) Nützlich für einfache Klassifikatoren & (+) Bessere Klassifikationsergebnisse in Kombination mit SVM oder Logistic Regression \cite{iyer2024sentiment} \\
             \hline
         \end{tabular}
-    \caption{Vergleich der Vor- und Nachteile von BoW und TF-IDF}
+    \caption{Vergleich der Vorteile (+) und Nachteile (–) von BoW und TF-IDF}
     \label{tab:vergleich}
 \end{table}
 
@@ -196,12 +196,12 @@ Ein Hashing Vectorizer ist eine Methode zur Umwandlung von Text in numerische Me
 erstellt oder gespeichert wird. Stattdessen wird eine Hash-Funktion verwendet, um jedes Wort auf einen Index im Feature-Vektor abzubilden \cite{Buddhadev2025}.
 
 In Abbildung \ref{fig:vgl_bow_tfidf_hashing} wird der Vergleich zwischen Machine-Learning-Modellen unter Verwendung von BoW-, TF-IDF- und
-Hashing-Features gezeigt. Die y-Achse präsentiert den F1-Score, also die Precision und Recall-Werte der jeweiligen Modelle.
+Hashing-Features gezeigt. Die y-Achse bildet die Genauigkeit der Modelle ab.
 Das Random-Forest-Modell (RF) zeigt eine schwache Leistung bei der Verwendung von Hashing, während die linearen Modelle 
-(z.B. SVM (Support Vector Machine) und LR (Logistische Regression)) ihre F1-Werte mit Hashing-Features verbessern konnten. 
+(z.B. SVM (Support Vector Machine) und LR (Logistische Regression)) ihre Werte mit Hashing-Features verbessern konnten. 
 
-Die Verbesserung ist aber nur minimal. Der F1-Score bei SVM ist ohne Hashing bei 0.89 und nach bei 0.90. 
-Bei LR steigt der Wert auch von 0.87 und 0.88.
+Die Verbesserung ist aber nur minimal. Bei SVM ist der Wert ohne Hashing bei 0.89 und nach bei 0.90. 
+Bei LR steigt er von 0.87 und 0.88.
 
 \begin{figure}[htbp]
     \begin{center}
@@ -213,35 +213,7 @@ Bei LR steigt der Wert auch von 0.87 und 0.88.
 \subsection{Machine Learning Modelle}
 \label{sec:ml_modelle}
 
-Folgende Modelle kommen bei der Klassifizierung von Nachrichtenartikeln zum Einsatz.
-
-\subsubsection{Naive-Bayes}
-
-Der Naive-Bayes-Algorithmus ist ein einfacher, aber leistungsfähiger Klassifikator, der auf dem Satz von Bayes basiert. 
-Er wird häufig in Bereichen wie Textklassifikation, Spam-Erkennung und Sentiment-Analyse eingesetzt \cite{zhang2004}.
-
-Der Klassifikator nutzt den Satz von Bayes zur Berechnung der Wahrscheinlichkeit einer Klasse \( C \) gegeben eine Merkmalsmenge \( X \):
-
-\begin{equation}
-    P(C \mid X) = \frac{P(X \mid C) \cdot P(C)}{P(X)}
-\end{equation}
-
-Dabei ist:
-
-\begin{itemize}
-  \item \textbf{\( P(C \mid X) \)} – \emph{Posterior}: Die Wahrscheinlichkeit für die Klasse \( C \), nachdem die Daten \( X \) beobachtet wurden.
-  \item \textbf{\( P(X \mid C) \)} – \emph{Likelihood}: Die Wahrscheinlichkeit, die Daten \( X \) zu sehen, wenn sie zur Klasse \( C \) gehören.
-  \item \textbf{\( P(C) \)} – \emph{Prior}: Die ursprüngliche Wahrscheinlichkeit der Klasse \( C \), ohne Kenntnis über die Daten.
-  \item \textbf{\( P(X) \)} – \emph{Evidenz}: Die Gesamtwahrscheinlichkeit, die Daten \( X \) zu beobachten (über alle Klassen hinweg).
-\end{itemize}
-
-Die zentrale Annahme des Naive-Bayes-Klassifikators ist die bedingte Unabhängigkeit der Merkmale:
-
-\begin{equation}
-    P(X \mid C) = \prod_{i=1}^{n} P(x_i \mid C)
-\end{equation}
-
-Dies vereinfacht die Berechnung erheblich, da nur die Wahrscheinlichkeiten einzelner Merkmale betrachtet werden müssen \cite{webb2010naive}.
+Unter anderem kommen folgende Modelle bei der Klassifizierung von Nachrichtenartikeln zum Einsatz.
 
 \subsubsection{Decision Tree}
 
@@ -298,7 +270,7 @@ Dabei ist:
     \item \( T \) die Gesamtanzahl der Entscheidungsbäume \cite{aslam2022}.
 \end{itemize}
 
-\textbf{Wichtige Hyperparameter für dieses Modell sind:}
+Wichtige Hyperparameter für dieses Modell sind:
 \begin{itemize}
     \item \texttt{n\_estimators}: Anzahl der Entscheidungsbäume im Wald.
     \item \texttt{max\_depth}: Maximale Tiefe der Bäume.
@@ -324,18 +296,7 @@ die Datenpunkte verschiedener Klassen mit maximalem Abstand (Margin) voneinander
     \end{center}
 \end{figure}
 
-\textbf{Folgende Schritte erklären den mathematischen Ablauf des Modells:}
-\begin{enumerate}
-  \item Definiere Trennebene: \( w^T x + b = 0 \)
-  \item Erzwinge korrekte Trennung: \( y_i(w^T x_i + b) \geq 1 \)
-  \item Maximiere Margin: \( \min \frac{1}{2} \|w\|^2 \)
-  \item Erlaube kleine Fehler: \( \min \frac{1}{2} \|w\|^2 + C \sum \xi_i \)
-  \item Wende ggf. Kernel an: \( K(x_i, x_j) = \phi(x_i)^T \phi(x_j) \)
-\end{enumerate}
-
-\textbf{Kernel-Trick}
-
-Bei komplexen Datensätzen wird das Problem durch eine Funktion \( \phi \) in höhere Dimensionen überführt, ohne sie explizit zu berechnen \cite{jakkula2006tutorial}.
+Bei komplexen Datensätzen wird das Problem durch eine Kernel-Funktion in höhere Dimensionen überführt \cite{jakkula2006tutorial}.
 
 Gängige Kernel-Funktionen sind:
 \begin{itemize}
@@ -343,16 +304,11 @@ Gängige Kernel-Funktionen sind:
   \item Polynomial: \( K(x, x') = (x^T x' + 1)^d \)
   \item Radial Basis Function (RBF): \( K(x, x') = \exp(-\gamma \|x - x'\|^2) \) \cite{jakkula2006tutorial}
 \end{itemize}
-\cite{Noble:2006aa} zeigt, dass durch geeignete Wahl eines Kernels auch komplex strukturierte Daten erfolgreich klassifiziert werden können.
 
-\textbf{Vorteile von SVMs sind:}
-
-\begin{itemize}
-    \item \textbf{Robustheit gegenüber Overfitting}, insbesondere bei hoher Dimensionalität und geringem Datensatz \cite{Noble:2006aa}.
-    \item \textbf{Gute Generalisierungsfähigkeit} durch Maximierung des Margins.
-    \item \textbf{Effizient in der Praxis}: Für viele reale Probleme sind SVMs konkurrenzfähig gegenüber tieferen Netzwerken, (z.B. in Fake-News-Klassifikationen) \cite{Buddhadev2025, sabir2025}.
-    \item \textbf{Flexibilität durch Kernel-Funktionen}, womit verschiedene Datentypen (z.B. Vektoren, Strings, Graphen) verarbeitet werden können.
-\end{itemize}
+\cite{Noble:2006aa} zeigt, dass durch geeignete Wahl eines Kernels auch komplex strukturierte Daten erfolgreich klassifiziert werden können und außerdem 
+besonders robust gegenüber Overfitting sind. Selbst bei kleinen Datensätzen mit hoher Merkmalsanzahl. 
+In praktischen Anwendungen, etwa bei der Fake-News-Erkennung, erzielen sie zuverlässige Ergebnisse und sind teilweise sogar konkurrenzfähig gegenüber 
+tieferen neuronalen Netzwerken \cite{Buddhadev2025, sabir2025}.
 
 \subsubsection{Logistische Regression}
 
@@ -383,31 +339,11 @@ benötigten Zielvariablen.
 \label{tab:linkfunktionen}
 \end{table}
 
-Das Ziel der logistischen Regression ist es, eine Funktion zu finden, die die Wahrscheinlichkeit \( P \) berechnet, 
-dass ein Eingabewert \( X \) zur Klasse \( y = 1 \) gehört. Dies geschieht zum Beispiel mittels der Sigmoidfunktion \cite{jurafsky2023}:
-
-\begin{equation}
-    P = \frac{1}{1 + e^{-(a + bX)}}
-\end{equation}
-
-Dabei sind:
-\begin{itemize}
-  \item \( P \): Wahrscheinlichkeit für Klasse 1 (Wert zwischen 0 und 1)
-  \item \( X \): Eingabewert (Merkmalsvariable)
-  \item \( b \): Gewicht des Merkmals
-  \item \( a \): \textbf{Bias} oder \textbf{Intercept}, also der Schnittpunkt mit der y-Achse, verschiebt die Entscheidungsgrenze. 
-  Ohne Bias würde die Entscheidungsgrenze immer durch den Ursprung laufen, was in der Praxis selten sinnvoll ist \cite{geron2019}.
-\end{itemize}
-
-In \cite{elchami2025} wurde der Intercept explizit deaktiviert, wodurch sich die Gleichung zu \( P = 1 / (1 + e^{-bX}) \) vereinfacht.
-
-\textbf{Vorteile der logistischen Regression:}
-\begin{itemize}
-  \item \textbf{Einfachheit und Interpretierbarkeit}: LR-Modelle sind leicht verständlich und liefern direkt interpretierbare Wahrscheinlichkeiten \cite{aslam2022}.
-  \item \textbf{Effizienz}: Sie sind schnell trainierbar und benötigen relativ geringe Rechenleistung \cite{SUDHAKAR2024101028}.
-  \item \textbf{Flexibilität}: LR lässt sich für binäre, multinomiale und ordinale Klassifikationsprobleme erweitern \cite{SUDHAKAR2024101028}.
-  \item \textbf{Breite Anwendbarkeit}: Sie wird in zahlreichen Bereichen eingesetzt, von der Medizin bis zur Textklassifikation \cite{aslam2022, elchami2025}.
-\end{itemize}
+Wie in \cite{aslam2022} beschrieben, sind LR-Modelle einfach aufgebaut und liefern Wahrscheinlichkeiten, die direkt interpretierbar sind. 
+Darüber hinaus sind sie effizient in der Anwendung, da sie wenig Rechenleistung benötigen und schnell trainiert werden können 
+und durch ihre Flexibilität kann LR sowohl für binäre als auch für multinomiale und ordinale Klassifikationsprobleme 
+eingesetzt werden \cite{SUDHAKAR2024101028}. Aufgrund dieser Eigenschaften findet die Methode breite Anwendung in verschiedensten Bereichen, 
+etwa in der Medizin oder bei der automatisierten Textklassifikation \cite{aslam2022, elchami2025}.
 
 \subsubsection{XGBoost}
 
@@ -454,8 +390,8 @@ deutlich schnelleren Trainingszeit bei nahezu gleichbleibender Genauigkeit.
 
 \paragraph{Exclusive Feature Bundling (EFB)} adressiert das Problem vieler hochdimensionaler Datensätze, in denen viele Merkmale nur selten 
 (sogenannte \textit{sparse} Features) oder nie gleichzeitig (\textit{mutually exclusive}) aktiv sind. 
-\textit{Sparse} bedeutet, dass die meisten Werte in einem Merkmal Null sind, während \textit{mutually exclusive} bedeutet, dass bestimmte Merkmale sich 
-gegenseitig ausschließen – also nicht gleichzeitig einen von Null verschiedenen Wert annehmen. 
+\textit{Sparse} bedeutet, dass die meisten Werte in einem Merkmal Null sind. \textit{Mutually exclusive} steht dafür, dass sich bestimmte Merkmale 
+gegenseitig ausschließen. Folglich also nicht gleichzeitig einen Wert ungleich Null annehmen können. 
 EFB fasst solche Merkmale zu sogenannten Bundles zusammen, wodurch sich die Anzahl der zu verarbeitenden Merkmale stark reduziert. 
 Das Bündelungsproblem wird als Graphfärbungsproblem modelliert und mit einem Greedy-Algorithmus angenähert.
 Dadurch wird der Histogrammaufbau effizienter und das Training insgesamt beschleunigt.
@@ -485,8 +421,8 @@ Folgendes Beispiel einer Fake News Klassifizierung zum Verständnis der Funktion
     Dabei lernt das Modell etwa, dass reißerische Sprache mit Fake News korreliert.
 
     \item \textbf{Anpassung der Vorhersage:}  
-    Das Modell passt seine ursprüngliche Schätzung anhand der Regeln des neu erzeugten Baums an. Dieser Baum liefert eine kleine Korrektur, die – 
-    positiv oder negativ – zur bestehenden Vorhersage hinzugefügt wird. So wird die Bewertung des Artikels differenzierter und genauer.
+    Das Modell passt seine ursprüngliche Schätzung anhand der Regeln des neu erzeugten Baums an. Dieser Baum liefert eine kleine Korrektur, die
+    positiv oder negativ zur bestehenden Vorhersage hinzugefügt wird. So wird die Bewertung des Artikels differenzierter und genauer.
 
     \item \textbf{Weitere Iterationen und Baum-Erzeugung:}  
     Nach jeder Anpassung wird erneut überprüft, wo Fehler verbleiben. Ein weiterer Baum wird erzeugt, um diese Fehler zu korrigieren. 

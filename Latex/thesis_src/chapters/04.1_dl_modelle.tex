@@ -20,7 +20,7 @@ Dabei werden mit maschinellen Lerntechniken verschiedene dichte Vektoren mit ein
 Word Embeddings sind gegenüber zu BOW (Sparse Matrizen) deutlich speicherschonender.
 
 Das Wort „Bank“ zum Beispiel hat in den Sätzen „Ich setze mich auf die Bank.“ und „Ich raube die Bank aus.“ zwei unterschiedliche Bedeutungen. 
-Moderne Word Embeddings erkennt diese und erstellt für die zwei Kontexte/Wörter zwei verschiedene Vektoren \cite{skopos2023wordembeddings}.
+Moderne Word Embeddings erkennen diese und erstellen für die zwei Kontexte/Wörter zwei verschiedene Vektoren \cite{skopos2023wordembeddings}.
 
 In Abbildung \ref{fig:bsp_word_embeddings} wird jedes Wort eines Korpus mit 6 Wörtern als dreidimensionaler Vektor dargestellt.
 Ziel eines Word Embedding Verfahrens ist hierbei, dass Wörter mit ähnlichen Bedeutungen oder Kontexten ähnliche Vektordarstellungen haben. 
@@ -37,8 +37,8 @@ hingegen zeigen in entgegengesetzte Richtungen, was auf ihre gegensätzlichen Be
 \subsubsection{Word2Vec}
 \label{sec:word2vec}
 
-Das Word Embedding Word2vec verwendet ein neuronales Netzwerk und erfasst numerisch die Ähnlichkeiten zwischen Wörtern aufgrund ihrer 
-kontextuellen Merkmale. Am häufigsten wird sie zur Analyse der semantischen Verbindungen zwischen Wörtern in einem Textkorpus 
+Das Modell Word2vec verwendet ein neuronales Netzwerk und erfasst numerisch die Ähnlichkeiten zwischen Wörtern aufgrund ihrer 
+kontextuellen Merkmale und erstellt darauf aufbauend Embeddings. Am häufigsten wird es zur Analyse der semantischen Verbindungen zwischen Wörtern in einem Textkorpus 
 eingesetzt \cite{schumacher2024word2vec}.
 
 Im Beispielsatz 'Mann verhält sich zu Frau wie König zu x.' erkennt Word2vec, dass für $x = \text{Königin}$ gilt. 

@@ -115,8 +115,8 @@ Dieser Webserver übernimmt die Aufgabe, eingehende Nachrichtenartikel automatis
 
 Abbildung \ref{fig:beispielablauf_gesamt} zeigt den beispielhaften Ablauf einer solchen Klassifikation. 
 Ein Artikel wird zunächst in einzelne Tokens zerlegt und anschließend durch ein vortrainiertes und feinjustiertes Transformer-Modell in einen semantischen Vektor überführt. 
-Der hierbei erzeugte \texttt{[CLS]}-Vektor – eine dichte, 768-dimensionale Repräsentation des gesamten Artikels – dient als Input für das LightGBM-Modell, 
-welches auf Grundlage dieses Vektors die finale Klassifikation vornimmt. Die Vorhersage (z.B. „Artikel ist wahr“) wird anschließend dem aufrufenden System zurückgegeben.
+Der hierbei erzeugte \texttt{[CLS]}-Vektor repräsentiert den gesamten Artikel in einem dichten, 768-dimensionalen Raum und dient als Input für das LightGBM-Modell.
+Dieses nimmt auf Grundlage dieses Vektors die finale Klassifikation vor. Die Vorhersage (z.B. „Artikel ist wahr“) wird anschließend dem aufrufenden System zurückgegeben.
 
 Diese Architektur erlaubt es, neue Texte schnell und effizient zu bewerten, ohne dass jedes Mal das komplexe Transformer-Modell zur Klassifikation herangezogen werden muss. 
 Stattdessen erfolgt dies über das deutlich ressourcenschonendere LightGBM-Modell. Damit ist die Lösung sowohl skalierbar als auch in Echtzeit einsetzbar.

@@ -87,7 +87,7 @@ Im Falle eines Encoding Transformers wie BERT (siehe Kapitel \ref{sec04:bert}) w
     \begin{itemize}
         \item Jedes Hidden Layer ist ein Transformer-Block mit Self-Attention.
         \item Jeder Token wird an allen anderen Tokens angepasst, um seine Bedeutung im Kontext zu erfassen.
-        \item Diese Aufmerksamkeit ist bidirektional – sie bezieht sich auf Wörter davor und danach.
+        \item Diese Aufmerksamkeit ist bidirektional und bezieht sich auf Wörter davor und danach.
     \end{itemize}
     
     \item \textbf{Tiefe Verfeinerung:} 
@@ -214,13 +214,13 @@ BPE besteht aus folgenden, in \cite{sennrich2015} erklärten, Schritten:
   \item Zerlege jedes Wort in einzelne Zeichen und hänge ein Endsymbol „·“ an (z.\,B.\ \texttt{``lower''} → \texttt{[l, o, w, e, r, ·]}).
   \item Zähle alle benachbarten Zeichenpaare im Korpus (z.\,B.\ \texttt{(l,o)}, \texttt{(o,w)}, \texttt{(w,e)}, \dots).
   \item Führe das häufigste Paar zu einem neuen Symbol zusammen (z.\,B.\ \texttt{(l,o)} → \texttt{``lo''}).
-  \item Wiederhole Schritt 2–3 für eine feste Anzahl von Merges (z.\,B.\ \texttt{``lo'' + ``w'' → ``low''} → \texttt{[low, e, r, ·]}).
+  \item Wiederhole Schritt 2-3 für eine feste Anzahl von Merges (z.\,B.\ \texttt{``lo'' + ``w'' → ``low''} → \texttt{[low, e, r, ·]}).
   \item Speichere die entstandenen Merge-Regeln und wende sie auf neue Wörter an.
 \end{enumerate}
 
 Die Eingaben bestehen aus Abschnitten von 512 aufeinanderfolgenden Token, die sich auch über mehrere Dokumente erstrecken können. 
 Der Beginn und das Ende eines Dokuments werden durch spezielle Markierungen <s> und </s> gekennzeichnet. 
-Während des Pretrainings werden 15\% der Token maskiert – in 80\% der Fälle durch <mask>, in 10\% durch 
+Während des Pretrainings werden 15\% der Token maskiert. In 80\% der Fälle durch <mask>, in 10\% durch 
 ein zufälliges anderes Token und in den restlichen 10\% bleiben sie unverändert. 
 Anders als bei BERT erfolgt die Maskierung dynamisch, also in jeder Epoche neu.
 
