@@ -1,3 +1,5 @@
+\newpage
+
 \section{Metriken}
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
@@ -5,7 +7,7 @@
 Zur Auswertung der Modelle werden Metriken genutzt. Die Auswahl der richtigen Metriken hängt von der gewünschten Zielsetzung ab.
 Diese kann zum Beispiel binäre, bzw. multi-Klassen Klassifikation oder Regression sein.
 
-Fake News Erkennung ist eine binäre Klassifizierung (Der Artikel ist entweder 'wahr' oder 'falsch').
+Fake News Erkennung ist eine binäre Klassifizierung (Der Artikel ist entweder 'wahr' (positive) oder 'falsch' (negative)).
 
 Dabei ergeben sich vier mögliche Ausgänge bei der Modellvorhersage:
 \begin{itemize}
@@ -15,12 +17,12 @@ Dabei ergeben sich vier mögliche Ausgänge bei der Modellvorhersage:
     \item True Negative (TN) - Das Modell hat die negative Klasse richtig vorhergesagt.
         
     (Der Artikel, der Fake ist, wird als 'falsch' gedeutet)
-    \item Falsch positiv (FP) - Das Modell hat die positive Klasse falsch vorhergesagt. 
+    \item False Positive (FP) - Das Modell hat die positive Klasse falsch vorhergesagt. 
+        
+    (Der Artikel, der Fake ist, wird als 'wahr' gedeutet)
+    \item False Negative (FN) - Dein Modell hat die negative Klasse falsch vorhergesagt. 
         
     (Der Artikel, der kein Fake ist, wird als 'falsch' gedeutet)
-    \item Falsches Negativ (FN) - Dein Modell hat die negative Klasse falsch vorhergesagt. 
-        
-    (Der Artikel, der kein Fake ist, wird als 'wahr' gedeutet)
 \end{itemize}
 
 Diese vier Werte werden in einer sogenannten Konfusionsmatrix  (siehe Abbildung \ref{fig:confusion_matrix}) zusammengefasst
@@ -46,7 +48,7 @@ Die Accuracy gibt den Anteil korrekt klassifizierter Instanzen an.
 
 \subsection{Recall}
 
-Der Recall gibt den Anteil korrekt erkannter positiver Fälle an.
+Der Recall gibt den Anteil korrekt erkannter positiver Fälle unter allen tatsächlich positiven an.
 
 \begin{equation}
     \text{Recall} = \frac{TP}{TP + FN}
@@ -54,7 +56,7 @@ Der Recall gibt den Anteil korrekt erkannter positiver Fälle an.
 
 \subsection{Specificity}
 
-Die Specificity gibt den Anteil korrekt erkannter negativer Fälle an.
+Die Specificity gibt den Anteil korrekt erkannter negativer Fälle unter allen tatsächlich negativen an.
 
 \begin{equation}
     \text{Specificity} = \frac{TN}{TN + FP}

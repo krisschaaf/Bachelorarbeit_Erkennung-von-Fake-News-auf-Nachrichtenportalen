@@ -32,7 +32,7 @@ Die Modelle generalisieren gut und zeigen eine stabile Leistung auf bislang unge
 
 Tabelle \ref{tab:vergleich_der_transformer_modelle} zeigt die Testergebnisse der fünf untersuchten Transformer-Modelle nach dem Fine-Tuning auf dem 
 Klassifikationsdatensatz. 
-Dargestellt sind Accuracy, F1-Score, Loss sowie die durchschnittliche Evaluationszeit. Das Modell XLM-RoBERTa-Large erzielt mit einer 
+Dargestellt sind Accuracy, F1-Score, Loss sowie die Evaluationszeit des Testdatensatzes. Das Modell XLM-RoBERTa-Large erzielt mit einer 
 Accuracy und einem F1-Score von jeweils 97,95\% die besten Resultate, gefolgt von RoBERTa-Large und RoBERTa-Base. 
 Das schwächste Ergebnis liefert BERT-Base-Uncased mit einem Accuracy-Wert von 95,33\%. Insgesamt zeigt sich, dass die \textit{Large}-Varianten
 der Tranformer Modelle bessere Ergebnisse erzielen, allerdings auch mit einem erhöhten Evaluationsaufwand verbunden sind.
@@ -110,7 +110,8 @@ Ein möglicher Grund für die leicht schlechteren Metriken bei der Verwendung vo
 Transformer-Embeddings liegen. Diese enthalten sehr viele komplexe, kontextuelle Informationen, die zwar für überwachte Modelle direkt nutzbar sind, 
 klassische Modelle wie LightGBM jedoch nur eingeschränkt verarbeiten können.
 \cite{reimers-gurevych-2019-sentence} erklärt, dass die Architektur von BERT für die Anwendung in weiteren unüberwachte Verfahren problematisch ist.
-Es lässt sich vermuten, dass Gleiches auch für überwachte Modelle gilt.
+Es lässt sich vermuten, dass Gleiches auch für überwachte Modelle gilt dass Gleiches auch für überwachte Modelle gilt, 
+sofern diese nicht speziell auf die Strukturen der Transformer-Embeddings ausgelegt sind.
 
 \section{Vergleich mit verwandten Arbeiten}
 
@@ -128,7 +129,7 @@ jeweils 97,95\% sehr gute Ergebnisse erzielt und damit nahe an den besten LightG
 Auch das LightGBM-Modell auf Basis der XLM-RoBERTa-Embeddings erreicht mit 97,84\% (Accuracy) und 97,73\% (F1) ein konkurrenzfähiges Niveau.
 
 Die teils noch höheren Werte in \cite{Essa:2023aa} könnten unter anderem auf Unterschiede in den Datensätzen zurückzuführen sein. 
-So ist beispielsweise der ISOT-Datensatz stark strukturiert und enthält viele sich wiederholende Phrasen, was klassische Embedding-Modelle begünstigen kann \cite{s22186970}. 
+So ist beispielsweise der ISOT-Datensatz stark strukturiert und enthält viele sich wiederholende Phrasen, was Klassifizierungen durch Embedding-Modelle begünstigen kann \cite{s22186970}. 
 
 \begin{table}[ht]
 \centering

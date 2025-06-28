@@ -128,13 +128,10 @@ Zur Bestimmung des geeignetsten Tools für den Webagenten,
 wurden verschiedene Technologien verglichen (siehe Tabelle \ref{table:technischeAnsaetze}).
 Aufgrund des begrenzten Zugriffs auf die zu analysierende Seiten, bieten sich die beiden Client-seitigen Umsetzungen 
 eine Chrome Extension zu implementieren oder über Tampermonkey Userscripts auszuführen am ehesten an.
-
 Im Vergleich zu Usercripts unterstützt die Extension mehrere Komponenten (Content Scripts, Background Scripts, Popup, Optionsseite).
 Anhand dieser können der DOM beobachtet, ein persistenter Speicher genutzt, Kontextmenüs erstellt und auf Browseraktionen reagiert werden (z.B. Tabwechsel, Navigation).
 Ein Userscript hingegen ist ein einfaches Script, das nur beim Laden einer Seite aktiv ist und dementsprechend keine Hintergrundverarbeitung und keine erweiterten UI-Komponenten
-zur Verfügung stellt.
-
-Basierend auf der Auswertung wird zur Implementierung des Webagents eine Chrome Extension (Manifest V3) verwendet.
+zur Verfügung stellt. Darauf basierend wird zur Implementierung des Webagents eine Chrome Extension (Manifest V3) verwendet.
 
 Genutzt wird ein \textit{Service Worker} ein \textit{Content Script} pro Nachrichtenportal und ein \textit{Popup}.
 

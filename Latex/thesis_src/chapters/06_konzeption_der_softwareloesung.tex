@@ -91,8 +91,8 @@ Die erzeugten Token werden von den jeweiligen angepassten Transformer Modellen i
 Diese Vektoren bilden die Grundlage für die nachfolgenden Self-Attention-Mechanismen, die kontextabhängige, semantisch reichhaltige Embeddings erzeugen.
 Diese Embeddings entstehen über mehrere aufeinanderfolgende Hidden Layer, wobei jede Schicht die Werte weiter verfeinert und anreichert.
 
-Um die Ausgabe der verschiedenen Embeddings der Hidden Layer zusammenzufassen kann zum Beispiel der \texttt{[CLS]}-Token aus einer oder mehreren Schichten extrahiert oder 
-ein Durchschnitt aller Token-Embeddings gebildet werden.
+Um die Embeddings besser und stabiler zu repräsentieren, werdne die Ausgaben der verschiedenen Hidden Layer zusammengefasst. Hierfür kann zum Beispiel der \texttt{[CLS]}-Token 
+aus einer oder mehreren Schichten extrahiert oder ein Durchschnitt aller Token-Embeddings gebildet werden.
 
 \cite{sun2020finetuneberttextclassification} zeigt für BERT, dass die letzten Layer die meisten Informationen beinhalten.
 In dieser Arbeit wird aus den letzten vier Layern ein Durchschnittswert gebildet.
@@ -118,15 +118,15 @@ Ein Artikel wird zunächst in einzelne Tokens zerlegt und anschließend durch ei
 Der hierbei erzeugte \texttt{[CLS]}-Vektor repräsentiert den gesamten Artikel in einem dichten, 768-dimensionalen Raum und dient als Input für das LightGBM-Modell.
 Dieses nimmt auf Grundlage dieses Vektors die finale Klassifikation vor. Die Vorhersage (z.B. „Artikel ist wahr“) wird anschließend dem aufrufenden System zurückgegeben.
 
-Diese Architektur erlaubt es, neue Texte schnell und effizient zu bewerten, ohne dass jedes Mal das komplexe Transformer-Modell zur Klassifikation herangezogen werden muss. 
-Stattdessen erfolgt dies über das deutlich ressourcenschonendere LightGBM-Modell. Damit ist die Lösung sowohl skalierbar als auch in Echtzeit einsetzbar.
-
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[scale=0.6]{diagrams/beispielablauf_gesamt.png}
         \caption{\label{fig:beispielablauf_gesamt} Beispielhafter Ablauf einer Klassifizierung eines Artikels}
     \end{center}
 \end{figure}
+
+Diese Architektur erlaubt es, neue Texte schnell und effizient zu bewerten, ohne dass jedes Mal das komplexe Transformer-Modell zur Klassifikation herangezogen werden muss. 
+Stattdessen erfolgt dies über das deutlich ressourcenschonendere LightGBM-Modell. Damit ist die Lösung sowohl skalierbar als auch in Echtzeit einsetzbar.
 
 \section{Konzeption des Webagenten} \label{sec:06:hauptkomponente}
 
@@ -141,9 +141,7 @@ Die Startseite ist wie folgt aufgebaut:
 \begin{lstlisting} [language=html]
     <!DOCTYPE html>
     <html>
-      <head>
-        ...
-      </head>
+      <head>...</head>
       <body>
         <div id="app">
             ...
