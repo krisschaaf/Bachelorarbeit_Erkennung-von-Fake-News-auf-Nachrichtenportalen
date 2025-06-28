@@ -75,9 +75,11 @@ const analyseArticle = async () => {
 
 
 const appendDataToDOM = (data, article) => {
-  const prozent = (data.probability * 100).toFixed(2);
-  const text    = `Der Artikel ist zu einer Wahrscheinlichkeit von ${prozent}% ` +
-                  (data.label === 1 ? "fake." : "echt.");
+  const probability = parseFloat(data.probability);
+  const prozent = !isNaN(probability) ? (probability * 100).toFixed(2) : "0.00";
+  const text = `Der Artikel ist zu einer Wahrscheinlichkeit von ` +
+                 (data.label === 1 ? `${prozent}%` : `${(100 - prozent).toFixed(2)}%`) +
+               (data.label === 1 ? " fake." : " echt.");
 
   let container = document.getElementById("analyse-container");
   if (!container) {

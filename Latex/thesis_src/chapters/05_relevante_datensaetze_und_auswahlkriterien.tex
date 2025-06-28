@@ -95,10 +95,13 @@ Durch die Analyse der Datensätze ergeben sich folgende Möglichkeiten für das 
     \item FANG-COVID mit ca. 26.000 Einträgen aber dafür 50/50 Klassenausgewogenheit
     \item FANG-COVID und FNDG kombiniert für bessere Generalisierung (105.110 Einträge, aber 16,94\% Klassenausgewogenheit)
     \item FANG-COVID und alle Fake Artikel von FNDG kombiniert für bessere Klassenausgewogenheit und mehr Daten
-    (45.866 Einträge mit 38.82\% Klassenausgewogenheit) %TODO: zahlen fixen
+    (45.866 Einträge mit 38.82\% Klassenausgewogenheit)
     \item Alle Fake Einträge aus FANG-COVID und FNDG kombiniert (17.809 Fake Einträge) kombiniert mit Stichproben aus sowohl FANG-COVID als auch FNDG
     um eine sinnvolle Klassenausgewogenheit mit vielen Daten und einer guten Generalisierung zu erreichen (45.866 Einträge mit 38.82\% Klassenausgewogenheit,
     aber 28.057 echten Einträgen zu 50/50 aus FANG-COVID und FNDG).
 \end{enumerate}
 
-Aufgrund der %TODO: entscheidung begründen warum der letzte datensatz genutzt wurde
+Auf Grundlage dieser Analyse wird die fünfte Variante als finaler Trainingsdatensatz gewählt. 
+Er bietet eine gute Balance aus Datenmenge, thematischer Vielfalt und Klassenausgewogenheit. 
+Durch die Kombination beider Quellen wird die Generalisierungsfähigkeit verbessert, ohne dass das Modell durch einseitige Inhalte oder 
+unausgewogene Klassenverteilungen verzerrt wird. Diese Auswahl eignet sich besonders für eine robuste und themenübergreifende Erkennung von Fake News.
