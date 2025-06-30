@@ -8,17 +8,18 @@ Basierend auf den vorgestellten Konzepten folgt die technische Erläuterung der 
 Die praktische Umsetzung des Machine Learning Modells basiert auf den konzeptionellen Grundlagen aus Kapitel \ref{chap:konzeption_der_softwareloesung}. 
 Ziel der Implementierung ist es, eine skalierbare und wiederverwendbare Pipeline zur automatisierten Klassifikation von Nachrichtenartikeln zu entwickeln.
 
-Dazu wird zunächst der Fine-Tuning-Prozess mehrerer vortrainierter Transformer-Modelle durchgeführt. 
-Dieser Prozess ermöglicht es, die Modelle auf die konkrete Zielaufgabe, zwischen echten und gefälschten Nachrichten zu unterscheiden, zu spezialisieren. 
-Anschließend werden aus den trainierten Modellen dichte Embeddings extrahiert, die den semantischen Gehalt eines Artikels komprimiert abbilden. 
-Diese Embeddings dienen als Eingabe für ein LightGBM-Modell, das für die finale Klassifikation verwendet wird.
+Dazu werden zunächst mehrere vortrainierte Transformer Modelle feinjustiert (Fine-tuning). 
+Dieser Prozess ermöglicht es, die Modelle auf die konkrete Zielaufgabe, also auf das Unterscheiden zwischen echten und gefälschten Nachrichten, zu spezialisieren. 
+Anschließend werden aus den trainierten Modellen Embeddings extrahiert, die den semantischen Gehalt eines Artikels komprimiert abbilden. 
+Diese Embeddings dienen als Eingabe für ein LightGBM Modell, das für die finale Klassifikation verwendet wird.
 
-Im weiteren Verlauf dieses Abschnitts werden die technischen Details zur Modellanpassung, Embedding-Generierung sowie zur Integration der Komponenten in eine 
-produktionsreife Architektur beschrieben. Dabei kommen gängige Frameworks wie PyTorch, Hugging Face Transformers sowie LightGBM zum Einsatz.
+Im weiteren Verlauf dieses Abschnitts werden die technischen Details zur Modellanpassung, Generierung der Embeddings sowie zur Integration der Komponenten in eine 
+produktionsreife Architektur beschrieben.
 
 \subsection{Fine-tuning der Transfomer Modelle}
 
-Für das \textit{fine-tuning} (Training) der verschiedenen Modelle werden die Transformers-Bibliothek von Hugging Face, Python und das Deep-Learning-Framework PyTorch verwendet.
+Für das Fine-tuning der verschiedenen Modelle werden die \textit{Transformers}-Bibliothek von Hugging Face, die Programmiersprache Python und das Deep-Learning-Framework 
+PyTorch verwendet.
 
 Trainiert werden fünf verschiedene Transformer Modelle mit dem Datensatz aus Kapitel \ref{sec6:datenvorverarbeitung}:
 \begin{itemize}
@@ -33,19 +34,21 @@ In \ref{tab:bert_models} angehängt, findet sich ein tabellarischer Vergleich de
 
 Das Tokenisieren erfolgt über den jeweiligen mitgelieferten Tokenizer.
 
-Eine Übersicht der für das \textit{fine-tuning} genutzten Hyperparameter findet sich im Anhang (siehe Tabelle \ref{tab:transformer-hyperparameter}).
+Eine Übersicht der für das \textit{Fine-tuning} genutzten Hyperparameter findet sich im Anhang (siehe Tabelle \ref{tab:transformer-hyperparameter}).
 
-Zur dynamischen Anpassung der Lernrate während des Trainings, wird ein linearer Learning Rate Scheduler mit Warmup verwendet.
-Zu Beginn des Trainings wird die Lernrate über 10\% der Trainingsschritte schrittweise erhöht, um das Modell zu stabilisieren. 
+Zur dynamischen Anpassung der Lernrate während des Trainings, wird ein linearer Learning Rate Scheduler verwendet.
+Zu Beginn des Trainings wird die Lernrate über 10\% der Trainingsschritte schrittweise erhöht, um das Modell zu stabilisieren (Warmup). 
 Anschließend wird sie linear bis zum Ende des Trainings wieder abgesenkt. Dieses Vorgehen hilft dabei, Konvergenzprobleme zu vermeiden und die Modellleistung zu verbessern.
 Konvergenzprobleme entstehen, wenn das Modell beim Training nicht richtig lernt und die Fehler (\textit{loss}) nicht zuverlässig kleiner werden.
 
 Das Training wird auf einer Google Colab Laufzeit mit einer A100 GPU mit erweitertem RAM Speicher durchgeführt.
-Die trainierten Modelle werden jeweils als einzelnen Repository im Hugging Face Hub gespeichert.
+Die trainierten Modelle werden jeweils als einzelne Repositories im Hugging Face Hub gespeichert.
 
 \subsection{Erzeugung der Embeddings} \label{sec:erzeugung_der_embeddings}
 
 Für das Erzeugen der Embeddings wird der Datensatz aus Kapitel \ref{sec6:datenvorverarbeitung} in Trainings- (80\%) und Testdaten (20\%) aufgeteilt und tokenisiert.
+
+\newpage
 
 Diese Datensätze durchlaufen anschließend folgende Schritte: 
 
@@ -70,25 +73,26 @@ Diese Datensätze durchlaufen anschließend folgende Schritte:
   um eine robustere Token-Repräsentation zu erhalten.
 
   \item \textbf{Maskierung und Mittelung über Tokens:}  
-  Mithilfe der \texttt{attention\_mask} werden \texttt{[PAD]}-Tokens ausgeschlossen. 
+  Mithilfe des \texttt{attention\_mask}-Vektors werden \texttt{[PAD]}-Tokens ausgeschlossen. Dieser Vektor stammt aus der \textit{Transformers}-Bibliothek und markiert binär
+  alle Vorkommen der \texttt{[PAD]}-Tokens.
   Die verbleibenden Token-Embeddings werden über die Sequenzlänge gemittelt, sodass ein einziger Vektor pro Eingabesequenz entsteht.
 
   \item \textbf{Speicherung der Embeddings:}  
-  Die resultierenden Satz-Embeddings sowie die zugehörigen Labels werden gesammelt und in \textit{NuMpy}-Arrays konvertiert.
+  Die resultierenden Embeddings sowie die zugehörigen Labels werden gesammelt und in \textit{NumPy}-Arrays konvertiert.
 
   \item \textbf{Finaler Output:}  
-  Nach Verarbeitung aller Batches werden die Satz-Embeddings und Labels aller Beispiele zu zwei großen Arrays (Embeddings und Label) zusammengefügt.
+  Nach Verarbeitung aller Batches werden die Embeddings und Labels aller Beispiele zu zwei großen Arrays (Embeddings und Label) zusammengefügt.
 \end{enumerate}
 
 Nach Durchlaufen der Schritte werden die Embeddings und Label der Trainings- und Testdaten in einem Python Dictionary gespeichert.
 
 \subsection{Nutzung der Embeddings im LightGBM Modell}
 
-Die Python LightGBM-Bibliothek stellt ein einfach zu implementierendes Modell zur Verfügung.
+Die Python \textit{LightGBM}-Bibliothek stellt ein einfach zu implementierendes Modell zur Verfügung.
 Dieses wird auf den verschiedenen erzeugten Embeddings trainiert.
 
 Eine Übersicht der im Modell genutzten Hyperparameter findet sich im Anhang (siehe Tabelle \ref{tab:lightgbm-hyperparameter}).
-Zur Wahl der geeignetsten Hyperparameter wird einmalig die Optuna-Bibliothek genutzt.
+Zur Wahl der geeignetsten Hyperparameter wird einmalig die \textit{Optuna}-Bibliothek genutzt.
 Dabei werden mithilfe von K-Fold-Cross-Validation (siehe Abbildung \ref{fig:k-fold_cross-validation}) verschiedene Kombinationen von LightGBM-Hyperparametern getestet, 
 um das Modell mit dem höchsten F1-Score zu finden.
 
@@ -103,15 +107,15 @@ Anhand von dem, in der Bibliothek zur Verfügung gestellten, \textit{early-stopp
 Anforderungen erreicht sind. 
 Die Parameter sind in diesem Fall so definiert, dass das Training beendet wird, sobald sich der logarithmische Verlust (\textit{Logloss}) auf den 
 Validierungsdaten über 100 aufeinanderfolgende Iterationen hinweg nicht mehr verbessert.
-Dadurch wird Overfitting verhindert und eine bessere Generalisierung auf unbekannte Texte ermöglicht.
+Dadurch wird Overfitting verhindert und folglich eine bessere Generalisierung auf unbekannte Texte ermöglicht.
 
 \subsection{Technische Systemarchitektur}
 
-Der Webserver wird mit der Python Starlette-Bibliothek implementiert und mit Docker containerisiert.
-Nach dem Starten werden zuerst die Transformer und LightGBM Modelle geladen, danach wird das \textit{ready}-Flag gesetzt und der Server kann Anfragen empfangen.
+Der Webserver wird mit der Python \textit{Starlette}-Bibliothek implementiert und mit Docker containerisiert.
+Nach dem Starten werden zuerst die Transformer und LightGBM Modelle geladen, danach wird ein \textit{ready}-Flag gesetzt und der Server kann Anfragen empfangen.
 Die einzige Klasse ist das Singleton \textit{EmbeddingService} (siehe Abbildung \ref{fig:uml_webserver}). Dieses erzeugt das Embedding und klassifiziert es anschließend.
 Zurückgegeben wird ein \textit{json}-Objekt mit den Informationen \textit{label} und \textit{probability}. Das \textit{label} enthält den klassifizierten Binärwert 
-(1 bedeutet Fake, 0 bedeutet Echt). Die \textit{probability} enthält die Wahrscheinlichkeit der korrekten Klassifizierung in Prozent.
+(1 bedeutet Fake, 0 bedeutet Echt). Die \textit{probability} gibt an, mit welcher Wahrscheinlichkeit der Artikel ein Fake ist (in Prozent).
 
 \begin{figure}[htbp]
     \begin{center}
@@ -135,12 +139,12 @@ zur Verfügung stellt. Darauf basierend wird zur Implementierung des Webagents e
 
 Genutzt wird ein \textit{Service Worker} ein \textit{Content Script} pro Nachrichtenportal und ein \textit{Popup}.
 
-\paragraph{Service Worker} steuern eine Seite genau dann, wenn ein Service Worker auf dieser Netzwerkanfragen in seinem Namen abfangen kann. 
-Der Service Worker kann dann Aufgaben für die Seite innerhalb eines bestimmten Scopes ausführen
+\paragraph{Service Worker} kontrollieren eine Seite genau dann, wenn sie in der Lage sind, Netzwerkanfragen dieser Seite innerhalb ihres definierten Scopes abzufangen. 
+Innerhalb dieses Bereichs können Service Worker dann bestimmte Aufgaben für die Seite übernehmen.
 
 Der Lifecycle eines Service Workers ist in folgende Events unterteilt: installing, installed, activating, activated.
 
-Nach Abschluss der Aktivierung steuert der Service Worker die Seite standardmäßig erst 
+Nach Abschluss der Aktivierung steuern Service Worker die Seite standardmäßig erst 
 bei der nächsten Navigation oder Seitenaktualisierung \cite{chrome2025serviceworker}.
 
 \paragraph{Content Scripts} sind Dateien, die im Kontext von Webseiten ausgeführt werden. 
@@ -150,7 +154,7 @@ Mit dem standardmäßigen Document Object Model (DOM) können sie Details der We
 Die Kommunikation mit den Service Worker erfolgt über die Extension-API \textit{runtime}.
 
 \paragraph{Pop-ups} sind Aktionen, bei denen ein Fenster angezeigt wird, über das Nutzer mehrere Erweiterungsfunktionen aufrufen kann. 
-Sie werden durch ein Tastenkürzel, durch Klicken auf das Aktionssymbol der Erweiterung oder durch Drücken von chrome.action.openPopup() ausgelöst. 
+Sie werden durch ein Tastenkürzel, durch Klicken auf das Aktionssymbol der Erweiterung oder durch das Aufrufen von \\ chrome.action.openPopup() ausgelöst. 
 Pop-ups werden automatisch geschlossen, wenn der Nutzer sich auf einen Bereich des Browsers außerhalb des Pop-ups konzentriert \cite{chrome2025popups}.
 
 In Abbildung \ref{fig:seq_hauptkomponente} zu sehen ist das Sequenzdiagramm des Webagents. Wie in Kapitel \ref{sec:06:hauptkomponente} beschrieben

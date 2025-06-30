@@ -5,14 +5,14 @@ Die entwickelte Anwendung ist aufgeteilt in zwei Komponenten. Die erste Komponen
 klassifiziert die Nachrichtenartikel und gibt das entsprechende Label zurück. Die zweite Komponente ist der Webagent, welcher
 die Artikel auf den Nachrichtenportalen liest, an das Machine Learning Modell schickt und die Antwort in das Portal integriert.
 
-Im folgenden Kapitel werden das jeweilige Konzept dieser beiden Komponenten vorgestellt.
+Im folgenden Kapitel wird das jeweilige Konzept dieser beiden Komponenten vorgestellt.
 
 \section{Konzeption des Machine Learning Modells} \label{sec:06:machine_learning_model}
 
-Zur zuverlässigen Erkennung von Fake News stellt das Machine-Learning-Modell die zentrale Komponente der Softwarelösung dar.
+Zur zuverlässigen Erkennung von Fake News stellt das Machine Learning Modell die zentrale Komponente der Softwarelösung dar.
 In diesem Abschnitt wird zunächst das konzeptionelle Vorgehen bei der Entwicklung des Modells beschrieben. Dabei wird erläutert, welche Modellarchitekturen zum Einsatz kommen und 
 auf welchen Grundlagen diese Auswahl basiert.
-Darauf aufbauend werden die wesentlichen Verarbeitungsschritte im Detail dargestellt. Diese umfassen die Datenvorverarbeitung, 
+Darauf aufbauend werden die wesentlichen Verarbeitungsschritte dargestellt. Diese umfassen die Datenvorverarbeitung, 
 das Fine-Tuning der vortrainierten Transformer-Modelle, die Erzeugung semantischer Embeddings sowie deren Weiterverarbeitung mittels des LightGBM-Klassifikators. 
 Abschließend wird die resultierende Gesamtarchitektur des Klassifikationssystems vorgestellt.
 
@@ -33,7 +33,7 @@ Es arbeitet besonders gut bei tabellarischen, hochdimensionalen Feature-Repräse
 Diese können zum Beispiel durch BERT-Embeddings entstehen.
 Außerdem erfolgt die finale Klassifikation über LightGBM mit deutlich weniger Rechenaufwand, da keine weitere tiefere neuronale Architektur benötigt wird.
 
-Beide Arbeiten zeigen, dass die Kombination zu besserer Generalisierung, niedrigerem Overfitting und schnellerem Training führt.
+Beide Arbeiten zeigen, dass die Kombination zu guten Generalisierungen, niedrigem Overfitting und schnellem Training führt.
 
 Folgende Kombinationen werden im Folgenden verglichen:
 \begin{itemize}
@@ -53,7 +53,7 @@ Im FANG-COVID Datensatz sind die Merkmale 'Unnamed: 0.1', 'Unnamed: 0', 'article
 enthalten. 'article', 'header' und 'label' sind hierbei relevant. 'header' und 'article' sind analog zum FNDG Datensatz Überschrift und Inhalt
 des Artikels. 'label' enthält entweder den Wert 'real' um den Artikel als echt oder 'fake' um den Artikel als gefälscht zu klassifizieren.
 
-Die beiden Datensatze werden zur Weiterverarbeitung zusammengefasst. Überschrift und Inhalt werden konkateniert, da das RoBERTa Modell nur
+Die beiden Datensätze werden zur Weiterverarbeitung zusammengefasst. Überschrift und Inhalt werden konkateniert, da das RoBERTa Modell nur
 einen Wert pro Label verarbeiten kann. Dieses Merkmal wird umbenannt zu 'text'. 
 Für die Klassifizierungskennzeichnung wird die Nominalskala des FNDG Datensatzes und der Titel des FANG-Covid Datensatzes übernommen.
 
@@ -91,7 +91,7 @@ Die erzeugten Token werden von den jeweiligen angepassten Transformer Modellen i
 Diese Vektoren bilden die Grundlage für die nachfolgenden Self-Attention-Mechanismen, die kontextabhängige, semantisch reichhaltige Embeddings erzeugen.
 Diese Embeddings entstehen über mehrere aufeinanderfolgende Hidden Layer, wobei jede Schicht die Werte weiter verfeinert und anreichert.
 
-Um die Embeddings besser und stabiler zu repräsentieren, werdne die Ausgaben der verschiedenen Hidden Layer zusammengefasst. Hierfür kann zum Beispiel der \texttt{[CLS]}-Token 
+Um die Embeddings besser und stabiler zu repräsentieren, werden die Ausgaben der verschiedenen Hidden Layer zusammengefasst. Hierfür kann zum Beispiel der \texttt{[CLS]}-Token 
 aus einer oder mehreren Schichten extrahiert oder ein Durchschnitt aller Token-Embeddings gebildet werden.
 
 \cite{sun2020finetuneberttextclassification} zeigt für BERT, dass die letzten Layer die meisten Informationen beinhalten.

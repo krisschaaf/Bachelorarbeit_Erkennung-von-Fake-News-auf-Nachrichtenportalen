@@ -1,16 +1,16 @@
 \chapter{Relevante Datensätze und Auswahlkriterien}
 \label{chap:relevante_datensaetze_und_auswahlkriterien}
 
-Die in dieser Arbeit entwickelte Anwendung benötigt eine Datenbasis um das Erkennen von Fake News erfolgreich zu lernen.
-Hierfür werden verschiedene Datensätze vorgestellt und analysiert.
+Damit die im Rahmen dieser Arbeit entwickelte Anwendung in der Lage ist, Fake News zuverlässig zu erkennen, ist eine geeignete Datenbasis erforderlich. 
+Zu diesem Zweck werden verschiedene relevante Datensätze vorgestellt, hinsichtlich ihrer Eigenschaften analysiert und im Hinblick auf ihre Eignung für das 
+Training des Modells bewertet.
 
 \section{Nutzung englischer Datensätze} \label{sec:english_datasets}
 
 Eine in \cite{Simone2022} angewandte Lösung ist die Erstellung eines großen Datensatzes mit englischen Artikeln. Das Modell wurde entsprechend auf Englisch 
 trainiert und die deutschen Artikel in der späteren Anwendung vor der Vorhersage übersetzt.
 Fake News haben oft stilistische, semantische oder rhetorisch manipulierende Muster, welche sich je nach Sprache unterscheiden können.
-Selbst mit modernen Transformern können diese Muster nicht sicher mit übersetzt werden, da diese einen übersetzen Artikel einer anderen Domäne zuordnen könnten
-als den ursprünglichen Artikel \cite{hong2023disentanglingstructurestylepolitical}. 
+Selbst mit modernen Transformern können diese Muster nicht sicher mit übersetzt werden \cite{hong2023disentanglingstructurestylepolitical}. 
 Ein typisches Beispiel ist der Satz: „Natürlich wird das RKI bald neue Lockdowns empfehlen - die haben ja auch sonst nichts zu tun.“ 
 Die Übersetzung ins Englische („Of course, the RKI will soon recommend new lockdowns - they have nothing else to do") wirkt sprachlich korrekt, 
 verliert in Teilen jedoch die ironisch-sarkastische Eigenschaft.
@@ -65,16 +65,17 @@ Die Eignung bezieht sich darauf, wie sinnvoll die Nutzung dieser jeweiligen Date
 \end{table}
 
 Da der DeFaktS Datensatz nicht öffentlich verfügbar ist, fällt dieser aus der Auswahl. 
-Um ein Modell zu trainierien werden viele Daten benötigt. Die in Kapitel \ref{sec:bert_lightgbm} vorgestellten Datensätze umfassen von 20.000 bis hin zu Millionen Artikeln.
-Aufrund der Größe entfällt der GermanFakeNC Datensatz.
+Neben genereller Verfügbarkeit ist außerdem die Anzahl der verfügbaren Daten für das Training eines Modells relevant. 
+Die in Kapitel \ref{sec:bert_lightgbm} vorgestellten Datensätze umfassen von 20.000 bis hin zu Millionen Artikeln.
+Aufrund der nicht ausreichenden Größe entfällt der GermanFakeNC Datensatz.
 
-Ein Problem, dass der Fake News Dataset German Datensatz (FNDG) bringt, ist die stark unausgewogene Klassenverteilung. Nur 7,24\% der 64.868 Einträge sind 
+Ein Problem des Fake News Dataset German Datensatzes (FNDG) ist die stark unausgewogene Klassenverteilung. Nur 7,24\% der 64.868 Einträge sind 
 als Fake-News gekennzeichnet. Dadurch kann es beim Trainieren eines Modells dazu kommen, dass es überwiegend die häufiger vorkommenen echten Artikel 
 lernt und Fake-News kaum oder gar nicht erkennt. 
 Ein Modell könnte beispielsweise stets „echt“ vorhersagen und damit auf diesem Datensatz eine hohe Accuracy erreichen.
 Bei späterer Anwendung würde es aber die entscheidenden Fälle nicht mehr differenzieren können. 
 Das führt zu einem guten Accuracy-Wert, während Recall und F1-Score für die Fake-Klasse deutlich leiden. 
-Das Modell verfehlt somit genau die Einträge, die für die Anwendung zentral sind.
+Das Modell würde genau die Einträge verfehlen, die für die Anwendung zentral sind.
 Inhaltlich sind die Einträge aber auf einem breiten Gebiet verteilt, was einen Teil dieses Datensatzes für die Auswahl interessant macht.
 
 Der verbleibende FANG-COVID Datensatz \cite{mattern-etal-2021-fang} fällt aufgrund seiner vielen Einträge und guter Klassenausgewogenheit

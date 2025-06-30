@@ -8,14 +8,14 @@ implementiert und evaluiert, der moderne Methoden des Natural Language Processin
 Im Mittelpunkt der Arbeit standen zwei Modellierungsansätze: Einerseits wurden vortrainierte Transformer-Modelle (BERT, RoBERTa, XLM-RoBERTa) 
 direkt per Fine-Tuning für die binäre Klassifikation optimiert. Andererseits wurden Embeddings dieser Modelle extrahiert und als Feature-Vektor 
 für LightGBM-Modelle verwendet. Ergänzend dazu wurde ein eigener deutschsprachiger Datensatz zusammengestellt, um die Modelle praxisnah zu trainieren und zu testen.
-Zur Umsetzung kamen aktuelle Frameworks wie Python, Hugging Face Transformers sowie PyTorch zum Einsatz.
+Zur Umsetzung kamen aktuelle Technologien wie Python, Hugging Face Transformers sowie PyTorch zum Einsatz.
 
 Die Evaluation zeigte, dass insbesondere das Modell XLM-RoBERTa-Large im direkten Fine-Tuning mit einer Accuracy und einem F1-Score von jeweils 97,95\% 
 die besten Resultate erzielte. Auch im hybriden Ansatz mit LightGBM auf Basis von Transformer-Embeddings erreichte dieses Modell hohe Werte (Accuracy: 97,84\%). 
 Über alle Experimente hinweg zeigte sich, dass die \textit{Large}-Varianten der Modelle tendenziell bessere Resultate liefern als die \textit{Base}-Versionen. 
 Allerdings mit erhöhtem Rechenaufwand.
 
-Entgegen der ursprünglichen Annahme, dass die Kombination aus Transformer-Embeddings und LightGBM-Classifiern eine bessere Generalisierungsleistung
+Entgegen der ursprünglichen Annahme, dass die Kombination aus Transformer Embeddings und LightGBM Modellen eine bessere Generalisierungsleistung
 ermöglichen könnte, schnitten die hybriden Modelle insgesamt leicht schlechter ab als die direkt feinjustierten Transformer. 
 Diese Beobachtung legt nahe, dass das direkte Fine-Tuning, trotz potenziell höherer Rechenkosten, die leistungsstärkere Strategie für die Fake-News-Klassifikation 
 darstellt. Der Vergleich mit verwandten Studien unterstreicht die Wettbewerbsfähigkeit der entwickelten Modelle, auch wenn unterschiedliche Datensätze und 
@@ -42,22 +42,22 @@ und damit eine verbesserte Generalisierungsfähigkeit der Modelle ermöglicht. D
 beinhaltet einen starken Fokus auf den COVID-19 Pandemie Kontext und ist außerdem stark veraltet. 
 Eine Ausweitung auf weitere thematische und aktuellere Domänen könnte die Robustheit der Modelle signifikant erhöhen.
 
-Des Weiteren bietet sich der Einsatz leistungsfähigerer Transformer-Modelle wie XLM-RoBERTa-XL an. Dieses Modell stellt eine noch größere Variante des in 
+Des Weiteren bietet sich der Einsatz leistungsfähigerer Transformer Modelle wie XLM-RoBERTa-XL an. Dieses Modell stellt eine noch größere Variante des in 
 dieser Arbeit bereits erfolgreich getesteten XLM-RoBERTa-Large dar und könnte insbesondere bei umfangreicheren Texten eine noch tiefere semantische 
-Repräsentation ermöglichen. Gescheitert ist die Verwendung dieses Modells an nicht ausreichenden Hardwaremöglichkeiten.
+Repräsentation ermöglichen. Gescheitert ist die Verwendung dieses Modells an nicht ausreichenden Hardwarekapazitäten.
 
-Ein bedeutender Limitationsfaktor vieler aktueller Transformer-Modelle ist die Beschränkung auf eine maximale Inputlänge von 512 Tokens. 
+Ein bedeutender Limitationsfaktor vieler aktueller Transformer Modelle ist die Beschränkung auf eine maximale Inputlänge von 512 Tokens. 
 Künftig könnten entweder Modelle mit erweiterter Kontextlänge (z.B. Longformer oder BigBird) oder Strategien zur Input-Segmentierung, 
 wie die Kombination von Head- und Tail-Abschnitten eines Dokuments \cite{sun2020finetuneberttextclassification}, eingesetzt werden. 
 Auf diese Weise ließen sich längere Nachrichtenartikel ohne Informationsverlust verarbeiten.
 
-Auch auf der Ebene der Repräsentationserzeugung aus den Transformer-Modellen bieten sich Optimierungsmöglichkeiten. 
+Auch auf der Ebene der Repräsentationserzeugung aus den Transformer Modellen bieten sich Optimierungsmöglichkeiten. 
 In dieser Arbeit wurden die Mittelwerte der letzten vier Hidden Layers genutzt, doch es existieren weitere Alternativen wie z.B. die Verwendung des 
 \texttt{[CLS]}-Tokens, der maximale Layer-Wert, oder unterschiedliche Gewichtungen der Layer-Repräsentationen. 
 Ein systematischer Vergleich dieser Methoden könnte zu einer verbesserten Repräsentationsqualität führen.
 
 Darüber hinaus wäre ein Vergleich mit alternativen Deep-Learning Modellarchitekturen von Interesse, wie zum Beispiel mit dem Ansatz FakeBERT \cite{Kaliyar:2021aa}, 
-welcher CNNs mit BERT kombiniert. Besonders vielversprechend erscheint die Kombination von FakeBERT mit XLM-RoBERTa als Embedding-Modell,
+welcher CNNs mit BERT kombiniert. Besonders vielversprechend erscheint die Kombination von CNNs mit XLM-RoBERTa als Embedding-Modell,
 um die semantische Tiefe transformerbasierter Repräsentationen mit den extraktiven Fähigkeiten von Convolutional Layers zu verbinden.
 Generell können Kombinationen aus allen in Kapitel \ref{chap:nlp} genannten Modellen erprobt werden.
 

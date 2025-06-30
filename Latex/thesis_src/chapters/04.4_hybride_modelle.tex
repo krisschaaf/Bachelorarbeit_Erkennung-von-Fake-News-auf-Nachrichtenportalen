@@ -1,3 +1,5 @@
+\newpage
+
 \section{Hybride Modelle zur Fake News Erkennung}
 \label{sec:hybride_modelle}
 
@@ -230,6 +232,13 @@ Durch RoBERTAs fortgeschritteneres dynamisches Maskieren wird jedes mal genau da
 Das Paper verwendet den „Fake News Detection Dataset“ zum Training. 
 Die Daten stammen von reuters.com und umfassen jeweils 12.600 Artikel, gesammelt in den Jahren 2016 bis 2017.
 
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[scale=0.5]{static/roberta_lightgbm_auc_roc_value.png}
+    \caption{\label{fig:roberta_lightgbm_auc_roc_value} Vergleich der Ergebnisse der verschiedenen Modelle \cite{V_G_2024}}
+    \end{center}
+\end{figure}
+
 Nach der Vorverarbeitung wurden die Daten tokenisiert und mit Roberta in Vektor-Embeddings umgewandelt.
 Verwendet wird der [CLS] Token aus den letzten drei Hidden Layers, um den gesamten Text zu repräsentieren.
 Durch Self Attention liefert dies eine feste, dichte Vektor-Repräsentation pro Artikel.
@@ -237,11 +246,5 @@ Diese Embeddings dienten anschließend als Eingabe für LightGBM zur binären Kl
 
 RoBERTa-LightGBM erzielt eine Verbesserung gegenüber BERT-LightGBM von bis zu 21\% (siehe Abbildung \ref{fig:roberta_lightgbm_auc_roc_value}).
 
-\begin{figure}[htbp]
-    \begin{center}
-    \includegraphics[scale=0.5]{static/roberta_lightgbm_auc_roc_value.png}
-    \caption{\label{fig:roberta_lightgbm_auc_roc_value} Vergleich der Ergebnisse der verschiedenen Modelle \cite{V_G_2024}}
-    \end{center}
-\end{figure}
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}

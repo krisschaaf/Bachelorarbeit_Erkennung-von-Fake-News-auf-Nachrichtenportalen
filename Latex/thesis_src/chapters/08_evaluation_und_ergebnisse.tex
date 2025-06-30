@@ -30,7 +30,7 @@ Die Modelle generalisieren gut und zeigen eine stabile Leistung auf bislang unge
 \label{tab:overfitting_check}
 \end{table}
 
-Tabelle \ref{tab:vergleich_der_transformer_modelle} zeigt die Testergebnisse der fünf untersuchten Transformer-Modelle nach dem Fine-Tuning auf dem 
+Tabelle \ref{tab:vergleich_der_transformer_modelle} zeigt die Testergebnisse der fünf untersuchten Transformer Modelle nach dem Fine-Tuning auf dem 
 Klassifikationsdatensatz. 
 Dargestellt sind Accuracy, F1-Score, Loss sowie die Evaluationszeit des Testdatensatzes. Das Modell XLM-RoBERTa-Large erzielt mit einer 
 Accuracy und einem F1-Score von jeweils 97,95\% die besten Resultate, gefolgt von RoBERTa-Large und RoBERTa-Base. 
@@ -54,13 +54,13 @@ der Tranformer Modelle bessere Ergebnisse erzielen, allerdings auch mit einem er
 \label{tab:vergleich_der_transformer_modelle}
 \end{table}
 
-In Tabelle \ref{tab:vergleich_lightgbm_modelle} dargestellt, sind die Metriken verschiedener LightGBM-Modells, welche auf den neu erzeugten 
+In Tabelle \ref{tab:vergleich_lightgbm_modelle} dargestellt, sind die Metriken verschiedener LightGBM Modelle, welche auf den neu erzeugten 
 Embeddings der verschiedenen Transformer-Modellen trainiert wurden.
-Dabei wurden jeweils die letzten vier Schichten der Modelle gemittelt und als Input für den LightGBM-Classifier verwendet. 
+Dabei wurden jeweils die letzten vier Schichten der Modelle gemittelt und als Input für ein untrainiertes LightGBM Modell verwendet. 
 Auch in diesem Setup erzielt XLM-RoBERTa-Large mit einer Accuracy von 97,84\% und einem F1-Score von 97,73\% die besten Ergebnisse. 
-Es folgen die \textit{Base}-Varianten von XLM-RoBERTa und RoBERTa mit sehr ähnlichen Werten. Deutlich schwächer schneidet BERT-Base-Uncased ab, 
-was auf eine geringere Qualität der erzeugten Embeddings hinweist. Insgesamt zeigt sich, dass die Qualität der Repräsentationen der Transformer-Modelle 
-einen wesentlichen Einfluss auf die nachgelagerte Klassifikationsleistung hat.
+Es folgen die \textit{Base}-Varianten von XLM-RoBERTa und RoBERTa mit sehr ähnlichen Werten. Deutlich schwächer schneidet BERT-Base-Uncased ab. 
+Insgesamt zeigt sich, dass die Qualität der Repräsentationen der Transformer-Modelle mit komplexer Architektur und zunehmender Vokabulargröße der jeweiligen Transformer steigt. 
+Die Qualität hat außerdem einen wesentlichen Einfluss auf die nachgelagerte Klassifikationsleistung hat.
 
 \begin{table}[!ht]
 \centering
@@ -110,7 +110,7 @@ Ein möglicher Grund für die leicht schlechteren Metriken bei der Verwendung vo
 Transformer-Embeddings liegen. Diese enthalten sehr viele komplexe, kontextuelle Informationen, die zwar für überwachte Modelle direkt nutzbar sind, 
 klassische Modelle wie LightGBM jedoch nur eingeschränkt verarbeiten können.
 \cite{reimers-gurevych-2019-sentence} erklärt, dass die Architektur von BERT für die Anwendung in weiteren unüberwachte Verfahren problematisch ist.
-Es lässt sich vermuten, dass Gleiches auch für überwachte Modelle gilt dass Gleiches auch für überwachte Modelle gilt, 
+Es lässt sich vermuten, dass Gleiches auch für überwachte Modelle gilt, 
 sofern diese nicht speziell auf die Strukturen der Transformer-Embeddings ausgelegt sind.
 
 \section{Vergleich mit verwandten Arbeiten}
@@ -118,14 +118,14 @@ sofern diese nicht speziell auf die Strukturen der Transformer-Embeddings ausgel
 Tabelle \ref{tab:vergleich_literatur} vergleicht die Accuracy- und F1-Scores der in dieser Arbeit entwickelten Modelle mit den besten Resultaten zweier 
 verwandter Studien. Während \cite{Essa:2023aa} ihre Modelle auf drei unterschiedlichen Fake-News-Datensätzen getestet hat 
 (ISOT, TI-CNN, FNC), stammen die Ergebnisse aus \cite{V_G_2024} vom FNDD-Datensatz. In dieser Arbeit wurde ein weiterer selbst entwickelter Datensatz verwendet. 
-Aufgrund dieser Unterschiede ist ein direkter Vergleich daher nur bedingt sinnvoll.
+Aufgrund dieser Unterschiede ist ein direkter Vergleich nur bedingt sinnvoll.
 
 Auffällig ist, dass in den Arbeiten von \cite{Essa:2023aa} und \cite{V_G_2024} ausschließlich Ergebnisse für klassifikatorgestützte Ansätze 
-(z.,B. BERT-Embeddings mit LightGBM oder LSTM) berichtet werden. Es fehlen dort jedoch vergleichbare Kennzahlen für direkt feinjustierte Transformer-Modelle 
+(z.,B. BERT-Embeddings mit LightGBM oder LSTM) gezeigt werden. Es fehlen vergleichbare Kennzahlen für direkt feinjustierte Transformer-Modelle 
 wie sie in dieser Arbeit durchgeführt wurden. Ein direkter Leistungsvergleich mit reinem Transformer-Fine-Tuning ist folglich nicht möglich.
 
 Trotzdem lässt sich beobachten, dass das in dieser Arbeit durchgeführte Fine-Tuning des XLM-RoBERTa-Large-Modells mit einer Accuracy und einem F1-Score von 
-jeweils 97,95\% sehr gute Ergebnisse erzielt und damit nahe an den besten LightGBM-Kombinationen der Vergleichsarbeiten liegt. 
+jeweils 97,95\% sehr gute Ergebnisse erzielt und damit nahe an den besten LightGBM Kombinationen der Vergleichsarbeiten liegt. 
 Auch das LightGBM-Modell auf Basis der XLM-RoBERTa-Embeddings erreicht mit 97,84\% (Accuracy) und 97,73\% (F1) ein konkurrenzfähiges Niveau.
 
 Die teils noch höheren Werte in \cite{Essa:2023aa} könnten unter anderem auf Unterschiede in den Datensätzen zurückzuführen sein. 
@@ -156,8 +156,10 @@ LightGBM-Ansatz mit aktuellen Forschungsarbeiten konkurrenzfähig sind.
 Zudem wird aber auch deutlich, dass ein sinnvoller Vergleich verschiedener Modellarchitekturen sehr schwer fällt.
 So liefert zum Beispiel die Kombination von BERT und LightGBM in dieser Arbeit mit 94,72\% (Accuracy) das schlechteste Ergebniss, während die gleiche Kombination
 in \cite{Essa:2023aa} 5,16\% mehr erzielt.
-Mögliche Ursachen hierfür können außerdem die unterschiedlichen Konfigurationen der Hyperparameter beim Modelltraining oder die Bildung der Embeddings aus den
-\textit{hidden states} sein. 
+Mögliche Ursachen hierfür können neben den verwendeten Datenbasen die unterschiedlichen Konfigurationen der Hyperparameter beim Modelltraining oder das Verfahren der 
+Embedding-Bildung sein. 
+
+\newpage
 
 \section{Ergebnisse der finalen Anwendung}
 
@@ -168,15 +170,15 @@ Die in Abbildung \ref{fig:screenshot_anwendung} dargestellten Beispiele verdeutl
 Ein möglicher Grund hierfür liegt in der unzureichenden Abdeckung aktueller Themen in den für das Training verwendeten Datensätzen. Infolgedessen verfügen die Modelle nicht 
 über ausreichenden Kontext, um die abgefragten Domänen adäquat bewerten zu können.
 
-Ein exemplarischer Fall ist der Artikel auf BILD.de mit dem Titel „Trump geht plötzlich auf Israel los“. Obwohl der Inhalt des Artikels faktisch korrekt ist, 
-wird er vom Modell fälschlicherweise als falsch eingestuft.
-
-Diese Fehleinschätzung könnte durch semantische oder stilistische Merkmale in der Überschrift bedingt sein. Um diesen Einfluss näher zu untersuchen, wäre es denkbar, 
-Titelvariationen wie „Trump kritisiert Israel - eine Kehrtwende in seiner bisherigen Haltung“ zu testen.
-
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=\linewidth]{static/screenshots_anwendung.png}
         \caption{\label{fig:screenshot_anwendung} Screenshots der Anwendung auf den verschiedenen Nachrichtenportalen - faktisch sind alle Artikel korrekt}
     \end{center}
 \end{figure}
+
+Ein exemplarischer Fall ist der Artikel auf BILD.de mit dem Titel „Trump geht plötzlich auf Israel los“. Obwohl der Inhalt des Artikels faktisch korrekt ist, 
+wird er vom Modell fälschlicherweise als falsch eingestuft.
+
+Diese Fehleinschätzung könnte durch semantische oder stilistische Merkmale in Überschrift und Artikel bedingt sein. Um diesen Einfluss näher zu untersuchen, wäre es denkbar, 
+Titelvariationen wie „Trump kritisiert Israel - eine Kehrtwende in seiner bisherigen Haltung“ mit entsprechend angepasstem Artikelinhalt zu testen.

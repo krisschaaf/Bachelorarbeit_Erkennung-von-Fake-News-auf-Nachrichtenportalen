@@ -11,7 +11,7 @@ Fake News Erkennung ist eine binäre Klassifizierung (Der Artikel ist entweder '
 
 Dabei ergeben sich vier mögliche Ausgänge bei der Modellvorhersage:
 \begin{itemize}
-    \item True Positive (TP) - Das Modell hat die positive Klasse vorhergesagt. 
+    \item True Positive (TP) - Das Modell hat die positive Klasse richtig vorhergesagt. 
         
     (Der Artikel, der kein Fake ist, wird als 'wahr' gedeutet)
     \item True Negative (TN) - Das Modell hat die negative Klasse richtig vorhergesagt.
@@ -19,10 +19,10 @@ Dabei ergeben sich vier mögliche Ausgänge bei der Modellvorhersage:
     (Der Artikel, der Fake ist, wird als 'falsch' gedeutet)
     \item False Positive (FP) - Das Modell hat die positive Klasse falsch vorhergesagt. 
         
-    (Der Artikel, der Fake ist, wird als 'wahr' gedeutet)
+    (Der Artikel, der kein Fake ist, wird als 'falsch' gedeutet)
     \item False Negative (FN) - Dein Modell hat die negative Klasse falsch vorhergesagt. 
         
-    (Der Artikel, der kein Fake ist, wird als 'falsch' gedeutet)
+    (Der Artikel, der Fake ist, wird als 'wahr' gedeutet)
 \end{itemize}
 
 Diese vier Werte werden in einer sogenannten Konfusionsmatrix  (siehe Abbildung \ref{fig:confusion_matrix}) zusammengefasst
@@ -30,13 +30,13 @@ aus der verschiedene Bewertungsmetriken abgeleitet werden können.
 
 \begin{figure}[htbp]
     \begin{center}
-        \includegraphics[scale=0.3]{static/confusion_matrix.png}
+        \includegraphics[scale=0.24]{static/confusion_matrix.png}
         \caption[Konfusionsmatrix]{\label{fig:confusion_matrix} Konfusionsmatrix \cite{datacamp_confusion_matrix_tutorial}}
     \end{center}
 \end{figure}
 
 Nach \cite{kivimaeki2025, Rainio:2024aa} sind die relevantesten Metriken für binäre Klassifikationen Accuracy, Recall (Sensitivity in \cite{Rainio:2024aa}), 
-Specificity und Precision. 
+Specificity und Precision.
 
 \subsection{Accuracy}
 
