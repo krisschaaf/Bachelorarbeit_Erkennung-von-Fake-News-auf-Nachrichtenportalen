@@ -7,6 +7,8 @@ Department Informatik
 
 📄 [Zur PDF-Version der Thesis](Latex/thesis_src/thesis.pdf)
 
+**Note:** 1.0
+
 ---
 
 ## Thema der Arbeit
